@@ -15,7 +15,7 @@ export default function Footer() {
                 leadwala{" "}
               </span>
 
-              <p className="mt-3 max-w-[260px] text-sm leading-6 text-neutral-500">
+              <p className="mt-3 max-w-65 text-sm leading-6 text-neutral-500">
                 Trusted data that helps you reach the right people.
               </p>
 

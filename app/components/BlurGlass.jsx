@@ -5,12 +5,12 @@ import FloatingCard from "./FloatingCard";
 export default function BlurGlass() {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center w-screen h-screen  text-center relative">
+      <div className="flex flex-col items-center justify-start w-screen h-screen  text-center relative shadow-lg">
 
         <BlobBackground />
 
 
-        <div className="h-screen border w-[99%] flex flex-row justify-center top-0 left-0 items-center text-left  bg-white/10 backdrop-blur-lg absolute">
+        <div className="h-screen w-[99%] flex flex-row justify-center top-0 left-0 items-center text-left  bg-white/10 backdrop-blur-lg absolute">
           {/* /////////////////////////////////////////////////////////// */}
           {/* left Side Heading */}
           {/* /////////////////////////////////////////////////////////// */}

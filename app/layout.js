@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -31,10 +31,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full w-[98vw] flex flex-col">
         <Navbar/>
 
         {children}
+
       <Footer/>
         </body>
     </html>

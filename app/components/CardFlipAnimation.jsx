@@ -36,11 +36,19 @@ const CARD_KEYFRAMES = `
 `;
 
 const CARD_TEXTS = [
-  { title: "A", subtitle: "Spade" },
-  { title: "K", subtitle: "Heart" },
-  { title: "Q", subtitle: "Club" },
-  { title: "J", subtitle: "Diamond" },
-  { title: "10", subtitle: "Star" },
+  { title: "Stock Market Traders", subtitle: "" },
+  { title: "Credit Card Holders", subtitle: "" },
+  { title: "Real Estate", subtitle: "" },
+  { title: "Students", subtitle: "" },
+  { title: "Insurance", subtitle: "" },
+  { title: "Email List Owners", subtitle: "" },
+  { title: "Doctors", subtitle: "" },
+  { title: "Enterprises", subtitle: "" },
+  { title: "Employees", subtitle: "" },
+  { title: "International", subtitle: "" },
+  { title: "Car Owners", subtitle: "" },
+  { title: "High Net Worth (HNI)", subtitle: "" },
+  { title: "Loan ", subtitle: "" },
 ];
 
 const ROLE_STYLE = {
@@ -63,6 +71,7 @@ function Card({ role, gradient, text, onDone }) {
       style={{
         width: 280,
         height: 180,
+        padding: "10px",
         position: "absolute",
         left: "50%",
         top: "50%",
@@ -70,6 +79,7 @@ function Card({ role, gradient, text, onDone }) {
         transformStyle: "preserve-3d",
         animation: `${animationName} ${duration}s cubic-bezier(0.45, 0.05, 0.25, 1) forwards`,
         willChange: "transform, opacity",
+        fontsize: "4px",
       }}
     >
       <div
@@ -82,12 +92,13 @@ function Card({ role, gradient, text, onDone }) {
           boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center", 
           justifyContent: "center",
           color: "#fff",
+          padding: "10px",
         }}
       >
-        <div style={{ fontSize: 44, fontWeight: 700 }}>{text.title}</div>
+        <div style={{ fontSize: 35, fontWeight: 700 , padding: "20px" }}>{text.title}</div>
         <div style={{ fontSize: 14, opacity: 0.85, marginTop: 8 }}>{text.subtitle}</div>
       </div>
       <div
@@ -102,6 +113,7 @@ function Card({ role, gradient, text, onDone }) {
           border: "6px solid #fff",
           boxSizing: "border-box",
           boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+              padding: "10px",
         }}
       />
     </div>
