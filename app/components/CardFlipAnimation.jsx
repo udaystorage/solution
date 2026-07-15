@@ -36,19 +36,22 @@ const CARD_KEYFRAMES = `
 `;
 
 const CARD_TEXTS = [
-  { title: "Stock Market Traders", subtitle: "" },
-  { title: "Credit Card Holders", subtitle: "" },
-  { title: "Real Estate", subtitle: "" },
-  { title: "Students", subtitle: "" },
-  { title: "Insurance", subtitle: "" },
-  { title: "Email List Owners", subtitle: "" },
-  { title: "Doctors", subtitle: "" },
-  { title: "Enterprises", subtitle: "" },
-  { title: "Employees", subtitle: "" },
-  { title: "International", subtitle: "" },
-  { title: "Car Owners", subtitle: "" },
-  { title: "High Net Worth (HNI)", subtitle: "" },
-  { title: "Loan ", subtitle: "" },
+  { title: "Stock Market Trader's Data", subtitle: "" },
+  { title: "Credit Card Holder's Data", subtitle: "" },
+  { title: "Real Estate Data", subtitle: "" },
+  { title: "College/School Student's Data", subtitle: "" },
+  { title: "Insurance Data", subtitle: "" },
+  { title: "Doctor's Data", subtitle: "" },
+  { title: "Hotel Data", subtitle: "" },
+  { title: "College/School Owner's Data", subtitle: "" }, 
+  { title: "Restaurant Data", subtitle: "" }, 
+  { title: "Spa Data", subtitle: "" }, 
+  { title: "Pincode Wise Data", subtitle: "" }, 
+  { title: "Employees Data", subtitle: "" },
+  { title: "International Data", subtitle: "" },
+  { title: "Car Owner's Data", subtitle: "" },
+  { title: "High Net Worth (HNI) Data", subtitle: "" },
+  { title: "Loan  Data", subtitle: "" },
 ];
 
 const ROLE_STYLE = {

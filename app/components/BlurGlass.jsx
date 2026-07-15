@@ -15,7 +15,7 @@ export default function BlurGlass() {
           {/* left Side Heading */}
           {/* /////////////////////////////////////////////////////////// */}
           <div className="w-[70%] h-full flex flex-col gap-8 justify-center items-start pl-50 ">
-            <p>For Data Buyers & Sellers</p>
+            <s>For Data Buyers & Sellers</s>
             <h1 className="text-6xl font-medium text-black">
               Leads, made <br />
               <p className="bg-linear-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
@@ -40,7 +40,7 @@ export default function BlurGlass() {
               </button>
             </div>
             
-            <p className="w-full"> <span className="font-bold"> 12,482 </span> leads verified today</p>
+            {/* <p className="w-full"> <span className="font-bold"> 12,482 </span> leads verified today</p> */}
           </div>
 {/* ///////////////////////////////////////////////////////////////// */}
           {/* right side card */} 
