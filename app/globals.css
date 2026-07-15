@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+@theme {
+  --animate-shimmer-small: shimmerSmall 5.5s ease-in-out infinite;
+
+  @keyframes shimmerSmall {
+    0% {
+      transform: translateX(-260%) skewX(-20deg);
+    }
+
+    100% {
+      transform: translateX(360%) skewX(-20deg);
+    }
+  }
+}
