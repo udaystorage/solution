@@ -19,8 +19,8 @@ const CARD_KEYFRAMES = `
   0%   { transform: ${NEAR} rotateY(0deg) scale(0.55); opacity: 1; }
   26%  { transform: ${CENTER} rotateY(360deg) scale(1); }
   33%  { transform: ${CENTER} rotateY(360deg) scale(0.82); }
-  49%  { transform: ${CENTER} rotateY(360deg) scale(1.5); }
-  87%  { transform: ${CENTER} rotateY(360deg) scale(1.5); }
+  49%  { transform: ${CENTER} rotateY(360deg) scale(1.3); }
+  87%  { transform: ${CENTER} rotateY(360deg) scale(1.3); }
   94%  { transform: ${CENTER} rotateY(360deg) scale(0.82); opacity: 1; }
   100% { transform: ${OFF_LEFT} rotateY(360deg) scale(0.6); opacity: 0; }
 }
@@ -50,9 +50,9 @@ const ROLE_STYLE = {
 };
 
 const CARD_GRADIENTS = [
-  "linear-gradient(135deg, #7f5af0f0, #2cb67df0)",
-  "linear-gradient(135deg, #f25f4cf0, #ffcb69f0)",
-  "linear-gradient(135deg, #2196f3f0, #e91e63f0)",
+  "linear-gradient(135deg, #ffffffb0, #15cebfb0, #15afceb0)",
+  "linear-gradient(135deg, #15afceb0, #1ec2ebb0, #d163e7b0)",
+  "linear-gradient(135deg, #ffffffb0, #d163e7b0, #5e1ac3b0)",
 ];
 
 function Card({ role, gradient, text, onDone }) {

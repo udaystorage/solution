@@ -10,11 +10,11 @@ export default function BlurGlass() {
         <BlobBackground />
 
 
-        <div className="h-screen w-screen flex flex-row justify-center top-0 left-0 items-center text-left  bg-white/10 backdrop-blur-lg shadow-lg ring-1 ring-black/20 absolute">
+        <div className="h-screen border w-[99%] flex flex-row justify-center top-0 left-0 items-center text-left  bg-white/10 backdrop-blur-lg absolute">
           {/* /////////////////////////////////////////////////////////// */}
           {/* left Side Heading */}
           {/* /////////////////////////////////////////////////////////// */}
-          <div className="w-[80%] h-full flex flex-col gap-8 justify-center items-start pl-50 ">
+          <div className="w-[70%] h-full flex flex-col gap-8 justify-center items-start pl-50 ">
             <p>For Data Buyers & Sellers</p>
             <h1 className="text-6xl font-medium text-black">
               Leads, made <br />
