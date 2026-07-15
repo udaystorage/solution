@@ -1,3 +1,4 @@
+"use client"
 import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 

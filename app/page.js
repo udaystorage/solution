@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BlurGlass from "./components/BlurGlass";
+import FAQSection from "./components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
     <div className="w-full h-screen bg-green-300">
         jf4e
     </div>
+    <FAQSection page="home" />
     </div>
   );
 }
