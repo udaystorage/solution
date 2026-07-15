@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffffcc;
-  --foreground: #171717;
+/* {
+  
+ background : "linear-gradient(135deg, #7f5af0b0, #2cb67db0)",
+ background :  "linear-gradient(135deg, #f25f4cb0, #ffcb69b0)",
+  background : "linear-gradient(135deg, #2196f3b0, #e91e63b0)",
+
 } */
+
+:root {
+  --background: #3affebb0;
+  --foreground: #171717;
+}
 /* 
 @theme inline {
   --color-background: var(--background);

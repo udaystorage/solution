@@ -1,35 +1,20 @@
 import React from "react";
+import BlobBackground from "../SVG/BlobBackground";
+import FloatingCard from "./FloatingCard";
 
 export default function BlurGlass() {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center w-screen h-screen px-20 text-center relative">
-        <svg
-          id="visual"
-          className=" translate-x-80"
-          viewBox="0 0 900 600"
-          width="900"
-          height="600"
-          version="1.1"
-        >
-          <linearGradient id="my-cool-gradient" x2="1" y2="1">
-            <stop offset="0%" stopColor="#a500d7" />
-            {/* <stop offset="50%" stopColor="#a500d7" /> */}
-            <stop offset="100%" stopColor="#00e6e2" />
-          </linearGradient>
-          <g transform="translate(407.71660719112697 324.812379246231)">
-            <path
-              d="M96.8 -97C138 -55.6 192.5 -27.8 213.9 21.4C235.4 70.7 223.8 141.4 182.6 160.9C141.4 180.4 70.7 148.7 13.3 135.4C-44.1 122.1 -88.2 127.2 -100.7 107.7C-113.2 88.2 -94.1 44.1 -103.3 -9.2C-112.5 -62.5 -149.9 -124.9 -137.4 -166.3C-124.9 -207.6 -62.5 -227.8 -17.3 -210.5C27.8 -193.1 55.6 -138.3 96.8 -97"
-              fill="url(#my-cool-gradient)"
-            />
-          </g>
-        </svg>
+      <div className="flex flex-col items-center justify-center w-screen h-screen  text-center relative">
 
-        <div className="h-screen w-full flex flex-row justify-center items-center text-left  bg-white/10 backdrop-blur-lg shadow-lg ring-1 ring-black/20 absolute">
+        <BlobBackground />
+
+
+        <div className="h-screen w-screen flex flex-row justify-center top-0 left-0 items-center text-left  bg-white/10 backdrop-blur-lg shadow-lg ring-1 ring-black/20 absolute">
           {/* /////////////////////////////////////////////////////////// */}
           {/* left Side Heading */}
           {/* /////////////////////////////////////////////////////////// */}
-          <div className="w-full h-full flex flex-col gap-8 justify-center items-start pl-40 ">
+          <div className="w-[80%] h-full flex flex-col gap-8 justify-center items-start pl-50 ">
             <p>For Data Buyers & Sellers</p>
             <h1 className="text-6xl font-medium text-black">
               Leads, made <br />
@@ -57,8 +42,11 @@ export default function BlurGlass() {
             
             <p className="w-full"> <span className="font-bold"> 12,482 </span> leads verified today</p>
           </div>
-
-          <div className="w-full flex flex-col justify-center items-center text-5xl font-medium text-black mt-20"></div>
+{/* ///////////////////////////////////////////////////////////////// */}
+          {/* right side card */} 
+          <div className=" w-full h-min  flex flex-col justify-center items-center text-5xl font-medium text-black pb-20">
+            <FloatingCard/>
+          </div>
         </div>
       </div>
     </div>

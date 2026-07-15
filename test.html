@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verinet — Lead & Data Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F5F0;
+    --panel:#FFFFFF;
+    --ink:#15131C;
+    --muted:#75717C;
+    --line:#E7E3DA;
+    --card-a1:#FF9FD1;
+    --card-a2:#9B8CFF;
+    --card-b1:#7FD8FF;
+    --card-b2:#7CFFC4;
+    --lime:#E4FF4E;
+    --black:#100E14;
+    --danger:#FF6B6B;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:12px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.02em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+  .shell{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav.topnav{position:sticky;top:0;z-index:50;background:rgba(246,245,240,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1180px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:700;font-size:18px;}
+  .logo .dot{width:20px;height:20px;border-radius:50% 50% 50% 4px;background:linear-gradient(135deg,var(--card-a2),var(--card-b1));display:inline-block;}
+  .nav-links{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);padding:5px;border-radius:100px;}
+  .nav-links button{border:none;background:none;padding:8px 18px;border-radius:100px;font-size:14px;font-weight:500;color:var(--muted);transition:all .2s;}
+  .nav-links button.active{background:var(--black);color:#fff;}
+  .nav-actions{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:500;}
+  .pill-btn{background:var(--black);color:#fff;padding:10px 20px;border-radius:100px;border:none;font-weight:600;font-size:14px;}
+  .pill-btn.outline{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .pill-btn.lg{padding:14px 26px;font-size:15px;}
+
+  /* PAGE toggling */
+  .page{display:none;animation:fade .35s ease;}
+  .page.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  /* HOME HERO */
+  .hero{padding:72px 0 40px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .eyebrow{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;font-weight:500;margin-bottom:18px;}
+  .eyebrow .line{width:22px;height:1px;background:var(--muted);}
+  .hero h1{font-size:56px;line-height:1.02;font-weight:600;}
+  .hero h1 .grad{background:linear-gradient(120deg,var(--card-a2),var(--card-b1));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.sub{color:var(--muted);font-size:16px;line-height:1.6;max-width:420px;margin:22px 0 28px;}
+  .cta-row{display:flex;align-items:center;gap:18px;}
+  .ticker{margin-top:38px;display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
+  .ticker .num{color:var(--ink);font-weight:600;}
+  .pulse{width:8px;height:8px;border-radius:50%;background:#4BD98A;box-shadow:0 0 0 0 rgba(75,217,138,.5);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(75,217,138,.5);}70%{box-shadow:0 0 0 8px rgba(75,217,138,0);}100%{box-shadow:0 0 0 0 rgba(75,217,138,0);}}
+
+  /* HERO VISUAL - stacked data cards echoing reference */
+  .hero-visual{position:relative;height:440px;}
+  .blob{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%, var(--card-a1), transparent 55%),radial-gradient(circle at 70% 60%, var(--card-b1), transparent 55%),radial-gradient(circle at 50% 90%, var(--card-b2), transparent 50%);filter:blur(38px);opacity:.55;}
+  .dcard{position:absolute;background:var(--panel);border-radius:var(--radius-md);box-shadow:0 20px 50px -18px rgba(20,15,30,.25);padding:16px;}
+  .dcard.lead-mini{top:14px;left:6px;width:190px;display:flex;gap:10px;align-items:center;}
+  .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--card-a2),var(--card-a1));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#fff;flex-shrink:0;}
+  .dcard.lead-mini .name{font-size:13px;font-weight:600;}
+  .dcard.lead-mini .role{font-size:11px;color:var(--muted);}
+  .badge{font-size:10px;padding:3px 8px;border-radius:100px;font-weight:600;display:inline-block;}
+  .badge.verified{background:#E3FBEC;color:#1E9E5A;}
+  .badge.pending{background:#FFF3D6;color:#B8862C;}
+  .badge.new{background:var(--lime);color:#2b3300;}
+
+  .dcard.main-card{top:90px;left:130px;width:280px;background:linear-gradient(135deg,var(--card-a2) 0%, var(--card-a1) 45%, var(--card-b1) 100%);color:#fff;padding:22px;}
+  .main-card .label{font-size:11px;opacity:.85;margin-bottom:6px;}
+  .main-card .value{font-size:30px;font-weight:600;font-family:'Space Grotesk';margin-bottom:16px;}
+  .main-card .rowline{display:flex;justify-content:space-between;align-items:center;font-size:12px;opacity:.9;}
+  .dots-mask{letter-spacing:3px;font-family:'IBM Plex Mono';font-size:13px;}
+
+  .dcard.stat-mini{bottom:70px;left:0px;width:170px;}
+  .stat-mini .k{font-size:11px;color:var(--muted);margin-bottom:4px;}
+  .stat-mini .v{font-size:20px;font-weight:600;font-family:'Space Grotesk';}
+
+  .dcard.company-mini{bottom:10px;right:20px;width:210px;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--card-b1),var(--card-b2));color:#0c1f18;}
+  .company-mini .name{font-size:13px;font-weight:600;}
+  .company-mini .role{font-size:11px;opacity:.75;}
+
+  /* LOGO STRIP */
+  .logostrip{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .logostrip .shell{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .logostrip span{font-family:'Space Grotesk';font-weight:600;color:#B9B5AD;font-size:16px;letter-spacing:.02em;}
+
+  /* FEATURES */
+  .section{padding:80px 0;}
+  .section-head{max-width:520px;margin-bottom:48px;}
+  .section-head h2{font-size:36px;font-weight:600;}
+  .section-head p{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.6;}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .feat-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;}
+  .feat-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px;}
+  .feat-icon.i1{background:linear-gradient(135deg,var(--card-a1),var(--card-a2));}
+  .feat-icon.i2{background:linear-gradient(135deg,var(--card-b1),var(--card-b2));}
+  .feat-icon.i3{background:var(--lime);}
+  .feat-card h4{font-size:17px;font-weight:600;margin-bottom:8px;}
+  .feat-card p{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0;}
+
+  /* CTA BAND */
+  .ctaband{background:var(--black);border-radius:var(--radius-lg);padding:56px;display:flex;justify-content:space-between;align-items:center;color:#fff;gap:24px;}
+  .ctaband h3{font-size:30px;font-weight:600;max-width:420px;}
+  .ctaband p{color:#B4B0BC;margin-top:10px;font-size:14px;}
+
+  footer{padding:50px 0 60px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:20px;}
+  footer .flinks{display:flex;gap:22px;}
+
+  /* PRICING */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .price-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;}
+  .price-card.highlight{background:var(--black);color:#fff;border-color:var(--black);transform:translateY(-10px);}
+  .price-card .tier{font-size:14px;color:var(--muted);font-weight:600;}
+  .price-card.highlight .tier{color:#B4B0BC;}
+  .price-card .amount{font-size:42px;font-weight:600;font-family:'Space Grotesk';margin:14px 0 4px;}
+  .price-card .per{font-size:13px;color:var(--muted);margin-bottom:24px;}
+  .price-card.highlight .per{color:#8A8692;}
+  .price-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px;font-size:13.5px;}
+  .price-list li{display:flex;gap:8px;align-items:flex-start;}
+  .check{width:16px;height:16px;border-radius:50%;background:var(--lime);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#2b3300;font-weight:700;}
+  .price-card.highlight .check{background:var(--lime);}
+  .price-card .pill-btn{width:100%;text-align:center;justify-content:center;}
+  .price-card.highlight .pill-btn{background:var(--lime);color:#2b3300;}
+
+  /* DASHBOARD */
+  .dash-wrap{display:grid;grid-template-columns:220px 1fr;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;min-height:640px;}
+  .sidebar{background:#FBFAF7;border-right:1px solid var(--line);padding:26px 18px;}
+  .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:4px;}
+  .side-link.active{background:var(--black);color:#fff;}
+  .side-ico{width:8px;height:8px;border-radius:2px;background:currentColor;opacity:.5;}
+  .dash-main{padding:30px 32px;}
+  .dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;}
+  .dash-top h3{font-size:22px;}
+  .search-box{background:#F2F0EA;border-radius:100px;padding:9px 16px;font-size:13px;color:var(--muted);width:220px;}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+  .stat-card{border-radius:var(--radius-md);padding:20px;}
+  .stat-card.s1{background:linear-gradient(135deg,var(--card-a2),var(--card-a1));color:#fff;}
+  .stat-card.s2{background:#fff;border:1px solid var(--line);}
+  .stat-card.s3{background:linear-gradient(135deg,var(--card-b1),var(--card-b2));color:#0c1f18;}
+  .stat-card .lbl{font-size:12px;opacity:.85;margin-bottom:8px;}
+  .stat-card .big{font-size:26px;font-weight:600;font-family:'Space Grotesk';}
+
+  table.leads{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table.leads th{text-align:left;color:var(--muted);font-weight:500;font-size:12px;padding:10px 12px;border-bottom:1px solid var(--line);}
+  table.leads td{padding:13px 12px;border-bottom:1px solid var(--line);}
+  table.leads tr:last-child td{border-bottom:none;}
+  .lead-name{display:flex;align-items:center;gap:10px;}
+  .lead-name .avatar{width:28px;height:28px;font-size:11px;}
+  .score{font-family:'IBM Plex Mono';font-weight:500;}
+  .rowbtn{background:none;border:1px solid var(--line);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;}
+
+  /* COMPONENTS PAGE */
+  .comp-block{margin-bottom:52px;}
+  .comp-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px;font-weight:600;}
+  .row-wrap{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn-primary{background:var(--black);color:#fff;border:none;padding:12px 22px;border-radius:100px;font-weight:600;font-size:14px;}
+  .btn-secondary{background:transparent;border:1px solid var(--line);padding:12px 22px;border-radius:100px;font-weight:600;font-size:14px;}
+  .btn-ghost{background:transparent;border:none;padding:12px 22px;font-weight:600;font-size:14px;color:var(--muted);}
+  .btn-lime{background:var(--lime);border:none;padding:12px 22px;border-radius:100px;font-weight:600;font-size:14px;color:#2b3300;}
+
+  .input-demo{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;max-width:360px;}
+  .field{margin-bottom:16px;}
+  .field label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;font-weight:500;}
+  .field input{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);font-size:14px;font-family:inherit;background:#FBFAF7;}
+
+  .segmented{display:inline-flex;background:#F2F0EA;border-radius:100px;padding:4px;}
+  .segmented button{border:none;background:none;padding:8px 18px;border-radius:100px;font-size:13px;font-weight:500;color:var(--muted);}
+  .segmented button.active{background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.06);}
+
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;}
+
+  .lead-card-lg{width:340px;border-radius:var(--radius-lg);padding:26px;background:linear-gradient(135deg,var(--card-a2) 0%, var(--card-a1) 40%, var(--card-b1) 100%);color:#fff;position:relative;overflow:hidden;}
+  .lead-card-lg .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:34px;}
+  .lead-card-lg .id{font-family:'IBM Plex Mono';font-size:11px;opacity:.8;}
+  .lead-card-lg .name{font-size:20px;font-weight:600;font-family:'Space Grotesk';margin-bottom:2px;}
+  .lead-card-lg .meta{font-size:12px;opacity:.85;}
+  .lead-card-lg .fields{display:flex;justify-content:space-between;font-size:11px;opacity:.9;margin-top:22px;}
+
+  .modal-demo{max-width:400px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;}
+  .modal-demo h4{font-size:18px;margin-bottom:6px;}
+  .modal-demo p.d{font-size:13px;color:var(--muted);margin:0 0 20px;}
+  .modal-demo .actions{display:flex;gap:10px;margin-top:22px;}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
+    .feat-grid, .price-grid, .stat-row{grid-template-columns:1fr;}
+    .dash-wrap{grid-template-columns:1fr;}
+    .sidebar{display:none;}
+    .nav-links{display:none;}
+    .ctaband{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span>Verinet</div>
+    <div class="nav-links">
+      <button class="active" data-page="home">Home</button>
+      <button data-page="pricing">Pricing</button>
+      <button data-page="dashboard">Dashboard</button>
+      <button data-page="components">Components</button>
+    </div>
+    <div class="nav-actions">
+      <a href="#">Log in</a>
+      <button class="pill-btn">Get Started</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+  <div class="shell hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="line"></span> For Data Buyers &amp; Sellers</div>
+        <h1>Leads, made<br><span class="grad">discoverable.</span></h1>
+        <p class="sub">Buy verified B2B contact and intent data, or list your own datasets for sale. Every record scored, matched and compliance-checked before it reaches a buyer.</p>
+        <div class="cta-row">
+          <button class="pill-btn lg">Browse datasets</button>
+          <button class="pill-btn lg outline">Sell your data</button>
+        </div>
+        <div class="ticker"><span class="pulse"></span> <span class="num mono">12,482</span> leads verified today</div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob"></div>
+        <div class="dcard lead-mini">
+          <div class="avatar">KJ</div>
+          <div>
+            <div class="name">Kelly Jensen</div>
+            <div class="role">VP Growth · SaaS</div>
+          </div>
+          <span class="badge verified" style="margin-left:auto;">Verified</span>
+        </div>
+        <div class="dcard main-card">
+          <div class="label">Dataset value</div>
+          <div class="value">$6,421.50</div>
+          <div class="rowline"><span class="dots-mask">•••• 3667 leads</span> <span>≈</span></div>
+        </div>
+        <div class="dcard stat-mini">
+          <div class="k">Match score</div>
+          <div class="v">94.2%</div>
+        </div>
+        <div class="dcard company-mini">
+          <div class="avatar" style="background:rgba(255,255,255,.35);color:#0c1f18;">TJ</div>
+          <div>
+            <div class="name">Thomas Josef</div>
+            <div class="role">Data Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logostrip">
+    <div class="shell">
+      <span>Northwind</span><span>Halcyon</span><span>Ferro&amp;Co</span><span>Basecamp</span><span>Or­bital</span><span>Marrow</span>
+    </div>
+  </div>
+
+  <div class="shell section">
+    <div class="section-head">
+      <h2>Built for both sides of the exchange.</h2>
+      <p>Whether you're sourcing leads or monetizing a dataset you already own, Verinet handles verification, pricing and delivery.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon i1">✓</div>
+        <h4>Verified contacts</h4>
+        <p>Every record passes email, phone and employment checks before it's listed — no stale or bounced data.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon i2">↻</div>
+        <h4>Real-time enrichment</h4>
+        <p>Append firmographic and intent signals to your existing lists in seconds via API or CSV upload.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon i3">◎</div>
+        <h4>Compliant sourcing</h4>
+        <p>Consent and origin tracked on every record, so what you buy or sell stays GDPR and CCPA safe.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell" style="padding-bottom:80px;">
+    <div class="ctaband">
+      <div>
+        <h3>Have a dataset worth selling?</h3>
+        <p>List it in minutes and get paid per verified record, per download, or per subscription.</p>
+      </div>
+      <button class="pill-btn lg" style="background:var(--lime);color:#2b3300;">Start selling</button>
+    </div>
+  </div>
+
+  <div class="shell">
+    <footer>
+      <span>© 2026 Verinet Data Exchange</span>
+      <div class="flinks"><a href="#">LinkedIn</a><a href="#">X</a><a href="#">Docs</a></div>
+    </footer>
+  </div>
+</div>
+
+<!-- ============ PRICING ============ -->
+<div class="page" id="page-pricing">
+  <div class="shell section">
+    <div class="section-head" style="margin:0 auto 48px;text-align:center;max-width:560px;">
+      <h2>Simple, usage-based pricing.</h2>
+      <p>Pay for verified records, not empty rows. Cancel or scale any time.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tier">Starter</div>
+        <div class="amount">$0</div>
+        <div class="per">500 free credits / month</div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> Basic contact search</li>
+          <li><span class="check">✓</span> CSV export</li>
+          <li><span class="check">✓</span> Email verification only</li>
+        </ul>
+        <button class="pill-btn outline">Start free</button>
+      </div>
+      <div class="price-card highlight">
+        <div class="tier">Growth</div>
+        <div class="amount">$249</div>
+        <div class="per">10,000 credits / month</div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> Full verification suite</li>
+          <li><span class="check">✓</span> API + Zapier access</li>
+          <li><span class="check">✓</span> Intent data layer</li>
+          <li><span class="check">✓</span> Priority support</li>
+        </ul>
+        <button class="pill-btn">Choose Growth</button>
+      </div>
+      <div class="price-card">
+        <div class="tier">Enterprise</div>
+        <div class="amount">Custom</div>
+        <div class="per">Unlimited, negotiated</div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> Dedicated data pipeline</li>
+          <li><span class="check">✓</span> Custom compliance review</li>
+          <li><span class="check">✓</span> Sell + buy marketplace access</li>
+        </ul>
+        <button class="pill-btn outline">Talk to sales</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div class="page" id="page-dashboard">
+  <div class="shell section" style="padding-top:44px;">
+    <div class="dash-wrap">
+      <div class="sidebar">
+        <div class="logo" style="margin-bottom:28px;"><span class="dot"></span>Verinet</div>
+        <div class="side-link active"><span class="side-ico"></span> Overview</div>
+        <div class="side-link"><span class="side-ico"></span> Leads</div>
+        <div class="side-link"><span class="side-ico"></span> Lists</div>
+        <div class="side-link"><span class="side-ico"></span> Billing</div>
+        <div class="side-link"><span class="side-ico"></span> Settings</div>
+      </div>
+      <div class="dash-main">
+        <div class="dash-top">
+          <h3>Overview</h3>
+          <div class="search-box">Search leads…</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-card s1">
+            <div class="lbl">Credit balance</div>
+            <div class="big">8,240</div>
+          </div>
+          <div class="stat-card s2">
+            <div class="lbl">Leads purchased</div>
+            <div class="big">3,667</div>
+          </div>
+          <div class="stat-card s3">
+            <div class="lbl">Avg. match score</div>
+            <div class="big">91.4%</div>
+          </div>
+        </div>
+        <table class="leads">
+          <thead>
+            <tr><th>Contact</th><th>Company</th><th>Score</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="lead-name"><div class="avatar">KJ</div>Kelly Jensen</div></td>
+              <td>Northwind Robotics</td>
+              <td class="score">94</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td><button class="rowbtn">View</button></td>
+            </tr>
+            <tr>
+              <td><div class="lead-name"><div class="avatar" style="background:linear-gradient(135deg,var(--card-b1),var(--card-b2));">TJ</div>Thomas Josef</div></td>
+              <td>Ferro &amp; Co</td>
+              <td class="score">88</td>
+              <td><span class="badge pending">Pending</span></td>
+              <td><button class="rowbtn">View</button></td>
+            </tr>
+            <tr>
+              <td><div class="lead-name"><div class="avatar">MR</div>Maya Reyes</div></td>
+              <td>Halcyon Health</td>
+              <td class="score">97</td>
+              <td><span class="badge new">New</span></td>
+              <td><button class="rowbtn">View</button></td>
+            </tr>
+            <tr>
+              <td><div class="lead-name"><div class="avatar">DP</div>Devon Park</div></td>
+              <td>Basecamp Labs</td>
+              <td class="score">76</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td><button class="rowbtn">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ COMPONENTS ============ -->
+<div class="page" id="page-components">
+  <div class="shell section">
+    <div class="section-head">
+      <h2>Component library</h2>
+      <p>Core building blocks used across the marketplace, dashboard and checkout flows.</p>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Buttons</div>
+      <div class="row-wrap">
+        <button class="btn-primary">Buy dataset</button>
+        <button class="btn-secondary">View details</button>
+        <button class="btn-ghost">Cancel</button>
+        <button class="btn-lime">Sell your data</button>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Status badges</div>
+      <div class="badge-row">
+        <span class="badge verified">Verified</span>
+        <span class="badge pending">Pending review</span>
+        <span class="badge new">New match</span>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Segmented control</div>
+      <div class="segmented">
+        <button class="active">All leads</button>
+        <button>Verified only</button>
+        <button>Saved</button>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Input field</div>
+      <div class="input-demo">
+        <div class="field">
+          <label>Company domain</label>
+          <input type="text" placeholder="e.g. northwindrobotics.com">
+        </div>
+        <div class="field">
+          <label>Record volume</label>
+          <input type="text" placeholder="1,000 contacts">
+        </div>
+        <button class="btn-primary" style="width:100%;">Get a quote</button>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Lead / data card</div>
+      <div class="lead-card-lg">
+        <div class="top">
+          <div>
+            <div class="name">Kelly Jensen</div>
+            <div class="meta">VP Growth · Northwind Robotics</div>
+          </div>
+          <span class="id">#LD-30667</span>
+        </div>
+        <div class="fields">
+          <span>Score 94</span>
+          <span>Email + Phone</span>
+          <span>Verified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <div class="comp-label">Request export modal</div>
+      <div class="modal-demo">
+        <h4>Request data export</h4>
+        <p class="d">3,667 records will be verified and delivered to your account within 24 hours.</p>
+        <div class="field">
+          <label>Delivery format</label>
+          <input type="text" value="CSV + API webhook">
+        </div>
+        <div class="actions">
+          <button class="btn-secondary" style="flex:1;">Cancel</button>
+          <button class="btn-primary" style="flex:1;">Confirm export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.nav-links button');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById('page-'+btn.dataset.page).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
