@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BlurGlass from "./components/BlurGlass";
 import { Check, TrendingUp } from "lucide-react";
+import 
 
 export default function Home() {
   return (
