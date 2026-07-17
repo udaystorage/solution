@@ -61,7 +61,7 @@ export const FAQSection = ({ page }) => {
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-16 text-center md:text-left">
-          <span className="text-sm font-semibold uppercase tracking-wider text-purple-600">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Have Questions?
           </span>
           <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-2xl capitalize">
