@@ -53,7 +53,7 @@ const CARD_TEXTS = [
   { title: "High Net Worth (HNI) Data", subtitle: "" },
   { title: "Loan  Data", subtitle: "" },
 ];
-
+// vexhgwxh
 const ROLE_STYLE = {
   center: { animationName: "cardMain", duration: MAIN_DURATION, z: 3 },
   near: { animationName: "cardShiftNear", duration: SHIFT_DURATION, z: 2 },
