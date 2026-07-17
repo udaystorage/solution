@@ -2,7 +2,6 @@ import Image from "next/image";
 import BlurGlass from "./components/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
 import { Check, TrendingUp } from "lucide-react";
-import 
 
 export default function Home() {
   return (
@@ -22,7 +21,7 @@ export default function Home() {
           Built for both sides of the exchange.
         </h3>
         <p className="text-gray-600 pl-25 w-180">
-          Whether you're sourcing leads or monetizing a dataset you already own,
+          Whether youapos re sourcing leads or monetizing a dataset you already own,
           Verinet handles verification, pricing and delivery.
         </p>
 
@@ -33,7 +32,7 @@ export default function Home() {
             </div>
             <h5 className="text-xl">Verified contacts</h5>
             <p className=" text-sm text-gray-600 p-1">
-              Every record passes email, phone and employment checks before it's
+              Every record passes email, phone and employment checks before itapos s
               listed — no stale or bounced data.
             </p>
           </div>
