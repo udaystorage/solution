@@ -1,8 +1,6 @@
-import Image from "next/image";
 import BlurGlass from "./components/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
 import { Check, TrendingUp } from "lucide-react";
-import 
 
 export default function Home() {
   return (
