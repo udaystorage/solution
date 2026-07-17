@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Verified, Smartphone, ListFilter } from "lucide-react";
 
 export default function SolutionsSection() {
   const [activeTab, setActiveTab] = useState("leads");
@@ -13,11 +14,21 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-28 font-sans text-[#1A1A1A]">
-      <div className="max-w-5xl mx-auto">
+    <section className="w-full bg-beige-100 px-20 py-10 font-sans text-[#1A1A1A]">
+      <div className="w-full px-20 py-10 ">
         {/* 1. Synced Regional Text Layout (Left Aligned, Non-stretching) */}
         <div className="w-full overflow-hidden pb-16 relative">
           <div className="flex space-x-12 whitespace-nowrap text-xl md:text-2xl font-semibold text-neutral-300 tracking-tight select-none">
+            <span>Mumbai</span>
+            <span>Delhi</span>
+            <span>Bangalore</span>
+            <span>Pune</span>
+            <span>West Bengal</span>
+            <span>Mumbai</span>
+            <span>Delhi</span>
+            <span>Bangalore</span>
+            <span>Pune</span>
+            <span>West Bengal</span>
             <span>Mumbai</span>
             <span>Delhi</span>
             <span>Bangalore</span>
@@ -29,10 +40,10 @@ export default function SolutionsSection() {
 
         {/* 2. Headline Matching the Left Grid Margin */}
         <div className="max-w-2xl mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-neutral-950 leading-tight">
+          <h2 className="text-4xl font-medium text-wrap w-140">
             Find the exact target list you need to pitch.
           </h2>
-          <p className="text-base text-neutral-500 leading-relaxed max-w-xl">
+          <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop dealing with missing emails and dead numbers. Tell us your
             target audience profile and our team will extract a verified dataset
             built to convert.
@@ -40,23 +51,18 @@ export default function SolutionsSection() {
         </div>
 
         {/* 3. Streamlined Minimal Feature Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14 PX-20">
           {/* Card 1 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200 p-5  hover:shadow-md transition-colors">
+          <div
+            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-[-16px_0_32px_-12px_rgba(15,23,42,0.15)] transition-colors bg-gradient-to-br
+from-white
+via-neutral-50
+to-neutral-100
+border border-neutral-200/80
+shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+          >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-emerald-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Verified className="w-4 h-4 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
@@ -71,21 +77,16 @@ export default function SolutionsSection() {
 
           {/* Card 2 */}
           {/* Card 2 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200 p-5  hover:shadow-md transition-colors">
+          <div
+            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-md transition-colors bg-gradient-to-br
+from-white
+via-neutral-50
+to-neutral-100
+border border-neutral-200/80
+shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+          >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-emerald-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Smartphone className="w-4 h-4 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
@@ -99,21 +100,16 @@ export default function SolutionsSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200 p-5  hover:shadow-md transition-colors">
+          <div
+            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-[12px_0_24px_-10px_rgba(15,23,42,0.12)] transition-colors bg-gradient-to-br
+from-white
+via-neutral-50
+to-neutral-100
+border border-neutral-200/80
+shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+          >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-emerald-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <ListFilter className="w-4 h-4 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
@@ -164,7 +160,7 @@ export default function SolutionsSection() {
                     : "text-neutral-600 hover:text-neutral-900"
                 }`}
               >
-                 Custom Data
+                Custom Data
               </button>
             </div>
           </div>
