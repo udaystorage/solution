@@ -5,12 +5,7 @@ function Carousel() {
     
 const marquee = [...states, ...states];
   return (
-<div className="group relative overflow-hidden py-4">
-  {/* Left Fade */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-32 bg-gradient-to-r from-[#F7F6F2] via-[#F7F6F2]/90 to-transparent" />
-
-  {/* Right Fade */}
-  <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-32 bg-gradient-to-l from-[#F7F6F2] via-[#F7F2]/90 to-transparent" />
+<div className="group marquee-mask relative overflow-hidden py-4">
 
   <div className="marquee-track">
     {/* First Copy */}
@@ -32,7 +27,7 @@ const marquee = [...states, ...states];
             backdrop-blur-md
 
             px-6
-            py-3
+            py-4
 
             shadow-[0_4px_12px_rgba(15,23,42,.05),inset_0_1px_0_rgba(255,255,255,.95)]
 
