@@ -1,17 +1,6 @@
 import Image from "next/image";
 import BlurGlass from "./components/BlurGlass";
-<<<<<<< HEAD
 import FAQSection from "./components/sections/FAQ";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center bg-white font-sans overflow-scroll ">
-         <BlurGlass/>
-    <div className="w-full h-screen bg-green-300">
-        jf4e
-    </div>
-    <FAQSection page="home" />
-=======
 import { Check, TrendingUp } from "lucide-react";
 
 export default function Home() {
@@ -69,7 +58,7 @@ export default function Home() {
       </div>
 
       <div className="w-full h-screen bg-green-300"></div>
->>>>>>> b7bd94c0f4bed07513d68378eb14133c21d45b9b
+        <FAQSection page="home" />
     </div>
   );
 }
