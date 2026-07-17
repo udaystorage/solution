@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Verified, Smartphone, ListFilter } from "lucide-react";
+import Carousel from "../ui/Carousel";
 
 export default function SolutionsSection() {
   const [activeTab, setActiveTab] = useState("leads");
@@ -17,25 +18,8 @@ export default function SolutionsSection() {
     <section className="w-full bg-beige-100 px-20 py-10 font-sans text-[#1A1A1A]">
       <div className="w-full px-20 py-10 ">
         {/* 1. Synced Regional Text Layout (Left Aligned, Non-stretching) */}
-        <div className="w-full overflow-hidden pb-16 relative">
-          <div className="flex space-x-12 whitespace-nowrap text-xl md:text-2xl font-semibold text-neutral-300 tracking-tight select-none">
-            <span>Mumbai</span>
-            <span>Delhi</span>
-            <span>Bangalore</span>
-            <span>Pune</span>
-            <span>West Bengal</span>
-            <span>Mumbai</span>
-            <span>Delhi</span>
-            <span>Bangalore</span>
-            <span>Pune</span>
-            <span>West Bengal</span>
-            <span>Mumbai</span>
-            <span>Delhi</span>
-            <span>Bangalore</span>
-            <span>Pune</span>
-            <span>West Bengal</span>
-            <span className="text-neutral-200">more..</span>
-          </div>
+        <div className="w-full overflow-hidden pb-24 relative">
+          <Carousel/>
         </div>
 
         {/* 2. Headline Matching the Left Grid Margin */}

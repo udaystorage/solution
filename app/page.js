@@ -62,7 +62,7 @@ export default function Home() {
 
       <SolutionSection />
       <WhyChooseUs />
-      <div className="w-full h-screen bg-green-300"></div>
+      {/* <div className="w-full h-screen bg-green-300"></div> */}
         <FAQSection page="home" />
     </div>
   );

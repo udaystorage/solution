@@ -54,15 +54,10 @@ body {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-300px);
   }
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
+  animation: marquee 4s linear infinite;
 }
