@@ -12,6 +12,7 @@ export default function Navbar() {
           <Link className=' bg-white rounded-full px-5 py-1.5' href="/leadstore">Lead Store</Link>
           <Link className=' bg-white rounded-full px-5 py-1.5' href="/pricing">Pricing</Link>
           <Link className=' bg-white rounded-full px-5 py-1.5' href="/aboutus">About us</Link>
+          <Link className=' bg-white rounded-full px-5 py-1.5' href="/blog">Blog</Link>
          </div>
          <div className=" flex justify-center items-center gap-4">
           <button className="bg-black text-white px-6 py-2 rounded-full ">Login</button>
