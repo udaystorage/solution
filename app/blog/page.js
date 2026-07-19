@@ -31,7 +31,7 @@ function Blog() {
               href={`/blog/${blog.slug}`}
               className="group block"
             >
-              <article key={blog.id}>
+              <article key={blog.id} >
              <div className="relative h-[260px] w-full overflow-hidden rounded-3xl">
   <Image
     src="/blog.jpg"
