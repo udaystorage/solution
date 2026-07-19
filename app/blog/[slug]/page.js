@@ -12,7 +12,7 @@ export default async function BlogPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-[#F7F6F2] relative overflow-hidden text-stone-900 selection:bg-emerald-100">
+    <main className="min-h-screen  relative overflow-hidden text-stone-900 selection:bg-emerald-100">
       {/* Premium Radial Lighting System for B2B Trust & Depth */}
       <div
         className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden"
@@ -35,11 +35,11 @@ export default async function BlogPage({ params }) {
         </div>
 
         {/* Premium Stair/Growth Inspired Title Heading */}
-        <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] text-stone-950 font-semibold">
+        <h1 className="mt-6  text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] text-stone-950 font-semibold">
           {blog.title}
         </h1>
 
-        <p className="mt-6 max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
+        <p className="mt-6 italic max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
           {blog.description}
         </p>
 
@@ -68,7 +68,7 @@ export default async function BlogPage({ params }) {
             {/* Iterative Section Mapping */}
             {blog.content.sections?.map((section, idx) => (
               <section key={idx} className="space-y-4">
-                <h2 className="font-serif text-2xl font-semibold tracking-tight text-stone-900 pt-4">
+                <h2 className=" text-2xl font-semibold tracking-tight text-stone-900 pt-4">
                   {section.heading}
                 </h2>
 
@@ -95,7 +95,7 @@ export default async function BlogPage({ params }) {
                 {/* Micro Ambient Glow Inside Takeaway */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl" />
                      
-                <h3 className="font-serif text-xs font-semibold tracking-widest text-emerald-400 uppercase">
+                <h3 className=" text-xs font-semibold tracking-widest text-emerald-400 uppercase">
                   Key Takeaway
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-stone-200 font-light">
@@ -107,7 +107,7 @@ export default async function BlogPage({ params }) {
 
           {/* Right Sidebar - Sticky Highlights / Executive Summary Display */}
           <aside className="lg:col-span-4 lg:sticky lg:top-8 bg-stone-100/80 border border-stone-200/60 rounded-2xl p-6 backdrop-blur-md shadow-sm">
-            <h3 className="font-serif text-sm font-semibold tracking-wider text-stone-900 border-b border-stone-200 pb-3">
+            <h3 className=" text-sm font-semibold tracking-wider text-stone-900 border-b border-stone-200 pb-3">
               Executive Highlights
             </h3>
 
