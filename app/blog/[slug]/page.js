@@ -39,7 +39,7 @@ export default async function BlogPage({ params }) {
           {blog.title}
         </h1>
 
-        <p className="italic mt-6 max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
+        <p className="mt-6 italic max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
           {blog.description}
         </p>
 
