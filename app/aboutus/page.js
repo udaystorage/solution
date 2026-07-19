@@ -494,8 +494,9 @@ function OurPrinciples() {
 
 function ReachCapabilities() {
   const cities = [
-    { name: "Delhi", left: "37%", top: "32%" },
+    { name: "Delhi", left: "35%", top: "30%" },
     { name: "Bhopal", left: "35%", top: "46%" },
+    { name: "Jaipur", left: "27%", top: "36%" },
     { name: "Mumbai", left: "23%", top: "58%" },
     { name: "Pune", left: "27%", top: "63%" },
     { name: "Bangalore", left: "37%", top: "75%" },
