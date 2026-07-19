@@ -68,7 +68,7 @@ export default async function BlogPage({ params }) {
             {/* Iterative Section Mapping */}
             {blog.content.sections?.map((section, idx) => (
               <section key={idx} className="space-y-4">
-                <h2 className="font-serif text-2xl font-semibold tracking-tight text-stone-900 pt-4">
+                <h2 className=" text-2xl font-semibold tracking-tight text-stone-900 pt-4">
                   {section.heading}
                 </h2>
 
@@ -95,7 +95,7 @@ export default async function BlogPage({ params }) {
                 {/* Micro Ambient Glow Inside Takeaway */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl" />
                      
-                <h3 className="font-serif text-xs font-semibold tracking-widest text-emerald-400 uppercase">
+                <h3 className=" text-xs font-semibold tracking-widest text-emerald-400 uppercase">
                   Key Takeaway
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-stone-200 font-light">
@@ -107,7 +107,7 @@ export default async function BlogPage({ params }) {
 
           {/* Right Sidebar - Sticky Highlights / Executive Summary Display */}
           <aside className="lg:col-span-4 lg:sticky lg:top-8 bg-stone-100/80 border border-stone-200/60 rounded-2xl p-6 backdrop-blur-md shadow-sm">
-            <h3 className="font-serif text-sm font-semibold tracking-wider text-stone-900 border-b border-stone-200 pb-3">
+            <h3 className=" text-sm font-semibold tracking-wider text-stone-900 border-b border-stone-200 pb-3">
               Executive Highlights
             </h3>
 
