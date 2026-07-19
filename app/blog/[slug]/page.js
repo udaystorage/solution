@@ -118,7 +118,7 @@ export default async function BlogPage({ params }) {
         
         {/* Decorative Ambient Effects Container */}
         <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-gradient-to-b from-indigo-500/5 via-slate-400/0 to-transparent blur-[120px]"></div>
+          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-linear-to-b from-indigo-500/5 via-slate-400/0 to-transparent blur-[120px]"></div>
           <div className="absolute top-[5%] left-[-10%] w-[50%] h-[40%] rounded-full bg-radial from-emerald-400/5 via-transparent to-transparent blur-[100px]"></div>
           <div className="absolute top-[2%] right-[-10%] w-[40%] h-[40%] rounded-full bg-radial from-stone-300/10 via-transparent to-transparent blur-[90px]"></div>
           <div className="absolute inset-0 backdrop-blur-[80px]" />
@@ -156,7 +156,7 @@ export default async function BlogPage({ params }) {
               alt={`${blog.title} cover image`} // Simplified alt text for better accessibility and SEO
               width={1200}
               height={680}
-              className="w-full h-[450px] object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
               priority
             />
           </div>
@@ -228,7 +228,7 @@ export default async function BlogPage({ params }) {
                       key={index}
                       className="flex gap-3 items-start text-sm text-stone-600"
                     >
-                      <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2" aria-hidden="true" />
+                      <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2" aria-hidden="true" />
                       <span className="leading-tight font-medium">{highlight}</span>
                     </li>
                   ))}
