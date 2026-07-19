@@ -12,7 +12,7 @@ export default async function BlogPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-[#F7F6F2] relative overflow-hidden text-stone-900 selection:bg-emerald-100">
+    <main className="min-h-screen  relative overflow-hidden text-stone-900 selection:bg-emerald-100">
       {/* Premium Radial Lighting System for B2B Trust & Depth */}
       <div
         className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden"
@@ -35,11 +35,11 @@ export default async function BlogPage({ params }) {
         </div>
 
         {/* Premium Stair/Growth Inspired Title Heading */}
-        <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] text-stone-950 font-semibold">
+        <h1 className="mt-6  text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] text-stone-950 font-semibold">
           {blog.title}
         </h1>
 
-        <p className="mt-6 max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
+        <p className="mt-6 italic max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
           {blog.description}
         </p>
 
