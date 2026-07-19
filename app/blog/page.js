@@ -8,9 +8,9 @@ function Blog() {
   return (
     <div className="w-full mt-20">
       <section className="w-full px-20 py-10 ">
-        <div className="absolute -top-40 left-1/4 h-[450px] w-[450px] rounded-full bg-gradient-to-br from-sky-300/20 to-cyan-400/10 blur-[160px]" />
+        <div className="absolute -top-40 left-1/4 h-112.5 w-112.5 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-[160px]" />
 
-        <div className="absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-indigo-300/15 to-violet-300/10 blur-[160px]" />
+        <div className="absolute top-0 right-0 h-100 w-100 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-[160px]" />
         <div className="w-full px-20 py-10 flex flex-col items-center gap-4">
           <h1 className="max-w-xl text-5xl text-center font-semibold">
             Insights that brings you <span>real growth</span>
@@ -31,8 +31,8 @@ function Blog() {
               href={`/blog/${blog.slug}`}
               className="group block"
             >
-              <article key={blog.id} >
-             <div className="relative h-[260px] w-full overflow-hidden rounded-3xl">
+              <article key={blog.id}>
+             <div className="relative h-65 w-full overflow-hidden rounded-3xl">
   <Image
     src="/blog.jpg"
     alt={blog.title}
@@ -87,7 +87,7 @@ function Blog() {
                 </button>
               </div>
             </div>
-            <div className="w-1/2 p-10 flex min-h-[400px] items-center justify-center overflow-hidden relative">
+            <div className="w-1/2 p-10 flex min-h-100 items-center justify-center overflow-hidden relative">
               <div
                 className="
       absolute
