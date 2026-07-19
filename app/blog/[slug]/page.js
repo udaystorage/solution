@@ -85,10 +85,10 @@ export default async function BlogPage({ params }) {
 
             {/* Strategic Premium Takeaway Callout */}
             {blog.content.takeaway && (
-              <div className="relative mt-12 p-8 rounded-2xl bg-gradient-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group">
+              <div className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group">
                 {/* Micro Ambient Glow Inside Takeaway */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl" />
-                
+                     
                 <h3 className="font-serif text-xs font-semibold tracking-widest text-emerald-400 uppercase">
                   Key Takeaway
                 </h3>
