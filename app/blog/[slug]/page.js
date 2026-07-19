@@ -48,6 +48,7 @@ export default async function BlogPage({ params }) {
             height={680}
             className="w-full h-[450px] object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
             priority
+            loading="eager"
           />
         </div>
 

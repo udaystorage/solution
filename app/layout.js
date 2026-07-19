@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import OrganizationSchema from "./components/OrganizationSchema";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full w-[98vw] flex flex-col">
+        <OrganizationSchema/>
         <Navbar/>
 
         {children}
