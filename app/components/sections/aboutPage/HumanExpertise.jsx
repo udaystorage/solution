@@ -23,7 +23,7 @@ export default function HumanExpertise() {
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Human + Technology
           </span>
 

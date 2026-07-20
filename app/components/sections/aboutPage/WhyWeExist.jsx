@@ -7,7 +7,7 @@ export default function WhyWeExist() {
         {/* left */}
         <div>
           <div className="lg:sticky lg:top-32">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
               Why we exist
             </span>
 
@@ -35,7 +35,7 @@ export default function WhyWeExist() {
           <div className="grid gap-5 pt-8 md:grid-cols-2">
             {/* old way */}
             <div className="rounded-3xl border border-stone-200 bg-white p-7 sm:p-8">
-              <span className="text-xs font-semibold uppercase tracking-widest text-stone-400">
+              <span className="text-xs font-semibold uppercase tracking-widest text-stone-500">
                 The old way
               </span>
 
@@ -58,7 +58,7 @@ export default function WhyWeExist() {
 
             {/* our way */}
             <div className="rounded-3xl bg-stone-950 p-7 text-white shadow-xl sm:p-8">
-              <span className="text-xs font-semibold uppercase tracking-widest text-stone-400">
+              <span className="text-xs font-semibold uppercase tracking-widest text-stone-300">
                 Our approach
               </span>
 

@@ -20,7 +20,7 @@ export default async function BlogPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
       />
 
-      <main className="min-h-screen bg-[#F7F6F2] relative overflow-hidden text-stone-900 selection:bg-emerald-100">
+      <section className="min-h-screen bg-[#F7F6F2] relative overflow-hidden text-stone-900 selection:bg-emerald-100">
         
         {/* Decorative Ambient Effects Container */}
         <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" aria-hidden="true">
@@ -137,6 +137,7 @@ export default async function BlogPage({ params }) {
           </aside>
         </div>
       </section>
-    </main>
+    </section>
+    </>
   );
 }
