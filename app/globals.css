@@ -85,3 +85,15 @@ body {
     transparent 100%
   );
 }
+
+@layer utilities {
+  @keyframes textShimmer {
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-shimmer {
+    animation: textShimmer 2.5s linear infinite;
+  }
+}
