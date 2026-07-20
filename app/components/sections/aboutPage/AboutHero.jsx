@@ -6,9 +6,9 @@ export default function AboutHero() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
 
       <div className="relative mx-auto flex min-h-[650px] max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-10">
-        <span className="mb-7 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+        {/* <span className="mb-7 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
           About Leadwala
-        </span>
+        </span> */}
 
         <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
           Data should create

@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
@@ -47,17 +46,86 @@ const processSteps = [
   },
 ];
 
+const stepBackgrounds = [
+  // 01 — Requirement | Rich violet / electric lavender
+  "from-violet-400/55 via-fuchsia-200/45 to-indigo-400/55",
+
+  // 02 — Research | Electric blue / aqua
+  "from-blue-400/55 via-cyan-200/45 to-sky-400/55",
+
+  // 03 — Verification | Emerald / luminous mint
+  "from-emerald-400/55 via-teal-200/45 to-cyan-400/50",
+
+  // 04 — Structuring | Golden amber / coral
+  "from-amber-400/55 via-orange-200/45 to-rose-400/50",
+
+  // 05 — Delivery | Royal indigo / magenta
+  "from-indigo-400/55 via-violet-200/45 to-fuchsia-400/55",
+];
+
 
 export default function OurApproach() {
   const [activeStep, setActiveStep] = useState(0);
   const active = processSteps[activeStep];
   const ActiveIcon = active.icon;
 
+const [allCompleted, setAllCompleted] = useState(false);
+
+const approachRef = useRef(null);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const section = approachRef.current;
+    if (!section) return;
+
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // Start when section reaches 70% of viewport
+    const triggerPoint = viewportHeight * 0.7;
+
+    const scrollDistance = triggerPoint - rect.top;
+
+    // More breathing room between each step
+    const stepDistance = 180;
+
+    const progressStep = Math.floor(scrollDistance / stepDistance);
+
+    // Allow 0 → 5, where 5 means everything is completed
+    const clampedProgress = Math.max(
+      0,
+      Math.min(processSteps.length, progressStep)
+    );
+
+    // Content itself stays capped at the last real step
+    const contentStep = Math.min(
+      clampedProgress,
+      processSteps.length - 1
+    );
+
+    setActiveStep(contentStep);
+
+    setAllCompleted(
+      clampedProgress === processSteps.length
+    );
+  };
+
+  window.addEventListener("scroll", handleScroll, {
+    passive: true,
+  });
+
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
   return (
-    <section id="approach" className="bg-white">
+    <section ref={approachRef} id="approach" className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
         <div className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Our approach
           </span>
 
@@ -74,48 +142,71 @@ export default function OurApproach() {
         </div>
 
         <div className="mt-16 overflow-hidden rounded-[2rem] border border-stone-200 bg-stone-50 p-5 sm:p-8 lg:p-10">
-          {/* desktop navigation */}
-          <div className="hidden grid-cols-5 lg:grid">
-            {processSteps.map((step, index) => (
-              <button
-                key={step.title}
-                onClick={() => setActiveStep(index)}
-                className="group relative text-left"
-              >
-                <div className="relative mb-5 flex items-center">
-                  <span
-                    className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-300 ${
-                      activeStep >= index
-                        ? "border-stone-950 bg-stone-950 text-white"
-                        : "border-stone-300 bg-white text-stone-400"
-                    }`}
-                  >
-                    {step.number}
-                  </span>
+         {/* desktop navigation */}
+<div className="hidden grid-cols-5 lg:grid">
+  {processSteps.map((step, index) => {
+    const isCompleted =
+  activeStep > index ||
+  (allCompleted && index === processSteps.length - 1);
+    const isActive = activeStep === index;
 
-                  {index !== processSteps.length - 1 && (
-                    <span className="absolute left-10 right-0 h-px bg-stone-200">
-                      <span
-                        className={`block h-full bg-stone-950 transition-all duration-500 ${
-                          activeStep > index ? "w-full" : "w-0"
-                        }`}
-                      />
-                    </span>
-                  )}
-                </div>
+    return (
+      <button
+        key={step.title}
+        onClick={() => setActiveStep(index)}
+        className="group relative text-left"
+      >
+        <div className="relative mb-5 flex items-center">
+          
+          {/* Step circle */}
+          <span
+            className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-500 ${
+              isCompleted
+                ? "border-emerald-500 bg-emerald-500 text-white"
+                : isActive
+                  ? "scale-105 border-stone-950 bg-stone-950 text-white shadow-md"
+                  : "border-stone-300 bg-white text-stone-400"
+            }`}
+          >
+            {isCompleted ? (
+              <Check
+                size={17}
+                strokeWidth={2.5}
+                className="animate-in zoom-in duration-300"
+              />
+            ) : (
+              step.number
+            )}
+          </span>
 
-                <span
-                  className={`text-sm font-medium transition-colors ${
-                    activeStep === index
-                      ? "text-stone-950"
-                      : "text-stone-400 group-hover:text-stone-700"
-                  }`}
-                >
-                  {step.title}
-                </span>
-              </button>
-            ))}
-          </div>
+          {/* Connecting progress line */}
+          {index !== processSteps.length - 1 && (
+            <span className="absolute left-10 right-0 h-px overflow-hidden bg-stone-200">
+              <span
+                className={`block h-full bg-emerald-500 transition-all duration-700 ease-out ${
+                  isCompleted ? "w-full" : "w-0"
+                }`}
+              />
+            </span>
+          )}
+        </div>
+
+        {/* Step title */}
+        <span
+          className={`text-sm font-medium transition-colors duration-300 ${
+            isCompleted
+              ? "text-emerald-700"
+              : isActive
+                ? "text-stone-950"
+                : "text-stone-400 group-hover:text-stone-700"
+          }`}
+        >
+          {step.title}
+        </span>
+      </button>
+    );
+  })}
+</div>
 
           {/* mobile navigation */}
           <div className="flex gap-2 overflow-x-auto pb-2 lg:hidden">
@@ -167,12 +258,29 @@ export default function OurApproach() {
             </div>
 
             {/* abstract data visual */}
-            <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-2xl bg-stone-50">
-              <div className="absolute h-40 w-40 rounded-full bg-gradient-to-br from-violet-200/60 via-blue-200/60 to-cyan-200/60 blur-3xl" />
+            <div className="relative flex min-h-55 items-center justify-center overflow-hidden rounded-2xl bg-stone-50">
 
               <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl border border-white bg-white/80 shadow-lg backdrop-blur-xl">
                 <ActiveIcon size={34} strokeWidth={1.5} />
               </div>
+              <div className="pointer-events-none absolute inset-0 overflow-hidden">
+  {stepBackgrounds.map((background, index) => (
+    <div
+      key={index}
+      className={`absolute left-1/2 top-1/2 h-72 w-72
+        -translate-x-1/2 -translate-y-1/2
+        rounded-full bg-linear-to-br ${background}
+        blur-[80px]
+        transition-opacity duration-1000 ease-in-out
+        ${
+          activeStep === index
+            ? "opacity-100"
+            : "opacity-0"
+        }
+      `}
+    />
+  ))}
+</div>
 
               <span className="absolute left-6 top-6 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[10px] font-medium shadow-sm">
                 Industry

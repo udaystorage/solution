@@ -130,6 +130,7 @@ export default async function BlogPage({ params }) {
           </aside>
         </div>
       </section>
-    </main>
+    </section>
+    </>
   );
 }
