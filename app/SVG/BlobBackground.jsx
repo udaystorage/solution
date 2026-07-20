@@ -28,7 +28,7 @@ function BlobBackground() {
   return (
     <svg
       id="visual"
-      className="translate-x-80"
+      className="translate-x-80 absolute blur-md"
       viewBox="0 0 900 600"
       width="900"
       height="600"

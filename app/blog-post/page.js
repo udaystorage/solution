@@ -9,7 +9,7 @@ import { Plus, Trash2, Upload } from "lucide-react";
 const emptySection = () => ({ heading: "", brief: "", paragraphs: [""] });
 const emptyMeta = () => ({ key: "", value: "" });
 
-const DEFAULT_READ_TIME = "10 min read";
+const DEFAULT_READ_TIME = "5 min read"; // Updated to match the backend schema logic
 
 const initialState = {
   id: null,
@@ -38,6 +38,8 @@ export default function BlogPostForm({ onSubmit }) {
   const [form, setForm] = useState(initialState);
   const [autoSlug, setAutoSlug] = useState(true);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
   // ---- top-level field updates ----
   const setField = (key, value) => {
@@ -188,9 +190,12 @@ export default function BlogPostForm({ onSubmit }) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+
+    setIsSubmitting(true);
+    setStatusMessage({ type: "", text: "" });
 
     const submissionDate = new Date().toLocaleDateString("en-US", {
       month: "long",
@@ -216,10 +221,42 @@ export default function BlogPostForm({ onSubmit }) {
       },
     };
 
+    // If a custom parent handler is provided, use it
     if (onSubmit) {
-      onSubmit(payload);
-    } else {
-      console.log("Blog post payload:", payload);
+      try {
+        await onSubmit(payload);
+        setForm(initialState);
+        setStatusMessage({ type: "success", text: "Blog post published custom!" });
+      } catch (err) {
+        setStatusMessage({ type: "error", text: err.message || "Submission failed." });
+      } finally {
+        setIsSubmitting(false);
+      }
+      return;
+    }
+
+    // Direct integration with the API endpoint
+    try {
+      const response = await fetch("/api/blogs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Something went wrong while saving the post.");
+      }
+
+      setForm(initialState);
+      setStatusMessage({ type: "success", text: "Blog post successfully published!" });
+    } catch (err) {
+      setStatusMessage({ type: "error", text: err.message });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -242,6 +279,19 @@ export default function BlogPostForm({ onSubmit }) {
           Fill in the details below to publish a new article.
         </p>
       </div>
+
+      {/* API Submission Status Alert */}
+      {statusMessage.text && (
+        <div
+          className={`p-4 rounded-xl text-sm font-medium border ${
+            statusMessage.type === "success"
+              ? "bg-green-50 border-green-200 text-green-800"
+              : "bg-red-50 border-red-200 text-red-800"
+          }`}
+        >
+          {statusMessage.text}
+        </div>
+      )}
 
       {/* Basic info */}
       <section className={cardClass}>
@@ -558,16 +608,21 @@ export default function BlogPostForm({ onSubmit }) {
       <div className="flex items-center justify-end gap-3 pt-2">
         <button
           type="button"
-          onClick={() => setForm(initialState)}
-          className="px-6 py-2.5 rounded-full text-sm font-semibold text-neutral-600 hover:text-black transition"
+          disabled={isSubmitting}
+          onClick={() => {
+            setForm(initialState);
+            setStatusMessage({ type: "", text: "" });
+          }}
+          className="px-6 py-2.5 rounded-full text-sm font-semibold text-neutral-600 hover:text-black transition disabled:opacity-50"
         >
           Reset
         </button>
         <button
           type="submit"
-          className="px-8 py-2.5 rounded-full bg-black text-white text-sm font-semibold hover:shadow-lg transition cursor-pointer"
+          disabled={isSubmitting}
+          className="px-8 py-2.5 rounded-full bg-black text-white text-sm font-semibold hover:shadow-lg transition cursor-pointer disabled:bg-neutral-400 disabled:cursor-not-allowed"
         >
-          Publish post
+          {isSubmitting ? "Publishing..." : "Publish post"}
         </button>
       </div>
     </form>

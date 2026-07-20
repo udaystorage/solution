@@ -50,7 +50,7 @@ const CARD_TEXTS = [
   { title: "Employees Data", subtitle: "" },
   { title: "International Data", subtitle: "" },
   { title: "Car Owner's Data", subtitle: "" },
-  { title: "High Net Worth (HNI) Data", subtitle: "" },
+  { title: "(HNI) Data", subtitle: "" },
   { title: "Loan  Data", subtitle: "" },
 ];
 // vexhgwxh
