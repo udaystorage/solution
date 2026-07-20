@@ -67,6 +67,7 @@ export default function OurApproach() {
 
   const approachRef = useRef(null);
 
+  // Using this useEffect to observe the viewport and animate the progressive step 
   useEffect(() => {
     const handleScroll = () => {
       const section = approachRef.current;
