@@ -5,8 +5,7 @@ function Carousel() {
     
 const marquee = [...states, ...states];
   return (
-<div className="group marquee-mask relative overflow-hidden py-4">
-
+<div className="group marquee-mask relative overflow-hidden py-1">
   <div className="marquee-track">
     {/* First Copy */}
     <div className="flex gap-4 pr-4">
@@ -20,7 +19,7 @@ const marquee = [...states, ...states];
             gap-3
             overflow-hidden
             rounded-full
-
+            cursor-pointer
             border border-white/70
 
             bg-white/45

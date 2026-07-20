@@ -12,17 +12,23 @@ export default async function BlogPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen  relative overflow-hidden text-stone-900 selection:bg-emerald-100">
-      {/* Premium Radial Lighting System for B2B Trust & Depth */}
-      <div
-        className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-gradient-to-b from-indigo-500/5 via-slate-400/0 to-transparent blur-[120px]"></div>
-        <div className="absolute top-[5%] -left-[10%] w-[50%] h-[40%] rounded-full bg-radial from-emerald-400/5 via-transparent to-transparent blur-[100px]"></div>
-        <div className="absolute top-[2%] -right-[10%] w-[40%] h-[40%] rounded-full bg-radial from-stone-300/10 via-transparent to-transparent blur-[90px]"></div>
-        <div className="absolute inset-0 backdrop-blur-[80px]" />
-      </div>
+    <>
+      {/* Schema Injection Node - Added an ID so React reconciles it properly on route changes */}
+      <script
+        id="schema-article"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+
+      <main className="min-h-screen bg-[#F7F6F2] relative overflow-hidden text-stone-900 selection:bg-emerald-100">
+        
+        {/* Decorative Ambient Effects Container */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-linear-to-b from-indigo-500/5 via-slate-400/0 to-transparent blur-[120px]"></div>
+          <div className="absolute top-[5%] left-[-10%] w-[50%] h-[40%] rounded-full bg-radial from-emerald-400/5 via-transparent to-transparent blur-[100px]"></div>
+          <div className="absolute top-[2%] right-[-10%] w-[40%] h-[40%] rounded-full bg-radial from-stone-300/10 via-transparent to-transparent blur-[90px]"></div>
+          <div className="absolute inset-0 backdrop-blur-[80px]" />
+        </div>
 
       <section className="relative z-10 mx-auto max-w-4xl px-6 py-24">
         {/* Meta Header */}
@@ -43,18 +49,17 @@ export default async function BlogPage({ params }) {
           {blog.description}
         </p>
 
-        {/* Featured Image Canvas Wrapper */}
-        <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
-          <Image
-            src="/demoBlog.webp"
-            alt={blog.title}
-            width={1200}
-            height={680}
-            className="w-full h-[450px] object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
-            priority
-            loading="eager"
-          />
-        </div>
+          {/* Hero Featured Media Canvas Wrapper */}
+          <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5 bg-neutral-100">
+            <Image
+              src={blog.image || "/demoBlog.webp"} 
+              alt={`${blog.title} cover image`} // Simplified alt text for better accessibility and SEO
+              width={1200}
+              height={680}
+              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+              priority
+            />
+          </div>
 
         {/* Article Core Layout Grid */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -111,17 +116,19 @@ export default async function BlogPage({ params }) {
               Executive Highlights
             </h3>
 
-            <ul className="mt-4 space-y-4">
-              {blog.content.highlights?.map((highlight, index) => (
-                <li
-                  key={index}
-                  className="flex gap-3 items-start text-sm text-stone-600"
-                >
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2" />
-                  <span className="leading-tight font-medium">{highlight}</span>
-                </li>
-              ))}
-            </ul>
+              {blog.content?.highlights && (
+                <ul className="mt-4 space-y-4 list-none">
+                  {blog.content.highlights.map((highlight, index) => (
+                    <li
+                      key={index}
+                      className="flex gap-3 items-start text-sm text-stone-600"
+                    >
+                      <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2" aria-hidden="true" />
+                      <span className="leading-tight font-medium">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
             {/* Contextual CTA component embedded inside the card */}
             <div className="mt-6 pt-5 border-t border-stone-200 text-center">
