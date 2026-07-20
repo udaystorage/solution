@@ -2,8 +2,8 @@ import { Check } from "lucide-react";
 
 export default function WhyWeExist() {
   return (
-    <section className="bg-stone-50">
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-36">
+    <section className="bg-stone-50 px-30 py-20">
+      <div className=" grid w-full gap-16  lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-36">
         {/* left */}
         <div>
           <div className="lg:sticky lg:top-32">
@@ -34,7 +34,10 @@ export default function WhyWeExist() {
 
           <div className="grid gap-5 pt-8 md:grid-cols-2">
             {/* old way */}
-            <div className="rounded-3xl border border-stone-200 bg-white p-7 sm:p-8">
+            <div className="rounded-3xl border border-stone-200 bg-white p-7 sm:p-8 border border-white/10
+bg-white/[0.07]
+backdrop-blur-xl
+shadow-[0_8px_32px_rgba(16,185,129,0.10)]">
               <span className="text-xs font-semibold uppercase tracking-widest text-stone-500">
                 The old way
               </span>
@@ -57,7 +60,9 @@ export default function WhyWeExist() {
             </div>
 
             {/* our way */}
-            <div className="rounded-3xl bg-stone-950 p-7 text-white shadow-xl sm:p-8">
+            <div className="rounded-3xl bg-stone-950 p-7 text-white shadow-xl sm:p-8 scale-105 z-10 bg-black/[0.07]
+backdrop-blur-xl
+shadow-[0_8px_32px_rgba(16,185,129,0.10)]">
               <span className="text-xs font-semibold uppercase tracking-widest text-stone-300">
                 Our approach
               </span>
@@ -83,7 +88,10 @@ export default function WhyWeExist() {
 function FlowItem({ label, last, muted = false }) {
   return (
     <div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 rounded-3xl
+bg-white/[0.07]
+backdrop-blur-xl
+shadow-[0_8px_32px_rgba(16,185,129,0.10)]">
         <span
           className={`flex h-7 w-7 items-center justify-center rounded-full ${
             muted
