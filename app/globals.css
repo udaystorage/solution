@@ -87,43 +87,28 @@ body {
   );
 }
 
-.glow-text {
-  /* Keep the clipping locked here so it never breaks */
-  background-clip: text;
-  -webkit-background-clip: text;
-  
-  /* The gradient structure */
-  background-image: linear-gradient(
-    90deg, 
-    #a8a29e 0%,    /* stone-400 solid */
-    #a8a29e 45%,   /* stone-400 solid */
-    #f5f5f4 50%,   /* stone-100 glow */
-    #a8a29e 55%,   /* stone-400 solid */
-    #a8a29e 100%   /* stone-400 solid */
-  );
-  background-size: 400% 100%;
-  
-  /* Start position: glow hidden right, text displays solid stone-400 */
-  background-position: 100% 0; 
-}
+
+ /* FinalCTA hover text glow effect */
 
 .glow-text {
-  /* Keep the clipping locked here so it never breaks */
+  /* Safely masks the gradient inside the text bounds */
   background-clip: text;
   -webkit-background-clip: text;
   
-  /* The gradient structure */
+  /* Solid base stone-400 color with a tight stone-100 glow strip at 50% */
   background-image: linear-gradient(
     90deg, 
-    #a8a29e 0%,    /* stone-400 solid */
-    #a8a29e 45%,   /* stone-400 solid */
-    #f5f5f4 50%,   /* stone-100 glow */
-    #a8a29e 55%,   /* stone-400 solid */
-    #a8a29e 100%   /* stone-400 solid */
+    #a8a29e 0%,    
+    #a8a29e 45%,   
+    #f5f5f4 50%,   
+    #a8a29e 55%,   
+    #a8a29e 100%   
   );
+  
+  /* Creates a giant canvas so the 10% glow strip can hide completely off-screen */
   background-size: 400% 100%;
   
-  /* Start position: glow hidden right, text displays solid stone-400 */
+  /* Initial state: Glow hidden completely to the right. Text appears solid stone-400 */
   background-position: 100% 0; 
 }
 
@@ -132,11 +117,12 @@ body {
     background-position: 100% 0;
   }
   100% {
+    /* Pulls the glow strip all the way across to the left and hides it */
     background-position: 0% 0;
   }
 }
 
-/* Animate only the text fill on hover, exactly once */
+/* When the parent container with the 'group' class is hovered, sweep once and lock */
 .group:hover .glow-text {
-  animation: sweep 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
+  animation: sweep 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
 }

@@ -30,7 +30,7 @@ export default function FinalCTA() {
           <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.035em] sm:text-5xl lg:text-6xl">
             You know your ideal customer.
             <br />
-           <span className="glow-text text-transparent">
+<span className="glow-text bg-gradient-to-r from-stone-400 via-stone-100 to-stone-400 bg-[length:300%_auto] bg-clip-text text-transparent">
   We&apos;ll help you find them.
 </span>
           </h2>
