@@ -4,7 +4,6 @@ import AboutHero from "../components/sections/aboutPage/AboutHero";
 import WhyWeExist from "../components/sections/aboutPage/WhyWeExist";
 import OurApproach from "../components/sections/aboutPage/OurApproach";
 import OurPrinciples from "../components/sections/aboutPage/OurPrinciples";
-// import HumanExpertise from "../components/sections/aboutPage/HumanExpertise";
 import FinalCTA from "../components/sections/aboutPage/FinalCTA";
 import ReachCapabilities from "../components/sections/aboutPage/ReachCapabilities";
 import FAQSection from "../components/sections/FAQ";
@@ -18,7 +17,6 @@ export default function AboutPage() {
       <OurPrinciples />
       <ReachCapabilities />
     <FAQSection page="about"/>
-      {/* <HumanExpertise /> */}
       <FinalCTA />
     </main>
   );
