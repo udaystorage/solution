@@ -20,7 +20,7 @@ export default function BlurGlass() {
               Leads, made <br />
               <p className="bg-linear-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
                 discoverable.
-              </p>
+              </p> 
             </h1>
 
             <p className="text-wrap w-2/3 ">

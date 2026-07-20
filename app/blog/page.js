@@ -104,7 +104,7 @@ export default function BlogListingPage() {
                     </div>
 
                     {/* Content Detail Tree */}
-                    <div className="pt-4 p-6 flex flex-col flex-grow">
+                    <div className="pt-4 p-6 flex flex-col grow">
                       <div className="flex items-center gap-2 text-sm text-neutral-500 font-semibold">
                         <span>{blog.readTime}</span>
                       </div>
@@ -114,7 +114,7 @@ export default function BlogListingPage() {
                         {blog.title}
                       </h2>
                       
-                      <p className="mt-2 text-sm text-neutral-500 line-clamp-2 leading-relaxed flex-grow">
+                      <p className="mt-2 text-sm text-neutral-500 line-clamp-2 leading-relaxed grow">
                         {blog.description}
                       </p>
                       

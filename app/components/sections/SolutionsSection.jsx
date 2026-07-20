@@ -15,11 +15,15 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section className="w-full bg-beige-100 px-20 py-10 font-sans text-[#1A1A1A]">
-      <div className="w-full px-20 py-10 ">
+    <section className="w-full bg-beige-100 px-20 py-5 font-sans text-[#1A1A1A]">
+      <div className="w-full px-20 ">
+        <div className="py-3 pb-5 w-full text-3xl text-center font-extrabold text-black/80">
+          Available All Over India
+        </div>
+
         {/* 1. Synced Regional Text Layout (Left Aligned, Non-stretching) */}
         <div className="w-full overflow-hidden pb-24 relative">
-          <Carousel/>
+          <Carousel />
         </div>
 
         {/* 2. Headline Matching the Left Grid Margin */}
@@ -46,7 +50,7 @@ border border-neutral-200/80
 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
           >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <Verified className="w-4 h-4 text-emerald-600" />
+              <Verified className="w-8 h-8 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
@@ -70,7 +74,7 @@ border border-neutral-200/80
 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
           >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <Smartphone className="w-4 h-4 text-emerald-600" />
+              <Smartphone className="w-7 h-7 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
@@ -93,7 +97,7 @@ border border-neutral-200/80
 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
           >
             <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
-              <ListFilter className="w-4 h-4 text-emerald-600" />
+              <ListFilter className="w-6 h-6 text-emerald-600" />
             </div>
 
             <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
