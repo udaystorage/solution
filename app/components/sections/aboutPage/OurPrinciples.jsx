@@ -29,8 +29,8 @@ const principles = [
 
 export default  function OurPrinciples() {
   return (
-    <section className="bg-stone-950 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
+    <section className="bg-stone-950 text-white px-30 py-20">
+      <div className="w-full lg:px-10 lg:py-36">
         <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr]">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
