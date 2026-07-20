@@ -23,7 +23,7 @@ export default function FinalCTA() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[350px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-cyan-400/20 blur-[100px]" />
 
         <div className="relative mx-auto max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Let&apos;s talk
           </span>
 
