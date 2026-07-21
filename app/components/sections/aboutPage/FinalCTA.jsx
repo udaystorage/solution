@@ -23,17 +23,19 @@ export default function FinalCTA() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[350px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-cyan-400/20 blur-[100px]" />
 
         <div className="relative mx-auto max-w-3xl">
-         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13.5px] font-semibold text-neutral-400 uppercase tracking-wider bg-white/[0.15] backdrop-blur-xl border border-white/[0.12] shadow-sm">
+         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13.5px] font-semibold text-stone-400 uppercase tracking-wider bg-white/[0.15] backdrop-blur-xl border border-white/[0.12] shadow-sm">
   Let&apos;s talk
 </span>
 
           <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.035em] sm:text-5xl lg:text-6xl">
             You know your ideal customer.
             <br />
-<span className="glow-text bg-gradient-to-r from-stone-400 via-stone-100 to-stone-400 bg-[length:300%_auto] bg-clip-text text-transparent">
+<span
+  data-text="We'll help you find them."
+  className="shimmer-text text-stone-400"
+>
   We&apos;ll help you find them.
-</span>
-          </h2>
+</span>          </h2>
 
           <p className="mx-auto mt-6 max-w-xl leading-7 text-stone-400">
             Tell us the industry, location, company profile, or decision-makers
