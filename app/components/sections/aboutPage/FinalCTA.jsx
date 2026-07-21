@@ -48,13 +48,13 @@ export default function FinalCTA() {
   href="/contact"
   className="group/cta inline-flex min-w-[170px] items-center justify-center gap-2
     rounded-full bg-white px-6 py-3.5 text-sm font-medium
-    transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl border-2 border-cyan-200"
+    transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border-2 border-cyan-200"
 >
   <span
-    className="bg-gradient-to-r from-violet-700 via-blue-700 to-cyan-700
+    className="bg-gradient-to-r from-violet-800 via-blue-700 to-cyan-800
       bg-clip-text text-transparent
-      group-hover/cta:from-cyan-700
-      group-hover/cta:to-violet-700"
+      group-hover/cta:from-cyan-800
+      group-hover/cta:to-violet-800"
   >
     Get Custom Data
   </span>
@@ -67,7 +67,7 @@ export default function FinalCTA() {
 </a>
 
 
-      <div className="rounded-full bg-linear-to-r from-violet-400 via-blue-400 to-cyan-400 p-px transition-all duration-300 hover:-translate-y-0.5 hover:from-cyan-400 hover:to-violet-400  transition-[background-position,transform] duration-700 ease-in-out">
+      <div className="rounded-full bg-linear-to-r from-violet-400 via-blue-400 to-cyan-400 p-px transition-all duration-300 hover:-translate-y-1 hover:from-cyan-400 hover:to-violet-400  transition-[background-position,transform] duration-700 ease-in-out">
   <button
     onClick={openWhatsApp}
     className="group/tte inline-flex min-w-[170px] cursor-pointer items-center justify-center gap-2
