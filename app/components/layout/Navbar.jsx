@@ -6,9 +6,9 @@ import { ShoppingCart } from "lucide-react";
 
 const navigationItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
   { label: "Lead Store", href: "/leadstore" },
   { label: "About Us", href: "/aboutus" },
+  { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
 ];
 
