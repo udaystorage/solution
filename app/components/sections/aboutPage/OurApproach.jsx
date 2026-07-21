@@ -115,7 +115,7 @@ export default function OurApproach() {
     <section ref={approachRef} id="approach" className="bg-white px-30 py-20">
       <div className="w-full lg:px-10 lg:py-36">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Our approach
           </span>
 

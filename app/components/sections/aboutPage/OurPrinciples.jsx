@@ -33,7 +33,7 @@ export default  function OurPrinciples() {
       <div className="w-full lg:px-10 lg:py-36">
         <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr]">
           <div>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
               Our principles
             </span>
 

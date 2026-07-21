@@ -7,7 +7,7 @@ export default function WhyWeExist() {
         {/* left */}
         <div>
           <div className="lg:sticky lg:top-32">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
               Why we exist
             </span>
 
