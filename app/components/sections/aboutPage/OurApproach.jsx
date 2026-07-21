@@ -67,6 +67,7 @@ export default function OurApproach() {
 
   const approachRef = useRef(null);
 
+  // Using this useEffect to observe the viewport and animate the progressive step 
   useEffect(() => {
     const handleScroll = () => {
       const section = approachRef.current;
@@ -111,10 +112,10 @@ export default function OurApproach() {
   }, []);
 
   return (
-    <section ref={approachRef} id="approach" className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
+    <section ref={approachRef} id="approach" className="bg-white px-30 py-20">
+      <div className="w-full lg:px-10 lg:py-36">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Our approach
           </span>
 

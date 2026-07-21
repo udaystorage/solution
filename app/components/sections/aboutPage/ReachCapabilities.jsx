@@ -2,7 +2,7 @@ import {ArrowUpRight,MapPin } from "lucide-react";
 import Image from "next/image";
 
 const capabilities = [
-  "Pan-India business research",
+  // "Pan-India business research",
   "Industry-specific datasets",
   "Decision-maker targeting",
   "Geographic segmentation",
@@ -22,8 +22,8 @@ export default function ReachCapabilities() {
   ];
 
   return (
-    <section className="bg-stone-50">
-      <div className="mx-auto max-w-7xl px-6 py-28 lg:px-10 lg:py-36">
+    <section className="bg-stone-50 px-30 py-20">
+      <div className="w-full lg:px-10 lg:py-36">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* visual */}
           <div className="relative order-2 min-h-[460px] overflow-hidden rounded-[2rem] border border-stone-200 bg-white lg:order-1">
@@ -55,7 +55,7 @@ export default function ReachCapabilities() {
 
           {/* content */}
           <div className="order-1 lg:order-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
               Our reach
             </span>
 
@@ -73,8 +73,24 @@ export default function ReachCapabilities() {
               {capabilities.map((item, index) => (
                 <div
                   key={item}
-                  className="group flex items-center justify-between border-b border-stone-200 py-4"
-                >
+className="
+  group relative z-0
+  flex items-center justify-between
+  border-b border-stone-200
+  px-3 py-4
+  rounded-xl
+
+  transition-[transform,background-color,box-shadow,border-color]
+  duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+  hover:z-20
+  hover:-translate-y-1
+  hover:scale-[1.025]
+  hover:bg-white/90
+  hover:border-transparent
+  hover:shadow-[0_18px_45px_-15px_rgba(0,0,0,0.18)]
+  hover:backdrop-blur-xl
+"                >
                   <div className="flex items-center gap-4">
                     <span className="text-[10px] font-medium text-stone-400">
                       0{index + 1}
