@@ -15,103 +15,76 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section className="w-full bg-beige-100 px-20 py-5 font-sans text-[#1A1A1A]">
-      <div className="w-full px-20 ">
-        <div className="py-3 pb-5 w-full text-3xl text-center font-extrabold text-black/80">
-          Available All Over India
-        </div>
+    // 1. Fixed compounding padding-x and set dynamic container width constraints
+    <section className="w-full bg-beige-100 px-4 py-16 sm:px-8 md:px-16 lg:px-20 font-sans text-[#1A1A1A]">
+      <div className="w-full max-w-7xl mx-auto ">
+        
+        {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
+        <h2 className="py-2 pb-5 w-full text-4xl text-center font-bold text-black/60">
+          Verified B2B Lead Databases Available All Over India
+        </h2>
 
-        {/* 1. Synced Regional Text Layout (Left Aligned, Non-stretching) */}
-        <div className="w-full overflow-hidden pb-24 relative">
+        {/* Carousel Container */}
+        <div className="w-full overflow-hidden  pb-10 relative">
           <Carousel />
         </div>
 
-        {/* 2. Headline Matching the Left Grid Margin */}
-        <div className="max-w-2xl mb-14">
-          <h2 className="text-4xl font-medium text-wrap w-140">
-            Find the exact target list you need to pitch.
-          </h2>
+        {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
+        <div className="max-w-2xl mb-12">
+          <h3 className="text-3xl sm:text-4xl font-medium tracking-tight mb-4">
+            Find the exact target B2B email list you need to pitch.
+          </h3>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop dealing with missing emails and dead numbers. Tell us your
             target audience profile and our team will extract a verified dataset
-            built to convert.
+            built to convert your prospects.
           </p>
         </div>
 
-        {/* 3. Streamlined Minimal Feature Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14 PX-20">
+        {/* 4. Streamlined Minimal Feature Grid (Removed typo 'PX-20') */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+          
           {/* Card 1 */}
-          <div
-            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-[-16px_0_32px_-12px_rgba(15,23,42,0.15)] transition-colors bg-gradient-to-br
-from-white
-via-neutral-50
-to-neutral-100
-border border-neutral-200/80
-shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-          >
-            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center" aria-hidden="true">
               <Verified className="w-8 h-8 text-emerald-600" />
             </div>
-
-            <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
-              Triple-Verified Contacts
-            </h3>
-
+            <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
+              Verified B2B Contact Lists
+            </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Every profile undergoes strict validation. Zero dead-end emails or
-              high bounce rates on your outreach campaigns.
+              Every sales lead profile undergoes strict validation. Zero dead-end emails or high bounce rates on your cold outreach campaigns.
             </p>
           </div>
 
           {/* Card 2 */}
-          {/* Card 2 */}
-          <div
-            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-md transition-colors bg-gradient-to-br
-from-white
-via-neutral-50
-to-neutral-100
-border border-neutral-200/80
-shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-          >
-            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center" aria-hidden="true">
               <Smartphone className="w-7 h-7 text-emerald-600" />
             </div>
-
-            <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
-              Direct Mobile Lines
-            </h3>
-
+            <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
+              Direct Mobile Phone Numbers
+            </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Connect instantly without dealing with receptionist gatekeepers.
-              Direct mobile phone connections built for fast sales loops.
+              Connect instantly without dealing with receptionist gatekeepers. Direct mobile connections optimized for fast sales loops.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div
-            className="space-y-2 rounded-xl border border-neutral-200 p-5  shadow-[12px_0_24px_-10px_rgba(15,23,42,0.12)] transition-colors bg-gradient-to-br
-from-white
-via-neutral-50
-to-neutral-100
-border border-neutral-200/80
-shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-          >
-            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+            <div className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center" aria-hidden="true">
               <ListFilter className="w-6 h-6 text-emerald-600" />
             </div>
-
-            <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
-              Custom Category Filters
-            </h3>
-
+            <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
+              Niche Industry Categories
+            </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Target narrow micro-niches instantly—ranging from local city
-              sectors right down to specific pinpoint zip codes.
+              Target narrow micro-niches instantly—ranging from specific industry verticals down to localized pincode tracking areas.
             </p>
           </div>
         </div>
 
-        {/* 4. Interactive Capture Section Styled Like Hero Component Pills */}
+        {/* 5. Interactive Capture Section */}
         <div className="bg-neutral-50 rounded-3xl p-8 md:p-10 border border-neutral-200/50">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-200/60">
             <div>
@@ -120,7 +93,7 @@ shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
               </h4>
             </div>
 
-            {/* Pill Switcher matching Navbar style */}
+            {/* Pill Switcher */}
             <div className="flex bg-neutral-200/60 p-1 rounded-full border border-neutral-300/30">
               <button
                 onClick={() => {
@@ -188,17 +161,20 @@ shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
                 >
                   <input
                     type="email"
+                    name="business-email"
+                    autoComplete="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter business email"
+                    placeholder="Enter business email address"
                     className="flex-1 px-4 py-3 rounded-full border border-neutral-300 text-xs focus:outline-none focus:border-black bg-white transition-all"
+                    aria-label="Business email address"
                   />
                   <button
                     type="submit"
                     className="px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs font-semibold rounded-full whitespace-nowrap transition-colors shadow-sm"
                   >
-                    Request Quote
+                    Request Free Sample
                   </button>
                 </form>
               )}
