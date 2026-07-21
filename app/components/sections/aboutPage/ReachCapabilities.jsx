@@ -2,7 +2,7 @@ import {ArrowUpRight,MapPin } from "lucide-react";
 import Image from "next/image";
 
 const capabilities = [
-  "Pan-India business research",
+  // "Pan-India business research",
   "Industry-specific datasets",
   "Decision-maker targeting",
   "Geographic segmentation",
