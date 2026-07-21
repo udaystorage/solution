@@ -213,40 +213,49 @@ export default function SolutionsSection() {
                   className="w-full flex flex-col sm:flex-row gap-2"
                 >
                   <div className="w-full flex-1">
-                    <input
-                      type="tel"
-                      name="mobile"
-                      autoComplete="tel"
-                      inputMode="numeric"
-                      maxLength={10}
-                      value={mobile}
-                      onChange={(e) => {
-                        const value = e.target.value
-                          .replace(/\D/g, "")
-                          .slice(0, 10);
+                    <div
+                      className={`rounded-full p-px ${
+                        mobileError
+                          ? "bg-red-400"
+                          : "bg-linear-to-r from-violet-500 via-blue-500 to-cyan-400"
+                      }`}
+                    >
+                      <input
+                        type="tel"
+                        name="mobile"
+                        autoComplete="tel"
+                        inputMode="numeric"
+                        maxLength={10}
+                        value={mobile}
+                        onChange={(e) => {
+                          const value = e.target.value
+                            .replace(/\D/g, "")
+                            .slice(0, 10);
 
-                        setMobile(value);
+                          setMobile(value);
 
-                        // Only show an immediate error for an invalid starting digit
-                        if (value && !/^[6-9]/.test(value)) {
-                          setMobileError(
-                            "Mobile number must starts with 6, 7, 8, or 9.",
-                          );
-                        } else {
-                          setMobileError("");
+                          // Only show an immediate error for an invalid starting digit
+                          if (value && !/^[6-9]/.test(value)) {
+                            setMobileError(
+                              "Mobile number must starts with 6, 7, 8, or 9.",
+                            );
+                          } else {
+                            setMobileError("");
+                          }
+                        }}
+                        placeholder={
+                          mobileError ? mobileError : "Enter Your Mobile Number"
                         }
-                      }}
-                      placeholder={
-                        mobileError ? mobileError : "Enter Your Mobile Number"
-                      }
-                      className={`w-full rounded-full border bg-white px-4 py-3 text-xs
-      outline-none transition-all ${
+                        className={`w-full rounded-full outline-none bg-white px-4 py-3 text-xs
+      transition-all ${
         mobileError
           ? "border-red-400 focus:border-red-500"
           : "border-neutral-300 focus:border-black"
       }`}
-                      aria-label="Mobile number"
-                    />
+                        aria-label="Mobile number"
+                      />
+                    </div>
+
                     <p
                       className={`mt-1.5 px-3 text-[13px] text-red-400 transition-opacity duration-300 ${
                         mobileError ? "opacity-100" : "opacity-0"
