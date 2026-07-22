@@ -5,10 +5,18 @@ import { useState, useRef } from "react";
 // an offset from dead-center (left:50%/top:50%), so `translate(-50%,-50%)`
 // is "true center" and everything else adds a px offset on top of that.
 const CENTER = "translate(-50%, -50%)";
-const NEAR = "translate(calc(-50% + 190px), calc(-50% - 110px))"; // top-right
-const FAR = "translate(calc(-50% + 190px), calc(-50% + 110px))"; // bottom-right
-const OFF_LEFT = "translate(calc(-50% - 480px), -50%)";
-const OFF_RIGHT_FAR = "translate(calc(-50% + 480px), calc(-50% + 110px))";
+
+const NEAR =
+  "translate(calc(-50% + var(--card-x)), calc(-50% - var(--card-y)))";
+
+const FAR =
+  "translate(calc(-50% + var(--card-x)), calc(-50% + var(--card-y)))";
+
+const OFF_LEFT =
+  "translate(calc(-50% - var(--card-boundary-x)), -50%)";
+
+const OFF_RIGHT_FAR =
+  "translate(calc(-50% + var(--card-boundary-x)), calc(-50% + var(--card-y)))";
 
 const MAIN_DURATION = 3.9; // seconds — includes the 1.5s hold at max size
 const SHIFT_DURATION = 1.3; // bottom-right waiting slot -> top-right waiting slot
@@ -68,13 +76,14 @@ const CARD_GRADIENTS = [
 
 function Card({ role, gradient, text, onDone }) {
   const { animationName, duration, z } = ROLE_STYLE[role];
+
   return (
     <div
+      className="hero-flip-card"
       onAnimationEnd={role === "center" ? onDone : undefined}
       style={{
-        width: 280,
-        height: 180,
-        padding: "10px",
+        width: "var(--card-width)",
+        height: "var(--card-height)",
         position: "absolute",
         left: "50%",
         top: "50%",
@@ -82,9 +91,9 @@ function Card({ role, gradient, text, onDone }) {
         transformStyle: "preserve-3d",
         animation: `${animationName} ${duration}s cubic-bezier(0.45, 0.05, 0.25, 1) forwards`,
         willChange: "transform, opacity",
-        fontsize: "4px",
       }}
     >
+      {/* Front */}
       <div
         style={{
           position: "absolute",
@@ -95,15 +104,34 @@ function Card({ role, gradient, text, onDone }) {
           boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center", 
+          alignItems: "center",
           justifyContent: "center",
           color: "#fff",
-          padding: "10px",
+          padding: 10,
         }}
       >
-        <div style={{ fontSize: 35, fontWeight: 700 , padding: "20px" }}>{text.title}</div>
-        <div style={{ fontSize: 14, opacity: 0.85, marginTop: 8 }}>{text.subtitle}</div>
+        <div
+          className="
+            px-4 text-center
+            text-[25px] sm:text-[29px] lg:text-[35px]
+            font-bold leading-tight
+          "
+        >
+          {text.title}
+        </div>
+
+        <div
+          className="
+            mt-2 px-3 text-center
+            text-[11px] sm:text-xs lg:text-sm
+            opacity-85
+          "
+        >
+          {text.subtitle}
+        </div>
       </div>
+
+      {/* Back */}
       <div
         style={{
           position: "absolute",
@@ -116,7 +144,7 @@ function Card({ role, gradient, text, onDone }) {
           border: "6px solid #fff",
           boxSizing: "border-box",
           boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-              padding: "10px",
+          padding: 10,
         }}
       />
     </div>
@@ -155,26 +183,95 @@ export default function CardFlipAnimation() {
 
   const [center, near, far] = queue;
 
-  return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: 580,
-        background: "transparent",
-        borderRadius: 16,
-        position: "relative",
-        overflow: "hidden",
-        perspective: 800,
-        fontFamily: "system-ui, sans-serif",
-       padding: 0,
-      }}
-    >
-      <style>{CARD_KEYFRAMES}</style>
+ return (
+  <div
+    className="
+      card-animation-stage
+      relative w-full
+       h-[310px]
+  sm:h-[350px]
+  md:h-[410px]
+  lg:h-[580px]
+      overflow-hidden
+      rounded-2xl
+    "
+  >
+<style>{`
+  .card-animation-stage {
+    /* PHONE */
+    --card-width: 190px;
+    --card-height: 122px;
 
-      <Card key={`center-${center.id}`} role="center" gradient={center.gradient} text={center.text} onDone={rotateQueue} />
-      <Card key={`near-${near.id}`} role="near" gradient={near.gradient} text={near.text} />
-      <Card key={`far-${far.id}`} role="far" gradient={far.gradient} text={far.text} />
-    </div>
-  );
+    --card-x: 70px;
+    --card-y: 68px;
+
+    --card-boundary-x: calc(50vw + 95px);
+
+    perspective: 800px;
+    font-family: system-ui, sans-serif;
+  }
+
+  @media (min-width: 640px) {
+    .card-animation-stage {
+      --card-width: 225px;
+      --card-height: 145px;
+
+      --card-x: 105px;
+      --card-y: 82px;
+
+      --card-boundary-x: calc(50vw + 112px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .card-animation-stage {
+      --card-width: 250px;
+      --card-height: 161px;
+
+      --card-x: 130px;
+      --card-y: 95px;
+
+      --card-boundary-x: calc(50vw + 125px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card-animation-stage {
+      --card-width: 280px;
+      --card-height: 180px;
+
+      --card-x: 165px;
+      --card-y: 110px;
+
+      --card-boundary-x: 430px;
+    }
+  }
+
+  ${CARD_KEYFRAMES}
+`}</style>
+
+    <Card
+      key={`center-${center.id}`}
+      role="center"
+      gradient={center.gradient}
+      text={center.text}
+      onDone={rotateQueue}
+    />
+
+    <Card
+      key={`near-${near.id}`}
+      role="near"
+      gradient={near.gradient}
+      text={near.text}
+    />
+
+    <Card
+      key={`far-${far.id}`}
+      role="far"
+      gradient={far.gradient}
+      text={far.text}
+    />
+  </div>
+);
 
 }

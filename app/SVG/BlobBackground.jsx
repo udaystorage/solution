@@ -19,33 +19,88 @@ function BlobBackground() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
     const id = setInterval(() => {
-      setIndex((i=1) => (i + 1) % blobPaths.length);
+      setIndex((i) => (i + 1) % blobPaths.length);
     }, 3000);
+
     return () => clearInterval(id);
   }, []);
 
   return (
-    <svg
-      id="visual"
-      className="translate-x-80 absolute blur-md"
-      viewBox="0 0 900 600"
-      width="900"
-      height="600"
-      version="1.1"
+    <div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute inset-0 z-0
+        overflow-hidden
+      "
     >
-      <linearGradient id="my-cool-gradient" x2="1" y2="1">
-        <stop offset="0%" stopColor="#a500d7" />
-        <stop offset="100%" stopColor="#00e6e2" />
-      </linearGradient>
-      <g transform="translate(407.71660719112697 324.812379246231)">
-        <path
-          d={blobPaths[index]}
-          fill="url(#my-cool-gradient)"
-        className="transition-all duration-4000 "
-        />
-      </g>
-    </svg>
+      <svg
+        viewBox="0 0 900 600"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        className="
+          absolute
+          h-auto max-w-none
+
+w-[500px]
+left-1/2
+top-[72%]
+-translate-x-1/2
+-translate-y-1/2
+
+sm:w-[580px]
+sm:top-[70%]
+
+md:w-[660px]
+md:top-[68%]
+
+lg:w-[760px]
+lg:left-[67%]
+lg:top-1/2
+
+          xl:w-[820px]
+          xl:left-[68%]
+
+          2xl:w-[860px]
+
+          blur-md
+          opacity-75
+        "
+      >
+        <defs>
+          <linearGradient
+            id="hero-blob-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="#a500d7" />
+            <stop offset="100%" stopColor="#00e6e2" />
+          </linearGradient>
+        </defs>
+
+        <g transform="translate(450 300)">
+          <path
+            d={blobPaths[index]}
+            fill="url(#hero-blob-gradient)"
+            className="
+              transition-all
+              duration-[3000ms]
+              ease-in-out
+              motion-reduce:transition-none
+            "
+          />
+        </g>
+      </svg>
+    </div>
   );
 }
 
