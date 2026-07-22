@@ -113,14 +113,17 @@ export default function Navbar() {
 
         {/* Account & Cart Actions */}
         <div className="flex items-center justify-center gap-4">
-          <Link href="/login" aria-label="Login Page">
-            <button
-              type="button"
-              className="rounded-full bg-black px-6 py-2 text-white
-                       transition-all duration-300 hover:bg-neutral-800"
-            >
-              Login
-            </button>
+          <Link
+            href="/login"
+            aria-label="Login to your Leadwala account"
+            className="
+    rounded-full bg-black px-6 py-2
+    text-white
+    transition-all duration-300
+    hover:bg-neutral-800
+  "
+          >
+            Login
           </Link>
 
           <Link
