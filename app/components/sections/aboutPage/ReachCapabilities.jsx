@@ -22,39 +22,21 @@ export default function ReachCapabilities() {
   ];
 
   return (
-    <section className="overflow-hidden bg-stone-50 px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20">
+    <section className="bg-stone-50 px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20">
   <div className="w-full lg:px-10 lg:py-36">
     <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
       
-      {/* Visual */}
-      <div
-        className="
-          relative order-2
-          min-h-[300px]
-          overflow-hidden
-          rounded-[1.5rem]
-          border border-stone-200
-          bg-white
-          sm:min-h-[380px]
-          sm:rounded-[2rem]
-          md:min-h-[420px]
-          lg:order-1
-          lg:min-h-[460px]
-        "
-      >
-        {/* Ambient background */}
-        <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(120,119,198,.08),transparent_60%)]" />
+      {/* visual */}
+      {/* IMPORTANT: Map container and image behavior kept untouched */}
+      <div className="relative order-2 min-h-[460px] overflow-hidden rounded-[2rem] border border-stone-200 bg-white lg:order-1">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,.08),transparent_60%)]" />
 
-        {/* Map */}
-  <Image
-  src="/map.webp"
-  alt="Pan India Coverage"
-  fill
-  className="object-cover"
-  sizes="(max-width: 1024px) 100vw, 50vw"
-/>
+        <Image
+          src="/map.webp"
+          alt="Pan India Coverege"
+          fill
+        />
 
-        {/* City markers */}
         {cities.map((city) => (
           <div
             key={city.name}
@@ -64,59 +46,28 @@ export default function ReachCapabilities() {
               top: city.top,
             }}
           >
-            <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
+            <span className="relative flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-stone-400 opacity-70" />
 
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500 sm:h-3 sm:w-3" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
             </span>
 
-            <span
-              className="
-                absolute -top-1
-                left-3
-                whitespace-nowrap
-                rounded-full
-                border border-stone-200
-                bg-white/90
-                px-2 py-0.5
-                text-[8px] font-medium
-                shadow-sm
-                backdrop-blur-sm
-                sm:-top-1.25
-                sm:left-4
-                sm:px-2.5 sm:py-1
-                sm:text-[10px]
-              "
-            >
+            <span className="absolute left-4 -top-1.25 whitespace-nowrap rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[10px] font-medium shadow-sm">
               {city.name}
             </span>
           </div>
         ))}
 
-        {/* Coverage badge */}
-        <div
-          className="
-            absolute bottom-4 left-4 z-20
-            flex items-center gap-1.5
-            rounded-full
-            border border-stone-200
-            bg-white/80
-            px-3 py-1.5
-            text-[10px] font-medium
-            shadow-sm
-            backdrop-blur
-            sm:bottom-6 sm:left-6
-            sm:gap-2 sm:px-4 sm:py-2
-            sm:text-xs
-          "
-        >
+        <div className="absolute bottom-6 left-6 flex items-center gap-2 rounded-full border border-stone-200 bg-white/80 px-4 py-2 text-xs font-medium shadow-sm backdrop-blur">
           <MapPin size={13} />
           Pan-India coverage
         </div>
       </div>
 
-      {/* Content */}
+      {/* content */}
       <div className="order-1 lg:order-2">
+        
+        {/* Eyebrow */}
         <span
           className="
             inline-flex items-center gap-1.5
@@ -133,6 +84,7 @@ export default function ReachCapabilities() {
           Our reach
         </span>
 
+        {/* Heading */}
         <h2
           className="
             mt-5 max-w-lg
@@ -146,6 +98,7 @@ export default function ReachCapabilities() {
           Built around the market you&apos;re trying to reach.
         </h2>
 
+        {/* Description */}
         <p
           className="
             mt-5 max-w-lg
@@ -168,23 +121,22 @@ export default function ReachCapabilities() {
               className="
                 group relative z-0
                 flex items-center justify-between
+                rounded-xl
                 border-b border-stone-200
                 px-2 py-4
                 sm:px-3
-                sm:py-4
 
                 transition-[transform,background-color,box-shadow,border-color]
                 duration-500
                 ease-[cubic-bezier(0.22,1,0.36,1)]
 
-                sm:hover:z-20
-                sm:hover:-translate-y-1
-                sm:hover:scale-[1.025]
-                sm:hover:rounded-xl
-                sm:hover:border-transparent
-                sm:hover:bg-white/90
-                sm:hover:shadow-[0_18px_45px_-15px_rgba(0,0,0,0.18)]
-                sm:hover:backdrop-blur-xl
+                hover:z-20
+                hover:-translate-y-1
+                hover:scale-[1.025]
+                hover:border-transparent
+                hover:bg-white/90
+                hover:shadow-[0_18px_45px_-15px_rgba(0,0,0,0.18)]
+                hover:backdrop-blur-xl
               "
             >
               <div className="flex min-w-0 items-center gap-3 sm:gap-4">
@@ -202,10 +154,10 @@ export default function ReachCapabilities() {
                 className="
                   ml-3 shrink-0
                   text-stone-300
-                  transition-all duration-300
-                  sm:group-hover:-translate-y-0.5
-                  sm:group-hover:translate-x-0.5
-                  sm:group-hover:text-stone-950
+                  transition-all
+                  group-hover:-translate-y-0.5
+                  group-hover:translate-x-0.5
+                  group-hover:text-stone-950
                 "
               />
             </div>
