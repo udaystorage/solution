@@ -47,24 +47,128 @@ const ENTER_DURATION = 1.8; // new card flies in from the right into the bottom-
 
 const CARD_KEYFRAMES = `
 @keyframes cardMain {
-  0%   { transform: ${NEAR} rotateY(0deg) scale(0.55); opacity: 1; }
-  26%  { transform: ${CENTER} rotateY(360deg) scale(1); }
-  33%  { transform: ${CENTER} rotateY(360deg) scale(0.82); }
-  49%  { transform: ${CENTER} rotateY(360deg) scale(1.3); }
-  87%  { transform: ${CENTER} rotateY(360deg) scale(1.3); }
-  94%  { transform: ${CENTER} rotateY(360deg) scale(0.82); opacity: 1; }
-  100% { transform: ${OFF_LEFT} rotateY(360deg) scale(0.6); opacity: 0; }
+  /*
+   * Must exactly match the final state of cardShiftNear.
+   * This prevents a visual jump when near becomes center.
+   */
+  0% {
+    transform:
+      ${NEAR}
+      rotateY(360deg)
+      rotateZ(-2deg)
+      scale(0.65);
+
+    opacity: 1;
+  }
+
+  /*
+   * ONE continuous movement into the hero position.
+   * Do not reach CENTER before this point.
+   */
+  30% {
+    transform:
+      ${CENTER}
+      rotateY(720deg)
+      rotateZ(0deg)
+      scale(1.3);
+
+    opacity: 1;
+  }
+
+  /*
+   * Identical transform = completely calm readable hold.
+   */
+  82% {
+    transform:
+      ${CENTER}
+      rotateY(720deg)
+      rotateZ(0deg)
+      scale(1.3);
+
+    opacity: 1;
+  }
+
+  /*
+   * Exit begins directly from the resting position.
+   */
+  100% {
+    transform:
+      ${OFF_LEFT}
+      rotateY(755deg)
+      rotateZ(-3deg)
+      scale(0.58);
+
+    opacity: 0;
+  }
 }
+
+
 @keyframes cardShiftNear {
-  0%   { transform: ${FAR} rotateY(360deg) scale(0.42); opacity: 1; }
-  100% { transform: ${NEAR} rotateY(360deg) scale(0.65); opacity: 1; }
+  /*
+   * Starts exactly where cardEnterFar ends.
+   */
+  0% {
+    transform:
+      ${FAR}
+      rotateY(360deg)
+      rotateZ(3deg)
+      scale(0.52);
+
+    opacity: 0.82;
+  }
+
+  /*
+   * Must exactly match cardMain 0%.
+   */
+  100% {
+    transform:
+      ${NEAR}
+      rotateY(360deg)
+      rotateZ(-2deg)
+      scale(0.65);
+
+    opacity: 1;
+  }
 }
+
+
 @keyframes cardEnterFar {
-  0%   { transform: ${OFF_RIGHT_FAR} rotateY(0deg) scale(0.42); opacity: 0; }
-  18%  { opacity: 1; }
-  100% { transform: ${FAR} rotateY(360deg) scale(0.52); opacity: 1; }
+  0% {
+    transform:
+      ${OFF_RIGHT_FAR}
+      rotateY(325deg)
+      rotateZ(6deg)
+      scale(0.38);
+
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.35;
+  }
+
+  /*
+   * Must exactly match cardShiftNear 0%.
+   */
+  100% {
+    transform:
+      ${FAR}
+      rotateY(360deg)
+      rotateZ(3deg)
+      scale(0.52);
+
+    opacity: 0.82;
+  }
 }
 `;
+
+
+// vexhgwxh
+const ROLE_STYLE = {
+  center: { animationName: "cardMain", duration: MAIN_DURATION, z: 3 },
+  near: { animationName: "cardShiftNear", duration: SHIFT_DURATION, z: 2 },
+  far: { animationName: "cardEnterFar", duration: ENTER_DURATION, z: 1 },
+};
 
 const CARD_TEXTS = [
   {
@@ -148,13 +252,6 @@ const CARD_TEXTS = [
     icon: Landmark,
   },
 ];
-// vexhgwxh
-const ROLE_STYLE = {
-  center: { animationName: "cardMain", duration: MAIN_DURATION, z: 3 },
-  near: { animationName: "cardShiftNear", duration: SHIFT_DURATION, z: 2 },
-  far: { animationName: "cardEnterFar", duration: ENTER_DURATION, z: 1 },
-};
-
 // const CARD_GRADIENTS = [
 //   "linear-gradient(135deg, #ffffffb0, #15cebfb0, #15afceb0)",
 //   "linear-gradient(135deg, #15afceb0, #1ec2ebb0, #d163e7b0)",
@@ -167,7 +264,7 @@ function Card({ role, text, onDone }) {
 
   return (
     <div
-      className="hero-flip-card"
+      className={`hero-flip-card hero-flip-card--${role}`}
       onAnimationEnd={role === "center" ? onDone : undefined}
       style={{
         width: "var(--card-width)",
@@ -177,7 +274,7 @@ function Card({ role, text, onDone }) {
         top: "50%",
         zIndex: z,
         transformStyle: "preserve-3d",
-        animation: `${animationName} ${duration}s cubic-bezier(0.45, 0.05, 0.25, 1) forwards`,
+        animation: `${animationName} ${duration}s cubic-bezier(0.4, 0, 0.2, 1) forwards`,
         willChange: "transform, opacity",
       }}
     >
@@ -236,9 +333,9 @@ function Card({ role, text, onDone }) {
               <span>VERIFIED DATA</span>
             </div>
 
-            <span className="data-mark">
+            {/* <span className="data-mark">
               LW / DATA
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
