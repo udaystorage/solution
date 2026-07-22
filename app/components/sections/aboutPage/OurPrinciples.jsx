@@ -79,7 +79,7 @@ export default  function OurPrinciples() {
             sm:text-[13px]
           "
         >
-          Why Leadwala
+          Our Principles
         </span>
 
         <h2
