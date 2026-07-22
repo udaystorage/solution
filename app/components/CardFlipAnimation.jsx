@@ -1,5 +1,28 @@
 "use client";
 import { useState, useRef } from "react";
+import {
+  BarChart3,
+  BriefcaseBusiness,
+  CarFront,
+  CreditCard,
+  Gem,
+  Globe2,
+  GraduationCap,
+  HeartPulse,
+  Hotel,
+  Landmark,
+  MapPin,
+  School,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  Store,
+  Utensils,
+  Building2,
+  Check,
+} from "lucide-react";
+
+import "./CardFlipAnimation.css"
 
 // Fixed on-screen positions the cards move between. All are expressed as
 // an offset from dead-center (left:50%/top:50%), so `translate(-50%,-50%)`
@@ -44,22 +67,86 @@ const CARD_KEYFRAMES = `
 `;
 
 const CARD_TEXTS = [
-  { title: "Stock Market Trader's Data", subtitle: "" },
-  { title: "Credit Card Holder's Data", subtitle: "" },
-  { title: "Real Estate Data", subtitle: "" },
-  { title: "College/School Student's Data", subtitle: "" },
-  { title: "Insurance Data", subtitle: "" },
-  { title: "Doctor's Data", subtitle: "" },
-  { title: "Hotel Data", subtitle: "" },
-  { title: "College/School Owner's Data", subtitle: "" }, 
-  { title: "Restaurant Data", subtitle: "" }, 
-  { title: "Spa Data", subtitle: "" }, 
-  { title: "Pincode Wise Data", subtitle: "" }, 
-  { title: "Employees Data", subtitle: "" },
-  { title: "International Data", subtitle: "" },
-  { title: "Car Owner's Data", subtitle: "" },
-  { title: "(HNI) Data", subtitle: "" },
-  { title: "Loan  Data", subtitle: "" },
+  {
+    category: "FINANCE",
+    title: "Stock Market Traders",
+    icon: BarChart3,
+  },
+  {
+    category: "FINANCE",
+    title: "Credit Card Holders",
+    icon: CreditCard,
+  },
+  {
+    category: "REAL ESTATE",
+    title: "Real Estate Data",
+    icon: Building2,
+  },
+  {
+    category: "EDUCATION",
+    title: "College & School Students",
+    icon: GraduationCap,
+  },
+  {
+    category: "INSURANCE",
+    title: "Insurance Data",
+    icon: ShieldCheck,
+  },
+  {
+    category: "HEALTHCARE",
+    title: "Doctors",
+    icon: Stethoscope,
+  },
+  {
+    category: "HOSPITALITY",
+    title: "Hotel Data",
+    icon: Hotel,
+  },
+  {
+    category: "EDUCATION",
+    title: "College & School Owners",
+    icon: School,
+  },
+  {
+    category: "HOSPITALITY",
+    title: "Restaurant Data",
+    icon: Utensils,
+  },
+  {
+    category: "WELLNESS",
+    title: "Spa Data",
+    icon: Sparkles,
+  },
+  {
+    category: "LOCATION",
+    title: "Pincode-Wise Data",
+    icon: MapPin,
+  },
+  {
+    category: "WORKFORCE",
+    title: "Employees Data",
+    icon: BriefcaseBusiness,
+  },
+  {
+    category: "GLOBAL",
+    title: "International Data",
+    icon: Globe2,
+  },
+  {
+    category: "AUTOMOTIVE",
+    title: "Car Owners",
+    icon: CarFront,
+  },
+  {
+    category: "PREMIUM SEGMENT",
+    title: "High-Net-Worth Individuals",
+    icon: Gem,
+  },
+  {
+    category: "FINANCE",
+    title: "Loan Data",
+    icon: Landmark,
+  },
 ];
 // vexhgwxh
 const ROLE_STYLE = {
@@ -68,14 +155,15 @@ const ROLE_STYLE = {
   far: { animationName: "cardEnterFar", duration: ENTER_DURATION, z: 1 },
 };
 
-const CARD_GRADIENTS = [
-  "linear-gradient(135deg, #ffffffb0, #15cebfb0, #15afceb0)",
-  "linear-gradient(135deg, #15afceb0, #1ec2ebb0, #d163e7b0)",
-  "linear-gradient(135deg, #ffffffb0, #d163e7b0, #5e1ac3b0)",
-];
+// const CARD_GRADIENTS = [
+//   "linear-gradient(135deg, #ffffffb0, #15cebfb0, #15afceb0)",
+//   "linear-gradient(135deg, #15afceb0, #1ec2ebb0, #d163e7b0)",
+//   "linear-gradient(135deg, #ffffffb0, #d163e7b0, #5e1ac3b0)",
+// ];
 
-function Card({ role, gradient, text, onDone }) {
+function Card({ role, text, onDone }) {
   const { animationName, duration, z } = ROLE_STYLE[role];
+  const Icon = text.icon;
 
   return (
     <div
@@ -93,70 +181,94 @@ function Card({ role, gradient, text, onDone }) {
         willChange: "transform, opacity",
       }}
     >
-      {/* Front */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          borderRadius: 18,
-          backfaceVisibility: "hidden",
-          background: gradient,
-          boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "#fff",
-          padding: 10,
-        }}
-      >
-        <div
-          className="
-            px-4 text-center
-            text-[25px] sm:text-[29px] lg:text-[35px]
-            font-bold leading-tight
-          "
-        >
-          {text.title}
-        </div>
+      {/* FRONT */}
+      <div className="glass-card-face glass-card-front">
+        {/* Soft internal refraction */}
+        <div className="glass-refraction" />
 
-        <div
-          className="
-            mt-2 px-3 text-center
-            text-[11px] sm:text-xs lg:text-sm
-            opacity-85
-          "
+        {/* Very subtle ambient glow */}
+        <div className="glass-ambient-glow" />
+
+        {/* Fine technical line */}
+        <svg
+          className="glass-data-line"
+          viewBox="0 0 280 180"
+          preserveAspectRatio="none"
+          aria-hidden="true"
         >
-          {text.subtitle}
+          <path
+            d="M-15 65 C 40 42, 75 92, 130 67 S 220 35, 300 75"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.8"
+          />
+
+          <circle cx="72" cy="73" r="2" fill="currentColor" />
+          <circle cx="185" cy="52" r="2" fill="currentColor" />
+        </svg>
+
+        {/* Main content */}
+        <div className="glass-card-content">
+          <div className="glass-icon-wrap">
+            <Icon
+              className="glass-card-icon"
+              strokeWidth={1.6}
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="glass-card-copy">
+            <p className="glass-category">
+              {text.category}
+            </p>
+
+            <h3 className="glass-title">
+              {text.title}
+            </h3>
+          </div>
+
+          <div className="glass-card-footer">
+            <div className="verified-label">
+              <span className="verified-dot">
+                <Check strokeWidth={2.2} />
+              </span>
+
+              <span>VERIFIED DATA</span>
+            </div>
+
+            <span className="data-mark">
+              LW / DATA
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Back */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          borderRadius: 18,
-          backfaceVisibility: "hidden",
-          transform: "rotateY(180deg)",
-          background:
-            "repeating-linear-gradient(45deg, #1e1e2f, #1e1e2f 10px, #2a2a40 10px, #2a2a40 20px)",
-          border: "6px solid #fff",
-          boxSizing: "border-box",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-          padding: 10,
-        }}
-      />
+      {/* BACK */}
+      <div className="glass-card-face glass-card-back">
+        <div className="glass-refraction" />
+
+        <div className="back-watermark">
+          <span>LW</span>
+        </div>
+
+        <div className="back-detail">
+          <span>CURATED</span>
+          <span>•</span>
+          <span>VERIFIED</span>
+          <span>•</span>
+          <span>STRUCTURED</span>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default function CardFlipAnimation() {
-  const [queue, setQueue] = useState([
-    { id: 0, text: CARD_TEXTS[0], gradient: CARD_GRADIENTS[0] }, // center
-    { id: 1, text: CARD_TEXTS[1], gradient: CARD_GRADIENTS[1] }, // near (top-right)
-    { id: 2, text: CARD_TEXTS[2], gradient: CARD_GRADIENTS[2] }, // far (bottom-right)
-  ]);
+ const [queue, setQueue] = useState([
+  { id: 0, text: CARD_TEXTS[0] },
+  { id: 1, text: CARD_TEXTS[1] },
+  { id: 2, text: CARD_TEXTS[2] },
+]);
   const nextId = useRef(3);
   const nextTextIndex = useRef(3);
 
@@ -164,22 +276,22 @@ export default function CardFlipAnimation() {
   // queue, so the new arrival never visually matches its neighbours.
   // Falls back to "just not the same as last time" if the palette is too
   // small to guarantee full uniqueness against every card on screen.
-  const pickGradient = (excluding) => {
-    const pool = CARD_GRADIENTS.filter((g) => !excluding.includes(g));
-    const options = pool.length > 0 ? pool : CARD_GRADIENTS.filter((g) => g !== excluding[0]);
-    return options[Math.floor(Math.random() * options.length)];
-  };
+  // const pickGradient = (excluding) => {
+  //   const pool = CARD_GRADIENTS.filter((g) => !excluding.includes(g));
+  //   const options = pool.length > 0 ? pool : CARD_GRADIENTS.filter((g) => g !== excluding[0]);
+  //   return options[Math.floor(Math.random() * options.length)];
+  // };
 
-  const rotateQueue = () => {
-    setQueue(([, near, far]) => {
-      const fresh = {
-        id: nextId.current++,
-        text: CARD_TEXTS[nextTextIndex.current++ % CARD_TEXTS.length],
-        gradient: pickGradient([near.gradient, far.gradient]),
-      };
-      return [near, far, fresh];
-    });
-  };
+const rotateQueue = () => {
+  setQueue(([, near, far]) => {
+    const fresh = {
+      id: nextId.current++,
+      text: CARD_TEXTS[nextTextIndex.current++ % CARD_TEXTS.length],
+    };
+
+    return [near, far, fresh];
+  });
+};
 
   const [center, near, far] = queue;
 
@@ -196,81 +308,27 @@ export default function CardFlipAnimation() {
       rounded-2xl
     "
   >
-<style>{`
-  .card-animation-stage {
-    /* PHONE */
-    --card-width: 190px;
-    --card-height: 122px;
 
-    --card-x: 70px;
-    --card-y: 68px;
+<style>{CARD_KEYFRAMES}</style>
 
-    --card-boundary-x: calc(50vw + 95px);
+<Card
+  key={`center-${center.id}`}
+  role="center"
+  text={center.text}
+  onDone={rotateQueue}
+/>
 
-    perspective: 800px;
-    font-family: system-ui, sans-serif;
-  }
+<Card
+  key={`near-${near.id}`}
+  role="near"
+  text={near.text}
+/>
 
-  @media (min-width: 640px) {
-    .card-animation-stage {
-      --card-width: 225px;
-      --card-height: 145px;
-
-      --card-x: 105px;
-      --card-y: 82px;
-
-      --card-boundary-x: calc(50vw + 112px);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .card-animation-stage {
-      --card-width: 250px;
-      --card-height: 161px;
-
-      --card-x: 130px;
-      --card-y: 95px;
-
-      --card-boundary-x: calc(50vw + 125px);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .card-animation-stage {
-      --card-width: 280px;
-      --card-height: 180px;
-
-      --card-x: 165px;
-      --card-y: 110px;
-
-      --card-boundary-x: 430px;
-    }
-  }
-
-  ${CARD_KEYFRAMES}
-`}</style>
-
-    <Card
-      key={`center-${center.id}`}
-      role="center"
-      gradient={center.gradient}
-      text={center.text}
-      onDone={rotateQueue}
-    />
-
-    <Card
-      key={`near-${near.id}`}
-      role="near"
-      gradient={near.gradient}
-      text={near.text}
-    />
-
-    <Card
-      key={`far-${far.id}`}
-      role="far"
-      gradient={far.gradient}
-      text={far.text}
-    />
+<Card
+  key={`far-${far.id}`}
+  role="far"
+  text={far.text}
+/>
   </div>
 );
 
