@@ -4,50 +4,166 @@ import FloatingCard from "./FloatingCard";
 
 export default function BlurGlass() {
   return (
-    // 1. Used <section> for semantic meaning - Google gives more weight to sections
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pl-20 bg-white" aria-label="Hero Section">
-      
-      <BlobBackground />
 
-      {/* 2. Changed container structure to ensure text content remains readable and crawlable */}
-      <div className="relative z-10 w-full  flex flex-col md:flex-row items-center justify-between py-5 bg-white/30">
-        
-        {/* Left Side: SEO-Critical Content */}
-        <div className="w-1/2 pl-40 flex flex-col gap-6">
-          <span className="text-sm font-semibold tracking-wide uppercase text-slate-500">
-            Premium B2B & B2C Lead Generation
-          </span>
-          
-          {/* 3. Strong H1 with primary keywords */}
-          <h1 className="text-5xl md:text-6xl font-bold text-black leading-tight">
-            Marketplace for <br />
-            <span className="bg-linear-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-              verified leads.
-            </span>
-          </h1>
+    // section gets morte weight by google
+  <section
+  className="
+    relative w-full min-h-screen
+    flex items-center justify-center
+    overflow-hidden bg-white
+    px-5 sm:px-8 md:px-10 lg:px-12 xl:px-20
+    py-24 sm:py-28 lg:py-20
+  "
+  aria-label="Hero Section"
+>
+  <BlobBackground />
 
-          {/* 4. Keyword-rich sub-headline */}
-          <p className="text-md text-slate-700 max-w-lg">
-            Instantly access direct-dial phone numbers and verified email databases. 
-            No subscription lock-ins, 95%+ accuracy, and compliance-ready data for your outreach.
-          </p>
+ 
+  <div
+    className="
+      relative z-10
+      w-full max-w-7xl mx-auto
+      flex flex-col lg:flex-row
+      items-center justify-between
+      gap-12 md:gap-14 lg:gap-8 xl:gap-12
+      rounded-3xl
+      bg-white/30
+    "
+  >
+    {/* Left Side: SEO-Critical Content */}
+    <div
+      className="
+        w-full lg:w-1/2
+        flex flex-col
+        items-center lg:items-start
+        text-center lg:text-left
+        gap-5 sm:gap-6
+        lg:pl-6 xl:pl-10
+      "
+    >
+      <span
+        className="
+          text-xs sm:text-sm
+          font-semibold tracking-wide uppercase
+          text-slate-500
+        "
+      >
+        Premium B2B & B2C Lead Generation
+      </span>
 
-          <div className="flex gap-4">
-            <button className="font-bold cursor-pointer bg-black text-white px-9 py-3 rounded-full hover:shadow-lg transition duration-300" aria-label="Explore database">
-              Explore Store
-            </button>
-            <button className="font-bold cursor-pointer bg-white px-9 py-3 rounded-full shadow-md hover:shadow-lg transition duration-300" aria-label="Contact sales team">
-              Talk with us
-            </button>
-          </div>
-        </div>
+      <h1
+        className="
+          text-[2.5rem] sm:text-5xl md:text-6xl
+          lg:text-[3.5rem] xl:text-6xl
+          font-bold text-black
+          leading-[1.08] sm:leading-tight
+          tracking-tight
+        "
+      >
+        Marketplace for
+        <br className="hidden sm:block" />{" "}
+        <span
+          className="
+            bg-linear-to-r
+            from-purple-500 to-cyan-500
+            bg-clip-text text-transparent
+          "
+        >
+          verified leads.
+        </span>
+      </h1>
 
-        {/* Right Side: Visual Element */}
-        {/* Added min-height to prevent layout shift during loading */}
-        <div className="w-full md:w-2/3 flex justify-center items-center mt-12 md:mt-0 min-h-75">
-          <FloatingCard />
-        </div>
+      <p
+        className="
+          max-w-xl
+          text-sm sm:text-base
+          leading-6 sm:leading-7
+          text-slate-700
+        "
+      >
+        Instantly access direct-dial phone numbers and verified email
+        databases. No subscription lock-ins, 95%+ accuracy, and
+        compliance-ready data for your outreach.
+      </p>
+
+      <div
+        className="
+          w-full sm:w-auto
+          flex flex-col sm:flex-row
+          items-stretch sm:items-center
+          justify-center lg:justify-start
+          gap-3 sm:gap-4
+          pt-1 sm:pt-2
+        "
+      >
+        <button
+          className="
+            w-full sm:w-auto
+            min-h-12
+            whitespace-nowrap
+            font-bold
+            cursor-pointer
+            bg-black text-white
+            px-7 sm:px-9 py-3
+            rounded-full
+            shadow-sm
+            hover:shadow-lg
+            hover:-translate-y-0.5
+            active:translate-y-0
+            transition-all duration-300
+          "
+          aria-label="Explore database"
+        >
+          Explore Store
+        </button>
+
+        <button
+          className="
+            w-full sm:w-auto
+            min-h-12
+            whitespace-nowrap
+            font-bold
+            cursor-pointer
+            bg-white text-black
+            px-7 sm:px-9 py-3
+            rounded-full
+            border border-slate-200/80
+            shadow-md
+            hover:shadow-lg
+            hover:-translate-y-0.5
+            active:translate-y-0
+            transition-all duration-300
+          "
+          aria-label="Contact sales team"
+        >
+          Talk with us
+        </button>
       </div>
-    </section>
+    </div>
+
+    {/* Right Side: Visual Element */}
+    <div
+      className="
+        relative
+        w-full lg:w-1/2
+        flex justify-center lg:justify-end
+        items-center
+        min-h-70 sm:min-h-80 md:min-h-95 lg:min-h-105
+      "
+    >
+      <div
+        className="
+          w-full
+          max-w-80
+          sm:max-w-md
+          md:max-w-lg
+          lg:max-w-xl
+        "
+      >
+        <FloatingCard />
+      </div>
+    </div>
+  </div>
+</section>
   );
 }

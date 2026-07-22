@@ -20,33 +20,91 @@ function BlobBackground() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i=1) => (i + 1) % blobPaths.length);
+      setIndex((i) => (i + 1) % blobPaths.length);
     }, 3000);
+
     return () => clearInterval(id);
   }, []);
 
   return (
-    <svg
-      id="visual"
-      className="translate-x-80 absolute blur-md"
-      viewBox="0 0 900 600"
-      width="900"
-      height="600"
-      version="1.1"
+    <div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        inset-0
+        z-0
+        overflow-hidden
+      "
     >
-      <linearGradient id="my-cool-gradient" x2="1" y2="1">
-        <stop offset="0%" stopColor="#a500d7" />
-        <stop offset="100%" stopColor="#00e6e2" />
-      </linearGradient>
-      <g transform="translate(407.71660719112697 324.812379246231)">
-        <path
-          d={blobPaths[index]}
-          fill="url(#my-cool-gradient)"
-        className="transition-all duration-4000 "
-        />
-      </g>
-    </svg>
+      <svg
+        className="
+          absolute
+
+          /* Mobile */
+          w-[620px]
+          h-auto
+          max-w-none
+          left-1/2
+          top-[55%]
+          -translate-x-1/2
+          -translate-y-1/2
+
+          /* Small tablets */
+          sm:w-[750px]
+          sm:top-[58%]
+
+          /* Tablets */
+          md:w-[900px]
+          md:top-[60%]
+
+          /* Laptop/Desktop */
+          lg:w-[1000px]
+          lg:left-[65%]
+          lg:top-1/2
+
+          /* Large desktop */
+          xl:w-[1150px]
+          xl:left-[67%]
+
+          /* 2XL screens */
+          2xl:w-[1300px]
+          2xl:left-[68%]
+
+          blur-md
+          opacity-80
+        "
+        viewBox="0 0 900 600"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="hero-blob-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="#a500d7" />
+            <stop offset="100%" stopColor="#00e6e2" />
+          </linearGradient>
+        </defs>
+
+        <g transform="translate(450 300)">
+          <path
+            d={blobPaths[index]}
+            fill="url(#hero-blob-gradient)"
+            className="
+              transition-all
+              duration-[3000ms]
+              ease-in-out
+            "
+          />
+        </g>
+      </svg>
+    </div>
   );
-}
+} 
 
 export default BlobBackground;
