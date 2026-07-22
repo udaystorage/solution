@@ -13,10 +13,10 @@ const FAR =
   "translate(calc(-50% + var(--card-x)), calc(-50% + var(--card-y)))";
 
 const OFF_LEFT =
-  "translate(calc(-50% - var(--card-exit-x)), -50%)";
+  "translate(calc(-50% - var(--card-boundary-x)), -50%)";
 
 const OFF_RIGHT_FAR =
-  "translate(calc(-50% + var(--card-enter-x)), calc(-50% + var(--card-y)))";
+  "translate(calc(-50% + var(--card-boundary-x)), calc(-50% + var(--card-y)))";
 
 const MAIN_DURATION = 3.9; // seconds — includes the 1.5s hold at max size
 const SHIFT_DURATION = 1.3; // bottom-right waiting slot -> top-right waiting slot
@@ -188,70 +188,67 @@ export default function CardFlipAnimation() {
     className="
       card-animation-stage
       relative w-full
-      h-[340px]
-      sm:h-[400px]
-      md:h-[460px]
-      lg:h-[580px]
+       h-[310px]
+  sm:h-[350px]
+  md:h-[410px]
+  lg:h-[580px]
       overflow-hidden
       rounded-2xl
     "
   >
-    <style>{`
-      .card-animation-stage {
-        --card-width: 210px;
-        --card-height: 135px;
+<style>{`
+  .card-animation-stage {
+    /* PHONE */
+    --card-width: 190px;
+    --card-height: 122px;
 
-        --card-x: 105px;
-        --card-y: 75px;
+    --card-x: 70px;
+    --card-y: 68px;
 
-        --card-exit-x: 330px;
-        --card-enter-x: 330px;
+    --card-boundary-x: calc(50vw + 95px);
 
-        perspective: 800px;
-        font-family: system-ui, sans-serif;
-      }
+    perspective: 800px;
+    font-family: system-ui, sans-serif;
+  }
 
-      @media (min-width: 640px) {
-        .card-animation-stage {
-          --card-width: 235px;
-          --card-height: 151px;
+  @media (min-width: 640px) {
+    .card-animation-stage {
+      --card-width: 225px;
+      --card-height: 145px;
 
-          --card-x: 135px;
-          --card-y: 90px;
+      --card-x: 105px;
+      --card-y: 82px;
 
-          --card-exit-x: 390px;
-          --card-enter-x: 390px;
-        }
-      }
+      --card-boundary-x: calc(50vw + 112px);
+    }
+  }
 
-      @media (min-width: 768px) {
-        .card-animation-stage {
-          --card-width: 255px;
-          --card-height: 164px;
+  @media (min-width: 768px) {
+    .card-animation-stage {
+      --card-width: 250px;
+      --card-height: 161px;
 
-          --card-x: 155px;
-          --card-y: 100px;
+      --card-x: 130px;
+      --card-y: 95px;
 
-          --card-exit-x: 430px;
-          --card-enter-x: 430px;
-        }
-      }
+      --card-boundary-x: calc(50vw + 125px);
+    }
+  }
 
-      @media (min-width: 1024px) {
-        .card-animation-stage {
-          --card-width: 280px;
-          --card-height: 180px;
+  @media (min-width: 1024px) {
+    .card-animation-stage {
+      --card-width: 280px;
+      --card-height: 180px;
 
-          --card-x: 190px;
-          --card-y: 110px;
+      --card-x: 165px;
+      --card-y: 110px;
 
-          --card-exit-x: 480px;
-          --card-enter-x: 480px;
-        }
-      }
+      --card-boundary-x: 430px;
+    }
+  }
 
-      ${CARD_KEYFRAMES}
-    `}</style>
+  ${CARD_KEYFRAMES}
+`}</style>
 
     <Card
       key={`center-${center.id}`}

@@ -49,19 +49,21 @@ function BlobBackground() {
           absolute
           h-auto max-w-none
 
-          w-[500px]
-          left-1/2 top-[60%]
-          -translate-x-1/2 -translate-y-1/2
+w-[500px]
+left-1/2
+top-[72%]
+-translate-x-1/2
+-translate-y-1/2
 
-          sm:w-[580px]
-          sm:top-[61%]
+sm:w-[580px]
+sm:top-[70%]
 
-          md:w-[660px]
-          md:top-[62%]
+md:w-[660px]
+md:top-[68%]
 
-          lg:w-[760px]
-          lg:left-[67%]
-          lg:top-1/2
+lg:w-[760px]
+lg:left-[67%]
+lg:top-1/2
 
           xl:w-[820px]
           xl:left-[68%]

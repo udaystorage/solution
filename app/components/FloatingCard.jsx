@@ -15,13 +15,17 @@ export default function FloatingCard() {
     overflow-visible
 
     max-w-[400px]
+    translate-y-6
 
     sm:max-w-[500px]
+    sm:translate-y-5
 
     md:max-w-[600px]
+    md:translate-y-3
 
     lg:max-w-none
     lg:w-[680px]
+    lg:translate-y-0
     lg:-translate-x-4
 
     xl:w-[720px]
