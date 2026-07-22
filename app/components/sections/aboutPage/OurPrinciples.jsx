@@ -29,28 +29,70 @@ const principles = [
 
 export default  function OurPrinciples() {
   return (
- <section className="relative w-full overflow-hidden bg-slate-950 px-4 py-16 text-slate-900 sm:px-8 md:px-16 lg:px-20">
-  {/* Dynamic Ambient Graphics — matched with reference section */}
+<section className="relative w-full overflow-hidden bg-slate-950 px-5 py-16 text-slate-900 sm:px-8 sm:py-20 md:px-16 lg:px-20">
+  {/* Dynamic Ambient Graphics */}
   <div
-    className="pointer-events-none absolute -right-25 top-20 h-137.5 w-137.5 rounded-full bg-[radial-gradient(circle_at_center,rgba(37,137,252,0.15),rgba(39,188,247,0.05)_70%,transparent_90%)] blur-[100px]"
+    className="
+      pointer-events-none absolute
+      -right-40 top-32
+      h-100 w-100
+      rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(37,137,252,0.15),rgba(39,188,247,0.05)_70%,transparent_90%)]
+      blur-[80px]
+      sm:-right-32 sm:top-24 sm:h-120 sm:w-120 sm:blur-[90px]
+      lg:-right-25 lg:top-20 lg:h-137.5 lg:w-137.5 lg:blur-[100px]
+    "
     aria-hidden="true"
   />
 
   <div
-    className="pointer-events-none absolute -top-40 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]"
+    className="
+      pointer-events-none absolute
+      -top-24 left-1/2
+      h-80 w-80
+      -translate-x-1/2
+      rounded-full
+      bg-cyan-500/10
+      blur-[90px]
+      sm:-top-32 sm:h-100 sm:w-100 sm:blur-[110px]
+      lg:-top-40 lg:h-125 lg:w-125 lg:blur-[120px]
+    "
     aria-hidden="true"
   />
 
   {/* Content */}
   <div className="relative z-10 mx-auto w-full max-w-7xl lg:px-10 lg:py-20">
-    <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr]">
+    <div className="grid gap-10 sm:gap-12 lg:grid-cols-[0.6fr_1.4fr]">
+      
       {/* Left Heading */}
       <div>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[13px] font-semibold uppercase tracking-wider text-cyan-400">
+        <span
+          className="
+            inline-flex items-center gap-1.5
+            rounded-full
+            border border-white/10
+            bg-white/10
+            px-3 py-1
+            text-[11px] font-semibold
+            uppercase tracking-wider
+            text-cyan-400
+            sm:text-[13px]
+          "
+        >
           Why Leadwala
         </span>
 
-        <h2 className="mt-5 max-w-sm text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl">
+        <h2
+          className="
+            mt-5 max-w-sm
+            text-[2rem] font-semibold
+            leading-[1.08]
+            tracking-[-0.035em]
+            text-white
+            sm:text-4xl
+            lg:text-5xl
+          "
+        >
           What guides the way we work.
         </h2>
       </div>
@@ -60,25 +102,64 @@ export default  function OurPrinciples() {
         {principles.map((principle) => (
           <div
             key={principle.number}
-            className="group grid gap-5 border-b border-white/10 py-8 first:border-t sm:grid-cols-[70px_1fr] sm:py-10"
+            className="
+              group
+              grid gap-3
+              border-b border-white/10
+              py-6
+              first:border-t
+              sm:grid-cols-[55px_1fr]
+              sm:gap-5
+              sm:py-8
+              lg:grid-cols-[70px_1fr]
+              lg:py-10
+            "
           >
-            <span className="text-xs font-medium text-slate-500 group-hover:text-cyan-400 group-hover:opacity-100">
+            {/* Number */}
+            <span
+              className="
+                text-[11px] font-medium
+                text-slate-500
+                transition-colors duration-300
+                group-hover:text-cyan-400
+                sm:text-xs
+              "
+            >
               {principle.number}
             </span>
 
-            <div className="transition-transform duration-300 group-hover:translate-x-1.5">
-              <div className="flex items-center justify-between gap-5">
-                <h3 className="text-2xl font-medium tracking-tight text-white sm:text-3xl group-hover:text-olive-100">
+            {/* Principle content */}
+            <div className="transition-transform duration-300 sm:group-hover:translate-x-1.5">
+              <div className="flex items-center justify-between gap-4">
+                <h3
+                  className="
+                    text-xl font-medium
+                    leading-tight
+                    tracking-tight
+                    text-white
+                    transition-colors duration-300
+                    sm:text-2xl
+                    lg:text-3xl
+                    group-hover:text-olive-100
+                  "
+                >
                   {principle.title}
                 </h3>
-
-                {/* <ArrowUpRight
-                  size={18}
-                  className="shrink-0 text-slate-500 opacity-0 transition-all duration-300 group-hover:text-cyan-400 group-hover:opacity-100"
-                /> */}
               </div>
 
-              <p className="mt-3 max-w-xl leading-7 text-slate-400 group-hover:text-slate-300">
+              <p
+                className="
+                  mt-3 max-w-xl
+                  text-[14px]
+                  leading-6
+                  text-slate-400
+                  transition-colors duration-300
+                  sm:text-[15px]
+                  sm:leading-7
+                  lg:text-base
+                  group-hover:text-slate-300
+                "
+              >
                 {principle.description}
               </p>
             </div>

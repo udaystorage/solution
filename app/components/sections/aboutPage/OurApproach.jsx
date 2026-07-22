@@ -112,180 +112,298 @@ export default function OurApproach() {
   }, []);
 
   return (
-    <section ref={approachRef} id="approach" className="bg-white px-30 py-20">
-      <div className="w-full lg:px-10 lg:py-36">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
-            Our approach
-          </span>
+  <section
+  ref={approachRef}
+  id="approach"
+  className="overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20"
+>
+  <div className="w-full lg:px-10 lg:py-36">
+    {/* Heading */}
+    <div className="max-w-2xl">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-black sm:text-[13px]">
+        Our approach
+      </span>
 
-          <h2 className="mt-5 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">
-            From a requirement to
-            <br />
-            business-ready data.
-          </h2>
+      <h2 className="mt-5 text-[2rem] font-semibold leading-[1.08] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+        From a requirement to
+        <br className="hidden sm:block" />
+        <span className="sm:hidden"> </span>
+        business-ready data.
+      </h2>
 
-          <p className="mt-5 max-w-xl leading-7 text-stone-600">
-            Every dataset follows a focused process designed to turn a business
-            requirement into information your team can actually use.
-          </p>
-        </div>
+      <p className="mt-5 max-w-xl text-[15px] leading-7 text-stone-600 sm:text-base">
+        Every dataset follows a focused process designed to turn a business
+        requirement into information your team can actually use.
+      </p>
+    </div>
 
-        <div className="mt-16 overflow-hidden rounded-[2rem] border border-stone-200 bg-stone-50 p-5 sm:p-8 lg:p-10">
-          {/* desktop navigation */}
-          <div className="hidden grid-cols-5 lg:grid">
-            {processSteps.map((step, index) => {
-              const isCompleted =
-                activeStep > index ||
-                (allCompleted && index === processSteps.length - 1);
-              const isActive = activeStep === index;
+    {/* Process container */}
+    <div
+      className="
+        mt-10
+        rounded-[1.5rem]
+        border border-stone-200
+        bg-stone-50
+        p-3
+        sm:mt-12 sm:rounded-[2rem] sm:p-6
+        lg:mt-16 lg:p-10
+      "
+    >
+      {/* Desktop navigation */}
+      <div className="hidden grid-cols-5 lg:grid">
+        {processSteps.map((step, index) => {
+          const isCompleted =
+            activeStep > index ||
+            (allCompleted && index === processSteps.length - 1);
 
-              return (
-                <button
-                  key={step.title}
-                  onClick={() => setActiveStep(index)}
-                  className="group relative text-left"
+          const isActive = activeStep === index;
+
+          return (
+            <button
+              key={step.title}
+              onClick={() => setActiveStep(index)}
+              className="group relative text-left"
+            >
+              <div className="relative mb-5 flex items-center">
+                {/* Step circle */}
+                <span
+                  className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-500 ${
+                    isCompleted
+                      ? "border-emerald-500 bg-emerald-500 text-white"
+                      : isActive
+                        ? "scale-105 border-stone-950 bg-stone-950 text-white shadow-md"
+                        : "border-stone-300 bg-white text-stone-400"
+                  }`}
                 >
-                  <div className="relative mb-5 flex items-center">
-                    {/* Step circle */}
+                  {isCompleted ? (
+                    <Check
+                      size={17}
+                      strokeWidth={2.5}
+                      className="animate-in zoom-in duration-300"
+                    />
+                  ) : (
+                    step.number
+                  )}
+                </span>
+
+                {/* Connecting progress line */}
+                {index !== processSteps.length - 1 && (
+                  <span className="absolute left-10 right-0 h-px overflow-hidden bg-stone-200">
                     <span
-                      className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-500 ${
-                        isCompleted
-                          ? "border-emerald-500 bg-emerald-500 text-white"
-                          : isActive
-                            ? "scale-105 border-stone-950 bg-stone-950 text-white shadow-md"
-                            : "border-stone-300 bg-white text-stone-400"
+                      className={`block h-full bg-emerald-500 transition-all duration-700 ease-out ${
+                        isCompleted ? "w-full" : "w-0"
                       }`}
-                    >
-                      {isCompleted ? (
-                        <Check
-                          size={17}
-                          strokeWidth={2.5}
-                          className="animate-in zoom-in duration-300"
-                        />
-                      ) : (
-                        step.number
-                      )}
-                    </span>
-
-                    {/* Connecting progress line */}
-                    {index !== processSteps.length - 1 && (
-                      <span className="absolute left-10 right-0 h-px overflow-hidden bg-stone-200">
-                        <span
-                          className={`block h-full bg-emerald-500 transition-all duration-700 ease-out ${
-                            isCompleted ? "w-full" : "w-0"
-                          }`}
-                        />
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Step title */}
-                  <span
-                    className={`text-sm font-medium transition-colors duration-300 ${
-                      isCompleted
-                        ? "text-emerald-700"
-                        : isActive
-                          ? "text-stone-950"
-                          : "text-stone-400 group-hover:text-stone-700"
-                    }`}
-                  >
-                    {step.title}
+                    />
                   </span>
-                </button>
-              );
-            })}
-          </div>
+                )}
+              </div>
 
-          {/* mobile navigation */}
-          <div className="flex gap-2 overflow-x-auto pb-2 lg:hidden">
-            {processSteps.map((step, index) => (
-              <button
-                key={step.title}
-                onClick={() => setActiveStep(index)}
-                className={`shrink-0 rounded-full px-4 py-2 text-xs font-medium transition ${
-                  activeStep === index
-                    ? "bg-stone-950 text-white"
-                    : "border border-stone-200 bg-white text-stone-500"
+              {/* Step title */}
+              <span
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  isCompleted
+                    ? "text-emerald-700"
+                    : isActive
+                      ? "text-stone-950"
+                      : "text-stone-400 group-hover:text-stone-700"
                 }`}
               >
-                {step.number} {step.title}
-              </button>
+                {step.title}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Mobile / tablet navigation */}
+      <div className="-mx-1 overflow-hidden lg:hidden">
+        <div
+          className="
+            flex gap-2 overflow-x-auto px-1 pb-2
+            [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden
+          "
+        >
+          {processSteps.map((step, index) => (
+            <button
+              key={step.title}
+              onClick={() => setActiveStep(index)}
+              className={`shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-[11px] font-medium transition-all duration-300 sm:px-4 sm:text-xs ${
+                activeStep === index
+                  ? "bg-stone-950 text-white shadow-sm"
+                  : "border border-stone-200 bg-white text-stone-500"
+              }`}
+            >
+              {step.number} {step.title}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Active content */}
+      <div
+        className="
+          mt-5 grid gap-7
+          rounded-[1.25rem]
+          bg-white
+          p-5
+          shadow-sm
+          sm:mt-7 sm:rounded-3xl sm:p-8
+          md:p-10
+          lg:mt-10 lg:min-h-[310px]
+          lg:grid-cols-[1fr_0.9fr]
+          lg:items-center
+        "
+      >
+        {/* Content */}
+        <div>
+          <span className="text-xs font-medium text-stone-400 sm:text-sm">
+            {active.number} / 05
+          </span>
+
+          <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:mt-4 sm:text-3xl lg:text-4xl">
+            {active.title}
+          </h3>
+
+          <p className="mt-4 max-w-xl text-[14px] leading-6 text-stone-600 sm:mt-5 sm:text-base sm:leading-7">
+            {active.description}
+          </p>
+
+          <button
+            onClick={() =>
+              setActiveStep((activeStep + 1) % processSteps.length)
+            }
+            className="group mt-6 inline-flex items-center gap-2 text-sm font-medium sm:mt-8"
+          >
+            {activeStep === processSteps.length - 1
+              ? "Start again"
+              : "Next step"}
+
+            <ArrowRight
+              size={15}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </button>
+        </div>
+
+        {/* Abstract data visual */}
+        <div
+          className="
+            relative flex
+            min-h-[210px]
+            items-center justify-center
+            overflow-hidden
+            rounded-2xl
+            bg-stone-50
+            sm:min-h-[240px]
+            lg:min-h-55
+          "
+        >
+          {/* Dynamic ambient backgrounds */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            {stepBackgrounds.map((background, index) => (
+              <div
+                key={index}
+                className={`absolute left-1/2 top-1/2
+                  h-56 w-56
+                  -translate-x-1/2 -translate-y-1/2
+                  rounded-full
+                  bg-linear-to-br ${background}
+                  blur-[70px]
+                  transition-opacity duration-1000 ease-in-out
+                  sm:h-72 sm:w-72 sm:blur-[80px]
+                  ${activeStep === index ? "opacity-100" : "opacity-0"}
+                `}
+              />
             ))}
           </div>
 
-          {/* active content */}
-          <div className="mt-10 grid min-h-[310px] gap-8 rounded-3xl bg-white p-7 shadow-sm sm:p-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <div>
-              <span className="text-sm font-medium text-stone-400">
-                {active.number} / 05
-              </span>
-
-              <h3 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                {active.title}
-              </h3>
-
-              <p className="mt-5 max-w-xl text-base leading-7 text-stone-600">
-                {active.description}
-              </p>
-
-              <button
-                onClick={() =>
-                  setActiveStep((activeStep + 1) % processSteps.length)
-                }
-                className="group mt-8 inline-flex items-center gap-2 text-sm font-medium"
-              >
-                {activeStep === processSteps.length - 1
-                  ? "Start again"
-                  : "Next step"}
-
-                <ArrowRight
-                  size={15}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </button>
-            </div>
-
-            {/* abstract data visual */}
-            <div className="relative flex min-h-55 items-center justify-center overflow-hidden rounded-2xl bg-stone-50">
-             <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl border border-white/70 bg-white/65 backdrop-blur-2xl shadow-[0_18px_45px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)]">
-  <ActiveIcon size={34} strokeWidth={1.5} />
-</div>
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                {stepBackgrounds.map((background, index) => (
-                  <div
-                    key={index}
-                    className={`absolute left-1/2 top-1/2 h-72 w-72
-        -translate-x-1/2 -translate-y-1/2
-        rounded-full bg-linear-to-br ${background}
-        blur-[80px]
-        transition-opacity duration-1000 ease-in-out
-        ${activeStep === index ? "opacity-100" : "opacity-0"}
-      `}
-                  />
-                ))}
-              </div>
-
-              <span className="absolute left-6 top-6 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[10px] font-medium shadow-sm">
-                Industry
-              </span>
-
-              <span className="absolute right-5 top-12 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[10px] font-medium shadow-sm">
-                Geography
-              </span>
-
-              <span className="absolute bottom-7 left-10 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[10px] font-medium shadow-sm">
-                Decision Maker
-              </span>
-
-              <span className="absolute bottom-5 right-8 flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1.5 text-[10px] font-medium text-emerald-800">
-                <Check size={11} />
-                Verified
-              </span>
-            </div>
+          {/* Main icon */}
+          <div
+            className="
+              relative z-10
+              flex h-20 w-20
+              items-center justify-center
+              rounded-[1.35rem]
+              border border-white/70
+              bg-white/65
+              backdrop-blur-2xl
+              shadow-[0_18px_45px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)]
+              sm:h-24 sm:w-24 sm:rounded-3xl
+            "
+          >
+            <ActiveIcon
+              size={30}
+              strokeWidth={1.5}
+              className="sm:h-[34px] sm:w-[34px]"
+            />
           </div>
+
+          {/* Floating labels */}
+          <span
+            className="
+              absolute left-3 top-3 z-10
+              rounded-full
+              border border-stone-200
+              bg-white
+              px-2.5 py-1
+              text-[9px] font-medium
+              shadow-sm
+              sm:left-6 sm:top-6 sm:px-3 sm:py-1.5 sm:text-[10px]
+            "
+          >
+            Industry
+          </span>
+
+          <span
+            className="
+              absolute right-3 top-10 z-10
+              rounded-full
+              border border-stone-200
+              bg-white
+              px-2.5 py-1
+              text-[9px] font-medium
+              shadow-sm
+              sm:right-5 sm:top-12 sm:px-3 sm:py-1.5 sm:text-[10px]
+            "
+          >
+            Geography
+          </span>
+
+          <span
+            className="
+              absolute bottom-5 left-3 z-10
+              rounded-full
+              border border-stone-200
+              bg-white
+              px-2.5 py-1
+              text-[9px] font-medium
+              shadow-sm
+              sm:bottom-7 sm:left-10 sm:px-3 sm:py-1.5 sm:text-[10px]
+            "
+          >
+            Decision Maker
+          </span>
+
+          <span
+            className="
+              absolute bottom-3 right-3 z-10
+              flex items-center gap-1
+              rounded-full
+              bg-emerald-100
+              px-2.5 py-1
+              text-[9px] font-medium
+              text-emerald-800
+              sm:bottom-5 sm:right-8 sm:px-3 sm:py-1.5 sm:text-[10px]
+            "
+          >
+            <Check size={11} />
+            Verified
+          </span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }
