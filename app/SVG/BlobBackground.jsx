@@ -19,6 +19,12 @@ function BlobBackground() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % blobPaths.length);
     }, 3000);
@@ -31,52 +37,40 @@ function BlobBackground() {
       aria-hidden="true"
       className="
         pointer-events-none
-        absolute
-        inset-0
-        z-0
+        absolute inset-0 z-0
         overflow-hidden
       "
     >
       <svg
-        className="
-          absolute
-
-          /* Mobile */
-          w-[620px]
-          h-auto
-          max-w-none
-          left-1/2
-          top-[55%]
-          -translate-x-1/2
-          -translate-y-1/2
-
-          /* Small tablets */
-          sm:w-[750px]
-          sm:top-[58%]
-
-          /* Tablets */
-          md:w-[900px]
-          md:top-[60%]
-
-          /* Laptop/Desktop */
-          lg:w-[1000px]
-          lg:left-[65%]
-          lg:top-1/2
-
-          /* Large desktop */
-          xl:w-[1150px]
-          xl:left-[67%]
-
-          /* 2XL screens */
-          2xl:w-[1300px]
-          2xl:left-[68%]
-
-          blur-md
-          opacity-80
-        "
         viewBox="0 0 900 600"
         preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
+        className="
+          absolute
+          h-auto max-w-none
+
+          w-[500px]
+          left-1/2 top-[60%]
+          -translate-x-1/2 -translate-y-1/2
+
+          sm:w-[580px]
+          sm:top-[61%]
+
+          md:w-[660px]
+          md:top-[62%]
+
+          lg:w-[760px]
+          lg:left-[67%]
+          lg:top-1/2
+
+          xl:w-[820px]
+          xl:left-[68%]
+
+          2xl:w-[860px]
+
+          blur-md
+          opacity-75
+        "
       >
         <defs>
           <linearGradient
@@ -99,12 +93,13 @@ function BlobBackground() {
               transition-all
               duration-[3000ms]
               ease-in-out
+              motion-reduce:transition-none
             "
           />
         </g>
       </svg>
     </div>
   );
-} 
+}
 
 export default BlobBackground;
