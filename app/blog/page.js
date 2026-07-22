@@ -68,135 +68,157 @@ export default function BlogListingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingJsonLd) }}
       />
 
-      <div className="w-full mt-20 text-neutral-800">
-        
-        {/* SEMANTIC HEADER BANNER ZONE */}
-        <header className="w-full px-4 sm:px-10 md:px-20 py-10 relative">
-          <div className="absolute -top-40 left-1/4 h-112.5 w-112.5 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-[160px] pointer-events-none" aria-hidden="true" />
-          <div className="absolute top-0 right-0 h-100 w-100 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-[160px] pointer-events-none" aria-hidden="true" />
-          
-          <div className="w-full flex flex-col items-center gap-4">
-            {/* Primary Target Keyword Heading */}
-            <h1 className="max-w-xl text-4xl sm:text-5xl text-center font-semibold text-neutral-900 tracking-tight leading-tight">
-              Insights that brings you <span className="text-black font-bold">Real growth</span>
-            </h1>
-            <p className="max-w-2xl text-center text-sm sm:text-base text-neutral-600 leading-relaxed">
-              Get the latest insights, trends, and best practices in the world of
-              digital marketing. Our blog is your go-to resource for staying ahead
-              in the ever-evolving landscape of online business.
-            </p>
-          </div>
-        </header>
+     <div className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
+  {/* SEMANTIC HEADER BANNER ZONE */}
+  <header className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
+    <div
+      className="pointer-events-none absolute -top-40 left-1/4 h-112.5 w-112.5 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-[160px]"
+      aria-hidden="true"
+    />
+    <div
+      className="pointer-events-none absolute top-0 right-0 h-100 w-100 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-[160px]"
+      aria-hidden="true"
+    />
 
-        {/* FEED LOOP LIST SECTION */}
-        <section className="w-full px-4 sm:px-10 md:px-20 py-10" aria-label="Latest blog articles">
-          <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 list-none p-0">
-            {blogs.map((blog) => {
-              let machineDate;
-              try {
-                machineDate = new Date(blog.date).toISOString().split('T')[0];
-              } catch(e) {
-                machineDate = new Date().toISOString().split('T')[0];
-              }
+    <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-3 sm:gap-4">
+      {/* Primary Target Keyword Heading */}
+      <h1 className="max-w-xl text-center text-3xl leading-tight font-semibold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
+        Insights that brings you{" "}
+        <span className="font-bold text-black">Real growth</span>
+      </h1>
 
-              return (
-                <li key={blog.id}>
-                  <Link
-                    href={`/blog/${blog.slug}`}
-                    className="group block focus:outline-hidden"
-                  >
-                    <article className="flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow duration-300 border border-neutral-100">
-                      
-                      {/* Visual Asset Container */}
-                      <div className="relative h-65 w-full overflow-hidden rounded-t-3xl bg-neutral-100">
-                        <Image
-                          src={blog.image || blogimage}
-                          alt={`Featured visualization analyzing: ${blog.title}`}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-102"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      </div>
+      <p className="max-w-2xl text-center text-sm leading-relaxed text-neutral-600 sm:text-base">
+        Get the latest insights, trends, and best practices in the world of
+        digital marketing. Our blog is your go-to resource for staying ahead
+        in the ever-evolving landscape of online business.
+      </p>
+    </div>
+  </header>
 
-                      {/* Content Detail Tree */}
-                      <div className="pt-4 p-6 flex flex-col grow">
-                        <div className="flex items-center gap-2 text-sm text-neutral-500 font-semibold">
-                          <span>{blog.readTime}</span>
-                        </div>
-                        
-                        <h2 className="mt-3 text-lg leading-6 font-semibold text-neutral-900 group-hover:text-black line-clamp-2">
-                          {blog.title}
-                        </h2>
-                        
-                        <p className="mt-2 text-sm text-neutral-500 line-clamp-2 leading-relaxed grow">
-                          {blog.description}
-                        </p>
-                        
-                        <div className="flex items-center justify-between mt-4 pt-4 border-t border-neutral-100">
-                          <time 
-                            dateTime={machineDate} 
-                            className="text-xs text-neutral-500 font-semibold"
-                          >
-                            {blog.date}
-                          </time>
-                          
-                          <span className="text-sm font-semibold text-neutral-700 transition duration-300 scale-100 group-hover:scale-105 inline-flex items-center gap-1">
-                            Read Post
-                            <MoveUpRight className="inline-block mb-0.5" size={14} />
-                          </span>
-                        </div>
-                      </div>
+  {/* FEED LOOP LIST SECTION */}
+  <section
+    className="w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20"
+    aria-label="Latest blog articles"
+  >
+    <ul className="mx-auto grid w-full max-w-7xl list-none grid-cols-1 gap-6 p-0 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:gap-10">
+      {blogs.map((blog) => {
+        let machineDate;
 
-                    </article>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+        try {
+          machineDate = new Date(blog.date).toISOString().split("T")[0];
+        } catch (e) {
+          machineDate = new Date().toISOString().split("T")[0];
+        }
 
-        {/* BOTTOM SECTION - CALL TO ACTION CONVERSION ANCHOR */}
-        <section className="w-full px-4 sm:px-10 md:px-20 py-10" aria-label="Get Started Banner">
-          <div className="w-full">
-            <div className="bg-neutral-100 rounded-3xl flex flex-col md:flex-row overflow-hidden border border-neutral-200/50">
-              
-              <div className="w-full md:w-1/2 p-6 sm:p-10 flex flex-col items-start justify-center gap-5">
-                <h2 className="text-3xl sm:text-4xl font-semibold text-neutral-900 tracking-tight">
-                  Get Your Lead Today
-                </h2>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Start your journey with us and unlock the potential of your
-                  business. Our team is ready to assist you in achieving your
-                  goals and driving success.
-                </p>
-                
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <Link href="/leadstore" className="bg-black text-white px-9 py-3 rounded-full hover:shadow-lg transition duration-300 font-semibold text-sm inline-block">
-                    Get Started
-                  </Link>
-                  <Link href="/services" className="bg-white text-neutral-800 px-9 py-3 rounded-full shadow-xs hover:shadow-md border border-neutral-200 transition duration-300 font-semibold text-sm inline-block">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-
-              <div className="w-full md:w-1/2 p-6 sm:p-10 flex min-h-100 items-center justify-center overflow-hidden relative bg-neutral-50/50">
-                <div className="absolute -bottom-12 -right-12 rounded-[30px] border border-neutral-300/70 p-3 bg-[#F7F6F2] shadow-xs hidden sm:block">
+        return (
+          <li key={blog.id} className="h-full">
+            <Link
+              href={`/blog/${blog.slug}`}
+              className="group block h-full focus:outline-hidden"
+            >
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-xs transition-shadow duration-300 hover:shadow-md sm:rounded-3xl">
+                {/* Visual Asset Container */}
+                <div className="relative h-52 w-full overflow-hidden bg-neutral-100 sm:h-60 md:h-56 lg:h-60 xl:h-65">
                   <Image
-                    src="/growthbg.webp"
-                    alt="Graph data tracking metrics representing scale development analytics"
-                    width={600}
-                    height={350}
-                    className="rounded-3xl object-cover"
+                    src={blog.image || blogimage}
+                    alt={`Featured visualization analyzing: ${blog.title}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-102"
+                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
                 </div>
-              </div>
 
-            </div>
+                {/* Content Detail Tree */}
+                <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 sm:text-sm">
+                    <span>{blog.readTime}</span>
+                  </div>
+
+                  <h2 className="mt-3 line-clamp-2 text-lg leading-6 font-semibold text-neutral-900 group-hover:text-black">
+                    {blog.title}
+                  </h2>
+
+                  <p className="mt-2 line-clamp-2 grow text-sm leading-relaxed text-neutral-500">
+                    {blog.description}
+                  </p>
+
+                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-neutral-100 pt-4">
+                    <time
+                      dateTime={machineDate}
+                      className="shrink-0 text-xs font-semibold text-neutral-500"
+                    >
+                      {blog.date}
+                    </time>
+
+                    <span className="inline-flex shrink-0 scale-100 items-center gap-1 text-sm font-semibold text-neutral-700 transition duration-300 group-hover:scale-105">
+                      Read Post
+                      <MoveUpRight
+                        className="mb-0.5 inline-block"
+                        size={14}
+                      />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  {/* BOTTOM SECTION - CALL TO ACTION CONVERSION ANCHOR */}
+  <section
+    className="w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20"
+    aria-label="Get Started Banner"
+  >
+    <div className="mx-auto w-full max-w-7xl">
+      <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200/50 bg-neutral-100 sm:rounded-3xl md:flex-row">
+        {/* CTA Content */}
+        <div className="flex w-full flex-col items-start justify-center gap-4 p-6 sm:gap-5 sm:p-8 md:w-1/2 md:p-10 lg:p-12">
+          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl">
+            Get Your Lead Today
+          </h2>
+
+          <p className="max-w-xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+            Start your journey with us and unlock the potential of your
+            business. Our team is ready to assist you in achieving your goals
+            and driving success.
+          </p>
+
+          <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+            <Link
+              href="/leadstore"
+              className="inline-flex items-center justify-center rounded-full bg-black px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:shadow-lg sm:px-9"
+            >
+              Get Started
+            </Link>
+
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-7 py-3 text-sm font-semibold text-neutral-800 shadow-xs transition duration-300 hover:shadow-md sm:px-9"
+            >
+              Learn More
+            </Link>
           </div>
-        </section>
+        </div>
 
+        {/* CTA Visual */}
+        <div className="relative hidden min-h-80 w-full items-center justify-center overflow-hidden bg-neutral-50/50 sm:flex md:min-h-100 md:w-1/2">
+          <div className="absolute -right-12 -bottom-12 rounded-[30px] border border-neutral-300/70 bg-[#F7F6F2] p-3 shadow-xs">
+            <Image
+              src="/growthbg.webp"
+              alt="Graph data tracking metrics representing scale development analytics"
+              width={600}
+              height={350}
+              className="rounded-3xl object-cover"
+            />
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+</div>
     </>
   );
 }
