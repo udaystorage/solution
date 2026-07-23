@@ -73,10 +73,11 @@ export default  function OurPrinciples() {
             border border-white/10
             bg-white/10
             px-3 py-1
-            text-[11px] font-semibold
+            text-[10px] font-semibold
             uppercase tracking-wider
             text-cyan-400
-            sm:text-[13px]
+            sm:text-[11px]
+            lg:text-[12px]
           "
         >
           Our Principles
@@ -85,12 +86,12 @@ export default  function OurPrinciples() {
         <h2
           className="
             mt-5 max-w-sm
-            text-[2rem] font-semibold
+            text-2xl font-semibold
             leading-[1.08]
             tracking-[-0.035em]
             text-white
-            sm:text-4xl
-            lg:text-5xl
+            sm:text-3xl
+            lg:text-4xl
           "
         >
           What guides the way we work.
@@ -133,13 +134,13 @@ export default  function OurPrinciples() {
               <div className="flex items-center justify-between gap-4">
                 <h3
                   className="
-                    text-xl font-medium
+                    text-lg font-medium
                     leading-tight
                     tracking-tight
                     text-white
                     transition-colors duration-300
-                    sm:text-2xl
-                    lg:text-3xl
+                    sm:text-xl
+                    lg:text-2xl
                     group-hover:text-olive-100
                   "
                 >
@@ -156,7 +157,7 @@ export default  function OurPrinciples() {
                   transition-colors duration-300
                   sm:text-[15px]
                   sm:leading-7
-                  lg:text-base
+                  lg:text-base 
                   group-hover:text-slate-300
                 "
               >

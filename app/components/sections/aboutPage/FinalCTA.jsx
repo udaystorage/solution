@@ -51,12 +51,13 @@ return (
             border border-white/[0.12]
             bg-white/[0.15]
             px-3 py-1
-            text-[11px] font-semibold
+            text-[10px] font-semibold
             uppercase tracking-wider
             text-stone-300
             shadow-sm
             backdrop-blur-xl
-            sm:text-[13px]
+            sm:text-[11px]
+            lg:text-[12px]
           "
         >
           Let&apos;s talk

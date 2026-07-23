@@ -120,11 +120,11 @@ export default function OurApproach() {
   <div className="w-full lg:px-10 lg:py-36">
     {/* Heading */}
     <div className="max-w-2xl">
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-black sm:text-[13px]">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-black sm:text-[11px] lg:text-[12px]">
         Our approach
       </span>
 
-      <h2 className="mt-5 text-[2rem] font-semibold leading-[1.08] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-5 text-2xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
         From a requirement to
         <br className="hidden sm:block" />
         <span className="sm:hidden"> </span>
