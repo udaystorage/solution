@@ -52,7 +52,7 @@ export default function ContactProcess() {
         </header>
 
         {/* Process */}
-        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6 lg:mt-16">
+        <ol className="mt-10 px-2 grid gap-10 md:grid-cols-3 md:gap-6 sm:mt-14 lg:mt-16 ">
           {STEPS.map((step, index) => {
             const Icon = step.icon;
 
@@ -67,7 +67,7 @@ export default function ContactProcess() {
                     {step.number}
                   </span>
 
-                  <div className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-50">
+                  <div className="ml-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-50">
                     <Icon
                       aria-hidden="true"
                       className="h-4 w-4 text-violet-600"
@@ -83,12 +83,12 @@ export default function ContactProcess() {
                 </div>
 
                 {/* Copy */}
-                <div className="mt-5 max-w-xs">
-                  <h3 className="text-base font-semibold tracking-[-0.015em] text-slate-950 sm:text-lg">
+                <div className="mt-3 max-w-xs sm:mt-3 md:mt-4 lg:mt-5">
+                  <h3 className="text-base font-semibold tracking-[-0.015em] text-slate-950 sm:text-lg lg:2xl">
                     {step.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-1 text-sm leading-6 text-slate-600 sm:mt-2 lg:mt-3">
                     {step.description}
                   </p>
                 </div>
