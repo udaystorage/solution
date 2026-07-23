@@ -1,7 +1,4 @@
-import {
-  ArrowUpRight,
-  Clock3,
-} from "lucide-react";
+import { ArrowUpRight, Clock3 } from "lucide-react";
 
 const PHONE_DISPLAY = "+91 98765 43210";
 const PHONE_LINK = "tel:+919876543210";
@@ -13,10 +10,8 @@ export default function ContactCTA() {
       className="px-4 pb-10 sm:px-6 sm:pb-12 lg:px-10 lg:pb-14"
     >
       <div className="mx-auto max-w-7xl">
-
         {/* Animated border wrapper */}
         <div className="contact-cta-border relative overflow-hidden rounded-[26px] p-px">
-
           {/* Actual CTA surface */}
           <div
             className="
@@ -68,10 +63,11 @@ export default function ContactCTA() {
                 <h2
                   id="contact-cta-heading"
                   className="
-                    text-2xl font-semibold
+                    text-xl font-semibold
                     tracking-[-0.025em]
                     text-white
-                    sm:text-3xl
+                    sm:text-2xl
+                    md:text-3xl
                   "
                 >
                   Want to call right now ?
@@ -80,12 +76,12 @@ export default function ContactCTA() {
                 <p
                   className="
                     mt-2 max-w-md
-                    text-sm leading-6
+                    text-sm sm:leading-4 md:leading-5 lg:leading-6
                     text-slate-400
                   "
                 >
-                  Tell us what you need and we&apos;ll help narrow down
-                  the right data for your audience.
+                  Tell us what you need and we&apos;ll help narrow down the
+                  right data for your audience.
                 </p>
               </div>
 
@@ -106,10 +102,11 @@ export default function ContactCTA() {
                     group
                     inline-flex
                     items-center gap-4
-                    text-2xl font-semibold
+                    text-xl font-semibold
                     tracking-[-0.03em]
                     text-white
-                    sm:text-3xl
+                    sm:text-2xl
+                    md:text-3xl
                   "
                 >
                   <span
@@ -125,7 +122,7 @@ export default function ContactCTA() {
                   {/* Interactive arrow */}
                   <span
                     className="
-                      flex h-10 w-10
+                      flex h-7 w-7
                       shrink-0
                       items-center justify-center
 
@@ -138,6 +135,7 @@ export default function ContactCTA() {
 
                       group-hover:border-white/30
                       group-hover:bg-white/[0.12]
+                      md:h-10 md:w-10
                     "
                   >
                     <ArrowUpRight
@@ -176,17 +174,11 @@ export default function ContactCTA() {
 
                   <span>Available Mon–Sat</span>
 
-                  <span
-                    aria-hidden="true"
-                    className="text-slate-600"
-                  >
+                  <span aria-hidden="true" className="text-slate-600">
                     ·
                   </span>
 
-                  <Clock3
-                    aria-hidden="true"
-                    className="h-3.5 w-3.5"
-                  />
+                  <Clock3 aria-hidden="true" className="h-3.5 w-3.5" />
 
                   <span>10:00 AM–7:00 PM</span>
                 </div>
