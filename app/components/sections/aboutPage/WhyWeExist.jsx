@@ -22,7 +22,7 @@ export default function WhyWeExist() {
             <h2
               className="
                 mt-5 max-w-md
-                text-2xl font-semibold
+                text-3xl font-semibold
                 leading-[1.08] tracking-[-0.035em]
                 sm:mt-6 sm:text-3xl
                 lg:text-4xl

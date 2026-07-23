@@ -124,7 +124,7 @@ export default function OurApproach() {
         Our approach
       </span>
 
-      <h2 className="mt-5 text-2xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
+      <h2 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
         From a requirement to
         <br className="hidden sm:block" />
         <span className="sm:hidden"> </span>
