@@ -8,11 +8,11 @@ export default function ContactHero() {
         lg:px-10 lg:pb-20 lg:pt-28
       "
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
 
           {/* Eyebrow */}
-          <p
+          {/* <p
             className="
               mb-5
               text-xs font-semibold uppercase
@@ -21,18 +21,18 @@ export default function ContactHero() {
             "
           >
             Contact us
-          </p>
+          </p> */}
 
           {/* Primary page heading */}
           <h1
             id="contact-page-heading"
             className="
-              text-4xl font-semibold
+              text-3xl font-semibold
               leading-[1.04]
               tracking-[-0.045em]
               text-slate-950
-              sm:text-5xl
-              lg:text-[64px]
+              sm:text-4xl
+              lg:text-5xl
             "
           >
             Have an audience

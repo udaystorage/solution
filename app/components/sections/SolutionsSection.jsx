@@ -39,9 +39,9 @@ export default function SolutionsSection() {
     <section className="w-full bg-beige-100 px-4 py-16 sm:px-8 md:px-16 lg:px-20 font-sans text-[#1A1A1A]">
       <div className="w-full max-w-7xl mx-auto ">
         {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
-        <h2 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
+        <h1 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
           Pan India B2B Leads
-        </h2>
+        </h1>
 
         {/* Carousel Container */}
         <div className="w-full overflow-hidden  pb-10 relative">
@@ -50,9 +50,9 @@ export default function SolutionsSection() {
 
         {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
         <div className="max-w-2xl mb-12 mt-12">
-          <h3 className="text-3xl sm:text-4xl font-medium tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-tight mb-4">
             Find the exact target B2B email list you need to pitch.
-          </h3>
+          </h2>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop dealing with missing emails and dead numbers. Tell us your
             target audience profile and our team will extract a verified dataset
