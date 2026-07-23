@@ -40,7 +40,7 @@ export default function SolutionsSection() {
       <div className="w-full max-w-7xl mx-auto ">
         {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
         <h2 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
-          Pan India B2B Data
+          Pan India B2B Leads
         </h2>
 
         {/* Carousel Container */}
