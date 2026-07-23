@@ -44,7 +44,7 @@ export default function BlurGlass() {
       <span
         className="
           text-xs sm:text-sm
-          font-semibold tracking-wide uppercase
+          font-semibold tracking-wide
           text-slate-500
         "
       >
