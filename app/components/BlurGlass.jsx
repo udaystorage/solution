@@ -44,7 +44,7 @@ export default function BlurGlass() {
       <span
         className="
           text-xs sm:text-sm
-          font-semibold tracking-wide uppercase
+          font-semibold tracking-wide
           text-slate-500
         "
       >
@@ -101,7 +101,7 @@ export default function BlurGlass() {
             w-full sm:w-auto
             min-h-12
             whitespace-nowrap
-            font-bold
+            font-semibold
             cursor-pointer
             bg-black text-white
             px-7 sm:px-9 py-3
@@ -122,7 +122,7 @@ export default function BlurGlass() {
             w-full sm:w-auto
             min-h-12
             whitespace-nowrap
-            font-bold
+            font-semibold
             cursor-pointer
             bg-white text-black
             px-7 sm:px-9 py-3
