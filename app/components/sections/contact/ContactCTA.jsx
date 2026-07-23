@@ -13,51 +13,184 @@ export default function ContactCTA() {
       className="px-4 pb-10 sm:px-6 sm:pb-12 lg:px-10 lg:pb-14"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[24px]  bg-linear-to-br from-[#111219] to-[#4b5667] px-6 py-8 shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:px-9 lg:px-12">
-          <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-12">
 
-            {/* Left */}
-            <div>
-              <h2
-                id="contact-cta-heading"
-                className="text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl"
+        {/* Animated border wrapper */}
+        <div className="contact-cta-border relative overflow-hidden rounded-[26px] p-px">
+
+          {/* Actual CTA surface */}
+          <div
+            className="
+              contact-cta-surface
+              relative
+              overflow-hidden
+              rounded-[25px]
+              bg-linear-to-br
+              from-[#111219]
+              via-[#1b1e27]
+              to-[#343b47]
+              px-6 py-8
+              sm:px-9 sm:py-9
+              lg:px-12
+            "
+          >
+            {/* Slow ambient light */}
+            <div
+              aria-hidden="true"
+              className="contact-cta-ambient pointer-events-none absolute inset-0"
+            />
+
+            {/* Soft upper highlight */}
+            <div
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute inset-x-16 top-0
+                h-px
+                bg-linear-to-r
+                from-transparent
+                via-white/25
+                to-transparent
+              "
+            />
+
+            {/* Content */}
+            <div
+              className="
+                relative z-10
+                grid items-center
+                gap-8
+                md:grid-cols-[1fr_auto]
+                md:gap-12
+              "
+            >
+              {/* Left */}
+              <div>
+                <h2
+                  id="contact-cta-heading"
+                  className="
+                    text-2xl font-semibold
+                    tracking-[-0.025em]
+                    text-white
+                    sm:text-3xl
+                  "
+                >
+                  Want to call right now ?
+                </h2>
+
+                <p
+                  className="
+                    mt-2 max-w-md
+                    text-sm leading-6
+                    text-slate-400
+                  "
+                >
+                  Tell us what you need and we&apos;ll help narrow down
+                  the right data for your audience.
+                </p>
+              </div>
+
+              {/* Right */}
+              <div
+                className="
+                  border-white/10
+                  md:min-w-[390px]
+                  md:border-l
+                  md:pl-10
+                  lg:pl-12
+                "
               >
-                Rather talk it through?
-              </h2>
+                <a
+                  href={PHONE_LINK}
+                  aria-label={`Call Leadwala at ${PHONE_DISPLAY}`}
+                  className="
+                    group
+                    inline-flex
+                    items-center gap-4
+                    text-2xl font-semibold
+                    tracking-[-0.03em]
+                    text-white
+                    sm:text-3xl
+                  "
+                >
+                  <span
+                    className="
+                      transition-opacity
+                      duration-300
+                      group-hover:opacity-75
+                    "
+                  >
+                    {PHONE_DISPLAY}
+                  </span>
 
-              <p className="mt-2 max-w-md text-sm leading-6 text-slate-400">
-                Our team is here to help you find the right data,
-                faster and easier.
-              </p>
-            </div>
+                  {/* Interactive arrow */}
+                  <span
+                    className="
+                      flex h-10 w-10
+                      shrink-0
+                      items-center justify-center
 
-            {/* Right */}
-            <div className="md:min-w-[360px]">
-              <a
-                href={PHONE_LINK}
-                aria-label={`Call Leadwala at ${PHONE_DISPLAY}`}
-                className="group inline-flex items-center gap-3 text-2xl font-semibold tracking-[-0.03em] text-white transition-opacity hover:opacity-70 sm:text-3xl"
-              >
-                {PHONE_DISPLAY}
+                      rounded-full
+                      border border-white/15
+                      bg-white/[0.06]
 
-                <ArrowUpRight
-                  aria-hidden="true"
-                  className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
+                      transition-all
+                      duration-300
 
-              <p className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-400">
-                <Clock3
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                />
+                      group-hover:border-white/30
+                      group-hover:bg-white/[0.12]
+                    "
+                  >
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="
+                        h-4 w-4
 
-                <span>Mon–Sat</span>
+                        transition-transform
+                        duration-300
 
-                <span aria-hidden="true">·</span>
+                        group-hover:-translate-y-0.5
+                        group-hover:translate-x-0.5
+                      "
+                    />
+                  </span>
+                </a>
 
-                <span>10:00 AM–7:00 PM</span>
-              </p>
+                <div
+                  className="
+                    mt-4
+                    flex flex-wrap
+                    items-center gap-2
+                    text-xs
+                    text-slate-400
+                  "
+                >
+                  {/* Static availability indicator */}
+                  <span
+                    aria-hidden="true"
+                    className="
+                      h-1.5 w-1.5
+                      rounded-full
+                      bg-emerald-400
+                    "
+                  />
+
+                  <span>Available Mon–Sat</span>
+
+                  <span
+                    aria-hidden="true"
+                    className="text-slate-600"
+                  >
+                    ·
+                  </span>
+
+                  <Clock3
+                    aria-hidden="true"
+                    className="h-3.5 w-3.5"
+                  />
+
+                  <span>10:00 AM–7:00 PM</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
