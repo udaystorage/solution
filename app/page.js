@@ -32,7 +32,7 @@ export default function Home() {
   return (
     // 2. Transformed wrapper into a semantic <main> landmark
     // Removed the w-[101%] overflow quirk which can cause layout shifts that hurt Google's Core Web Vitals (CLS)
-    <main className="w-full flex flex-col items-center justify-center bg-white font-sans overflow-hidden mx-auto">
+    <main className="w-full flex flex-col items-center justify-center bg-white overflow-hidden mx-auto">
       
       {/* Hero section */}
       <BlurGlass />
