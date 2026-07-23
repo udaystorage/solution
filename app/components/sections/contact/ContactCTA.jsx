@@ -13,7 +13,7 @@ export default function ContactCTA() {
       className="px-4 pb-10 sm:px-6 sm:pb-12 lg:px-10 lg:pb-14"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[24px] bg-slate-950 px-6 py-8 shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:px-9 lg:px-12">
+        <div className="rounded-[24px]  bg-linear-to-br from-[#111219] to-[#4b5667] px-6 py-8 shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:px-9 lg:px-12">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-12">
 
             {/* Left */}
