@@ -35,7 +35,7 @@ const marquee = [...states, ...states];
             ease-out
 
             hover:-translate-y-0.5
-            hover:border-emerald-200
+            hover:border-cyan-200
             hover:bg-white/60
             hover:shadow-[0_12px_24px_rgba(15,23,42,.08),inset_0_1px_0_rgba(255,255,255,1)]
           "
