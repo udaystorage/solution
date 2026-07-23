@@ -68,7 +68,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <Verified className="w-8 h-8 text-emerald-600" />
+              <Verified className="w-8 h-8 text-blue-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Verified B2B Contact Lists
@@ -86,7 +86,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <Smartphone className="w-7 h-7 text-emerald-600" />
+              <Smartphone className="w-7 h-7 text-blue-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Direct Mobile Phone Numbers
@@ -103,7 +103,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <ListFilter className="w-6 h-6 text-emerald-600" />
+              <ListFilter className="w-6 h-6 text-blue-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Niche Industry Categories
