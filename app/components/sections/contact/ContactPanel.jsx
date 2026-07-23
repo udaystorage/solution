@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowUpRight, Clock3, Phone } from "lucide-react";
 
 import ContactForm from "./ContactForm";
