@@ -21,7 +21,7 @@ return (
     <div
       className="
         group relative mx-auto
-        max-w-7xl overflow-hidden
+        max-w-5xl overflow-hidden
         rounded-[1.5rem]
         bg-linear-to-br from-[#111219] to-[#4b5667]
         px-5 py-14
@@ -33,9 +33,11 @@ return (
 
         sm:rounded-[2rem]
         sm:px-10
-        sm:py-20
+        sm:py-20  
+        sm:max-w-2xl
 
         md:py-24
+        md:max-w-4xl
 
         lg:py-28
         lg:hover:-translate-y-0.5
@@ -67,14 +69,14 @@ return (
         <h2
           className="
             mt-5
-            text-[2rem] font-semibold
+            text-2xl font-semibold
             leading-[1.08]
             tracking-[-0.035em]
             sm:mt-6
-            sm:text-4xl
+            sm:text-3xl
             sm:leading-[1.1]
-            md:text-5xl
-            lg:text-6xl
+            md:text-4xl
+            lg:text-5xl
           "
         >
           You know your ideal customer.
@@ -96,7 +98,7 @@ return (
           className="
             mx-auto mt-5
             max-w-xl
-            text-[14px]
+            text-[13px]
             leading-6
             text-stone-300
             sm:mt-6
