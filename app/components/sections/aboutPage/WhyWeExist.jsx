@@ -14,26 +14,18 @@ export default function WhyWeExist() {
         {/* left */}
         <div>
           <div className="lg:sticky lg:top-32">
-            <span
-              className="
-                inline-flex items-center gap-1.5
-                rounded-full border border-neutral-200/60
-                bg-neutral-100
-                px-3 py-1
-                text-[11px] font-semibold uppercase tracking-wider text-black
-                sm:text-[13px]
-              "
-            >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-black sm:text-[11px] lg:text-[12px]">
+
               Why we exist
             </span>
 
             <h2
               className="
                 mt-5 max-w-md
-                text-[2rem] font-semibold
+                text-3xl font-semibold
                 leading-[1.08] tracking-[-0.035em]
-                sm:mt-6 sm:text-4xl
-                lg:text-5xl
+                sm:mt-6 sm:text-3xl
+                lg:text-4xl
               "
             >
               Business data shouldn&apos;t create more work.
@@ -60,7 +52,7 @@ export default function WhyWeExist() {
                 text-lg leading-7
                 tracking-[-0.015em] text-stone-700
                 sm:text-xl sm:leading-8
-                lg:text-2xl lg:leading-9
+                lg:text-xl lg:leading-9
               "
             >
               Too many businesses spend valuable time filtering outdated
