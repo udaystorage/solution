@@ -2,12 +2,46 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
-import { blogs } from "../../data/blogs";
+// import { blogs } from "../../data/blogs";
 import blogimage from "../../public/blog.jpg";
+import { promises as fs } from "fs";
+import path from "path";
+ 
+const BLOG_DIR = path.join(process.cwd(), "data", "blog");
+ 
+/**
+ * Reads every .json file in a directory and returns their parsed
+ * contents merged into a single array.
+ *
+ * @param {string} dirPath - Absolute path to the directory to read.
+ * @returns {Promise<Array>} Combined array of all JSON file contents.
+ */
+export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
+  try {
+    const files = await fs.readdir(dirPath);
+    const jsonFiles = files.filter((file) => file.endsWith(".json"));
+ 
+    const items = await Promise.all(
+      jsonFiles.map(async (file) => {
+        const filePath = path.join(dirPath, file);
+        const raw = await fs.readFile(filePath, "utf-8");
+        return JSON.parse(raw);
+      })
+    );
+ 
+    return items;
+  } catch (err) {
+    // Directory doesn't exist yet -> return an empty array instead of throwing
+    if (err.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
+
 
 /**
  * 1. CONFIGURATION META ENCODING BLOCK
- */
+*/
 export const metadata = {
   title: "B2b sales intelligence platform & Lead Generation Blog | Leadwala",
   description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
@@ -29,11 +63,12 @@ export const metadata = {
   },
 };
 
-export default function BlogListingPage() {
+export default async function BlogListingPage() {
   
   /**
    * 2. BATCH ARCHIVE SCHEMA (JSON-LD)
-   */
+  */
+ const blogs =  await getJsonFilesAsArray();
   const listingJsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",

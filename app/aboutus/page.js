@@ -1,4 +1,3 @@
-"use client";
 
 import AboutHero from "../components/sections/aboutPage/AboutHero";
 import WhyWeExist from "../components/sections/aboutPage/WhyWeExist";
@@ -16,6 +15,7 @@ export const metadata = {
     "Discover how Leadwala helps businesses reach decision-makers with high-accuracy B2B databases, custom human-assisted research, and pan-India coverage.",
   keywords: [
     "Leadwala",
+    "",
     "B2B data provider",
     "verified B2B leads",
     "lead generation India",

@@ -1,7 +1,40 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { blogs } from "@/data/blogs";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
+import { promises as fs } from "fs";
+import path from "path";
+ 
+const BLOG_DIR = path.join(process.cwd(), "data", "blog");
+ 
+/**
+ * Reads every .json file in a directory and returns their parsed
+ * contents merged into a single array.
+ *
+ * @param {string} dirPath - Absolute path to the directory to read.
+ * @returns {Promise<Array>} Combined array of all JSON file contents.
+ */
+export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
+  try {
+    const files = await fs.readdir(dirPath);
+    const jsonFiles = files.filter((file) => file.endsWith(".json"));
+ 
+    const items = await Promise.all(
+      jsonFiles.map(async (file) => {
+        const filePath = path.join(dirPath, file);
+        const raw = await fs.readFile(filePath, "utf-8");
+        return JSON.parse(raw);
+      })
+    );
+ 
+    return items;
+  } catch (err) {
+    // Directory doesn't exist yet -> return an empty array instead of throwing
+    if (err.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
+const blogs = await getJsonFilesAsArray();
 
 /**
  * 1. SSG PRE-RENDERING PARAMETERS
@@ -66,8 +99,16 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
+
+
 export default async function BlogPage({ params }) {
+
+
+  
+   
   const { slug } = await params;
+  
   const blog = blogs.find((item) => item.slug === slug);
 
   if (!blog) {
@@ -153,7 +194,7 @@ export default async function BlogPage({ params }) {
               alt={`${blog.title} overview image`}
               width={1200}
               height={680}
-              className="w-full h-[450px] object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
               priority
             />
           </div>

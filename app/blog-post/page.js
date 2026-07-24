@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Plus, Trash2, Upload } from "lucide-react";
+import { Plus, Trash2, Upload, Loader2, X } from "lucide-react";
 
 // Matches the blog object shape:
 // { id, slug, title, image, date, readTime, description,
@@ -39,6 +39,7 @@ export default function BlogPostForm({ onSubmit }) {
   const [autoSlug, setAutoSlug] = useState(true);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
   // ---- top-level field updates ----
@@ -169,12 +170,48 @@ export default function BlogPostForm({ onSubmit }) {
     }));
   };
 
-  // ---- image upload preview (stores object URL as `image`) ----
-  const handleImageChange = (e) => {
+  // ---- image upload (uploads immediately to /api/upload, stores real URL) ----
+  const handleImageChange = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    const url = URL.createObjectURL(file);
-    setField("image", url);
+
+    setIsUploadingImage(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      const body = new FormData();
+      body.append("file", file);
+
+      const res = await fetch("/api/upload", { method: "POST", body });
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.message || "Image upload failed.");
+      }
+
+      // If replacing an existing uploaded image, clean up the old file
+      if (form.image && form.image.startsWith("/uploads/")) {
+        fetch(`/api/upload?url=${encodeURIComponent(form.image)}`, {
+          method: "DELETE",
+        }).catch(() => {});
+      }
+
+      setField("image", result.url);
+    } catch (err) {
+      setStatusMessage({ type: "error", text: err.message });
+    } finally {
+      setIsUploadingImage(false);
+      e.target.value = ""; // allow re-selecting the same file later
+    }
+  };
+
+  const handleRemoveImage = () => {
+    if (form.image && form.image.startsWith("/uploads/")) {
+      fetch(`/api/upload?url=${encodeURIComponent(form.image)}`, {
+        method: "DELETE",
+      }).catch(() => {});
+    }
+    setField("image", "");
   };
 
   // ---- validation + submit ----
@@ -193,6 +230,10 @@ export default function BlogPostForm({ onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+    if (isUploadingImage) {
+      setStatusMessage({ type: "error", text: "Please wait for the image to finish uploading." });
+      return;
+    }
 
     setIsSubmitting(true);
     setStatusMessage({ type: "", text: "" });
@@ -237,7 +278,7 @@ export default function BlogPostForm({ onSubmit }) {
 
     // Direct integration with the API endpoint
     try {
-      const response = await fetch("/api/blogs", {
+      const response = await fetch("/api/test-db", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -352,25 +393,47 @@ export default function BlogPostForm({ onSubmit }) {
 
           <div>
             <label className={labelClass}>Cover image</label>
-            <label className="flex items-center gap-3 rounded-xl border border-dashed border-neutral-300 px-4 py-3 cursor-pointer hover:border-neutral-400 transition">
-              <Upload size={16} className="text-neutral-500" />
-              <span className="text-sm text-neutral-500">
-                {form.image ? "Change image" : "Upload cover image"}
-              </span>
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleImageChange}
-              />
-            </label>
-            {form.image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={form.image}
-                alt="Cover preview"
-                className="mt-3 h-40 w-full object-cover rounded-xl border border-neutral-200"
-              />
+
+            {form.image ? (
+              <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={form.image}
+                  alt="Cover preview"
+                  className="h-40 w-full object-cover rounded-xl border border-neutral-200"
+                />
+                <button
+                  type="button"
+                  onClick={handleRemoveImage}
+                  className="absolute top-2 right-2 p-1.5 rounded-full bg-black/60 text-white hover:bg-black/80 transition"
+                  aria-label="Remove image"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+            ) : (
+              <label className="flex items-center gap-3 rounded-xl border border-dashed border-neutral-300 px-4 py-3 cursor-pointer hover:border-neutral-400 transition">
+                {isUploadingImage ? (
+                  <>
+                    <Loader2 size={16} className="text-neutral-500 animate-spin" />
+                    <span className="text-sm text-neutral-500">Uploading...</span>
+                  </>
+                ) : (
+                  <>
+                    <Upload size={16} className="text-neutral-500" />
+                    <span className="text-sm text-neutral-500">
+                      Upload cover image
+                    </span>
+                  </>
+                )}
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml"
+                  className="hidden"
+                  disabled={isUploadingImage}
+                  onChange={handleImageChange}
+                />
+              </label>
             )}
           </div>
         </div>
@@ -610,6 +673,11 @@ export default function BlogPostForm({ onSubmit }) {
           type="button"
           disabled={isSubmitting}
           onClick={() => {
+            if (form.image && form.image.startsWith("/uploads/")) {
+              fetch(`/api/upload?url=${encodeURIComponent(form.image)}`, {
+                method: "DELETE",
+              }).catch(() => {});
+            }
             setForm(initialState);
             setStatusMessage({ type: "", text: "" });
           }}
@@ -619,7 +687,7 @@ export default function BlogPostForm({ onSubmit }) {
         </button>
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isUploadingImage}
           className="px-8 py-2.5 rounded-full bg-black text-white text-sm font-semibold hover:shadow-lg transition cursor-pointer disabled:bg-neutral-400 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Publishing..." : "Publish post"}

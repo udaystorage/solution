@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingCart } from "lucide-react";
+import logiNav from "@/public/logoNav.png"
+import Image from "next/image";
 
 const navigationItems = [
   { label: "Home", href: "/" },
@@ -14,8 +16,27 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
+
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
+
+   let  text = "eadwala"
+   let  delay = 40
+  
+    useEffect(() => {
+      setVisibleCount(0);
+      const letters = text.split("");
+      let i = 0;
+      const interval = setInterval(() => {
+        i += 1;
+        setVisibleCount(i);
+        if (i >= letters.length) clearInterval(interval);
+      }, delay);
+      return () => clearInterval(interval);
+    }, [text, delay]);
+
+
 
   // Lock page scrolling only while mobile navigation is open.
   useEffect(() => {
@@ -39,9 +60,9 @@ export default function Navbar() {
         aria-label="Primary navigation"
         className="
           relative flex h-full w-full items-center justify-between
-          bg-gray-50/10 px-4 shadow-sm backdrop-blur-sm
+          bg-gray-50/40 px-6 shadow-sm backdrop-blur-sm
           sm:px-6
-          lg:justify-around lg:px-4
+          lg:justify-between lg:px-25
         "
       >
         {/* Brand */}
@@ -51,11 +72,30 @@ export default function Navbar() {
           onClick={closeMenu}
           className="
             relative z-50
-            text-2xl font-bold tracking-tight
-            sm:text-3xl
+            text-2xl font-bold
+            sm:text-3xl flex items-center justify-center tracking-wide
           "
         >
-          leadwala
+          <Image src={logiNav} width={50}
+        height={25} className="object-cover mix-blend-multiply translate-x-4" alt="Logo"/>
+
+        {text.split("").map((char, index) => (
+          <span
+            key={index}
+            className="inline-block transition-all duration-500 ease-out pb-2"
+            style={{
+              opacity: index < visibleCount ? 1 : 0,
+              transform:
+                index < visibleCount
+                  ? "translateX(0)"
+                  : "translateX(-20px)",
+              transitionDelay: `${index * 5}ms`,
+              whiteSpace: char === " " ? "pre" : "normal",
+            }}
+          >
+            {char}
+          </span>
+        ))}
         </Link>
 
         {/* =====================================================
@@ -137,19 +177,7 @@ export default function Navbar() {
         ====================================================== */}
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
-          <Link
-            href="/login"
-            aria-label="Login to your Leadwala account"
-            className="
-              rounded-full bg-black
-              px-6 py-2
-              text-white
-              transition-colors duration-300
-              hover:bg-neutral-800
-            "
-          >
-            Login
-          </Link>
+         
 
           <Link
             href="/cart"
@@ -504,53 +532,7 @@ export default function Navbar() {
             <div className="relative my-3 h-px bg-neutral-200/70" />
 
             {/* Login CTA */}
-            <Link
-              href="/login"
-              onClick={closeMenu}
-              style={{
-                transitionDelay: isMenuOpen ? "320ms" : "0ms",
-              }}
-              className={`
-                relative
-                flex w-full items-center justify-between
-                rounded-2xl
-                bg-neutral-950
-                px-5 py-4
-                text-sm font-medium text-white
-                shadow-lg
-                transition-all duration-500
-                ease-[cubic-bezier(0.22,1,0.36,1)]
-                hover:bg-neutral-800
-
-                ${
-                  isMenuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-2 opacity-0"
-                }
-              `}
-            >
-              <span>Login to your account</span>
-
-              <span
-                className="
-                  flex size-8
-                  items-center justify-center
-                  rounded-full
-                  bg-white/10
-                "
-              >
-                <span
-                  aria-hidden="true"
-                  className="
-                    text-lg leading-none
-                    transition-transform duration-300
-                    group-hover:translate-x-0.5
-                  "
-                >
-                  →
-                </span>
-              </span>
-            </Link>
+            
           </div>
         </div>
       </div>
