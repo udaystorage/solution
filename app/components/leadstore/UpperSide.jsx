@@ -14,7 +14,6 @@ export default function UpperSide() {
           <div className="w-1/2 h-full flex flex-col justify-center items-start gap-4 pl-55">
             <div className="text-5xl font-bold">
               Get Custom Leads Tailored to Your Exact Needs.
-             <span> <CircleChevronRight className=' relative left-42 bottom-10 w-10 h-10'/> </span>
             </div>
             <div className="">
               Get custom, verified databases delivered directly to you within 2–3 hours

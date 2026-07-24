@@ -23,15 +23,11 @@ export default function page() {
                             <div className="">569</div>
                         </div>
                         <div className="w-full h-8 flex justify-between pr-10">
-                            <div className="">Total Price(2 items)</div>
+                            <div className="">Discount</div>
                             <div className="">569</div>
                         </div>
                         <div className="w-full h-8 flex justify-between pr-10">
-                            <div className="">Total Price(2 items)</div>
-                            <div className="">569</div>
-                        </div>
-                        <div className="w-full h-8 flex justify-between pr-10">
-                            <div className="">Total Price(2 items)</div>
+                            <div className="">Extra charges</div>
                             <div className="">569</div>
                         </div>
                     </div>

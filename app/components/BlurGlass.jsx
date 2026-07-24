@@ -1,6 +1,7 @@
 import React from "react";
 import BlobBackground from "../SVG/BlobBackground";
 import FloatingCard from "./FloatingCard";
+import Link from "next/link";
 
 export default function BlurGlass() {
   return (
@@ -96,7 +97,8 @@ export default function BlurGlass() {
           pt-1 sm:pt-2
         "
       >
-        <button
+        <Link
+        href={"/leadstore"}
           className="
             w-full sm:w-auto
             min-h-12
@@ -115,7 +117,7 @@ export default function BlurGlass() {
           aria-label="Explore database"
         >
           Explore Store
-        </button>
+        </Link>
 
         <button
           className="
