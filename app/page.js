@@ -8,13 +8,19 @@ import { Check, TrendingUp } from "lucide-react";
 // 1. Core Metadata Configuration for B2B Bounded Engine Optimization
 export const metadata = {
   title: "Leadwala | Premium B2B Lead Databases & Verified Email Lists",
-  description: "Buy hand-verified B2B contact lists without annual subscription traps. Export premium databases for Real Estate, E-commerce, Insurance, and niche industries.",
+  description: "Buy hand-verified B2B database without annual subscription traps. Export premium databases for Real Estate, E-commerce, Insurance,college database , and niche industries.",
   keywords: [
-    "buy b2b email list",
+    "Buy leads online",
     "real estate agent database",
+    "best lead selling plat form",
     "b2b lead generation platform",
     "ecommerce store email list",
-    "download bulk lead database"
+    "download bulk lead database",
+    "ecommerce customer database India",
+    "business owner database",
+    "CA database India",
+    "doctor database India",
+    "school and college database"
   ],
   alternates: {
     canonical: "https://leadwala.com", // Replace with your real URL when production-ready

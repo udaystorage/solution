@@ -24,9 +24,9 @@ export async function generateMetadata({ params }) {
   const cleanImageUrl = blog.image?.startsWith("http")
     ? blog.image
     : `https://leadwala.com${blog.image || "/demoBlog.webp"}`;
-
-  const isoDate = new Date(blog.date).toISOString();
-
+    
+    const isoDate = new Date(blog.date).toISOString();
+    
   return {
     title: `${blog.title} | Leadwala Insights`,
     description: blog.description?.substring(0, 160) || "Read the latest digital insights on Leadwala.",

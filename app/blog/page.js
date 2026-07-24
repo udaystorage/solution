@@ -9,7 +9,7 @@ import blogimage from "../../public/blog.jpg";
  * 1. CONFIGURATION META ENCODING BLOCK
  */
 export const metadata = {
-  title: "B2B Marketing Insights & Lead Generation Blog | Leadwala",
+  title: "B2b sales intelligence platform & Lead Generation Blog | Leadwala",
   description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   alternates: {
     canonical: "https://leadwala.com/blog",
