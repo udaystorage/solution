@@ -79,13 +79,6 @@ export default function ContactPanel() {
     lg:border-t-0
   "
           >
-            {/* ==================================================
-      AMBIENT BACKGROUND
-
-      These sit BEHIND the glass surface and create
-      subtle refraction/depth. Keep them restrained.
-  ================================================== */}
-
             <div
               aria-hidden="true"
               className="

@@ -1,8 +1,31 @@
-"use client"
+"use client";
+
+import { useState } from "react";
 import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 
+import { openWhatsApp } from "@/lib/whatsapp";
+
 export default function Footer() {
+  const [mobile, setMobile] = useState("");
+  const [error, setError] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleClick = () => {
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    setError("");
+    setStatus("Opening WhatsApp...");
+
+    const message = `I want to buy database form LW. My number : ${mobile}`;
+    openWhatsApp(message);
+
+    setMobile("");
+  };
+
   return (
     <footer className="border-t border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -113,23 +136,45 @@ export default function Footer() {
 
           <div className="flex flex-col justify-between">
             <div>
-     <h3 className="relative mb-5 inline-block overflow-hidden text-[15 px] font-semibold tracking-tight text-neutral-900 before:absolute before:top-0 before:left-0 before:h-full before:w-[45%]  before:skew-x-[-20deg] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.15)_35%,rgba(255,255,255,0.98)_50%,rgba(255,255,255,0.15)_65%,transparent_100%)] before:animate-shimmer-small">
-  Need Custom Data?
-</h3>
+              <h3 className="relative mb-5 inline-block overflow-hidden text-[15 px] font-semibold tracking-tight text-neutral-900 before:absolute before:top-0 before:left-0 before:h-full before:w-[45%]  before:skew-x-[-20deg] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.15)_35%,rgba(255,255,255,0.98)_50%,rgba(255,255,255,0.15)_65%,transparent_100%)] before:animate-shimmer-small">
+                Need Custom Data?
+              </h3>
               <p className="text-[13px] text-neutral-600">
-                Tell our expert what you need, type your contact, we will get back to you within 24 hours.
+                Tell our expert what you need, type your contact, we will get
+                back to you within 24 hours.
               </p>
 
-              <div className="flex overflow-hidden rounded-xl border border-neutral-300 bg-white mt-4">
-                <input
-                  type="email"
-                  placeholder="Email / Phone number"
-                  className="w-full px-5 py-3 text-[13px] outline-none placeholder:text-neutral-400"
-                />
+              <div className="mt-4">
+                <div className="flex overflow-hidden rounded-xl border border-neutral-300 bg-white">
+                  <input
+                    type="tel"
+                    placeholder="Enter Your Mobile Number"
+                    value={mobile}
+                    onChange={(e) => {
+                      setMobile(e.target.value);
+                      setError("");
+                      setStatus("")
+                    }}
+                    className="w-full px-5 py-3 text-[13px] outline-none placeholder:text-neutral-400"
+                  />
 
-              <button className="group flex w-14 items-center justify-center border-l border-neutral-200 bg-transparent transition-colors duration-200 hover:bg-black cursor-pointer">
-  <ArrowRight className="h-5 w-5 text-neutral-600 transition-colors duration-200 group-hover:text-white" />
-</button>
+                  <button
+                    onClick={handleClick}
+                    className="group flex w-14 items-center justify-center border-l border-neutral-200 bg-black transition-colors duration-200 hover:bg-black cursor-pointer"
+                  >
+                    <ArrowRight className="h-5 w-5 text-neutral-400 transition-all duration-300 group-hover:text-white group-hover:translate-x-1" />
+                  </button>
+                </div>
+
+               <p
+  className={`mt-2 h-5 text-xs transition-opacity duration-200 ${
+    error || status ? "opacity-100" : "opacity-0"
+  } ${
+    error ? "text-red-500" : "text-neutral-500"
+  }`}
+>
+  {error || status || "\u00A0"}
+</p>
               </div>
             </div>
 
