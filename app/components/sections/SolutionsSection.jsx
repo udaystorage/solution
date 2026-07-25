@@ -50,7 +50,7 @@ export default function SolutionsSection() {
 
         {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
         <div className="max-w-2xl mb-12 mt-12">
-          <h2 className="text-3xl sm:text-4xl font-medium tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
             Find the exact target B2B email list you need to pitch.
           </h2>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
