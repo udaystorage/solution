@@ -27,19 +27,27 @@ import "./CardFlipAnimation.css"
 // Fixed on-screen positions the cards move between. All are expressed as
 // an offset from dead-center (left:50%/top:50%), so `translate(-50%,-50%)`
 // is "true center" and everything else adds a px offset on top of that.
+//
+// FIX: every var() now has a fallback value. If CardFlipAnimation.css
+// doesn't define --card-x / --card-y / --card-boundary-x for a given
+// viewport width (e.g. a mobile breakpoint got missed), the transform
+// used to silently resolve to an invalid value and the browser would
+// just skip rendering the transform entirely — which looks exactly like
+// "the animation isn't working." These fallbacks guarantee there's
+// always a valid number to fall back to.
 const CENTER = "translate(-50%, -50%)";
 
 const NEAR =
-  "translate(calc(-50% + var(--card-x)), calc(-50% - var(--card-y)))";
+  "translate(calc(-50% + var(--card-x, 90px)), calc(-50% - var(--card-y, 70px)))";
 
 const FAR =
-  "translate(calc(-50% + var(--card-x)), calc(-50% + var(--card-y)))";
+  "translate(calc(-50% + var(--card-x, 90px)), calc(-50% + var(--card-y, 70px)))";
 
 const OFF_LEFT =
-  "translate(calc(-50% - var(--card-boundary-x)), -50%)";
+  "translate(calc(-50% - var(--card-boundary-x, 220px)), -50%)";
 
 const OFF_RIGHT_FAR =
-  "translate(calc(-50% + var(--card-boundary-x)), calc(-50% + var(--card-y)))";
+  "translate(calc(-50% + var(--card-boundary-x, 220px)), calc(-50% + var(--card-y, 70px)))";
 
 const MAIN_DURATION = 3.9; // seconds — includes the 1.5s hold at max size
 const SHIFT_DURATION = 1.3; // bottom-right waiting slot -> top-right waiting slot
@@ -252,11 +260,6 @@ const CARD_TEXTS = [
     icon: Landmark,
   },
 ];
-// const CARD_GRADIENTS = [
-//   "linear-gradient(135deg, #ffffffb0, #15cebfb0, #15afceb0)",
-//   "linear-gradient(135deg, #15afceb0, #1ec2ebb0, #d163e7b0)",
-//   "linear-gradient(135deg, #ffffffb0, #d163e7b0, #5e1ac3b0)",
-// ];
 
 function Card({ role, text, onDone }) {
   const { animationName, duration, z } = ROLE_STYLE[role];
@@ -267,19 +270,34 @@ function Card({ role, text, onDone }) {
       className={`hero-flip-card hero-flip-card--${role}`}
       onAnimationEnd={role === "center" ? onDone : undefined}
       style={{
-        width: "var(--card-width)",
-        height: "var(--card-height)",
+        width: "var(--card-width, 200px)",
+        height: "var(--card-height, 260px)",
         position: "absolute",
         left: "50%",
         top: "50%",
         zIndex: z,
+        // FIX: added -webkit- versions. iOS Safari (and Chrome on iOS,
+        // which is really Safari's engine under the hood) is unreliable
+        // rendering 3D transforms — preserve-3d, backface-visibility,
+        // etc. — without the vendor-prefixed property alongside the
+        // standard one. Desktop Chrome/Firefox don't need this, which
+        // is exactly why this can look totally fine on desktop and
+        // break only on a real phone.
+        WebkitTransformStyle: "preserve-3d",
         transformStyle: "preserve-3d",
         animation: `${animationName} ${duration}s cubic-bezier(0.4, 0, 0.2, 1) forwards`,
+        WebkitAnimation: `${animationName} ${duration}s cubic-bezier(0.4, 0, 0.2, 1) forwards`,
         willChange: "transform, opacity",
       }}
     >
       {/* FRONT */}
-      <div className="glass-card-face glass-card-front">
+      <div
+        className="glass-card-face glass-card-front"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+        }}
+      >
         {/* Soft internal refraction */}
         <div className="glass-refraction" />
 
@@ -341,7 +359,13 @@ function Card({ role, text, onDone }) {
       </div>
 
       {/* BACK */}
-      <div className="glass-card-face glass-card-back">
+      <div
+        className="glass-card-face glass-card-back"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+        }}
+      >
         <div className="glass-refraction" />
 
         <div className="back-watermark">
@@ -369,16 +393,6 @@ export default function CardFlipAnimation() {
   const nextId = useRef(3);
   const nextTextIndex = useRef(3);
 
-  // Picks a gradient that isn't currently used by any card still in the
-  // queue, so the new arrival never visually matches its neighbours.
-  // Falls back to "just not the same as last time" if the palette is too
-  // small to guarantee full uniqueness against every card on screen.
-  // const pickGradient = (excluding) => {
-  //   const pool = CARD_GRADIENTS.filter((g) => !excluding.includes(g));
-  //   const options = pool.length > 0 ? pool : CARD_GRADIENTS.filter((g) => g !== excluding[0]);
-  //   return options[Math.floor(Math.random() * options.length)];
-  // };
-
 const rotateQueue = () => {
   setQueue(([, near, far]) => {
     const fresh = {
@@ -404,6 +418,17 @@ const rotateQueue = () => {
       overflow-hidden
       rounded-2xl
     "
+    style={{
+      // FIX: perspective was missing on any ancestor. Without a
+      // perspective value set somewhere above the 3D-transformed cards,
+      // rotateY/rotateZ have no vanishing point to render depth against
+      // and the browser can flatten the transform to 2D instead — some
+      // mobile browsers are stricter about this than desktop Chrome/
+      // Firefox, which is another reason this can look fine on desktop
+      // but break on a real phone.
+      perspective: "1400px",
+      WebkitPerspective: "1400px",
+    }}
   >
 
 <style>{CARD_KEYFRAMES}</style>

@@ -21,20 +21,6 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(0);
 
-   let  text = "eadwala"
-   let  delay = 40
-  
-    useEffect(() => {
-      setVisibleCount(0);
-      const letters = text.split("");
-      let i = 0;
-      const interval = setInterval(() => {
-        i += 1;
-        setVisibleCount(i);
-        if (i >= letters.length) clearInterval(interval);
-      }, delay);
-      return () => clearInterval(interval);
-    }, [text, delay]);
 
 
 
@@ -55,12 +41,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-18">
+    <header className="fixed inset-x-0 top-0 z-50 sm:h-18 h-14">
       <nav
         aria-label="Primary navigation"
         className="
           relative flex h-full w-full items-center justify-between
-          bg-gray-50/40 px-6 shadow-sm backdrop-blur-sm
+          bg-gray-50/40 px-2 shadow-sm backdrop-blur-sm
           sm:px-6
           lg:justify-between lg:px-25
         "
@@ -72,30 +58,15 @@ export default function Navbar() {
           onClick={closeMenu}
           className="
             relative z-50
-            text-2xl font-bold
-            sm:text-3xl flex items-center justify-center tracking-wide
+            text-xl font-bold
+            sm:text-3xl flex items-end gap-4 justify-center tracking-wide
           "
         >
-          <Image src={logiNav} width={50}
-        height={25} className="object-cover mix-blend-multiply translate-x-4" alt="Logo"/>
-
-        {text.split("").map((char, index) => (
-          <span
-            key={index}
-            className="inline-block transition-all duration-500 ease-out pb-2"
-            style={{
-              opacity: index < visibleCount ? 1 : 0,
-              transform:
-                index < visibleCount
-                  ? "translateX(0)"
-                  : "translateX(-20px)",
-              transitionDelay: `${index * 5}ms`,
-              whiteSpace: char === " " ? "pre" : "normal",
-            }}
-          >
-            {char}
-          </span>
-        ))}
+          <div className="relative sm:h-14 sm:w-10 h-10 w-8"> 
+          <Image src={logiNav} fill
+        sizes="100vw" className="object-cover mix-blend-multiply translate-x-4" alt="Logo"/>
+        </div>
+        <span>eadwala</span>
         </Link>
 
         {/* =====================================================
@@ -197,21 +168,21 @@ export default function Navbar() {
             MOBILE ACTIONS
         ====================================================== */}
 
-        <div className="relative z-50 flex items-center gap-2 lg:hidden">
+        <div className="relative z-50 flex items-center gap-4 lg:hidden">
           {/* Cart */}
           <Link
             href="/cart"
             aria-label="View shopping cart"
             onClick={closeMenu}
             className="
-              flex size-10 items-center justify-center
+              flex sm:size-10 size-8 items-center justify-center
               rounded-full
               border border-black/5
               bg-white/70
               shadow-sm
               backdrop-blur-xl
               transition-colors duration-300
-              hover:bg-white
+              hover:bg-white 
             "
           >
             <ShoppingCart aria-hidden="true" className="size-5" />
@@ -230,11 +201,11 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen((current) => !current)}
             className="
               group relative
-              flex size-11
+              flex sm:size-11 size-9
               items-center justify-center
               overflow-hidden
               rounded-full
-              p-px
+              p-px cursor-pointer
               focus:outline-none
               focus-visible:ring-2
               focus-visible:ring-blue-500

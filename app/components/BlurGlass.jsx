@@ -2,6 +2,7 @@ import React from "react";
 import BlobBackground from "../SVG/BlobBackground";
 import FloatingCard from "./FloatingCard";
 import Link from "next/link";
+import { Headset } from "lucide-react";
 
 export default function BlurGlass() {
   return (
@@ -16,7 +17,7 @@ export default function BlurGlass() {
     py-24 sm:py-28 lg:py-20
   "
   aria-label="Hero Section"
->
+  >
   <BlobBackground />
 
  
@@ -28,7 +29,7 @@ export default function BlurGlass() {
       items-center justify-between
       gap-12 md:gap-14 lg:gap-8 xl:gap-12
       rounded-3xl
-      bg-white/30
+      bg-white/10
     "
   >
     {/* Left Side: SEO-Critical Content */}
@@ -42,7 +43,7 @@ export default function BlurGlass() {
         lg:pl-6 xl:pl-10
       "
     >
-      <span
+      <h2
         className="
           text-xs sm:text-sm
           font-semibold tracking-wide
@@ -50,7 +51,7 @@ export default function BlurGlass() {
         "
       >
         Premium B2B & B2C Lead Generation
-      </span>
+      </h2>
 
       <h1
         className="
@@ -122,13 +123,13 @@ export default function BlurGlass() {
         <button
           className="
             w-full sm:w-auto
-            min-h-12
+            min-h-12  flex gap-2
             whitespace-nowrap
             font-semibold
             cursor-pointer
             bg-white text-black
             px-7 sm:px-9 py-3
-            rounded-full
+            rounded-full justify-center 
             border border-slate-200/80
             shadow-md
             hover:shadow-lg
@@ -138,7 +139,8 @@ export default function BlurGlass() {
           "
           aria-label="Contact sales team"
         >
-          Talk with us
+          Talk with us   
+        <Headset/>  
         </button>
       </div>
     </div>
