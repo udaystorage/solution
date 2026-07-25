@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 text-cyan-400 border border-white/10 uppercase tracking-wider">
               Why Leadwala
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
               Why Smart Sales Teams Source Data From Us
             </h2>
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl">
