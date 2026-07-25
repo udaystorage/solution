@@ -120,7 +120,7 @@ export default function SolutionsSection() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-200/60">
             <div>
               <h4 className="text-xl font-bold text-neutral-900">
-                Try Our Premium Sample
+                Try Our Premium Leads
               </h4>
             </div>
 
