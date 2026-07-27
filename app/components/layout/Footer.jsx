@@ -1,15 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 
 import { openWhatsApp } from "@/lib/whatsapp";
 
+const footerLinks = [
+  { label: "About Us", href: "/aboutus" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Footer() {
   const [mobile, setMobile] = useState("");
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
+
+  
 
   const handleClick = () => {
     if (!/^[6-9]\d{9}$/.test(mobile)) {
@@ -29,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.6fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
           {/* Logo */}
 
           <div>
@@ -46,7 +55,7 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Subhasgram, Kolkata 700147</span>
+                  <span>Topsia,  Kolkata 700039</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
@@ -90,7 +99,7 @@ export default function Footer() {
 
           {/* Platform */}
 
-          <div>
+          {/* <div>
             <h3 className="mb-5 text-[14px] font-semibold text-neutral-900">
               Platform
             </h3>
@@ -109,7 +118,7 @@ export default function Footer() {
                 ),
               )}
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
 
@@ -119,14 +128,14 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-3">
-              {["About Us", "Pricing", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
+              {footerLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
                     className="text-[13px] text-neutral-700 transition hover:text-black"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
