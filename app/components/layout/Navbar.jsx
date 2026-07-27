@@ -150,32 +150,46 @@ export default function Navbar() {
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
-            href="/leadstore/custom-data"
-            className="
+  href="/leadstore/custom-data"
+  className="
+    group
+    relative
     inline-flex
     items-center
     justify-center
-    rounded-xl
+    gap-2
+    rounded-full
     border
-    border-black
-    px-4
+    border-slate-900/10
+    bg-white
+    px-5
     py-2.5
     text-sm
-    font-medium
-    text-black
+    font-semibold
+    text-slate-900
+    shadow-sm
     transition-all
     duration-300
+    ease-out
     hover:-translate-y-0.5
+    hover:border-slate-900
+    hover:bg-slate-950
     hover:text-white
-    hover:bg-black
-    hover:shadow-lg
+    hover:shadow-md
+    hover:shadow-slate-950/10
     active:translate-y-0
+    focus:outline-none
+    focus:ring-2
+    focus:ring-slate-950
+    focus:ring-offset-2
   "
-          >
-            Get Custom Data
-<ArrowRight size={16} className="ml-2 animate-arrow-invite"/>
-            {/* <ShoppingCart aria-hidden="true" className="size-7" /> */}
-          </Link>
+>
+  <span>Get Custom Data</span>
+  <ArrowRight 
+    size={16} 
+    className="transition-transform duration-300 ease-out group-hover:translate-x-1" 
+  />
+</Link>
         </div>
 
         {/* =====================================================
@@ -201,7 +215,47 @@ export default function Navbar() {
           >
             <ShoppingCart aria-hidden="true" className="size-5" />
           </Link> */}
-
+          <Link
+  href="/leadstore/custom-data"
+  className="
+    group
+    relative
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    rounded-full
+    border
+    border-slate-900/10
+    bg-white
+    px-5
+    py-2.5
+    text-sm
+    font-semibold
+    text-slate-900
+    shadow-sm
+    transition-all
+    duration-300
+    ease-out
+    hover:-translate-y-0.5
+    hover:border-slate-900
+    hover:bg-slate-950
+    hover:text-white
+    hover:shadow-md
+    hover:shadow-slate-950/10
+    active:translate-y-0
+    focus:outline-none
+    focus:ring-2
+    focus:ring-slate-950
+    focus:ring-offset-2
+  "
+>
+  <span>Get Custom Data</span>
+  <ArrowRight 
+    size={16} 
+    className="transition-transform duration-300 ease-out group-hover:translate-x-1" 
+  />
+</Link>
           {/* Hamburger */}
           <button
             type="button"
