@@ -1,22 +1,72 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
   LoaderCircle,
   MessageCircle,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
-export default function WhatsappButton({
-  loading,
-  error,
-  onClick,
-}) {
+const WHATSAPP_NUMBER = "919999999999"; // Replace with yours
+
+export default function WhatsappButton({ request }) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleClick() {
+    setError("");
+
+    // Basic validation
+
+    if (!request.location.trim()) {
+      return setError("Please choose a target location.");
+    }
+
+    if (!request.customer.name.trim()) {
+      return setError("Please enter your name.");
+    }
+
+    if (!request.customer.phone.trim()) {
+      return setError("Please enter your mobile number.");
+    }
+
+    setLoading(true);
+
+    try {
+      const payload = {
+        version: 1,
+        updatedAt: new Date().toISOString(),
+        ...request,
+      };
+
+      localStorage.setItem(
+        "leadwala_database_request",
+        JSON.stringify(payload)
+      );
+
+      const message = createWhatsappMessage(request);
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+        message
+      )}`;
+
+      // tiny premium delay
+
+      await new Promise((resolve) => setTimeout(resolve, 900));
+
+      window.open(url, "_blank");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="w-full sm:w-auto">
       <button
         type="button"
-        onClick={onClick}
+        onClick={handleClick}
         disabled={loading}
         aria-disabled={loading}
         className="
@@ -52,9 +102,14 @@ export default function WhatsappButton({
           </>
         ) : (
           <>
-            <MessageCircle size={18} />
+            <FaWhatsapp
+  className="relative z-10  transition-colors
+    duration-300
+    group-hover:text-[#25D366]"
+  size={20} 
+/>
 
-            Continue on WhatsApp
+            <span className="whitespace-nowrap">Open Whatsapp</span>
 
             <ArrowRight
               size={18}
@@ -78,4 +133,55 @@ export default function WhatsappButton({
       </div>
     </div>
   );
+}
+
+function createWhatsappMessage(request) {
+  return `
+Hi Leadwala 👋
+
+I'd like to request a database.
+
+━━━━━━━━━━━━━━
+
+Database:
+${request.category}
+
+Target Region:
+${request.location}
+
+Quantity:
+${request.quantity}
+
+Quality:
+${
+  request.quality === "premium"
+    ? "Premium"
+    : "Standard"
+}
+
+━━━━━━━━━━━━━━
+
+Requirements:
+
+${request.requirements || "None"}
+
+━━━━━━━━━━━━━━
+
+Contact Details
+
+Name:
+${request.customer.name}
+
+Phone:
+${request.customer.phone}
+
+Email:
+${request.customer.email || "Not provided"}
+
+━━━━━━━━━━━━━━
+
+Please share the pricing and availability.
+
+Thank you.
+`;
 }
