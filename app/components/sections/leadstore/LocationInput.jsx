@@ -145,8 +145,7 @@ export default function LocationInput({
             <p className="mt-1 text-sm leading-6 text-stone-600">
 
               We support city-level, state-level and pan-India datasets.
-              If you need multiple locations, simply mention them in your
-              requirements below.
+              Need multiple locations ? Mention them in requirements below.
 
             </p>
 

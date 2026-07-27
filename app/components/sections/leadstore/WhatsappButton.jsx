@@ -103,7 +103,7 @@ export default function WhatsappButton({ request }) {
         ) : (
           <>
             <FaWhatsapp
-  className="relative z-10  transition-colors
+  className="relative z-10 text-[#25D366] md:text-[#25D366]  lg:text-white transition-colors
     duration-300
     group-hover:text-[#25D366]"
   size={20} 
