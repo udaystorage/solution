@@ -229,7 +229,10 @@ export default function Navbar() {
     border-slate-900/10
     bg-white
     px-5
-    py-2.5
+    py-2
+    sm:py-2.5
+    md:py-2.5
+    lg:py-2.5
     text-sm
     font-semibold
     text-slate-900
@@ -237,7 +240,9 @@ export default function Navbar() {
     transition-all
     duration-300
     ease-out
-    hover:-translate-y-0.5
+    hover:-translate-y-0.2
+    sm:hover:-translate-y-0.5
+    md:hover:-translate-y-0.5
     hover:border-slate-900
     hover:bg-slate-950
     hover:text-white
