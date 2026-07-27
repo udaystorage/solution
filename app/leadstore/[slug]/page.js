@@ -1,16 +1,20 @@
-import React from 'react'
+import { notFound } from "next/navigation";
 
-export default async function page({ params }) {
-    const { slug } = await params;
-  return (
-    <>
-    <div className="w-full text-center h-screen flex justify-center items-center bg-green-400">
-        {
-        console.log( typeof(slug ))
-    }
-    <div className="text-2xl  text-center text-black"> {slug} </div>  
-    </div>
-    
-    </>
-  )
+import leadStoreData from "@/data/leadStoreData";
+
+import LeadStoreClient from "../LeadStoreClient";
+
+export default async function LeadStoreProductPage({ params }) {
+  const { slug } = await params;
+
+  const product = leadStoreData.find(
+    (item) => item.slug === slug
+  );
+
+  if (!product) {
+    console.log(slug);
+console.log(product);
+  }
+
+  return <LeadStoreClient product={product} />;
 }
