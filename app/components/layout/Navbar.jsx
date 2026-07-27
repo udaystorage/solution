@@ -170,7 +170,7 @@ export default function Navbar() {
 
         <div className="relative z-50 flex items-center gap-4 lg:hidden">
           {/* Cart */}
-          <Link
+          {/* <Link
             href="/cart"
             aria-label="View shopping cart"
             onClick={closeMenu}
@@ -186,7 +186,7 @@ export default function Navbar() {
             "
           >
             <ShoppingCart aria-hidden="true" className="size-5" />
-          </Link>
+          </Link> */}
 
           {/* Hamburger */}
           <button

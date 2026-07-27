@@ -1,0 +1,26 @@
+{
+  "id": 7,
+  "slug": "this-is-a-demo-for",
+  "title": "this is a demo for ",
+  "image": "/uploads/1785132795002-ddb82add-febf-4875-88a0-7b7c9909ceab.jpg",
+  "date": "July 27, 2026",
+  "readTime": "5 min read",
+  "description": "this is a description for test this page",
+  "content": {
+    "introduction": "this a introduction for this blog which i made in this ",
+    "highlights": [
+      "this is highlight no 1"
+    ],
+    "sections": [
+      {
+        "heading": "this is section heading ",
+        "brief": "this is a brief of the passage",
+        "paragraphs": [
+          "this first paragraph of this blog and we are going to publish it ",
+          "this is second paragraph of this blog "
+        ]
+      }
+    ],
+    "takeaway": "i have to say nothing for take away "
+  }
+}

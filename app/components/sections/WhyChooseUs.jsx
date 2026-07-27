@@ -8,9 +8,9 @@ export default function WhyChooseUs() {
   const benefits = [
     {
       id: "01",
-      title: "Verified B2B Contact Lists",
+      title: "Verified B2B & B2C Contact Lists",
       description:
-        "Every B2B email list and phone number database undergoes rigorous multi-layer verification to guarantee high deliverability.",
+        "Every B2B and B2C email list and phone number database undergoes rigorous multi-layer verification to guarantee high deliverability.",
       icon: BadgeCheck,
       highlight: true,
     },
