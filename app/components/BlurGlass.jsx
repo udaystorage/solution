@@ -120,7 +120,9 @@ export default function BlurGlass() {
           Explore Store
         </Link>
 
-        <button
+        <Link
+        href={"/contact"}
+
           className="
             w-full sm:w-auto
             min-h-12  flex gap-2
@@ -141,7 +143,7 @@ export default function BlurGlass() {
         >
           Talk with us   
         <Headset/>  
-        </button>
+        </Link>
       </div>
     </div>
 
