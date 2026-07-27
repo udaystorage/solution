@@ -5,6 +5,69 @@ import { promises as fs } from "fs";
 import path from "path";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
+
+// Some older/raw content has bullet points typed inline inside a single
+// paragraph string, e.g. "May include: • Item one • Item two • Item three"
+// instead of being stored as a proper list block. This detects that pattern
+// and splits it into an optional intro sentence + real list items.
+function extractInlineBulletList(text) {
+  if (!text || !text.includes("•")) return null;
+
+  const parts = text
+    .split("•")
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  // Need at least 2 bullet-separated chunks to treat this as a list
+  if (parts.length < 2) return null;
+
+  const [intro, ...items] = parts;
+  return { intro, items };
+}
+
+// Turns a paragraph textarea's raw text into an array of blocks.
+// Lines starting with "- ", "* ", or "• " become a list block.
+// Everything else becomes a paragraph block.
+function parseParagraphBlocks(text) {
+  const lines = text.split("\n");
+  const blocks = [];
+  let currentList = null;
+  let currentParagraph = [];
+
+  const flushParagraph = () => {
+    const joined = currentParagraph.join(" ").trim();
+    if (joined) blocks.push({ type: "paragraph", text: joined });
+    currentParagraph = [];
+  };
+
+  const flushList = () => {
+    if (currentList && currentList.length) {
+      blocks.push({ type: "list", items: currentList });
+    }
+    currentList = null;
+  };
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    const bulletMatch = trimmed.match(/^[-*•]\s+(.*)/);
+
+    if (bulletMatch) {
+      flushParagraph();
+      if (!currentList) currentList = [];
+      currentList.push(bulletMatch[1]);
+    } else if (trimmed === "") {
+      flushParagraph();
+      flushList();
+    } else {
+      flushList();
+      currentParagraph.push(trimmed);
+    }
+  });
+
+  flushParagraph();
+  flushList();
+  return blocks;
+}
  
 /**
  * Reads every .json file in a directory and returns their parsed
@@ -220,11 +283,61 @@ export default async function BlogPage({ params }) {
                     </p>
                   )}
 
-                  {section.paragraphs?.map((para, pIdx) => (
-                    <p key={pIdx} className="text-stone-600 leading-relaxed text-base antialiased">
-                      {para}
-                    </p>
-                  ))}
+                  {section.paragraphs?.map((block, pIdx) => {
+                    // Backward compatibility: older posts may have saved
+                    // paragraphs as plain strings instead of block objects.
+                    if (typeof block === "string") {
+                      return (
+                        <p
+                          key={pIdx}
+                          className="text-stone-600 leading-relaxed text-base antialiased"
+                        >
+                          {block}
+                        </p>
+                      );
+                    }
+
+                    if (block?.type === "list") {
+                      return (
+                        <ul
+                          key={pIdx}
+                          className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-base antialiased"
+                        >
+                          {block.items?.map((item, itemIdx) => (
+                            <li key={itemIdx}>{item}</li>
+                          ))}
+                        </ul>
+                      );
+                    }
+
+                    const inlineList = extractInlineBulletList(block?.text);
+
+                    if (inlineList) {
+                      return (
+                        <div key={pIdx} className="space-y-3">
+                          {inlineList.intro && (
+                            <p className="text-stone-600 leading-relaxed text-base antialiased">
+                              {inlineList.intro}
+                            </p>
+                          )}
+                          <ul className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-base antialiased">
+                            {inlineList.items.map((item, itemIdx) => (
+                              <li key={itemIdx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <p
+                        key={pIdx}
+                        className="text-stone-600 leading-relaxed text-base antialiased"
+                      >
+                        {block?.text}
+                      </p>
+                    );
+                  })}
                 </section>
               ))}
 

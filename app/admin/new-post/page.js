@@ -1,12 +1,35 @@
 "use client";
 import React, { useState } from "react";
-import { Plus, Trash2, Upload, Loader2, X } from "lucide-react";
+import { Plus, Trash2, Upload, Loader2, X, List, AlignLeft, GripVertical } from "lucide-react";
 
 // Matches the blog object shape:
 // { id, slug, title, image, date, readTime, description,
-//   content: { introduction, highlights: [], sections: [{heading, brief, paragraphs: []}], takeaway } }
+//   content: { introduction, highlights: [], sections: [{heading, brief, paragraphs: [Block] }], takeaway } }
+//
+// A "Block" is one of:
+//   { type: "paragraph", text: "" }
+//   { type: "list", items: [""] }
+//
+// This lets a section mix normal paragraphs with bullet lists. When you render
+// the published post, map over `section.paragraphs` and switch on `block.type`:
+//
+//   {section.paragraphs.map((block, i) =>
+//     block.type === "list" ? (
+//       <ul key={i} className="list-disc pl-5">
+//         {block.items.map((item, j) => <li key={j}>{item}</li>)}
+//       </ul>
+//     ) : (
+//       <p key={i}>{block.text}</p>
+//     )
+//   )}
 
-const emptySection = () => ({ heading: "", brief: "", paragraphs: [""] });
+const emptyParagraphBlock = () => ({ type: "paragraph", text: "" });
+const emptyListBlock = () => ({ type: "list", items: [""] });
+const emptySection = () => ({
+  heading: "",
+  brief: "",
+  paragraphs: [emptyParagraphBlock()],
+});
 const emptyMeta = () => ({ key: "", value: "" });
 
 const DEFAULT_READ_TIME = "5 min read"; // Updated to match the backend schema logic
@@ -109,43 +132,11 @@ export default function BlogPostForm({ onSubmit }) {
     }));
   };
 
-  // ---- sections (array of {heading, brief, paragraphs[]}) ----
+  // ---- sections (array of {heading, brief, paragraphs: Block[]}) ----
   const updateSectionField = (sIndex, key, value) => {
     setForm((prev) => {
       const sections = [...prev.content.sections];
       sections[sIndex] = { ...sections[sIndex], [key]: value };
-      return { ...prev, content: { ...prev.content, sections } };
-    });
-  };
-
-  const updateParagraph = (sIndex, pIndex, value) => {
-    setForm((prev) => {
-      const sections = [...prev.content.sections];
-      const paragraphs = [...sections[sIndex].paragraphs];
-      paragraphs[pIndex] = value;
-      sections[sIndex] = { ...sections[sIndex], paragraphs };
-      return { ...prev, content: { ...prev.content, sections } };
-    });
-  };
-
-  const addParagraph = (sIndex) => {
-    setForm((prev) => {
-      const sections = [...prev.content.sections];
-      sections[sIndex] = {
-        ...sections[sIndex],
-        paragraphs: [...sections[sIndex].paragraphs, ""],
-      };
-      return { ...prev, content: { ...prev.content, sections } };
-    });
-  };
-
-  const removeParagraph = (sIndex, pIndex) => {
-    setForm((prev) => {
-      const sections = [...prev.content.sections];
-      sections[sIndex] = {
-        ...sections[sIndex],
-        paragraphs: sections[sIndex].paragraphs.filter((_, i) => i !== pIndex),
-      };
       return { ...prev, content: { ...prev.content, sections } };
     });
   };
@@ -168,6 +159,113 @@ export default function BlogPostForm({ onSubmit }) {
         sections: prev.content.sections.filter((_, i) => i !== sIndex),
       },
     }));
+  };
+
+  // ---- paragraph blocks (text or list) ----
+  const addParagraphBlock = (sIndex) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      sections[sIndex] = {
+        ...sections[sIndex],
+        paragraphs: [...sections[sIndex].paragraphs, emptyParagraphBlock()],
+      };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  const addListBlock = (sIndex) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      sections[sIndex] = {
+        ...sections[sIndex],
+        paragraphs: [...sections[sIndex].paragraphs, emptyListBlock()],
+      };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  const removeBlock = (sIndex, pIndex) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      sections[sIndex] = {
+        ...sections[sIndex],
+        paragraphs: sections[sIndex].paragraphs.filter((_, i) => i !== pIndex),
+      };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  const updateParagraphText = (sIndex, pIndex, value) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      const paragraphs = [...sections[sIndex].paragraphs];
+      paragraphs[pIndex] = { ...paragraphs[pIndex], text: value };
+      sections[sIndex] = { ...sections[sIndex], paragraphs };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  // ---- list items within a list block ----
+  const updateListItem = (sIndex, pIndex, itemIndex, value) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      const paragraphs = [...sections[sIndex].paragraphs];
+      const items = [...paragraphs[pIndex].items];
+      items[itemIndex] = value;
+      paragraphs[pIndex] = { ...paragraphs[pIndex], items };
+      sections[sIndex] = { ...sections[sIndex], paragraphs };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  const addListItem = (sIndex, pIndex) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      const paragraphs = [...sections[sIndex].paragraphs];
+      paragraphs[pIndex] = {
+        ...paragraphs[pIndex],
+        items: [...paragraphs[pIndex].items, ""],
+      };
+      sections[sIndex] = { ...sections[sIndex], paragraphs };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  const removeListItem = (sIndex, pIndex, itemIndex) => {
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      const paragraphs = [...sections[sIndex].paragraphs];
+      paragraphs[pIndex] = {
+        ...paragraphs[pIndex],
+        items: paragraphs[pIndex].items.filter((_, i) => i !== itemIndex),
+      };
+      sections[sIndex] = { ...sections[sIndex], paragraphs };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
+  };
+
+  // Pasting multiple lines into a list item auto-splits them into separate items
+  const handleListItemPaste = (sIndex, pIndex, itemIndex, e) => {
+    const pasted = e.clipboardData.getData("text");
+    if (!pasted.includes("\n")) return; // let default paste happen
+    e.preventDefault();
+
+    const lines = pasted
+      .split("\n")
+      .map((l) => l.replace(/^[-*•]\s*/, "").trim())
+      .filter((l) => l !== "");
+
+    if (lines.length === 0) return;
+
+    setForm((prev) => {
+      const sections = [...prev.content.sections];
+      const paragraphs = [...sections[sIndex].paragraphs];
+      const items = [...paragraphs[pIndex].items];
+      items.splice(itemIndex, 1, ...lines);
+      paragraphs[pIndex] = { ...paragraphs[pIndex], items };
+      sections[sIndex] = { ...sections[sIndex], paragraphs };
+      return { ...prev, content: { ...prev.content, sections } };
+    });
   };
 
   // ---- image upload (uploads immediately to /api/upload, stores real URL) ----
@@ -257,7 +355,15 @@ export default function BlogPostForm({ onSubmit }) {
         highlights: form.content.highlights.filter((h) => h.trim() !== ""),
         sections: form.content.sections.map((s) => ({
           ...s,
-          paragraphs: s.paragraphs.filter((p) => p.trim() !== ""),
+          paragraphs: s.paragraphs
+            .map((block) =>
+              block.type === "list"
+                ? { type: "list", items: block.items.filter((i) => i.trim() !== "") }
+                : { type: "paragraph", text: block.text.trim() }
+            )
+            .filter((block) =>
+              block.type === "list" ? block.items.length > 0 : block.text !== ""
+            ),
         })),
       },
     };
@@ -613,36 +719,107 @@ export default function BlogPostForm({ onSubmit }) {
 
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-                  <label className={labelClass + " mb-0"}>Paragraphs</label>
-                  <button
-                    type="button"
-                    onClick={() => addParagraph(sIndex)}
-                    className="flex items-center gap-1 text-xs font-medium text-neutral-600 hover:text-black transition"
-                  >
-                    <Plus size={13} /> Add paragraph
-                  </button>
+                  <label className={labelClass + " mb-0"}>Content blocks</label>
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => addParagraphBlock(sIndex)}
+                      className="flex items-center gap-1 text-xs font-medium text-neutral-600 hover:text-black transition"
+                    >
+                      <AlignLeft size={13} /> Add paragraph
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => addListBlock(sIndex)}
+                      className="flex items-center gap-1 text-xs font-medium text-neutral-600 hover:text-black transition"
+                    >
+                      <List size={13} /> Add list
+                    </button>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  {section.paragraphs.map((p, pIndex) => (
-                    <div key={pIndex} className="flex items-start gap-2">
-                      <textarea
-                        rows={2}
-                        className={inputClass + " resize-none"}
-                        placeholder={`Paragraph ${pIndex + 1}`}
-                        value={p}
-                        onChange={(e) =>
-                          updateParagraph(sIndex, pIndex, e.target.value)
-                        }
-                      />
-                      {section.paragraphs.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => removeParagraph(sIndex, pIndex)}
-                          className="p-2 text-neutral-400 hover:text-red-500 transition"
-                          aria-label="Remove paragraph"
-                        >
-                          <Trash2 size={16} />
-                        </button>
+
+                <div className="flex flex-col gap-3">
+                  {section.paragraphs.map((block, pIndex) => (
+                    <div
+                      key={pIndex}
+                      className="rounded-lg border border-neutral-100 bg-neutral-50/60 p-3"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="flex items-center gap-1.5 text-[11px] font-semibold text-neutral-400 uppercase tracking-wide">
+                          {block.type === "list" ? (
+                            <>
+                              <List size={12} /> List
+                            </>
+                          ) : (
+                            <>
+                              <AlignLeft size={12} /> Paragraph
+                            </>
+                          )}
+                        </span>
+                        {section.paragraphs.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => removeBlock(sIndex, pIndex)}
+                            className="p-1 text-neutral-400 hover:text-red-500 transition"
+                            aria-label="Remove block"
+                          >
+                            <Trash2 size={15} />
+                          </button>
+                        )}
+                      </div>
+
+                      {block.type === "list" ? (
+                        <div className="flex flex-col gap-2">
+                          {block.items.map((item, itemIndex) => (
+                            <div key={itemIndex} className="flex items-center gap-2">
+                              <GripVertical
+                                size={14}
+                                className="text-neutral-300 shrink-0"
+                              />
+                              <input
+                                type="text"
+                                className={inputClass}
+                                placeholder={`List item ${itemIndex + 1} (paste multiple lines to auto-split)`}
+                                value={item}
+                                onChange={(e) =>
+                                  updateListItem(sIndex, pIndex, itemIndex, e.target.value)
+                                }
+                                onPaste={(e) =>
+                                  handleListItemPaste(sIndex, pIndex, itemIndex, e)
+                                }
+                              />
+                              {block.items.length > 1 && (
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    removeListItem(sIndex, pIndex, itemIndex)
+                                  }
+                                  className="p-2 text-neutral-400 hover:text-red-500 transition"
+                                  aria-label="Remove list item"
+                                >
+                                  <Trash2 size={16} />
+                                </button>
+                              )}
+                            </div>
+                          ))}
+                          <button
+                            type="button"
+                            onClick={() => addListItem(sIndex, pIndex)}
+                            className="flex items-center gap-1 text-xs font-medium text-neutral-600 hover:text-black transition self-start mt-1"
+                          >
+                            <Plus size={13} /> Add item
+                          </button>
+                        </div>
+                      ) : (
+                        <textarea
+                          rows={3}
+                          className={inputClass + " resize-none"}
+                          placeholder="Paragraph text"
+                          value={block.text}
+                          onChange={(e) =>
+                            updateParagraphText(sIndex, pIndex, e.target.value)
+                          }
+                        />
                       )}
                     </div>
                   ))}
