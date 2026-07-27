@@ -61,18 +61,6 @@ export default function CustomerForm({
             value={value.phone}
             onChange={(e) => update("phone", e.target.value)}
           />
-
-          {/* Email */}
-
-          <Input
-            icon={<Mail size={18} />}
-            label="Email Address"
-            type="email"
-            placeholder="john@example.com"
-            value={value.email}
-            onChange={(e) => update("email", e.target.value)}
-          />
-
         </div>
 
         {/* Privacy */}

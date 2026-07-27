@@ -138,12 +138,6 @@ Thank you.
 
           <div className="space-y-6">
             <RequestSummary request={request} />
-
-            {/* <WhatsappButton
-              loading={loading}
-              error={error}
-              onClick={handleContinue}
-            /> */}
           </div>
         </div>
       </section>

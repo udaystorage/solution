@@ -7,7 +7,6 @@ const SUGGESTIONS = [
   "Business Owners",
   "Age 25–40",
   "High Net Worth",
-  "Decision Makers",
   "Startup Founders",
 ];
 
@@ -106,15 +105,11 @@ export default function RequirementsBox({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={`Example:
-
 • Women Investors
-• Mumbai & Pune
-• Age 30–45
 • Income above ₹15L
 • Mutual Fund Investors
-• Working Professionals
 
-Any additional filters or preferences...`}
+  Any additional filters or preferences...`}
           className="
             w-full
             resize-none
