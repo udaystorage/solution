@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart } from "lucide-react";
-import logiNav from "@/public/logoNav.png"
+import { ShoppingCart,ArrowRight } from "lucide-react";
+import logiNav from "@/public/logoNav.png";
 import Image from "next/image";
 
 const navigationItems = [
@@ -16,13 +16,9 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
-
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(0);
-
-
-
+  // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
   useEffect(() => {
@@ -62,11 +58,16 @@ export default function Navbar() {
             sm:text-3xl flex items-end gap-4 justify-center tracking-wide
           "
         >
-          <div className="relative sm:h-14 sm:w-10 h-10 w-8"> 
-          <Image src={logiNav} fill
-        sizes="100vw" className="object-cover mix-blend-multiply translate-x-4" alt="Logo"/>
-        </div>
-        <span>eadwala</span>
+          <div className="relative sm:h-14 sm:w-10 h-10 w-8">
+            <Image
+              src={logiNav}
+              fill
+              sizes="100vw"
+              className="object-cover mix-blend-multiply translate-x-4"
+              alt="Logo"
+            />
+          </div>
+          <span>eadwala</span>
         </Link>
 
         {/* =====================================================
@@ -148,19 +149,32 @@ export default function Navbar() {
         ====================================================== */}
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
-         
-
           <Link
-            href="/cart"
-            aria-label="View shopping cart"
+            href="/leadstore/custom-data"
             className="
-              cursor-pointer rounded-xl
-              px-3 py-2
-              transition-colors duration-200
-              hover:bg-white
-            "
+    inline-flex
+    items-center
+    justify-center
+    rounded-xl
+    border
+    border-black
+    px-4
+    py-2.5
+    text-sm
+    font-medium
+    text-black
+    transition-all
+    duration-300
+    hover:-translate-y-0.5
+    hover:text-white
+    hover:bg-black
+    hover:shadow-lg
+    active:translate-y-0
+  "
           >
-            <ShoppingCart aria-hidden="true" className="size-7" />
+            Get Custom Data
+<ArrowRight size={16} className="ml-2 animate-arrow-invite"/>
+            {/* <ShoppingCart aria-hidden="true" className="size-7" /> */}
           </Link>
         </div>
 
@@ -192,9 +206,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label={
-              isMenuOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
             }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
@@ -247,11 +259,7 @@ export default function Navbar() {
                     transition-all duration-500
                     ease-[cubic-bezier(0.76,0,0.24,1)]
 
-                    ${
-                      isMenuOpen
-                        ? "translate-y-1.5 rotate-45"
-                        : ""
-                    }
+                    ${isMenuOpen ? "translate-y-1.5 rotate-45" : ""}
                   `}
                 />
 
@@ -278,11 +286,7 @@ export default function Navbar() {
                     transition-all duration-500
                     ease-[cubic-bezier(0.76,0,0.24,1)]
 
-                    ${
-                      isMenuOpen
-                        ? "-translate-y-1 -rotate-45"
-                        : ""
-                    }
+                    ${isMenuOpen ? "-translate-y-1 -rotate-45" : ""}
                   `}
                 />
               </span>
@@ -486,11 +490,7 @@ export default function Navbar() {
                           transition-transform duration-300
                           group-hover/link:scale-125
 
-                          ${
-                            isActive
-                              ? "bg-white"
-                              : "bg-neutral-400"
-                          }
+                          ${isActive ? "bg-white" : "bg-neutral-400"}
                         `}
                       />
                     </span>
@@ -503,7 +503,6 @@ export default function Navbar() {
             <div className="relative my-3 h-px bg-neutral-200/70" />
 
             {/* Login CTA */}
-            
           </div>
         </div>
       </div>

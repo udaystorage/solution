@@ -340,3 +340,17 @@ body {
     animation: none;
   }
 }
+
+/* header custom data btn arrow */
+@theme {
+  --animate-arrow-invite: arrowInvite 1.7s ease-in-out infinite;
+
+  @keyframes arrowInvite {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+}
