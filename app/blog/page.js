@@ -230,7 +230,7 @@ export default async function BlogListingPage() {
             </Link>
 
             <Link
-              href="/services"
+              href="/aboutus"
               className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-7 py-3 text-sm font-semibold text-neutral-800 shadow-xs transition duration-300 hover:shadow-md sm:px-9"
             >
               Learn More
