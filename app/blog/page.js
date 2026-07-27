@@ -105,7 +105,7 @@ export default async function BlogListingPage() {
 
      <div className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
   {/* SEMANTIC HEADER BANNER ZONE */}
-  <header className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
+  <header className="relative w-full  px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
     <div
       className="pointer-events-none absolute -top-40 left-1/4 h-112.5 w-112.5 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-[160px]"
       aria-hidden="true"
