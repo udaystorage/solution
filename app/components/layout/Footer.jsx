@@ -55,7 +55,7 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Subhasgram, Kolkata 700147</span>
+                  <span>Topsia,  Kolkata 700039</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
