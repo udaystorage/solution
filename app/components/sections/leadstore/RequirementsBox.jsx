@@ -145,13 +145,10 @@ export default function RequirementsBox({
 
             <h4 className="font-medium text-stone-900">
               Better requirements lead to better data.
-            </h4>
+            </h4> 
 
             <p className="mt-2 text-sm leading-6 text-stone-600">
-              Mention industries, demographics, income range,
-              designation, company size, interests or any custom
-              segmentation. Our team manually reviews every request
-              before preparing your database.
+             Premium data should always be tailored to your needs.
             </p>
 
           </div>
