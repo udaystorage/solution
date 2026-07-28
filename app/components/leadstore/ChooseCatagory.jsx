@@ -50,7 +50,7 @@ export default function ChooseCatagory() {
         }`}
       >
         <div className="flex flex-row justify-between items-center w-full px-4 sm:px-8 md:px-8 lg:px-6 bg-white gap-2">
-          <div className="text-lg sm:text-xl md:text-2xl font-bold">Shop by Categories</div>
+          <div className="text-lg sm:text-xl md:text-2xl font-bold">Leads by Categories</div>
           <div
             className="flex gap-2 items-center text-center cursor-pointer hover:text-gray-500 text-sm sm:text-base shrink-0"
             onClick={() => setExpanded((prev) => !prev)}
