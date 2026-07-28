@@ -2,6 +2,7 @@ import React from "react";
 import UpperSide from "../components/leadstore/UpperSide";
 import ChooseCatagory from "../components/leadstore/ChooseCatagory";
 import BestProducts from "../components/leadstore/BestProducts";
+import FAQSection from "../components/sections/FAQ";
 
 
 export default function page() {
@@ -11,6 +12,7 @@ export default function page() {
          <UpperSide/>
          <ChooseCatagory/>
          <BestProducts/>
+         <FAQSection page="leadstore"/>
       </div>
     </>
   );

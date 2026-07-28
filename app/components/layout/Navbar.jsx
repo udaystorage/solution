@@ -223,7 +223,8 @@ export default function Navbar() {
     inline-flex
     items-center
     justify-center
-    gap-2
+    gap-1
+    sm:gap-2 md:gap-2 lg-gap-2
     rounded-full
     border
     border-slate-900/10
@@ -258,7 +259,10 @@ export default function Navbar() {
     focus:ring-offset-2
   "
 >
-  <span>Get Custom Data</span>
+  <span>
+  <span className="hidden xs:inline">Get Custom Data</span>
+  <span className="inline xs:hidden">Custom Data</span>
+</span>
   <ArrowRight 
     size={16} 
     className="transition-transform duration-300 ease-out group-hover:translate-x-1" 

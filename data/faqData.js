@@ -15,20 +15,23 @@ export const faqData = {
       answer: "We prioritize privacy and strict compliance. All data distributed through Leadwala is thoroughly vetted to align with GDPR, CCPA, and global cold-outreach regulations."
     }
   ],
-  pricing: [
-    {
-      question: "Are there any hidden fees or setup costs?",
-      answer: "No. Our pricing is fully transparent based on the tier you select. There are no onboarding fees, and you can upgrade, downgrade, or cancel your subscription at any time."
-    },
-    {
-      question: "What happens if a verified lead bounces?",
-      answer: "We stand by our data quality. If you encounter a hard bounce on a record verified within the last 30 days, we credit that lead back to your account immediately."
-    },
-    {
-      question: "Do you offer custom enterprise data packages?",
-      answer: "Yes. For high-volume teams requiring specific intent tracking, custom delivery pipelines, or dedicated API access, reach out to our sales team for a custom quote."
-    }
-  ],
+leadstore: [
+  {
+    question: "How do I request a database from the Lead Store?",
+    answer:
+      "Simply click on any item on leadstore, add every database details carefully & add anything specific you need and hit the open whatsapp btn. On whatsapp just hit the send btn and done! We will reach you within 10 minutes."
+  },
+  {
+    question: "Can I request multiple databases in one inquiry?",
+    answer:
+      "Yes. You can add multiple databases in single query. Just add all the database names   in the 'Customize your database' section while posting your query on whatsapp."
+  },
+  {
+    question: "Will I receive the database immediately after submitting my request?",
+    answer:
+    "Our database expert will call you within 10 minutes of submitting your query, finalize your database order, and your curated leads will reach you within 2-3 business hours."
+  }
+],
   about: [
     {
       question: "What is Leadwala's core mission?",

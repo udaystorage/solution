@@ -105,15 +105,16 @@ export default async function BlogListingPage() {
 
      <div className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
   {/* SEMANTIC HEADER BANNER ZONE */}
-  <header className="relative w-full  px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
-    <div
-      className="pointer-events-none absolute -top-40 left-1/4 h-112.5 w-112.5 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-[160px]"
-      aria-hidden="true"
-    />
-    <div
-      className="pointer-events-none absolute top-0 right-0 h-100 w-100 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-[160px]"
-      aria-hidden="true"
-    />
+  <header className="relative w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
+  <div
+  className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-3xl sm:-top-28 sm:left-1/3 sm:h-72 sm:w-72 sm:blur-[100px] lg:-top-40 lg:left-1/4 lg:h-[28rem] lg:w-[28rem] lg:blur-[160px]"
+  aria-hidden="true"
+/>
+
+<div
+  className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-3xl sm:h-64 sm:w-64 sm:blur-[100px] lg:h-[25rem] lg:w-[25rem] lg:blur-[160px]"
+  aria-hidden="true"
+/>
 
     <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-3 sm:gap-4">
       {/* Primary Target Keyword Heading */}
