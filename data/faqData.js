@@ -29,7 +29,7 @@ leadstore: [
   {
     question: "Will I receive the database immediately after submitting my request?",
     answer:
-    "Our database expert will call you within 10 minutes of submitting your query, finalize your database order, and your curated leads will reach you within 2 hours."
+    "Our database expert will call you within 10 minutes of submitting your query, finalize your database order, and your curated leads will reach you within 2-3 business hours."
   }
 ],
   about: [
