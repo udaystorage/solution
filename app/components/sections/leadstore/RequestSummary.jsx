@@ -66,24 +66,22 @@ export default function RequestSummary({ request }) {
 
         {/* Summary */}
 
-        <div className="px-7 py-6">
+        <div className="px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
           <div className="space-y-5">
             {rows.map((item) => {
               const Icon = item.icon;
 
               return (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-stone-100 text-cyan-700">
-                    <Icon size={20} />
-                  </div>
+                <div key={item.label} className="flex items-start gap-3">
+                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-cyan-700">
+    <Icon className="h-[18px] w-[18px]" />
+</div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs uppercase tracking-[0.18em] text-stone-400">
-                      {item.label}
+<p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">                      {item.label}
                     </p>
 
-                    <p className="mt-1 break-words text-[15px] font-medium text-stone-900">
-                      {item.value}
+<p className="mt-0.5 break-words text-sm font-medium leading-6 text-stone-900">                      {item.value}
                     </p>
                   </div>
                 </div>
@@ -94,14 +92,14 @@ export default function RequestSummary({ request }) {
 
         {/* Delivery */}
 
-        <div className="border-t border-stone-200 bg-stone-50 px-7 py-6">
-          <div className="flex items-start gap-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white">
-              <Clock3 size={20} className="text-cyan-700" />
-            </div>
+        <div className="border-t border-stone-200 bg-stone-50 px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
+          <div className="flex items-start gap-3">
+           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white">
+    <Clock3 className="h-[18px] w-[18px] text-cyan-700" />
+</div>
 
             <div>
-              <h4 className="font-medium text-stone-900">Estimated Delivery</h4>
+              <h4 className="text-sm font-semibold text-stone-900">Estimated Delivery</h4>
 
               <p className="mt-1 text-sm leading-6 text-stone-600">
                 Most database requests are prepared and shared within
