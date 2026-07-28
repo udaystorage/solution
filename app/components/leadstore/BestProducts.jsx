@@ -17,8 +17,8 @@ const CATEGORIES = [
 
 export default function BestProducts() {
     return (
-      <>
-        <div className="w-full flex flex-col justify-start items-center overflow-hidden transition-all duration-400">
+      <section>
+        <div className="w-full flex flex-col justify-start items-center  transition-all duration-400">
           <div className="flex flex-row justify-between items-center w-full px-4 sm:px-8 md:px-16 lg:px-25 py-3 sm:py-5 bg-white">
             <div className="text-lg sm:text-xl md:text-2xl font-bold py-2 sm:py-3">Best Selling Leads</div>
             {/* <div
@@ -27,7 +27,7 @@ export default function BestProducts() {
               <MoveRight />
             </div> */}
           </div>
-          <div className="flex flex-row justify-center items-start flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full px-4 sm:px-10 md:px-16 lg:px-20">
+          <div className="flex flex-row md:mb-8 justify-center items-start flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full px-4 sm:px-10 md:px-16  lg:px-20">
             {
               CATEGORIES.map((cat) => {
                 return (
@@ -36,7 +36,20 @@ export default function BestProducts() {
               })
             }
           </div>
+<div className="py-10 px-4 text-center">
+  <p className="text-xs sm:text-sm   uppercase tracking-[0.2em] text-emerald-600">
+    Database Collection
+  </p>
+
+  <h2 className="mt-2 text-xl md:text-2xl  font-bold ">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500">20,834+ </span> Verified Database Segments
+  </h2>
+
+  <p className="mt-2 md:mt-3 text-sm md:text-base  text-neutral-500">
+    Built to help you reach the right audience with precision.
+  </p>
+</div>
         </div>
-      </>
+      </section>
     );
 }
