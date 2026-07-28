@@ -23,11 +23,11 @@ export default function BestProductCard({ name, slug }) {
               href={`/leadstore/${slug}`}
               className="cursor-pointer mb-1 py-2 flex-1 rounded-xl bg-emerald-400 hover:bg-emerald-500 text-center text-white font-bold text-sm sm:text-base"
             >
-              Details
+              Procced
             </Link>
-            <button className="group cursor-pointer hover:bg-cyan-400 mb-1 p-2 transition-all duration-300 rounded-xl shrink-0">
+            {/* <button className="group cursor-pointer hover:bg-cyan-400 mb-1 p-2 transition-all duration-300 rounded-xl shrink-0">
               <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:stroke-white" />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

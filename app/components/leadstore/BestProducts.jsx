@@ -4,20 +4,13 @@ import React, { useState } from 'react'
 import BestProductCard from './BestProductCard'
 
 const CATEGORIES = [
-  { id: 1, title: "Demat Account Holders Data", slug: "demat-account-holders-data" },
-  { id: 2, title: "Stock Market Investors Data", slug: "stock-market-investors-data" },
-  { id: 3, title: "Loan Data", slug: "loan-data" },
-  { id: 4, title: "Insurance Data", slug: "insurance-data" },
-  { id: 5, title: "Real Estate Data", slug: "real-estate-data" },
-  { id: 6, title: "IT, Government, MNC Employees Data", slug: "it-government-mnc-employees-data" },
-  { id: 7, title: "HNI (High Net Worth Individuals) Data", slug: "hni-high-net-worth-individuals-data" },
-  { id: 8, title: "Car Owners Data", slug: "car-owners-data" },
-  { id: 9, title: "Credit Card Data", slug: "credit-card-data" },
-  { id: 10, title: "Students Data", slug: "students-data" },
-  { id: 11, title: "Company's,Hotel, Collage School Database", slug: "companys-hotel-collage-school-database" },
-  { id: 12, title: "Pincode Wise Data", slug: "pincode-wise-data" },
-  { id: 13, title: "Doctors Data", slug: "doctors-data" },
-  { id: 14, title: "International Data", slug: "international-data" }
+  { id: 1, title: "Stock Market Traders Data", slug: "stock-market-traders-data" },
+  { id: 2, title: "Loan Data", slug: "loan-data" },
+  { id: 3, title: "Insurance Data", slug: "insurance-data" },
+  { id: 4, title: "Real Estate Data", slug: "real-estate-data" },
+  { id: 5, title: "HNI (High Net Worth Individuals) Data", slug: "hni-high-net-worth-individuals-data" },
+  { id: 6, title: "Credit Card Holders Data", slug: "credit-card-holders-data" },
+  { id: 7, title: "Students Data", slug: "students-data" },
 ];
 
 export default function BestProducts() {
