@@ -14,7 +14,7 @@ const leadStoreData = [
   {
     id: 2,
     slug: "demat-account-holders-data",
-    title: "Demat Account Holders Data",
+    title: "Demat Account Holder's Data",
     description:
       "Verified database of Demat account holders across India.",
     industry: "Finance",
@@ -26,7 +26,7 @@ const leadStoreData = [
   {
     id: 3,
     slug: "stock-market-investors-data",
-    title: "Stock Market Investors Data",
+    title: "Stock Market Trader's Data",
     description:
       "Verified stock market investors database for financial marketing campaigns.",
     industry: "Finance",
@@ -98,7 +98,7 @@ const leadStoreData = [
   {
     id: 9,
     slug: "car-owners-data",
-    title: "Car Owners Data",
+    title: "Car Owner's Data",
     description:
       "Verified car owners database across India.",
     industry: "Automobile",
