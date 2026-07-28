@@ -149,8 +149,8 @@ export default function Footer() {
                 Need Custom Data?
               </h3>
               <p className="text-[13px] text-neutral-600">
-                Tell our expert what you need, type your contact, we will get
-                back to you within 24 hours.
+                Tell our expert what you need. Send us your contact, we will get
+                back to you within 5 minutes. 
               </p>
 
               <div className="mt-4">
