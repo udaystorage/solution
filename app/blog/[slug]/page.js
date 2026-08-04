@@ -3,6 +3,7 @@ import Image from "next/image";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import { promises as fs } from "fs";
 import path from "path";
+import Link from "next/link";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
@@ -234,6 +235,9 @@ const blogs = await getJsonFilesAsArray();
           
           {/* Header Segment */}
           <header className="flex flex-col gap-4">
+            <Link href="/blog" className="text-stone-400 hover:text-emerald-700 font-sm flex items-center gap-2">
+              <span aria-hidden="true">←</span> Back to Blog
+            </Link>
             <div className="flex items-center gap-3 text-sm font-medium tracking-wide uppercase text-stone-500">
               <time dateTime={isoDate.split('T')[0]}>{blog.date}</time>
               <span className="text-stone-300" aria-hidden="true">•</span>

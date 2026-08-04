@@ -1,5 +1,7 @@
 // app/sitemap.js
-import { blogs } from "@/data/blogs";
+import getJsonFilesAsArray from "@/lib/blog";
+
+const blogs = await getJsonFilesAsArray();
 
 export default async function sitemap() {
   const baseUrl = "https://leadwala.com";
