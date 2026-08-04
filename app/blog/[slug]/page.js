@@ -97,12 +97,13 @@ export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
   }
 }
 
-const blogs = await getJsonFilesAsArray();
 
 /**
  * 1. SSG PRE-RENDERING PARAMETERS
  */
 export async function generateStaticParams() {
+  const blogs = await getJsonFilesAsArray();
+
   return blogs.map((blog) => ({
     slug: blog.slug,
   }));
@@ -112,6 +113,8 @@ export async function generateStaticParams() {
  * 2. DYNAMIC SEO METADATA INJECTION
  */
 export async function generateMetadata({ params }) {
+  const blogs = await getJsonFilesAsArray();
+
   const { slug } = await params;
   const blog = blogs.find((item) => item.slug === slug);
 
@@ -166,9 +169,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function BlogPage({ params }) {
-
-
-  
+const blogs = await getJsonFilesAsArray();
    
   const { slug } = await params;
   

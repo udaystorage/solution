@@ -1,0 +1,30 @@
+{
+  "id": 3,
+  "slug": "trust-is-our-key",
+  "title": "Trust Is Our Key",
+  "image": "/uploads/1785838838167-80d7bcd4-5354-436d-acb5-2ef48afbd87a.webp",
+  "date": "August 4, 2026",
+  "readTime": "5 min read",
+  "description": "A trust is a legal arrangement where a person or group (the trustor or grantor) gives a second party (the trustee) the right to hold and manage assets or property for the benefit of a third party (the beneficiary)",
+  "content": {
+    "introduction": "Trust is must to build network and establishing any big business",
+    "highlights": [
+      "Reach your customer with trust",
+      "Gain their trust",
+      "Let them share their needs openly"
+    ],
+    "sections": [
+      {
+        "heading": "Why trust matters",
+        "brief": "Trust is the only currency in building business",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "deal-making, and sustains long-term growth when cash alone cannot secure a partnership. While money facilitates a single transaction, trust determines whether a customer returns, an employee stays, or a partner takes a risk. Without it, every exchange requires high legal friction and deep skepticism, making business slow and expensive"
+          }
+        ]
+      }
+    ],
+    "takeaway": "Without trust the foundation of any business is missing."
+  }
+}

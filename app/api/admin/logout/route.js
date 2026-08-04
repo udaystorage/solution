@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 
 export async function POST() {
-  const response = NextResponse.json({ success: true });
-  response.cookies.set("editor_session", "", { path: "/", maxAge: 0 });
-  return response;
+
+    const response = NextResponse.json({
+        success: true,
+    });
+
+    response.cookies.delete("editor_session");
+
+    return response;
+
 }
