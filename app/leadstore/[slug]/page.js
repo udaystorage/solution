@@ -12,8 +12,7 @@ export default async function LeadStoreProductPage({ params }) {
   );
 
   if (!product) {
-    console.log(slug);
-console.log(product);
+    notFound();
   }
 
   return <LeadStoreClient product={product} />;

@@ -1,11 +1,17 @@
 // app/robots.js
 export default function robots() {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/private/", // Optional: Add paths you want to hide from Google here
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: [
+          "/admin/",
+          "/api/",
+        ],
+      },
+    ],
     sitemap: "https://leadwala.com/sitemap.xml",
+    host: "https://leadwala.com",
   };
 }

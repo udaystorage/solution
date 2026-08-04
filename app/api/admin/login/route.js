@@ -1,34 +1,46 @@
 import { NextResponse } from "next/server";
+import { createAdminToken } from "@/lib/admin-auth";
 
 export async function POST(request) {
   let body;
+
   try {
     body = await request.json();
-    console.log(body);
-    
   } catch {
-    return NextResponse.json({ message: "Invalid request." }, { status: 400 });
-     console.log("code is not their");
+    return NextResponse.json(
+      { message: "Invalid request." },
+      { status: 400 }
+    );
   }
 
-  const { code } = body || {};
+  const { code } = body;
 
   if (!code || typeof code !== "string") {
-    return NextResponse.json({ message: "Code is required." }, { status: 400 });
+    return NextResponse.json(
+      { message: "Code is required." },
+      { status: 400 }
+    );
   }
 
-  if (code !== process.env.EDITOR_ACCESS_CODE) {
-    return NextResponse.json({ message: "Invalid code." }, { status: 401 });
+  if (code !== process.env.EDITOR_ACCESS_CODE?.trim()) {
+    return NextResponse.json(
+      { message: "Invalid code." },
+      { status: 401 }
+    );
   }
 
-  const response = NextResponse.json({ success: true });
+  const token = await createAdminToken();
 
-  response.cookies.set("editor_session", process.env.ADMIN_SESSION_SECRET, {
+  const response = NextResponse.json({
+    success: true,
+  });
+
+  response.cookies.set("editor_session", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "strict",
     path: "/",
-    maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 8, // 8 hours
   });
 
   return response;

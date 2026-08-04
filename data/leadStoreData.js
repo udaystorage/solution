@@ -3,6 +3,7 @@ const leadStoreData = [
     id: 1,
     slug: "custom-data",
     title: "Custom Data",
+    image:"/leadCards/custom-data.webp",
     description:
       "Custom-built databases tailored to your exact audience and business requirements.",
     industry: "Custom",
@@ -14,7 +15,9 @@ const leadStoreData = [
   {
     id: 2,
     slug: "demat-account-holders-data",
-    title: "Demat Account Holders Data",
+    title: "Demat Account Holder's Data",
+    image:"/leadCards/demat-account-holders.webp",
+
     description:
       "Verified database of Demat account holders across India.",
     industry: "Finance",
@@ -26,7 +29,8 @@ const leadStoreData = [
   {
     id: 3,
     slug: "stock-market-investors-data",
-    title: "Stock Market Investors Data",
+    title: "Stock Market Trader's Data",
+    image:"/leadCards/stock-trader.webp",
     description:
       "Verified stock market investors database for financial marketing campaigns.",
     industry: "Finance",
@@ -39,6 +43,8 @@ const leadStoreData = [
     id: 4,
     slug: "loan-data",
     title: "Loan Data",
+    image:"/leadCards/loan.webp",
+
     description:
       "Verified loan customer database across multiple lending segments.",
     industry: "Finance",
@@ -51,6 +57,8 @@ const leadStoreData = [
     id: 5,
     slug: "insurance-data",
     title: "Insurance Data",
+    image:"/leadCards/insurance.webp",
+
     description:
       "Verified insurance customer database for targeted outreach.",
     industry: "Insurance",
@@ -63,6 +71,8 @@ const leadStoreData = [
     id: 6,
     slug: "real-estate-data",
     title: "Real Estate Data",
+    image:"/leadCards/real-estate.webp",
+
     description:
       "Verified real estate buyers, investors and property-related database.",
     industry: "Real Estate",
@@ -75,6 +85,8 @@ const leadStoreData = [
     id: 7,
     slug: "it-government-mnc-employees-data",
     title: "IT, Government & MNC Employees Data",
+    image:"/leadCards/employee.webp",
+
     description:
       "Verified employee database across IT companies, Government departments and MNCs.",
     industry: "Corporate",
@@ -87,6 +99,8 @@ const leadStoreData = [
     id: 8,
     slug: "hni-data",
     title: "HNI (High Net Worth Individuals)",
+    image:"/leadCards/hni.webp",
+
     description:
       "Premium verified High Net Worth Individuals database.",
     industry: "Finance",
@@ -98,7 +112,9 @@ const leadStoreData = [
   {
     id: 9,
     slug: "car-owners-data",
-    title: "Car Owners Data",
+    title: "Car Owner's Data",
+    image:"/leadCards/car-owner.webp",
+
     description:
       "Verified car owners database across India.",
     industry: "Automobile",
@@ -111,6 +127,8 @@ const leadStoreData = [
     id: 10,
     slug: "credit-card-data",
     title: "Credit Card Data",
+    image:"/leadCards/credit-card.webp",
+
     description:
       "Verified credit card holder database.",
     industry: "Finance",
@@ -123,6 +141,8 @@ const leadStoreData = [
     id: 11,
     slug: "students-data",
     title: "Students Data",
+    image:"/leadCards/students.webp",
+
     description:
       "Verified college and university student database.",
     industry: "Education",
@@ -135,6 +155,8 @@ const leadStoreData = [
     id: 12,
     slug: "companies-hotels-colleges-schools-restaurants-spa-database",
     title: "Companies, Hotels, Colleges, Schools, Restaurants & Spa Database",
+    image:"/leadCards/business.webp",
+
     description:
       "Verified business and institution database across multiple industries.",
     industry: "Business",
@@ -147,6 +169,8 @@ const leadStoreData = [
     id: 13,
     slug: "pincode-wise-data",
     title: "Pincode Wise Data",
+    image:"/leadCards/pincode-wise.webp",
+
     description:
       "Highly targeted database filtered by PIN code and location.",
     industry: "Location Based",
@@ -159,6 +183,8 @@ const leadStoreData = [
     id: 14,
     slug: "doctors-data",
     title: "Doctors Data",
+    image:"/leadCards/doctors.webp",
+
     description:
       "Verified doctors and healthcare professionals database.",
     industry: "Healthcare",
@@ -171,6 +197,7 @@ const leadStoreData = [
     id: 15,
     slug: "international-data",
     title: "International Data",
+    image:"/leadCards/international.webp",
     description:
       "Verified international B2B and B2C databases across multiple countries.",
     industry: "Global",

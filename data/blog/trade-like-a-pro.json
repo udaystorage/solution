@@ -1,0 +1,30 @@
+{
+  "id": 4,
+  "slug": "trade-like-a-pro",
+  "title": "Trade like a pro",
+  "image": "/uploads/1785842231559-229f7613-a61c-49e0-9e38-19f4108e22a9.jpg",
+  "date": "August 4, 2026",
+  "readTime": "5 min read",
+  "description": "Learn how to trade like a pro in two minutes",
+  "content": {
+    "introduction": "Learn and earn as  much as you want",
+    "highlights": [
+      "Don't waste money ",
+      "Learn how to read market",
+      "Bet and withdraw in right time"
+    ],
+    "sections": [
+      {
+        "heading": "Trading is not a game to entertain with",
+        "brief": "Learn and earn as much as you want",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Trading mastery requires a blend of discipline, risk management, and continuous learning. Successful traders do not rely on luck or emotion. Instead, they execute well-defined strategies with consistency. They accept that losses are inevitable and manage them through strict risk controls. True mastery means controlling psychology to avoid greed and fear. Markets change constantly, demanding continuous adaptation and analysis. Ultimately, elite traders treat trading as a business, focusing on long-term execution rather than short-term gain."
+          }
+        ]
+      }
+    ],
+    "takeaway": "Once you learn, lifetime you earn."
+  }
+}

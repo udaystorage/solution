@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 import crypto from "crypto";
+import { requireAdmin } from "@/lib/require-admin";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 // Images are saved to /public/uploads so they're served directly at /uploads/<filename>
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
@@ -39,6 +40,14 @@ async function ensureUploadDir() {
 
 // POST /api/upload -> accepts multipart/form-data with a "file" field
 export async function POST(request) {
+
+    if (!(await requireAdmin())) {
+    return NextResponse.json(
+      { message: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+  
   try {
     const formData = await request.formData();
     const file = formData.get("file");

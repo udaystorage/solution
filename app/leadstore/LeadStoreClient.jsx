@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import ProductHero from "@/app/components/sections/leadstore/ProductHero";
-import DatabaseConfigurator from "@/app/components/sections/leadstore/DatabaseConfigurator";
-import RequestSummary from "@/app/components/sections/leadstore/RequestSummary";
+import ProductHero from "@/app/components/sections/leadstoreSlug/ProductHero";
+import DatabaseConfigurator from "@/app/components/sections/leadstoreSlug/DatabaseConfigurator";
+import RequestSummary from "@/app/components/sections/leadstoreSlug/RequestSummary";
 
 const WHATSAPP_NUMBER = "919999999999";
 
@@ -144,3 +144,5 @@ Thank you.
     </main>
   );
 }
+
+
