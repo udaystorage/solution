@@ -15,6 +15,8 @@ const leadStoreData = [
     id: 2,
     slug: "demat-account-holders-data",
     title: "Demat Account Holder's Data",
+    image:"/leadCards/demat-account-holders.webp",
+
     description:
       "Verified database of Demat account holders across India.",
     industry: "Finance",
@@ -82,6 +84,8 @@ const leadStoreData = [
     id: 7,
     slug: "it-government-mnc-employees-data",
     title: "IT, Government & MNC Employees Data",
+    image:"/leadCards/employee.webp",
+
     description:
       "Verified employee database across IT companies, Government departments and MNCs.",
     industry: "Corporate",
@@ -150,6 +154,8 @@ const leadStoreData = [
     id: 12,
     slug: "companies-hotels-colleges-schools-restaurants-spa-database",
     title: "Companies, Hotels, Colleges, Schools, Restaurants & Spa Database",
+    image:"/leadCards/business.webp",
+
     description:
       "Verified business and institution database across multiple industries.",
     industry: "Business",
@@ -162,6 +168,8 @@ const leadStoreData = [
     id: 13,
     slug: "pincode-wise-data",
     title: "Pincode Wise Data",
+    image:"/leadCards/pincode-wise.webp",
+
     description:
       "Highly targeted database filtered by PIN code and location.",
     industry: "Location Based",
@@ -174,6 +182,8 @@ const leadStoreData = [
     id: 14,
     slug: "doctors-data",
     title: "Doctors Data",
+    image:"/leadCards/doctors.webp",
+
     description:
       "Verified doctors and healthcare professionals database.",
     industry: "Healthcare",
@@ -186,6 +196,7 @@ const leadStoreData = [
     id: 15,
     slug: "international-data",
     title: "International Data",
+    image:"/leadCards/international.webp",
     description:
       "Verified international B2B and B2C databases across multiple countries.",
     industry: "Global",
