@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   BadgeCheck,
@@ -11,7 +12,7 @@ import {
 } from "lucide-react";
 
 export default function ProductHero({ product }) {
-  const { title, description } = product;
+  const { title, description, image } = product;
 
   console.log(description);
   console.log(title);
@@ -82,44 +83,58 @@ export default function ProductHero({ product }) {
                 <Sparkles className="text-cyan-600" size={18} />
               </div>
 
-              <div className="mt-8 rounded-2xl bg-stone-50 p-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100">
-                    <Database className="text-cyan-700" size={24} />
-                  </div>
+              <div className="mt-8 overflow-hidden rounded-2xl border border-stone-200 bg-white">
+                {/* Hero Image */}
+                <div className="relative aspect-[16/9] w-full bg-stone-100">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width:1024px)100vw,420px"
+                  />
 
-                  <div>
-                    <p className="font-medium text-stone-900">{title}</p>
-
-                    <p className="text-sm text-stone-500">
-                      Tailored & Verified Dataset
-                    </p>
-                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/35 to-transparent" />
                 </div>
 
-                <div className="mt-8 space-y-4">
-                  <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
-                    <span className="text-stone-500">Coverage</span>
-                    <span className="font-medium">Pan India</span>
+                {/* Details */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100">
+                      <Database className="text-cyan-700" size={22} />
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-stone-900">{title}</p>
+
+                      <p className="text-sm text-stone-500">
+                        Tailored & Verified Dataset
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
-                    <span className="text-stone-500">Quality</span>
-                    <span className="font-medium">Premium Verified</span>
-                  </div>
+                  <div className="mt-6 space-y-4">
+                    <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
+                      <span className="text-stone-500">Coverage</span>
+                      <span className="font-medium">Pan India</span>
+                    </div>
 
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-stone-500">Delivery</span>
-                    <span className="font-medium">Within Hours</span>
+                    <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
+                      <span className="text-stone-500">Quality</span>
+                      <span className="font-medium">Premium Verified</span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-stone-500">Delivery</span>
+                      <span className="font-medium">Within Hours</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 rounded-2xl border border-cyan-100 bg-cyan-50 px-5 py-4">
                 <p className="text-sm leading-6 text-cyan-900">
-                  Every database request is manually reviewed before delivery to
-                  ensure better accuracy, freshness and relevance for your
-                  campaign.
+                 Every database is tailored, reviewd and verified before delivery.
                 </p>
               </div>
             </div>

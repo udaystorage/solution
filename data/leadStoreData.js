@@ -27,6 +27,7 @@ const leadStoreData = [
     id: 3,
     slug: "stock-market-investors-data",
     title: "Stock Market Trader's Data",
+    image:"/leadCards/stock-trader.webp",
     description:
       "Verified stock market investors database for financial marketing campaigns.",
     industry: "Finance",
@@ -39,6 +40,8 @@ const leadStoreData = [
     id: 4,
     slug: "loan-data",
     title: "Loan Data",
+    image:"/leadCards/loan.webp",
+
     description:
       "Verified loan customer database across multiple lending segments.",
     industry: "Finance",
@@ -51,6 +54,8 @@ const leadStoreData = [
     id: 5,
     slug: "insurance-data",
     title: "Insurance Data",
+    image:"/leadCards/insurance.webp",
+
     description:
       "Verified insurance customer database for targeted outreach.",
     industry: "Insurance",
@@ -63,6 +68,8 @@ const leadStoreData = [
     id: 6,
     slug: "real-estate-data",
     title: "Real Estate Data",
+    image:"/leadCards/real-estate.webp",
+
     description:
       "Verified real estate buyers, investors and property-related database.",
     industry: "Real Estate",
@@ -87,6 +94,8 @@ const leadStoreData = [
     id: 8,
     slug: "hni-data",
     title: "HNI (High Net Worth Individuals)",
+    image:"/leadCards/hni.webp",
+
     description:
       "Premium verified High Net Worth Individuals database.",
     industry: "Finance",
@@ -99,6 +108,8 @@ const leadStoreData = [
     id: 9,
     slug: "car-owners-data",
     title: "Car Owner's Data",
+    image:"/leadCards/car-owner.webp",
+
     description:
       "Verified car owners database across India.",
     industry: "Automobile",
@@ -111,6 +122,8 @@ const leadStoreData = [
     id: 10,
     slug: "credit-card-data",
     title: "Credit Card Data",
+    image:"/leadCards/credit-card.webp",
+
     description:
       "Verified credit card holder database.",
     industry: "Finance",
@@ -123,6 +136,8 @@ const leadStoreData = [
     id: 11,
     slug: "students-data",
     title: "Students Data",
+    image:"/leadCards/students.webp",
+
     description:
       "Verified college and university student database.",
     industry: "Education",

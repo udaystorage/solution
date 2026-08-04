@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import bestselling1 from "../../images/BestSelling/bestselling1.jpg";
-import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 export default function BestProductCard({ name, slug, image, description }) {
