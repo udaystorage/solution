@@ -299,7 +299,7 @@ export default function ContactPanel() {
                       className="h-3.5 w-3.5 text-slate-400"
                     />
 
-                    <span>10:00 AM–7:00 PM</span>
+                    <span>10:00 AM–08:00 PM</span>
                   </div>
 
                   <p

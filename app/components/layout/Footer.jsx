@@ -247,7 +247,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-neutral-200 pt-8 text-center lg:flex-row lg:text-left">
           <p className="text-sm leading-7 text-neutral-600">
-            © 2026 Lead Wale
+            © 2026 Leadwala
             <br />
             All rights reserved.
           </p>

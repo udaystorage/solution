@@ -42,7 +42,7 @@ export default function BestProducts() {
   </p>
 
   <h2 className="mt-2 text-xl md:text-2xl  font-bold ">
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500">20,834+ </span> Verified Database Segments
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500">4,834+ </span> Verified Database Segments
   </h2>
 
   <p className="mt-2 md:mt-3 text-sm md:text-base  text-neutral-500">

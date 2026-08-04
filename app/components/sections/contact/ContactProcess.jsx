@@ -8,7 +8,7 @@ import {
 const STEPS = [
   {
     number: "01",
-    title: "Tell us who you need",
+    title: "Tell us what you need",
     description:
       "Share the audience, industry, location, or market you want to reach.",
     icon: UsersRound,

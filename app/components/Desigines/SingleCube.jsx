@@ -1,114 +1,300 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import { useEffect, useState } from "react";
+import useDatasetRotation from "./useDatasetRotation";
 
 export default function SingleCube({
   name,
-  shadow,
-  position,
-  ztranslate,
-  rotation,
-  width = 100,
-  height = 100,
   colour,
-  floatDuration = 3.2, // seconds
-  floatDelay = 0,       // seconds
-  floatHeight = 18,     // px
+  width = 120,
+  height = 120,
+  depth = 60,
+
+  rotation = {
+    x: -25,
+    y: -35,
+  },
+
+  floatHeight = 18,
+  floatDuration = 4,
+
+  rockAmount = 5,
+  rockDuration = 8,
+
+  glow = true,
 }) {
-  const FACES = [
-    { name: `${name}`, transform: `rotateY(0deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "1" },
-    { name: "", transform: `rotateY(180deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "2" },
-    { name: "", transform: `rotateY(90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "3" },
-    { name: "", transform: `rotateY(-90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "4" },
-    { name: "", transform: `rotateX(90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "5" },
-    { name: "", transform: `rotateX(-90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "6" },
+  const faces = [
+    {
+      id: 1,
+      title: name,
+      transform: `rotateY(0deg) translateZ(${depth}px)`,
+    },
+    {
+      id: 2,
+      title: "",
+      transform: `rotateY(180deg) translateZ(${depth}px)`,
+    },
+    {
+      id: 3,
+      title: "",
+      transform: `rotateY(90deg) translateZ(${depth}px)`,
+    },
+    {
+      id: 4,
+      title: "",
+      transform: `rotateY(-90deg) translateZ(${depth}px)`,
+    },
+    {
+      id: 5,
+      title: "",
+      transform: `rotateX(90deg) translateZ(${depth}px)`,
+    },
+    {
+      id: 6,
+      title: "",
+      transform: `rotateX(-90deg) translateZ(${depth}px)`,
+    },
   ];
 
   return (
-    <div className={`cube-stage w-full flex justify-center ${position}`} style={{ perspective: "900px" }}>
+    <>
       <style>{`
-        @keyframes cube-hover-float {
-          0%   { transform: translateY(0px); }
-          50%  { transform: translateY(calc(-1 * var(--float-h, 18px))); }
-          100% { transform: translateY(0px); }
+
+      .cube-root{
+
+        --float-height:${floatHeight}px;
+        --float-duration:${floatDuration}s;
+
+        --rock-duration:${rockDuration}s;
+        --rock-amount:${rockAmount}deg;
+
+      }
+
+      @keyframes cubeFloat{
+
+        0%{
+
+          transform:translateY(0px);
+
         }
-        @keyframes cube-hover-shadow {
-          0%   { transform: scale(1);    opacity: 0.5; }
-          50%  { transform: scale(0.65); opacity: 0.25; }
-          100% { transform: scale(1);    opacity: 0.5; }
+
+        50%{
+
+          transform:translateY(calc(var(--float-height) * -1));
+
         }
-        .cube-float-wrap {
-          animation: cube-hover-float var(--float-dur, 3.2s) ease-in-out infinite;
-          animation-delay: var(--float-delay, 0s);
+
+        100%{
+
+          transform:translateY(0px);
+
         }
-        .cube-shadow-anim {
-          animation: cube-hover-shadow var(--float-dur, 3.2s) ease-in-out infinite;
-          animation-delay: var(--float-delay, 0s);
+
+      }
+
+      @keyframes cubeRock{
+
+        0%{
+
+          transform:
+          rotateX(${rotation.x}deg)
+          rotateY(${rotation.y}deg);
+
         }
-        .cube-responsive-scale {
-          transform: scale(0.55);
+
+        25%{
+
+          transform:
+          rotateX(calc(${rotation.x}deg + var(--rock-amount)))
+          rotateY(calc(${rotation.y}deg - var(--rock-amount)));
+
         }
-        @media (min-width: 480px) {
-          .cube-responsive-scale { transform: scale(0.7); }
+
+        50%{
+
+          transform:
+          rotateX(${rotation.x}deg)
+          rotateY(${rotation.y}deg);
+
         }
-        @media (min-width: 640px) {
-          .cube-responsive-scale { transform: scale(0.85); }
+
+        75%{
+
+          transform:
+          rotateX(calc(${rotation.x}deg - var(--rock-amount)))
+          rotateY(calc(${rotation.y}deg + var(--rock-amount)));
+
         }
-        @media (min-width: 1024px) {
-          .cube-responsive-scale { transform: scale(1); }
+
+        100%{
+
+          transform:
+          rotateX(${rotation.x}deg)
+          rotateY(${rotation.y}deg);
+
         }
+
+      }
+
+      @keyframes shadowPulse{
+
+        0%{
+
+          transform:scale(1);
+          opacity:.35;
+
+        }
+
+        50%{
+
+          transform:scale(.78);
+          opacity:.18;
+
+        }
+
+        100%{
+
+          transform:scale(1);
+          opacity:.35;
+
+        }
+
+      }
+
+      @keyframes glowPulse{
+
+        0%{
+
+          opacity:.25;
+
+        }
+
+        50%{
+
+          opacity:.5;
+
+        }
+
+        100%{
+
+          opacity:.25;
+
+        }
+
+      }
+
+      .cube-float{
+
+        animation:cubeFloat var(--float-duration)
+        ease-in-out infinite;
+
+      }
+
+      .cube-body{
+
+        animation:cubeRock var(--rock-duration)
+        ease-in-out infinite;
+
+      }
+
+      .cube-shadow{
+
+        animation:
+        shadowPulse var(--float-duration)
+        ease-in-out infinite;
+
+      }
+
+      .cube-glow{
+
+        animation:
+        glowPulse 6s ease-in-out infinite;
+
+      }
+
       `}</style>
 
-      {/* everything below scales together as one unit, so cube geometry never distorts */}
-      <div className="cube-responsive-scale flex flex-col items-center" style={{ transformOrigin: "center center" }}>
-        <div
-          className="cube-float-wrap"
-          style={{
-            "--float-dur": `${floatDuration}s`,
-            "--float-delay": `${floatDelay}s`,
-            "--float-h": `${floatHeight}px`,
-          }}
-        >
-          <div
-            className="relative"
-            style={{
-              width: `${width}px`,
-              height: `${height}px`,
-              transformStyle: "preserve-3d",
-              transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-            }}
-          >
-            {FACES.map((face) => (
+      <div
+        className="cube-root flex flex-col items-center"
+        style={{
+          perspective: "1200px",
+        }}
+      >
+        <div className="cube-float">
+
+          <div className="relative">
+
+            {glow && (
               <div
-                key={face.id}
-                className={`absolute inset-0 flex items-center justify-center rounded-sm border border-white/20 ${face.from} shadow-[inset_0_0_40px_rgba(255,255,255,0.15)]`}
-                style={{
-                  width: `${width}px`,
-                  height: `${height}px`,
-                  transform: face.transform,
-                  backfaceVisibility: "hidden",
-                }}
-              >
-                <span className="text-white/90 text-sm text-center tracking-[0.2em] font-bold">
-                  <div className="w-full h-full flex items-center justify-center p-2">
-                    {face.name}
+                className={`cube-glow absolute inset-0 blur-3xl rounded-full ${colour}`}
+              />
+            )}
+
+            <div
+              className="cube-body relative"
+              style={{
+                width,
+                height,
+                transformStyle: "preserve-3d",
+              }}
+            >
+              {faces.map((face) => (
+                <div
+                  key={face.id}
+                  className={`
+                  absolute
+                  inset-0
+
+                  rounded-md
+
+                  border
+                  border-white/20
+
+                  backdrop-blur-xl
+
+                  ${colour}
+
+                  shadow-[inset_0_0_40px_rgba(255,255,255,.15)]
+                  `}
+                  style={{
+                    width,
+                    height,
+                    transform: face.transform,
+                    backfaceVisibility: "hidden",
+                  }}
+                >
+                  <div className="absolute inset-[1px] rounded-md border border-white/10" />
+
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10 rounded-md" />
+
+                  <div className="flex h-full w-full items-center justify-center p-4">
+
+                    <span className="text-white font-semibold tracking-[.25em] text-center leading-relaxed">
+
+                      {face.title}
+
+                    </span>
+
                   </div>
-                </span>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div
-          className={`mx-auto rounded-full bg-black/50 blur-xl cube-shadow-anim ${shadow}`}
-          style={{
-            width: "140px",
-            height: "20px",
-            marginBottom: "-20px",
-            "--float-dur": `${floatDuration}s`,
-            "--float-delay": `${floatDelay}s`,
-            transform: `scaleX(${1 - Math.abs(rotation.x % 180) / 300})`,
-          }}
+          className="
+          cube-shadow
+          mt-2
+          h-5
+          w-36
+          rounded-full
+          bg-black/40
+          blur-xl
+          "
         />
       </div>
-    </div>
-  )
+    </>
+  );
 }

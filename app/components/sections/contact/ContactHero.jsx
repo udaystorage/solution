@@ -62,7 +62,7 @@ export default function ContactHero() {
               sm:text-lg
             "
           >
-            Share the market or audience you&apos;re trying to reach.
+            Share the target audience you&apos;re trying to reach.
             We&apos;ll check what&apos;s available and help you find the
             right data.
           </p>
