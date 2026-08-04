@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
+import {ArrowLeft} from "lucide-react";
 import Image from "next/image";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
-import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
+import { getJsonFilesAsArray } from "@/lib/blog";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
@@ -70,33 +71,7 @@ function parseParagraphBlocks(text) {
   return blocks;
 }
  
-/**
- * Reads every .json file in a directory and returns their parsed
- * contents merged into a single array.
- *
- * @param {string} dirPath - Absolute path to the directory to read.
- * @returns {Promise<Array>} Combined array of all JSON file contents.
- */
-export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
-  try {
-    const files = await fs.readdir(dirPath);
-    const jsonFiles = files.filter((file) => file.endsWith(".json"));
- 
-    const items = await Promise.all(
-      jsonFiles.map(async (file) => {
-        const filePath = path.join(dirPath, file);
-        const raw = await fs.readFile(filePath, "utf-8");
-        return JSON.parse(raw);
-      })
-    );
- 
-    return items;
-  } catch (err) {
-    // Directory doesn't exist yet -> return an empty array instead of throwing
-    if (err.code === "ENOENT") return [];
-    throw err;
-  }
-}
+
 
 
 /**
@@ -235,9 +210,13 @@ const blogs = await getJsonFilesAsArray();
           
           {/* Header Segment */}
           <header className="flex flex-col gap-4">
-            <Link href="/blog" className="text-stone-400 hover:text-emerald-700 font-sm flex items-center gap-2">
-              <span aria-hidden="true">←</span> Back to Blog
-            </Link>
+         <Link
+          href="/blog"
+          className="inline-flex w-fit items-center gap-2 text-sm text-stone-500 transition hover:text-emerald-700"
+        >
+          <ArrowLeft size={16} />
+          Back to Blog
+        </Link>
             <div className="flex items-center gap-3 text-sm font-medium tracking-wide uppercase text-stone-500">
               <time dateTime={isoDate.split('T')[0]}>{blog.date}</time>
               <span className="text-stone-300" aria-hidden="true">•</span>

@@ -1,5 +1,5 @@
 // app/sitemap.js
-import getJsonFilesAsArray from "@/lib/blog";
+import {getJsonFilesAsArray} from "@/lib/blog";
 
 const blogs = await getJsonFilesAsArray();
 
