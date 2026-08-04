@@ -1,300 +1,109 @@
-"use client";
-
-import React from "react";
-import { useEffect, useState } from "react";
-import useDatasetRotation from "./useDatasetRotation";
+import React from 'react';
 
 export default function SingleCube({
   name,
-  colour,
-  width = 120,
-  height = 120,
-  depth = 60,
-
-  rotation = {
-    x: -25,
-    y: -35,
-  },
-
-  floatHeight = 18,
-  floatDuration = 4,
-
-  rockAmount = 5,
-  rockDuration = 8,
-
-  glow = true,
+  position = "",
+  size = 120, // default cubic dimension in px
+  colorTheme = "blue", // "blue" | "cyan" | "violet"
+  rotation = { x: -25, y: -35 },
+  floatDuration = 3.2,
+  floatDelay = 0,
+  floatHeight = 16,
 }) {
-  const faces = [
-    {
-      id: 1,
-      title: name,
-      transform: `rotateY(0deg) translateZ(${depth}px)`,
+  const halfSize = size / 2;
+
+  // Theme configuration for DaaS glow aesthetics
+  const themes = {
+    blue: {
+      front: "bg-gradient-to-tr from-blue-600/70 via-blue-500/50 to-indigo-400/60 border-blue-300/40 shadow-[inset_0_0_25px_rgba(59,130,246,0.3)]",
+      top: "bg-gradient-to-tr from-blue-400/80 to-indigo-300/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
+      right: "bg-gradient-to-tr from-blue-800/80 to-indigo-900/70 border-blue-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
+      glow: "bg-blue-500/30",
     },
-    {
-      id: 2,
-      title: "",
-      transform: `rotateY(180deg) translateZ(${depth}px)`,
+    cyan: {
+      front: "bg-gradient-to-tr from-cyan-600/70 via-teal-500/50 to-cyan-400/60 border-cyan-300/40 shadow-[inset_0_0_25px_rgba(6,182,212,0.3)]",
+      top: "bg-gradient-to-tr from-cyan-300/80 to-teal-200/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
+      right: "bg-gradient-to-tr from-cyan-900/80 to-teal-950/70 border-cyan-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
+      glow: "bg-cyan-400/30",
     },
-    {
-      id: 3,
-      title: "",
-      transform: `rotateY(90deg) translateZ(${depth}px)`,
+    violet: {
+      front: "bg-gradient-to-tr from-violet-600/70 via-purple-500/50 to-fuchsia-400/60 border-violet-300/40 shadow-[inset_0_0_25px_rgba(139,92,246,0.3)]",
+      top: "bg-gradient-to-tr from-violet-300/80 to-fuchsia-200/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
+      right: "bg-gradient-to-tr from-violet-900/80 to-purple-950/70 border-violet-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
+      glow: "bg-violet-500/30",
     },
-    {
-      id: 4,
-      title: "",
-      transform: `rotateY(-90deg) translateZ(${depth}px)`,
-    },
-    {
-      id: 5,
-      title: "",
-      transform: `rotateX(90deg) translateZ(${depth}px)`,
-    },
-    {
-      id: 6,
-      title: "",
-      transform: `rotateX(-90deg) translateZ(${depth}px)`,
-    },
+  };
+
+  const currentTheme = themes[colorTheme] || themes.blue;
+
+  // Face definition with volumetric shading
+  const FACES = [
+    { id: "front", transform: `rotateY(0deg) translateZ(${halfSize}px)`, style: currentTheme.front, showName: true },
+    { id: "back", transform: `rotateY(180deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
+    { id: "right", transform: `rotateY(90deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
+    { id: "left", transform: `rotateY(-90deg) translateZ(${halfSize}px)`, style: currentTheme.front, showName: false },
+    { id: "top", transform: `rotateX(90deg) translateZ(${halfSize}px)`, style: currentTheme.top, showName: false },
+    { id: "bottom", transform: `rotateX(-90deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
   ];
 
   return (
-    <>
-      <style>{`
-
-      .cube-root{
-
-        --float-height:${floatHeight}px;
-        --float-duration:${floatDuration}s;
-
-        --rock-duration:${rockDuration}s;
-        --rock-amount:${rockAmount}deg;
-
-      }
-
-      @keyframes cubeFloat{
-
-        0%{
-
-          transform:translateY(0px);
-
-        }
-
-        50%{
-
-          transform:translateY(calc(var(--float-height) * -1));
-
-        }
-
-        100%{
-
-          transform:translateY(0px);
-
-        }
-
-      }
-
-      @keyframes cubeRock{
-
-        0%{
-
-          transform:
-          rotateX(${rotation.x}deg)
-          rotateY(${rotation.y}deg);
-
-        }
-
-        25%{
-
-          transform:
-          rotateX(calc(${rotation.x}deg + var(--rock-amount)))
-          rotateY(calc(${rotation.y}deg - var(--rock-amount)));
-
-        }
-
-        50%{
-
-          transform:
-          rotateX(${rotation.x}deg)
-          rotateY(${rotation.y}deg);
-
-        }
-
-        75%{
-
-          transform:
-          rotateX(calc(${rotation.x}deg - var(--rock-amount)))
-          rotateY(calc(${rotation.y}deg + var(--rock-amount)));
-
-        }
-
-        100%{
-
-          transform:
-          rotateX(${rotation.x}deg)
-          rotateY(${rotation.y}deg);
-
-        }
-
-      }
-
-      @keyframes shadowPulse{
-
-        0%{
-
-          transform:scale(1);
-          opacity:.35;
-
-        }
-
-        50%{
-
-          transform:scale(.78);
-          opacity:.18;
-
-        }
-
-        100%{
-
-          transform:scale(1);
-          opacity:.35;
-
-        }
-
-      }
-
-      @keyframes glowPulse{
-
-        0%{
-
-          opacity:.25;
-
-        }
-
-        50%{
-
-          opacity:.5;
-
-        }
-
-        100%{
-
-          opacity:.25;
-
-        }
-
-      }
-
-      .cube-float{
-
-        animation:cubeFloat var(--float-duration)
-        ease-in-out infinite;
-
-      }
-
-      .cube-body{
-
-        animation:cubeRock var(--rock-duration)
-        ease-in-out infinite;
-
-      }
-
-      .cube-shadow{
-
-        animation:
-        shadowPulse var(--float-duration)
-        ease-in-out infinite;
-
-      }
-
-      .cube-glow{
-
-        animation:
-        glowPulse 6s ease-in-out infinite;
-
-      }
-
-      `}</style>
-
-      <div
-        className="cube-root flex flex-col items-center"
-        style={{
-          perspective: "1200px",
-        }}
-      >
-        <div className="cube-float">
-
-          <div className="relative">
-
-            {glow && (
+    <div className={`cube-stage flex justify-center items-center ${position}`} style={{ perspective: "1000px" }}>
+      <div className="cube-responsive-scale flex flex-col items-center" style={{ transformOrigin: "center center" }}>
+        
+        {/* Floating Wrapper */}
+        <div
+          className="cube-float-wrap relative"
+          style={{
+            "--float-dur": `${floatDuration}s`,
+            "--float-delay": `${floatDelay}s`,
+            "--float-h": `${floatHeight}px`,
+          }}
+        >
+          {/* Ambient Glow behind Cube */}
+          <div className={`absolute -inset-4 rounded-full blur-2xl opacity-60 pointer-events-none ${currentTheme.glow}`} />
+
+          {/* 3D Cube Container */}
+          <div
+            className="relative transition-transform duration-100 ease-out"
+            style={{
+              width: `${size}px`,
+              height: `${size}px`,
+              transformStyle: "preserve-3d",
+              transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+            }}
+          >
+            {FACES.map((face) => (
               <div
-                className={`cube-glow absolute inset-0 blur-3xl rounded-full ${colour}`}
-              />
-            )}
-
-            <div
-              className="cube-body relative"
-              style={{
-                width,
-                height,
-                transformStyle: "preserve-3d",
-              }}
-            >
-              {faces.map((face) => (
-                <div
-                  key={face.id}
-                  className={`
-                  absolute
-                  inset-0
-
-                  rounded-md
-
-                  border
-                  border-white/20
-
-                  backdrop-blur-xl
-
-                  ${colour}
-
-                  shadow-[inset_0_0_40px_rgba(255,255,255,.15)]
-                  `}
-                  style={{
-                    width,
-                    height,
-                    transform: face.transform,
-                    backfaceVisibility: "hidden",
-                  }}
-                >
-                  <div className="absolute inset-[1px] rounded-md border border-white/10" />
-
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10 rounded-md" />
-
-                  <div className="flex h-full w-full items-center justify-center p-4">
-
-                    <span className="text-white font-semibold tracking-[.25em] text-center leading-relaxed">
-
-                      {face.title}
-
-                    </span>
-
-                  </div>
-                </div>
-              ))}
-            </div>
+                key={face.id}
+                className={`absolute inset-0 flex items-center justify-center rounded-lg border backdrop-blur-md transition-all duration-300 ${face.style}`}
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  transform: face.transform,
+                  backfaceVisibility: "hidden",
+                }}
+              >
+                {face.showName && name && (
+                  <span className="text-white text-xs sm:text-sm font-semibold tracking-wider text-center p-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                    {name}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
+        {/* Dynamic Shadow */}
         <div
-          className="
-          cube-shadow
-          mt-2
-          h-5
-          w-36
-          rounded-full
-          bg-black/40
-          blur-xl
-          "
+          className="mx-auto rounded-full bg-black/60 blur-xl cube-shadow-anim mt-6 pointer-events-none"
+          style={{
+            width: `${size * 0.9}px`,
+            height: `${size * 0.2}px`,
+            "--float-dur": `${floatDuration}s`,
+            "--float-delay": `${floatDelay}s`,
+          }}
         />
       </div>
-    </>
+    </div>
   );
 }

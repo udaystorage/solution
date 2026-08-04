@@ -83,9 +83,7 @@ export default function BlurGlass() {
           text-slate-700
         "
       >
-        Instantly access direct-dial phone numbers and verified email
-        databases. No subscription lock-ins, 95%+ accuracy, and
-        compliance-ready data for your outreach.
+       Reach the right people and turn each call into a business opportunity with Leadwala&apos;s premium verified contact lists.
       </p>
 
       <div
