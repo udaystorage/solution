@@ -11,34 +11,34 @@ export default function WhyChooseUs() {
       id: "01",
       title: "Verified B2B & B2C Contact Lists",
       description:
-        "Every B2B and B2C email list and phone number database undergoes rigorous multi-layer verification to guarantee high deliverability.",
+        "Every B2B and B2C email list and phone number database undergoe multi-layer verification and filtration to guarantee high deliverability.",
       icon: BadgeCheck,
       highlight: true,
     },
     {
       id: "02",
       tagline: "1,239+ targeted B2B datasets delivered",
-      title: "Custom B2B Database Curations",
+      title: "Fully Customizable Leads",
       description:
-        "Get tailored lead databases filtered dynamically by niche industry verticals, job designations, geographic locations, and scales.",
+        "Get tailored lead databases filtered dynamically by niche industry, job designations, geographic locations, and scales.",
       icon: Database,
       highlight: false,
     },
     {
       id: "03",
-      tagline: "Instant data exports delivered within 5 hours",
-      title: "Secure Bulk CSV Downloads",
+      tagline: "Instant data exports delivered within 3 hours",
+      title: "Secure Email Delivery",
       description:
-        "Gain fast access to your prospective lead directories using encrypted delivery methods with full legal confidentiality.",
+        "After the database is filtered and curated by the admin team, the spreadsheet is directly maileed to your inbox within 3 hours.",
       icon: ShieldCheck,
       highlight: false,
     },
     {
       id: "04",
-      tagline: "Direct support specialists available 24/7",
+      tagline: "Direct support specialists available 10 PM-8 PM EST",
       title: "Dedicated Lead Generation Experts",
       description:
-        "Our specialized data extraction team coordinates with your marketing requirements to deliver actionable prospect profiles.",
+        "Our specialized lead expert will learn about your requirements and suggests you the best fit leads.",
       icon: Headset,
       highlight: false,
     },
@@ -76,8 +76,7 @@ const handleWhyChooseUsClick = () => {
               Why Smart Sales Teams Source Data From Us
             </h2>
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-              Trusted by high-growth B2B agencies that demand fresh, accurate, and 
-              GDPR/CCPA compliant data to drive cold email and calling pipelines.
+              Trusted by thousands of returning cleints who value high quality databases that creates real business opportunities
             </p>
           </div>
 
