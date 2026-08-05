@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { BadgeCheck, Database, ShieldCheck, Headset } from "lucide-react";
 
@@ -42,6 +43,12 @@ export default function WhyChooseUs() {
       highlight: false,
     },
   ];
+
+  const router = useRouter();
+
+const handleWhyChooseUsClick = () => {
+  router.push("/aboutus#approach");
+};
 
   return (
     // 1. Replaced the flat blue gradient background with high-contrast text layout styling
@@ -112,12 +119,12 @@ export default function WhyChooseUs() {
                       <p className="text-slate-400 text-sm leading-relaxed max-w-md">
                         {feat.description}
                       </p>
-                      <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-cyan-400 cursor-pointer">
+                      <button onClick={handleWhyChooseUsClick} className="pt-2 flex items-center gap-2 text-xs font-semibold text-cyan-400 cursor-pointer">
                         Learn about verification pipeline
                         <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true">
                           →
                         </span>
-                      </div>
+                      </button>
                     </div>
                   </div>
                 );
