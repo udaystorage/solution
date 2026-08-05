@@ -41,7 +41,7 @@ export default function UpperSide() {
                 className="object-cover rounded-full w-10 h-10 sm:w-12 sm:h-12 -translate-x-8 border-2 border-white"
                 />
                 <p className="w-full min-w-fit text-xs sm:text-sm font-medium text-center sm:text-left sm:w-auto  sm:translate-x-0">
-                  Verified by 10,000+ Happy Bussinesses.
+                  Verified by 7,203+ Happy Bussinesses.
                 </p>
             </div>
           </div>

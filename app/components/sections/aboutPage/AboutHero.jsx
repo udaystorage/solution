@@ -20,8 +20,7 @@ export default function AboutHero() {
         </h1>
 
         <p className="mt-8 max-w-2xl text-base leading-7 text-stone-600 sm:text-lg">
-          We help businesses discover and reach the right companies and
-          decision-makers with relevant, structured, and dependable B2B data.
+          We help businesses discover and reach the clients they desire with high value databases backed by our lead expert&apos;s consultation.
         </p>
 
         <a
