@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full w-[98vw] flex flex-col">
+      <body className="min-h-full w-full flex flex-col">
         <OrganizationSchema/>
         <Navbar/>
 
