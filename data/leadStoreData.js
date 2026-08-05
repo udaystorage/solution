@@ -205,6 +205,44 @@ const leadStoreData = [
     delivery: "2–3 Hours",
     verification: "Human Verified",
   },
+    {
+    id: 16,
+    slug: "pan-india-business-research",
+    title: "Pan-India business research",
+    image:"/leadCards/pan-india.webp",
+    description:
+      "Verified pan-India business research data.",
+    industry: "Business",
+    coverage: "Pan India",
+    delivery: "2–3 Hours",
+    verification: "Human Verified",
+  },
+    {
+    id: 18,
+    slug: "industry-specific-datasets",
+    title: "Industry-specific datasets",
+    image:"/leadCards/industry-specific.webp",
+    description:
+      "Verified industry-specific datasets across multiple sectors.",
+    industry: "Industry Specific",
+    coverage: "Pan India",
+    delivery: "2–3 Hours",
+    verification: "Human Verified",
+  },
+
+    {
+    id: 19,
+    slug: "geographic-segmentation",
+    title: "Geographic segmentation",
+    image:"/leadCards/geographic-segmentation.webp",
+    description:
+      "Verified geographic segmentation data across multiple regions.",
+    industry: "Location Based",
+    coverage: "Pan India",
+    delivery: "2–3 Hours",
+    verification: "Human Verified",
+  },
+  
 ];
 
 export default leadStoreData;

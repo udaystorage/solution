@@ -8,7 +8,7 @@ const capabilities = [
   {id: 2, name: "Industry-specific datasets", slug: "industry-specific-datasets"},
   {id: 3, name: "Decision-maker targeting", slug: "decision-maker-targeting"},
   {id: 4, name: "Geographic segmentation", slug: "geographic-segmentation"},
-  {id: 5, name: "Custom data requirements", slug: "custom-data-requirements"},
+  {id: 5, name: "Custom data requirements", slug: "custom-data"},
 ];
 
 export default function ReachCapabilities() {
