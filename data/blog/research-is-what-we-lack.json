@@ -1,0 +1,30 @@
+{
+  "id": 6,
+  "slug": "research-is-what-we-lack",
+  "title": "Research is what we lack",
+  "image": "/uploads/1785848430541-2ebb5869-c8ec-4aa8-b43b-80992dedbd54.webp",
+  "date": "August 4, 2026",
+  "readTime": "5 min read",
+  "description": "Without proper research we can not take the best decision",
+  "content": {
+    "introduction": "The best decisions are always backed by good research.",
+    "highlights": [
+      "Dig enough to know all",
+      "Know the market",
+      "Learn about others behaviours"
+    ],
+    "sections": [
+      {
+        "heading": "Good research always pays off",
+        "brief": "DO some digging and you will find out the best thing ppossible",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Research is a careful and organized study to find new facts, solve problems, and learn more about the world. It uses clear steps like collecting information, studying details, and sharing what you find."
+          }
+        ]
+      }
+    ],
+    "takeaway": "Ample research reassures any tough decision"
+  }
+}

@@ -19,7 +19,7 @@ leadstore: [
   {
     question: "How do I request a database from the Lead Store?",
     answer:
-      "Simply click on any item on leadstore, add every database details carefully & add anything specific you need and hit the open whatsapp btn. On whatsapp just hit the send btn and done! We will reach you within 10 minutes."
+      "Simply click on any item on leadstore, add every database details carefully & add anything specific you need and hit the open whatsapp button. On whatsapp just hit the send button and done! We will reach you within 10 minutes."
   },
   {
     question: "Can I request multiple databases in one inquiry?",

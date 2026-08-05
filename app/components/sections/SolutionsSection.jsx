@@ -40,7 +40,7 @@ export default function SolutionsSection() {
       <div className="w-full max-w-7xl mx-auto ">
         {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
         <h1 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
-          Pan India B2B Leads
+          Pan India Business Leads
         </h1>
 
         {/* Carousel Container */}
@@ -51,12 +51,11 @@ export default function SolutionsSection() {
         {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
         <div className="max-w-2xl mb-12 mt-12">
           <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            Find the exact target B2B email list you need to pitch.
+            {/* Find the exact target B2B/B2C email list you need to pitch. */}
+            Reach the target audience with leadwala verified preimium databases.
           </h2>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
-            Stop dealing with missing emails and dead numbers. Tell us your
-            target audience profile and our team will extract a verified dataset
-            built to convert your prospects.
+            Stop reaching out the wrong people. Our verified and filtered databses will lead you to the interested prospects.
           </p>
         </div>
 
@@ -71,12 +70,11 @@ export default function SolutionsSection() {
               <Verified className="w-8 h-8 text-blue-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
-              Verified B2B Contact Lists
+              Human Verified Databases
             </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Every sales lead profile undergoes strict validation. Zero
-              dead-end emails or high bounce rates on your cold outreach
-              campaigns.
+              Every sales lead profile undergoes manual verification for optimum database accuracy. No outreach campaign goes to waste.
+              {/* Every sales lead profile undergoes manual verification & validation. Leadwala make sure each databse has optimum accuracy for your outreach campaigns.   */}
             </p>
           </div>
 
@@ -89,11 +87,10 @@ export default function SolutionsSection() {
               <Smartphone className="w-7 h-7 text-blue-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
-              Direct Mobile Phone Numbers
+              Direct Mobile Numbers
             </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Connect instantly without dealing with receptionist gatekeepers.
-              Direct mobile connections optimized for fast sales loops.
+              You reach the decision maker - no intermediary interactions.
             </p>
           </div>
 
@@ -109,8 +106,7 @@ export default function SolutionsSection() {
               Niche Industry Categories
             </h4>
             <p className="text-sm leading-6 text-neutral-500">
-              Target narrow micro-niches instantly—ranging from specific
-              industry verticals down to localized pincode tracking areas.
+              Target your outreach campaigns to micro industries, desired regions, and specific audience segments.
             </p>
           </div>
         </div>
@@ -172,15 +168,11 @@ export default function SolutionsSection() {
             <div className="lg:col-span-6">
               {activeTab === "leads" ? (
                 <p className="text-neutral-500 text-sm leading-relaxed">
-                  Get high-density contact logs grouped by industry, region, and
-                  scale. Perfect for cold calling or setting up direct
-                  transactional outreach loops.
+                 Need broader reach over your target audience? our standard leads are what you need. Affordable and reliable.
                 </p>
               ) : (
                 <p className="text-neutral-500 text-sm leading-relaxed">
-                  Looking for unique criteria like specific local restaurant
-                  spaces or local pincode blocks? Our experts will custom curate
-                  it.
+                  Looking for higher response rates? Our premium databases are what you need. Accurate, precise and human-verified. 
                 </p>
               )}
             </div>
