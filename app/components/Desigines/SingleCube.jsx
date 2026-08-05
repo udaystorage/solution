@@ -1,73 +1,77 @@
-import React from 'react';
+import React from 'react'
 
 export default function SingleCube({
   name,
-  position = "",
-  size = 120, // default cubic dimension in px
-  colorTheme = "blue", // "blue" | "cyan" | "violet"
-  rotation = { x: -25, y: -35 },
-  floatDuration = 3.2,
-  floatDelay = 0,
-  floatHeight = 16,
+  shadow,
+  position,
+  ztranslate,
+  rotation,
+  width = 100,
+  height = 100,
+  colour,
+  floatDuration = 3.2, // seconds
+  floatDelay = 0,       // seconds
+  floatHeight = 18,     // px
 }) {
-  const halfSize = size / 2;
-
-  // Theme configuration for DaaS glow aesthetics
-  const themes = {
-    blue: {
-      front: "bg-gradient-to-tr from-blue-600/70 via-blue-500/50 to-indigo-400/60 border-blue-300/40 shadow-[inset_0_0_25px_rgba(59,130,246,0.3)]",
-      top: "bg-gradient-to-tr from-blue-400/80 to-indigo-300/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
-      right: "bg-gradient-to-tr from-blue-800/80 to-indigo-900/70 border-blue-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
-      glow: "bg-blue-500/30",
-    },
-    cyan: {
-      front: "bg-gradient-to-tr from-cyan-600/70 via-teal-500/50 to-cyan-400/60 border-cyan-300/40 shadow-[inset_0_0_25px_rgba(6,182,212,0.3)]",
-      top: "bg-gradient-to-tr from-cyan-300/80 to-teal-200/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
-      right: "bg-gradient-to-tr from-cyan-900/80 to-teal-950/70 border-cyan-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
-      glow: "bg-cyan-400/30",
-    },
-    violet: {
-      front: "bg-gradient-to-tr from-violet-600/70 via-purple-500/50 to-fuchsia-400/60 border-violet-300/40 shadow-[inset_0_0_25px_rgba(139,92,246,0.3)]",
-      top: "bg-gradient-to-tr from-violet-300/80 to-fuchsia-200/70 border-white/40 shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]",
-      right: "bg-gradient-to-tr from-violet-900/80 to-purple-950/70 border-violet-500/30 shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
-      glow: "bg-violet-500/30",
-    },
-  };
-
-  const currentTheme = themes[colorTheme] || themes.blue;
-
-  // Face definition with volumetric shading
   const FACES = [
-    { id: "front", transform: `rotateY(0deg) translateZ(${halfSize}px)`, style: currentTheme.front, showName: true },
-    { id: "back", transform: `rotateY(180deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
-    { id: "right", transform: `rotateY(90deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
-    { id: "left", transform: `rotateY(-90deg) translateZ(${halfSize}px)`, style: currentTheme.front, showName: false },
-    { id: "top", transform: `rotateX(90deg) translateZ(${halfSize}px)`, style: currentTheme.top, showName: false },
-    { id: "bottom", transform: `rotateX(-90deg) translateZ(${halfSize}px)`, style: currentTheme.right, showName: false },
+    { name: `${name}`, transform: `rotateY(0deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "1" },
+    { name: "", transform: `rotateY(180deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "2" },
+    { name: "", transform: `rotateY(90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "3" },
+    { name: "", transform: `rotateY(-90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "4" },
+    { name: "", transform: `rotateX(90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "5" },
+    { name: "", transform: `rotateX(-90deg) translateZ(${ztranslate}px)`, from: `${colour}`, id: "6" },
   ];
 
   return (
-    <div className={`cube-stage flex justify-center items-center ${position}`} style={{ perspective: "1000px" }}>
+    <div className={`cube-stage w-full flex justify-center ${position}`} style={{ perspective: "900px" }}>
+      <style>{`
+        @keyframes cube-hover-float {
+          0%   { transform: translateY(0px); }
+          50%  { transform: translateY(calc(-1 * var(--float-h, 18px))); }
+          100% { transform: translateY(0px); }
+        }
+        @keyframes cube-hover-shadow {
+          0%   { transform: scale(1);    opacity: 0.5; }
+          50%  { transform: scale(0.65); opacity: 0.25; }
+          100% { transform: scale(1);    opacity: 0.5; }
+        }
+        .cube-float-wrap {
+          animation: cube-hover-float var(--float-dur, 3.2s) ease-in-out infinite;
+          animation-delay: var(--float-delay, 0s);
+        }
+        .cube-shadow-anim {
+          animation: cube-hover-shadow var(--float-dur, 3.2s) ease-in-out infinite;
+          animation-delay: var(--float-delay, 0s);
+        }
+        .cube-responsive-scale {
+          transform: scale(0.55);
+        }
+        @media (min-width: 480px) {
+          .cube-responsive-scale { transform: scale(0.7); }
+        }
+        @media (min-width: 640px) {
+          .cube-responsive-scale { transform: scale(0.85); }
+        }
+        @media (min-width: 1024px) {
+          .cube-responsive-scale { transform: scale(1); }
+        }
+      `}</style>
+
+      {/* everything below scales together as one unit, so cube geometry never distorts */}
       <div className="cube-responsive-scale flex flex-col items-center" style={{ transformOrigin: "center center" }}>
-        
-        {/* Floating Wrapper */}
         <div
-          className="cube-float-wrap relative"
+          className="cube-float-wrap"
           style={{
             "--float-dur": `${floatDuration}s`,
             "--float-delay": `${floatDelay}s`,
             "--float-h": `${floatHeight}px`,
           }}
         >
-          {/* Ambient Glow behind Cube */}
-          <div className={`absolute -inset-4 rounded-full blur-2xl opacity-60 pointer-events-none ${currentTheme.glow}`} />
-
-          {/* 3D Cube Container */}
           <div
-            className="relative transition-transform duration-100 ease-out"
+            className="relative"
             style={{
-              width: `${size}px`,
-              height: `${size}px`,
+              width: `${width}px`,
+              height: `${height}px`,
               transformStyle: "preserve-3d",
               transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             }}
@@ -75,35 +79,36 @@ export default function SingleCube({
             {FACES.map((face) => (
               <div
                 key={face.id}
-                className={`absolute inset-0 flex items-center justify-center rounded-lg border backdrop-blur-md transition-all duration-300 ${face.style}`}
+                className={`absolute inset-0 flex items-center justify-center rounded-sm border border-white/20 ${face.from} shadow-[inset_0_0_40px_rgba(255,255,255,0.15)]`}
                 style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
+                  width: `${width}px`,
+                  height: `${height}px`,
                   transform: face.transform,
                   backfaceVisibility: "hidden",
                 }}
               >
-                {face.showName && name && (
-                  <span className="text-white text-xs sm:text-sm font-semibold tracking-wider text-center p-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                    {name}
-                  </span>
-                )}
+                <span className="text-white/90 text-sm text-center tracking-[0.2em] font-bold">
+                  <div className="w-full h-full flex items-center justify-center p-2">
+                    {face.name}
+                  </div>
+                </span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Dynamic Shadow */}
         <div
-          className="mx-auto rounded-full bg-black/60 blur-xl cube-shadow-anim mt-6 pointer-events-none"
+          className={`mx-auto rounded-full bg-black/50 blur-xl cube-shadow-anim ${shadow}`}
           style={{
-            width: `${size * 0.9}px`,
-            height: `${size * 0.2}px`,
+            width: "140px",
+            height: "20px",
+            marginBottom: "-20px",
             "--float-dur": `${floatDuration}s`,
             "--float-delay": `${floatDelay}s`,
+            transform: `scaleX(${1 - Math.abs(rotation.x % 180) / 300})`,
           }}
         />
       </div>
     </div>
-  );
+  )
 }

@@ -1,104 +1,71 @@
-"use client";
-import React, { useState, useCallback } from "react";
+"use client"
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import SingleCube from "./SingleCube";
 
 export default function Cube() {
-  const BASE_ROTATION = { x: -22, y: -32 };
-  const [rotation, setRotation] = useState(BASE_ROTATION);
+  const [rotation, setRotation] = useState({ x: -25, y: -35 });
 
-  // Smooth mouse move interaction
-  const handleMouseMove = useCallback((e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-
-    // Calculate normalized offset (-0.5 to 0.5)
-    const offsetX = (clientX / innerWidth) - 0.5;
-    const offsetY = (clientY / innerHeight) - 0.5;
-
-    // Subtle tilt response
-    setRotation({
-      x: BASE_ROTATION.x - offsetY * 15,
-      y: BASE_ROTATION.y + offsetX * 20,
-    });
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setRotation(BASE_ROTATION);
-  }, []);
 
   return (
-    <div 
-      className="w-full h-full min-h-[420px] flex items-center justify-center bg-transparent select-none overflow-visible relative"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Global CSS keyframes for floating animation */}
-      <style>{`
-        @keyframes cube-hover-float {
-          0%, 100% { transform: translateY(0px); }
-          50%      { transform: translateY(calc(-1 * var(--float-h, 18px))); }
-        }
-        @keyframes cube-hover-shadow {
-          0%, 100% { transform: scale(1); opacity: 0.5; }
-          50%      { transform: scale(0.65); opacity: 0.2; }
-        }
-        .cube-float-wrap {
-          animation: cube-hover-float var(--float-dur, 3.2s) ease-in-out infinite;
-          animation-delay: var(--float-delay, 0s);
-        }
-        .cube-shadow-anim {
-          animation: cube-hover-shadow var(--float-dur, 3.2s) ease-in-out infinite;
-          animation-delay: var(--float-delay, 0s);
-        }
-        .cube-responsive-scale {
-          transform: scale(0.65);
-        }
-        @media (min-width: 640px) {
-          .cube-responsive-scale { transform: scale(0.85); }
-        }
-        @media (min-width: 1024px) {
-          .cube-responsive-scale { transform: scale(1); }
-        }
-      `}</style>
+<div className="w-full h-full flex flex-col items-center justify-center bg-transparent rounded-2xl p-8 select-none overflow-hidden">
 
-      {/* Main Container Layout */}
-      <div className="relative flex items-center justify-center w-full max-w-2xl h-full">
-        {/* Central / Main Block */}
-        <SingleCube
-          name="Stock Market Investor"
-          colorTheme="blue"
-          size={140}
-          rotation={rotation}
-          floatDuration={3.6}
-          floatDelay={0}
-          floatHeight={20}
-          position="z-20 relative"
-        />
+  <SingleCube
+    floatDelay={1}
+    floatHeight="10"
+    floatDuration="3"
+    shadow=""
+    name="Stock Market Investor"
+    colour="bg-blue-500/50 blur-10"
+    position="
+      translate-y-20
+      md:translate-y-12
+      lg:translate-y-20
+    "
+    ztranslate={75}
+    rotation={rotation}
+    width={150}
+    height={150}
+  />
 
-        {/* Left Block */}
-        <SingleCube
-          name="Real Estate"
-          colorTheme="cyan"
-          size={100}
-          rotation={rotation}
-          floatDuration={3.0}
-          floatDelay={0.6}
-          floatHeight={14}
-          position="z-10 absolute -translate-x-32 sm:-translate-x-44 translate-y-6"
-        />
+  <SingleCube
+    floatDelay={0}
+    floatHeight="20"
+    floatDuration="2.5"
+    shadow=""
+    name="Real Estate"
+    colour="bg-cyan-500/50 blur-10"
+    position="
+      -translate-x-20
+      sm:-translate-x-45
+      md:-translate-x-28 md:-translate-y-2
+      lg:-translate-x-45
+    "
+    ztranslate={50}
+    rotation={rotation}
+    width={100}
+    height={100}
+  />
 
-        {/* Right Block */}
-        <SingleCube
-          name="Student's Data"
-          colorTheme="violet"
-          size={100}
-          rotation={rotation}
-          floatDuration={3.2}
-          floatDelay={1.2}
-          floatHeight={16}
-          position="z-10 absolute translate-x-32 sm:translate-x-44 -translate-y-6"
-        />
-      </div>
-    </div>
+  <SingleCube
+    floatDelay={0.5}
+    floatHeight="20"
+    floatDuration="2.2"
+    shadow=""
+    name="Student's Data"
+    colour="bg-violet-500/50 blur-10"
+    position="
+      translate-x-20
+      -translate-y-20
+      sm:translate-x-40 sm:-translate-y-20
+      md:translate-x-24 md:-translate-y-14
+      lg:translate-x-40 lg:-translate-y-20
+    "
+    ztranslate={50}
+    rotation={rotation}
+    width={100}
+    height={100}
+  />
+
+</div>
   );
 }
