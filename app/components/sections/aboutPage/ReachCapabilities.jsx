@@ -1,12 +1,14 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const capabilities = [
   // "Pan-India business research",
-  "Industry-specific datasets",
-  "Decision-maker targeting",
-  "Geographic segmentation",
-  "Custom data requirements",
+  {id: 1, name: "Pan-India business research", slug: "pan-india-business-research"},
+  {id: 2, name: "Industry-specific datasets", slug: "industry-specific-datasets"},
+  {id: 3, name: "Decision-maker targeting", slug: "decision-maker-targeting"},
+  {id: 4, name: "Geographic segmentation", slug: "geographic-segmentation"},
+  {id: 5, name: "Custom data requirements", slug: "custom-data-requirements"},
 ];
 
 export default function ReachCapabilities() {
@@ -90,8 +92,9 @@ export default function ReachCapabilities() {
             {/* Capabilities */}
             <div className="mt-8 border-t border-stone-200 sm:mt-10">
               {capabilities.map((item, index) => (
-                <div
-                  key={item}
+                <Link
+                  href={`/leadstore/${item.slug}`}
+                  key={item.id}
                   className="
                 group relative z-0
                 flex items-center justify-between
@@ -119,7 +122,7 @@ export default function ReachCapabilities() {
                     </span>
 
                     <span className="text-[13px] font-medium leading-5 sm:text-sm">
-                      {item}
+                      {item.name}
                     </span>
                   </div>
 
@@ -134,7 +137,7 @@ export default function ReachCapabilities() {
                   group-hover:text-stone-950
                 "
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
