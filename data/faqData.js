@@ -4,15 +4,15 @@ export const faqData = {
   home: [
     {
       question: "How does Leadwala verify its B2B contact and intent data?",
-      answer: "We use a multi-step verification engine. Every record undergoes real-time SMTP handshakes, social profile matching, and compliance checks to ensure you receive active, high-intent leads."
+      answer: "Leadwala employs a multi-layer verification process that includes automated validation, manual review, and cross-referencing with trusted data sources. This ensures that every contact and dataset meets our high standards for accuracy and deliverability."
     },
     {
       question: "Can I list and sell my own verified datasets?",
-      answer: "Absolutely. Data providers can list high-quality datasets on Leadwala. Once our system validates your records for compliance and accuracy, they will become discoverable to buyers."
+      answer: "No, we only sale databases, not allow users to list their own datasets. "
     },
     {
       question: "What compliance standards does Leadwala follow?",
-      answer: "We prioritize privacy and strict compliance. All data distributed through Leadwala is thoroughly vetted to align with GDPR, CCPA, and global cold-outreach regulations."
+      answer: "Leadwala is committed to responsible data practices. We source and deliver business data with a focus on accuracy, transparency, and applicable privacy regulations."
     }
   ],
 leadstore: [
@@ -35,11 +35,11 @@ leadstore: [
   about: [
     {
       question: "What is Leadwala's core mission?",
-      answer: "Leadwala was founded to bridge the gap between B2B data transparency and accessibility. We aim to empower growth teams with highly accurate, friction-free data while ensuring compliance."
+      answer: "To help businesses connect with the right people through accurate, human-verified data they can trust."
     },
     {
       question: "Where does your team source data?",
-      answer: "Our database is built using a combination of public web scraping, proprietary data partnerships, dynamic intent signal monitoring, and contributions from verified independent sellers."
+      answer: "We compile data from trusted business sources, public records, company websites, and proprietary research. Each dataset is reviewed and verified to deliver accurate, up-to-date business information."
     }
   ],
   contact: [

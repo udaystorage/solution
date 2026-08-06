@@ -23,7 +23,7 @@ const principles = [
     number: "04",
     title: "Business outcomes over database size.",
     description:
-      "The value isn't how many rows you receive. It's how useful those rows become for your team.",
+      "The value isn't how many rows you receive. It's how many successful opportunities you generate.",
   },
 ];
 

@@ -1,7 +1,12 @@
 import { ArrowDown } from "lucide-react";
 export default function AboutHero() {
   return (
-    <section className="relative">
+    <section className="relative h-[85vh] overflow-hidden">
+        {/* Background Image */}
+    <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.8]"
+    style={{ backgroundImage: "url('/about-bg.jpg')" }}
+  />
       {/* subtle background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
 
@@ -20,8 +25,7 @@ export default function AboutHero() {
         </h1>
 
         <p className="mt-8 max-w-2xl text-base leading-7 text-stone-600 sm:text-lg">
-          We help businesses discover and reach the right companies and
-          decision-makers with relevant, structured, and dependable B2B data.
+          We help businesses discover and reach the clients they desire with high value databases backed by our lead expert&apos;s consultation.
         </p>
 
         <a
@@ -36,13 +40,15 @@ export default function AboutHero() {
         </a>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
-          <span>Verified Data</span>
-          <span className="hidden h-1 w-1 rounded-full bg-stone-300 sm:block" />
-          <span>Custom Research</span>
-          <span className="hidden h-1 w-1 rounded-full bg-stone-300 sm:block" />
-          <span>Pan-India Coverage</span>
-          <span className="hidden h-1 w-1 rounded-full bg-stone-300 sm:block" />
-          <span>Human-Assisted Research</span>
+          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
+  Verified Data
+</span>
+          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
+          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
+          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
         </div>
       </div>
     </section>
