@@ -15,7 +15,7 @@ export default function AboutHero() {
           About Leadwala
         </span> */}
 
-        <h1 className="max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+        <h1 className="max-w-4xl text-3xl font-semibold leading-tight  sm:text-4xl lg:text-5xl">
           Data should create
           <br />
           <span className="bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">

@@ -9,11 +9,40 @@ import { CircleChevronRight } from 'lucide-react';
 
 export default function UpperSide() {
   return ( 
-    <>
-     <div className="w-screen h-150 md:h-115 bg-linear-180 from-cyan-300 to-purple-400 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
-          
+<section className="relative isolate overflow-hidden w-screen h-150 md:h-115 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">  
+  {/* Base Gradient */}
+<div className="absolute inset-0 -z-30 bg-gradient-to-br from-sky-100 via-cyan-50 to-violet-100" />
+
+{/* Large Cyan Glow */}
+<div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-cyan-300/35 blur-[140px] -z-20" />
+
+{/* Purple Glow */}
+<div className="absolute bottom-[-220px] left-1/3 w-[650px] h-[650px] rounded-full bg-violet-400/25 blur-[170px] -z-20" />
+
+{/* Blue Glow */}
+<div className="absolute top-10 right-[-180px] w-[500px] h-[500px] rounded-full bg-sky-400/25 blur-[140px] -z-20" />
+
+{/* White Highlight */}
+<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-white/35 blur-[120px] -z-20" />
+<div
+  className="absolute inset-0 opacity-[0.04] -z-10"
+  style={{
+    backgroundImage: `
+      linear-gradient(to right, black 1px, transparent 1px),
+      linear-gradient(to bottom, black 1px, transparent 1px)
+    `,
+    backgroundSize: "48px 48px",
+  }}
+/>  
+<div
+  className="absolute inset-0 -z-10"
+  style={{
+    background:
+      "radial-gradient(circle at center, transparent 35%, rgba(255,255,255,0.45) 100%)",
+  }}
+/>      
           <div className="w-full md:w-1/2 h-full flex flex-col justify-center  items-center md:items-start gap-4 text-center md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
               Get Custom Leads Tailored to Your Exact Needs.
             </div>
             <div className="text-sm sm:text-base">
@@ -46,10 +75,13 @@ export default function UpperSide() {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 h-45 sm:h-80 md:h-full flex flex-col justify-center items-center">
-            <Cube />
-          </div>
-        </div>
-    </>
+         <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center">
+
+    <div className="absolute w-[420px] h-[420px] rounded-full bg-cyan-300/20 blur-[110px]" />
+
+    <Cube />
+
+</div>
+        </section>
   )
 }

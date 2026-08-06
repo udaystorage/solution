@@ -65,7 +65,7 @@ export default function Navbar() {
               aspectratio={1}
               sizes="100vw"
               className="object-cover mix-blend-multiply translate-x-4"
-              // style={{ transform: "rotate(270deg)" }}
+              style={{ transform: "rotate(180deg)" }}
               alt="Logo"
             />
           </div>
