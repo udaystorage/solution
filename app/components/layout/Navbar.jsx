@@ -188,7 +188,9 @@ export default function Navbar() {
 >
   <span>
   <span className="min-[1100px]:inline hidden">Get </span>
-  Custom Data
+  <span className="min-[1080px]:inline hidden">Custom </span>
+
+   Data
 </span>
   
   <ArrowRight 
