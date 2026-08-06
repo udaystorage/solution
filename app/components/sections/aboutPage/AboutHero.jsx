@@ -4,8 +4,8 @@ export default function AboutHero() {
     <section className="relative h-[85vh] overflow-hidden">
         {/* Background Image */}
     <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.8]"
-    style={{ backgroundImage: "url('/about-bg.jpg')" }}
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.9]"
+    style={{ backgroundImage: "url('/about.webp')" }}
   />
       {/* subtle background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
@@ -39,7 +39,7 @@ export default function AboutHero() {
           />
         </a>
 
-        <div className="mt-14 md:mt-18 lg:mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
+        <div className="mt-14  flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
           <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
   Verified Data
 </span>

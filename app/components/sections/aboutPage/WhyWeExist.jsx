@@ -55,9 +55,9 @@ export default function WhyWeExist() {
                 lg:text-lg lg:leading-8
               "
             >
-             <span className="font-bold text-amber-500">!</span> Too many businesses spend valuable time filtering outdated
+              Too many businesses spend valuable time filtering outdated
               contacts, generic databases, and thousands of records before
-              finding someone worth reaching.
+              finding someone worth reaching<span className="font-bold text-amber-500"> !</span>
             </p>
           </div>
 
