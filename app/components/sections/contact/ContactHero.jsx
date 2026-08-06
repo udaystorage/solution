@@ -29,7 +29,6 @@ export default function ContactHero() {
             className="
               text-3xl font-semibold
               leading-[1.04]
-              tracking-[-0.045em]
               text-slate-950
               sm:text-4xl
               lg:text-5xl

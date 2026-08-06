@@ -4,8 +4,8 @@ export default function AboutHero() {
     <section className="relative h-[85vh] overflow-hidden">
         {/* Background Image */}
     <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.8]"
-    style={{ backgroundImage: "url('/about-bg.jpg')" }}
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.9]"
+    style={{ backgroundImage: "url('/about.webp')" }}
   />
       {/* subtle background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
@@ -15,7 +15,7 @@ export default function AboutHero() {
           About Leadwala
         </span> */}
 
-        <h1 className="max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+        <h1 className="max-w-4xl text-3xl font-semibold leading-tight  sm:text-4xl lg:text-5xl">
           Data should create
           <br />
           <span className="bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
@@ -39,16 +39,16 @@ export default function AboutHero() {
           />
         </a>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
+        <div className="mt-14  flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
   Verified Data
 </span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
         </div>
       </div>
     </section>

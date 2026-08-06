@@ -45,11 +45,11 @@ leadstore: [
   contact: [
     {
       question: "What is the typical response time for support?",
-      answer: "Our support team typically responds to all inquiries within 2 to 4 hours during standard operating business days."
+      answer: "Our support team typically responds to all inquiries within 5-10 minutes during business hours (10:00 AM – 08:00 PM). For urgent matters, we recommend calling us directly at +91 9876543210."
     },
-    {
+    {                           
       question: "How do I report a problem with a dataset?",
-      answer: "You can open a support ticket directly from your Dashboard, or email support@leadwala.com with the Dataset ID, and our compliance team will review it within 24 hours."
+      answer: "Please submit your feedback on whatsapp using the number you used to contact us. We will replace the database according to the issue ratio."
     }
   ]
 };

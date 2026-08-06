@@ -44,12 +44,12 @@ export default function ReachCapabilities() {
                 }}
               >
                 <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-stone-400 opacity-70" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-stone-400 opacity-75" />
 
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-600" />
                 </span>
 
-                <span className="absolute left-4 -top-1.25 whitespace-nowrap rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[10px] font-medium shadow-sm">
+                <span className="absolute left-4 -top-1.25 whitespace-nowrap rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[10px] font-medium shadow-sm inline-block origin-left animate-pulse-scale">
                   {city.name}
                 </span>
               </div>

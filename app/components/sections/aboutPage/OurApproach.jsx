@@ -170,7 +170,7 @@ export default function OurApproach() {
                 <span
                   className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-500 ${
                     isCompleted
-                      ? "border-emerald-500 bg-emerald-500 text-white"
+                      ? "border-cyan-500 bg-cyan-600 text-white font-bold "
                       : isActive
                         ? "scale-105 border-stone-950 bg-stone-950 text-white shadow-md"
                         : "border-stone-300 bg-white text-stone-400"
@@ -191,7 +191,7 @@ export default function OurApproach() {
                 {index !== processSteps.length - 1 && (
                   <span className="absolute left-10 right-0 h-px overflow-hidden bg-stone-200">
                     <span
-                      className={`block h-full bg-emerald-500 transition-all duration-700 ease-out ${
+                      className={`block h-full bg-cyan-500 transition-all duration-700 ease-out ${
                         isCompleted ? "w-full" : "w-0"
                       }`}
                     />
@@ -203,7 +203,7 @@ export default function OurApproach() {
               <span
                 className={`text-sm font-medium transition-colors duration-300 ${
                   isCompleted
-                    ? "text-emerald-700"
+                    ? "text-cyan-700"
                     : isActive
                       ? "text-stone-950"
                       : "text-stone-400 group-hover:text-stone-700"

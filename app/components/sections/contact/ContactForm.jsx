@@ -5,6 +5,7 @@ import {
   ArrowRight,
   ShieldCheck,
 } from "lucide-react";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 const INITIAL_FORM = {
   mobile: "",
@@ -63,37 +64,9 @@ export default function ContactForm() {
       return;
     }
 
-    try {
-      setIsSubmitting(true);
-
-      /*
-        Connect this later to your API:
-
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            mobile: `+91${form.mobile}`,
-            requirement: form.requirement.trim(),
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Unable to submit enquiry.");
-        }
-
-        setForm(INITIAL_FORM);
-      */
-
-      console.log({
-        mobile: `+91${form.mobile}`,
-        requirement: form.requirement.trim(),
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const message = `Hello Leadwala, I am looking for the following data: ${form.requirement}. You can reach me at +91${form.mobile}.`;
+    openWhatsApp(message);
+    setForm(INITIAL_FORM);
   }
 
   return (

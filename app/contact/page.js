@@ -2,6 +2,7 @@ import ContactHero from "../components/sections/contact/ContactHero";
 import ContactPanel from "../components/sections/contact/ContactPanel";
 import ContactProcess from "../components/sections/contact/ContactProcess";
 import ContactCTA from "../components/sections/contact/ContactCTA";
+import FAQSection from "../components/sections/FAQ";
 
 // Keep this only if you already use this FAQ component on Contact.
 // import FAQSection from "../components/sections/FAQ";
@@ -35,8 +36,9 @@ export default function ContactPage() {
         Keep this only if your Contact FAQ contains genuinely useful
         contact/data-buying questions rather than generic filler.
 
-        <FAQSection page="contact" />
       */}
+        <FAQSection page="contact" />
+
 
       <ContactCTA />
     </main>

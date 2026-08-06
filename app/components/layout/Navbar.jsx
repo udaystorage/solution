@@ -43,7 +43,7 @@ export default function Navbar() {
         className="
           relative flex h-full w-full items-center justify-between
           bg-gray-50/40 px-2 shadow-sm backdrop-blur-sm
-          sm:px-6
+          sm:px-4
           lg:justify-between lg:px-25
         "
       >
@@ -55,19 +55,21 @@ export default function Navbar() {
           className="
             relative z-50
             text-xl font-bold
-            sm:text-3xl flex items-end gap-4 justify-center tracking-wide
+            sm:text-2xl lg:text-[1.8rem] flex items-center gap-2 md:gap-2  justify-center tracking-wide
           "
         >
-          <div className="relative sm:h-14 sm:w-10 h-10 w-8">
+          <div className="relative h-10 w-10 sm:h-12 sm:w-12 lg:h-15 lg:w-15">
             <Image
-              src={logiNav}
+              src="/logo/logo-1.svg"
               fill
+              aspectratio={1}
               sizes="100vw"
               className="object-cover mix-blend-multiply translate-x-4"
+              style={{ transform: "rotate(180deg)" }}
               alt="Logo"
             />
           </div>
-          <span>eadwala</span>
+          <span>Leadwala</span>
         </Link>
 
         {/* =====================================================
@@ -184,10 +186,16 @@ export default function Navbar() {
     focus:ring-offset-2
   "
 >
-  <span>Get Custom Data</span>
+  <span>
+  <span className="min-[1100px]:inline hidden">Get </span>
+  <span className="min-[1080px]:inline hidden">Custom </span>
+
+   Data
+</span>
+  
   <ArrowRight 
     size={16} 
-    className="transition-transform duration-300 ease-out group-hover:translate-x-1" 
+    className="transition-transform duration-300 ease-out group-hover:translate-x-1 " 
   />
 </Link>
         </div>
@@ -260,7 +268,6 @@ export default function Navbar() {
   "
 >
   <span>
-  <span className="hidden xs:inline">Get Custom Data</span>
   <span className="inline xs:hidden">Custom Data</span>
 </span>
   <ArrowRight 
