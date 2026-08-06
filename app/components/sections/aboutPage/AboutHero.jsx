@@ -39,16 +39,16 @@ export default function AboutHero() {
           />
         </a>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
+        <div className="mt-14 md:mt-18 lg:mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
   Verified Data
 </span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
           <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
-          <span className="rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
+          <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
         </div>
       </div>
     </section>

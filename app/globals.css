@@ -354,3 +354,17 @@ body {
     }
   }
 }
+
+/* Reach Capabilities ping animation- AboutUs */
+@theme {
+  --animate-pulse-scale: pulse-scale 1.3s ease-in-out infinite;
+
+  @keyframes pulse-scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.07);
+    }
+  }
+}

@@ -34,7 +34,7 @@ export default function WhyWeExist() {
             <p
               className="
                 mt-5 max-w-md
-                text-[15px] leading-7 text-stone-600
+                text-[14px] leading-7 text-stone-600
                 sm:mt-6 sm:text-base
               "
             >
@@ -49,13 +49,13 @@ export default function WhyWeExist() {
           <div className="max-w-xl">
             <p
               className="
-                text-lg leading-7
+                text-base  leading-7
                 tracking-[-0.015em] text-stone-700
-                sm:text-xl sm:leading-8
-                lg:text-xl lg:leading-9
+                sm:text-lg sm:leading-7
+                lg:text-lg lg:leading-8
               "
             >
-              Too many businesses spend valuable time filtering outdated
+             <span className="font-bold text-amber-500">!</span> Too many businesses spend valuable time filtering outdated
               contacts, generic databases, and thousands of records before
               finding someone worth reaching.
             </p>
@@ -159,7 +159,7 @@ function FlowItem({ label, last, muted = false }) {
           className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
             muted
               ? "bg-stone-100 text-stone-400"
-              : "bg-emerald-400 text-stone-950"
+              : "bg-cyan-600 text-stone-50"
           }`}
         >
           <Check size={14} strokeWidth={2.5} />

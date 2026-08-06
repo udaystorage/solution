@@ -55,19 +55,21 @@ export default function Navbar() {
           className="
             relative z-50
             text-xl font-bold
-            sm:text-3xl flex items-end gap-4 justify-center tracking-wide
+            sm:text-3xl flex items-center gap-1 md:gap-2  justify-center tracking-wide
           "
         >
-          <div className="relative sm:h-14 sm:w-10 h-10 w-8">
+          <div className="relative h-10 w-10 sm:h-12 sm:w-12 lg:h-15 lg:w-15">
             <Image
-              src={logiNav}
+              src="/logo/logo-1.svg"
               fill
+              aspectratio={1}
               sizes="100vw"
               className="object-cover mix-blend-multiply translate-x-4"
+              // style={{ transform: "rotate(270deg)" }}
               alt="Logo"
             />
           </div>
-          <span>eadwala</span>
+          <span>Leadwala</span>
         </Link>
 
         {/* =====================================================
