@@ -58,11 +58,12 @@ export default function DisclaimerPage() {
           </header>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               1. General Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 The content available on this website is provided for general
                 business information purposes only. It is intended to help
@@ -79,11 +80,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               2. Data Accuracy
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala uses research, validation and manual review processes
                 to improve the quality of the business databases we provide.
@@ -99,11 +101,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               3. No Guarantee of Business Results
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Purchasing or using a database from LeadWala does not guarantee
                 sales, appointments, qualified leads, customer acquisition,
@@ -119,11 +122,12 @@ export default function DisclaimerPage() {
           </section>
           
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               4. Data Sources
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala may compile datasets using publicly available business
                 information, company websites, trusted commercial sources,
@@ -139,11 +143,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               5. Customer Responsibility
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers are solely responsible for determining whether the
                 supplied information is suitable for their intended purpose and
@@ -160,11 +165,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               6. Third-Party Services &amp; External Links
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Our website may contain links to third-party websites or
                 services, including WhatsApp. These services are operated by
@@ -180,11 +186,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               7. Website Availability
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We aim to keep our website available and up to date. However,
                 uninterrupted access cannot be guaranteed. Maintenance,
@@ -195,11 +202,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               8. Limitation of Reliance
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Decisions made using information obtained from LeadWala remain
                 the responsibility of the customer. We recommend evaluating the
@@ -210,11 +218,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               9. Changes to this Disclaimer
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala may update this Disclaimer periodically to reflect
                 changes in our services, legal obligations or business
@@ -225,11 +234,12 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               10. Contact Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 If you have any questions regarding this Disclaimer, please
                 contact:

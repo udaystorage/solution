@@ -76,11 +76,12 @@ export default function PrivacyPolicyPage() {
           </header>
 
           <section className="pt-14">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               1. Introduction
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala (&quot;LeadWala&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides curated
                 business databases and custom data research services across
@@ -104,11 +105,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               2. Information We Collect
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 When you choose to submit an enquiry, you may voluntarily
                 provide information including:
@@ -132,11 +134,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               3. How the Website Handles Your Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 The information entered into our enquiry form is used to prepare
                 a structured WhatsApp message on your device.
@@ -157,11 +160,12 @@ export default function PrivacyPolicyPage() {
             </div>
           </section>
                   <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               4. WhatsApp Communication
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala uses WhatsApp as its primary enquiry channel. After
                 completing an enquiry form, a pre-filled WhatsApp message is
@@ -183,11 +187,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               5. How We Use Your Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Information shared with us may be used only for legitimate
                 business purposes relating to your enquiry.
@@ -210,11 +215,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               6. Cookies & Website Analytics
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Our website may use cookies and similar technologies to improve
                 website functionality, analyse visitor behaviour, understand
@@ -236,11 +242,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               7. Third-Party Services
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Our website may contain links to third-party websites or
                 services, including WhatsApp. These services operate under their
@@ -251,11 +258,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               8. Data Security
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We implement reasonable administrative, organisational and
                 technical measures designed to protect information under our
@@ -270,11 +278,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               9. Data Retention
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Information entered into the enquiry form is generally not
                 retained by the website before it is sent through WhatsApp.
@@ -289,11 +298,12 @@ export default function PrivacyPolicyPage() {
             </div>
           </section>
                     <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               10. Your Rights
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Subject to applicable law, you may request access to, correction
                 of, or deletion of information that you have shared directly
@@ -310,11 +320,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               11. Children&apos;s Privacy
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala&apos;s services are intended for businesses and individuals
                 capable of entering commercial arrangements. Our website is not
@@ -325,11 +336,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               12. Changes to this Privacy Policy
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We may update this Privacy Policy from time to time to reflect
                 changes in our business practices, website functionality, legal
@@ -345,11 +357,12 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="pt-16">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               13. Contact Us
             </h2>
 
-            <div className="mt-8 space-y-6 text-[17px] leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 If you have any questions about this Privacy Policy or how your
                 information is handled, please contact us using the details

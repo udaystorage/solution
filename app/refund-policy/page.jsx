@@ -64,11 +64,12 @@ export default function RefundPolicyPage() {
           </header>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               1. Overview
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Because our databases are prepared specifically for each
                 customer, refunds are not automatic. Whenever possible,
@@ -85,11 +86,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               2. Custom Database Orders
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Most orders supplied by LeadWala are custom-built using filters
                 such as industry, geography, designation, company size or other
@@ -105,11 +107,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               3. Quality Review &amp; Replacement
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 If you believe the supplied database does not meet the expected
@@ -153,11 +156,12 @@ export default function RefundPolicyPage() {
             </div>
           </section>
                    <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               4. Situations Not Eligible for Refund
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 Refund requests will generally not be approved in the following
@@ -177,11 +181,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               5. Review Process
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 After receiving your feedback, our team will review the
@@ -211,11 +216,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               6. Resolution Options
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 Depending on the verified findings of our review, LeadWala may,
@@ -241,11 +247,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               7. Changes to this Policy
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 LeadWala may revise this Refund &amp; Replacement Policy from
@@ -262,11 +269,12 @@ export default function RefundPolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               8. Contact Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
                 For refund or replacement enquiries, please contact:

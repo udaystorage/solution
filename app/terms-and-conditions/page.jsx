@@ -57,11 +57,11 @@ export default function TermsConditionsPage() {
           </header>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               1. Acceptance of these Terms
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 By accessing or using the LeadWala website, you agree to be
                 bound by these Terms &amp; Conditions. If you do not agree with
@@ -77,11 +77,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               2. Our Services
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 LeadWala provides curated business databases and custom business
                 data research services. Information displayed on this website is
@@ -103,11 +104,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               3. Enquiry &amp; Order Process
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Customers may browse database categories and submit enquiries
                 through our WhatsApp enquiry workflow.
@@ -128,11 +130,12 @@ export default function TermsConditionsPage() {
             </div>
           </section>
                     <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               4. Pricing &amp; Quotations
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Prices displayed on the website, if any, are indicative unless
                 expressly stated otherwise. Final pricing depends on factors
@@ -154,11 +157,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               5. Delivery &amp; Fulfilment
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 LeadWala manually researches, verifies and prepares datasets
                 based on customer requirements. Delivery timelines may vary
@@ -179,11 +183,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               6. Customer Responsibilities
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Customers are responsible for providing accurate requirements
                 and ensuring that any information shared with LeadWala is
@@ -200,11 +205,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               7. Acceptable Use
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Customers must not use LeadWala&apos;s services or supplied datasets
                 for any unlawful, deceptive, or unethical purpose.
@@ -226,11 +232,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               8. Intellectual Property
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Unless otherwise stated, all website content, branding, logos,
                 graphics, layouts, text, and other intellectual property remain
@@ -246,11 +253,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               9. Third-Party Services
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Our website may link to third-party platforms such as WhatsApp
                 or other external services. LeadWala is not responsible for the
@@ -260,11 +268,12 @@ export default function TermsConditionsPage() {
             </div>
           </section>
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               10. Limitation of Liability
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 LeadWala makes reasonable efforts to provide accurate and
                 relevant business information. However, business data naturally
@@ -288,11 +297,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               11. Indemnification
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 You agree to indemnify and hold harmless LeadWala, its owners,
                 employees and representatives from claims, liabilities,
@@ -304,11 +314,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               12. Suspension &amp; Termination
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 We reserve the right to suspend, refuse or discontinue services
                 where we reasonably believe these Terms have been violated or
@@ -324,11 +335,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               13. Governing Law &amp; Jurisdiction
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 These Terms &amp; Conditions shall be governed by and construed
                 in accordance with the laws of India.
@@ -344,11 +356,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               14. Changes to These Terms
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 We may revise these Terms &amp; Conditions periodically to
                 reflect changes in our business operations, legal obligations,
@@ -363,11 +376,12 @@ export default function TermsConditionsPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               15. Contact Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+
               <p>
                 Questions regarding these Terms &amp; Conditions may be directed
                 to:

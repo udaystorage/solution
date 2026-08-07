@@ -59,11 +59,12 @@ export default function AcceptableUsePolicyPage() {
           </header>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               1. Purpose
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala provides curated business databases for legitimate
                 commercial purposes. This policy establishes the standards that
@@ -79,11 +80,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               2. Permitted Use
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>The datasets supplied by LeadWala may be used for legitimate business purposes, including:</p>
 
               <ul className="list-disc pl-6 space-y-2">
@@ -103,11 +105,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               3. Prohibited Activities
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>You must not use LeadWala&apos;s services or supplied data for:</p>
 
               <ul className="list-disc pl-6 space-y-2">
@@ -120,11 +123,12 @@ export default function AcceptableUsePolicyPage() {
             </div>
           </section>
                    <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               4. Legal Compliance
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers are responsible for ensuring that their use of
                 LeadWala&apos;s services complies with all applicable laws,
@@ -140,11 +144,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               5. Data Security &amp; Confidentiality
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers should implement appropriate technical and
                 organisational measures to protect datasets supplied by
@@ -166,11 +171,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               6. Monitoring &amp; Enforcement
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala reserves the right to investigate suspected misuse of
                 its services where reasonably necessary to protect its business,
@@ -187,11 +193,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               7. Reporting Misuse
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 If you become aware of any misuse of LeadWala&apos;s services or
                 datasets, we encourage you to notify us promptly so that we may
@@ -206,11 +213,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               8. Changes to this Policy
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We may update this Acceptable Use Policy from time to time to
                 reflect changes in our services, legal obligations or business
@@ -225,11 +233,12 @@ export default function AcceptableUsePolicyPage() {
           </section>
 
           <section className="pt-20">
-            <h2 className="border-b border-stone-200 pb-3 text-2xl font-bold">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
               9. Contact Information
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-stone-700">
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 If you have any questions regarding this Acceptable Use Policy,
                 please contact:

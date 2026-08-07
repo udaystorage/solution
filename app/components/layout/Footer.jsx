@@ -250,15 +250,15 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-stone-500">
             <Link href="/privacy-policy">Privacy Policy</Link>
-            <span>|</span>
+            <span className="text-stone-300">|</span>
             <Link href="/terms-and-conditions">Terms & Conditions</Link>
-            <span>|</span>
+            <span className="text-stone-300">|</span>
 
             <Link href="/acceptable-use">Acceptable Use</Link>
-            <span>|</span>
+            <span className="text-stone-300"  >|</span>
 
             <Link href="/refund-policy">Refund Policy</Link>
-            <span>|</span>
+            <span className="text-stone-300">|</span>
 
             <Link href="/disclaimer">Disclaimer</Link>
           </div>
