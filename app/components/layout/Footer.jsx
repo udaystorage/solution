@@ -18,8 +18,6 @@ export default function Footer() {
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
 
-  
-
   const handleClick = () => {
     if (!/^[6-9]\d{9}$/.test(mobile)) {
       setError("Please enter a valid 10-digit mobile number.");
@@ -55,7 +53,7 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Topsia,  Kolkata 700039</span>
+                  <span>Topsia, Kolkata 700039</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
@@ -150,7 +148,7 @@ export default function Footer() {
               </h3>
               <p className="text-[13px] text-neutral-600">
                 Tell our expert what you need. Send us your contact, we will get
-                back to you within 5 minutes. 
+                back to you within 5 minutes.
               </p>
 
               <div className="mt-4">
@@ -162,7 +160,7 @@ export default function Footer() {
                     onChange={(e) => {
                       setMobile(e.target.value);
                       setError("");
-                      setStatus("")
+                      setStatus("");
                     }}
                     className="w-full px-5 py-3 text-[13px] outline-none placeholder:text-neutral-400"
                   />
@@ -175,15 +173,13 @@ export default function Footer() {
                   </button>
                 </div>
 
-               <p
-  className={`mt-2 h-5 text-xs transition-opacity duration-200 ${
-    error || status ? "opacity-100" : "opacity-0"
-  } ${
-    error ? "text-red-500" : "text-neutral-500"
-  }`}
->
-  {error || status || "\u00A0"}
-</p>
+                <p
+                  className={`mt-2 h-5 text-xs transition-opacity duration-200 ${
+                    error || status ? "opacity-100" : "opacity-0"
+                  } ${error ? "text-red-500" : "text-neutral-500"}`}
+                >
+                  {error || status || "\u00A0"}
+                </p>
               </div>
             </div>
 
@@ -252,14 +248,19 @@ export default function Footer() {
             All rights reserved.
           </p>
 
-          <div className="flex gap-6 text-sm text-neutral-600">
-            <a href="#" className="hover:text-black">
-              Privacy Policy
-            </a>
+          <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-stone-500">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <span>|</span>
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            <span>|</span>
 
-            <a href="#" className="hover:text-black">
-              Terms of Service
-            </a>
+            <Link href="/acceptable-use">Acceptable Use</Link>
+            <span>|</span>
+
+            <Link href="/refund-policy">Refund Policy</Link>
+            <span>|</span>
+
+            <Link href="/disclaimer">Disclaimer</Link>
           </div>
         </div>
       </div>
