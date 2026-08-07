@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "919999999999"; // Replace with yours
 
-export default function WhatsappButton({ request }) {
+export default function WhatsappButton({ request, accepted }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -32,6 +32,12 @@ export default function WhatsappButton({ request }) {
       return setError("Please enter your mobile number.");
     }
 
+    if (!accepted) {
+      return setError(
+        "Please accept the Terms & Conditions and Privacy Policy.",
+      );
+    }
+
     setLoading(true);
 
     try {
@@ -43,13 +49,13 @@ export default function WhatsappButton({ request }) {
 
       localStorage.setItem(
         "leadwala_database_request",
-        JSON.stringify(payload)
+        JSON.stringify(payload),
       );
 
       const message = createWhatsappMessage(request);
 
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        message
+        message,
       )}`;
 
       // tiny premium delay
@@ -93,21 +99,17 @@ export default function WhatsappButton({ request }) {
       >
         {loading ? (
           <>
-            <LoaderCircle
-              size={18}
-              className="animate-spin"
-            />
-
+            <LoaderCircle size={18} className="animate-spin" />
             Preparing Request...
           </>
         ) : (
           <>
             <FaWhatsapp
-  className="relative z-10 text-[#25D366] md:text-[#25D366]  lg:text-white transition-colors
+              className="relative z-10 text-[#25D366] md:text-[#25D366]  lg:text-white transition-colors
     duration-300
     group-hover:text-[#25D366]"
-  size={20} 
-/>
+              size={20}
+            />
 
             <span className="whitespace-nowrap">Open Whatsapp</span>
 
@@ -126,9 +128,7 @@ export default function WhatsappButton({ request }) {
             Opening WhatsApp...
           </p>
         ) : (
-          <p className="text-sm text-red-500">
-            {error || "\u00A0"}
-          </p>
+          <p className="text-sm text-red-500">{error || "\u00A0"}</p>
         )}
       </div>
     </div>
@@ -153,11 +153,7 @@ Quantity:
 ${request.quantity}
 
 Quality:
-${
-  request.quality === "premium"
-    ? "Premium"
-    : "Standard"
-}
+${request.quality === "premium" ? "Premium" : "Standard"}
 
 ━━━━━━━━━━━━━━
 

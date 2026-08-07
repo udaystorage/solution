@@ -10,7 +10,7 @@ export default function AboutHero() {
       {/* subtle background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
 
-      <div className="relative mx-auto flex min-h-[650px] max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-10">
+      <div className="relative mx-auto md:mt-12 lg:mt-10 flex min-h-[650px] max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-10">
         {/* <span className="mb-7 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
           About Leadwala
         </span> */}
@@ -39,15 +39,15 @@ export default function AboutHero() {
           />
         </a>
 
-        <div className="mt-14  flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-stone-500">
+        <div className="mt-14  flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs font-medium text-stone-500">
           <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">
   Verified Data
 </span>
-          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="hidden h-1 w-1 rounded-full bg-white sm:block" />
           <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Custom Research</span>
-          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="hidden h-1 w-1 rounded-full bg-white sm:block" />
           <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Pan-India Coverage</span>
-          <span className="hidden h-1 w-1 rounded-full bg-cyan-300 sm:block" />
+          <span className="hidden h-1 w-1 rounded-full bg-white sm:block" />
           <span className="text-[9px] sm:text-[10px] md:text-[12px] rounded-full bg-white/70 backdrop-blur-md px-3 py-1 text-stone-800 shadow-sm">Human-Assisted Research</span>
         </div>
       </div>

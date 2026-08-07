@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import LocationInput from "./LocationInput";
 import QuantitySelector from "./QuantitySelector";
 import QualitySelector from "./QualitySelector";
 import RequirementsBox from "./RequirementsBox";
 import CustomerForm from "./CustomerForm";
+import ConsentCheckbox from "../../ui/ConsentCheckbox";
 import WhatsappButton from "./WhatsappButton";
 
 export default function DatabaseConfigurator({
@@ -14,6 +16,8 @@ export default function DatabaseConfigurator({
   error,
   handleClick,
 }) {
+   const [accepted, setAccepted] = useState(false);
+
   const updateField = (field, value) => {
     setRequest((prev) => ({
       ...prev,
@@ -88,19 +92,15 @@ export default function DatabaseConfigurator({
       {/* Footer */}
 
       <div className="border-t border-stone-200 bg-stone-50 px-8 py-8 lg:px-10">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h3 className="text-lg font-semibold text-stone-900">
-              Ready to request your database?
-            </h3>
-
-            <p className="mt-1 text-sm leading-6 text-stone-600">
-              We&apos;ll prepare your request and open WhatsApp with all your
-              details pre-filled.
-            </p>
-          </div>
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <ConsentCheckbox
+        checked={accepted}
+        onChange={setAccepted}
+      />
 
           <WhatsappButton
+            accepted={accepted}
+            request={request}
             loading={loading}
             error={error}
             onClick={handleClick}
