@@ -249,18 +249,18 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-stone-500">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <span className="text-stone-300">|</span>
-            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            <Link href="/privacy-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Privacy Policy</Link>
+            <span className="text-stone-300 text-[13px]">|</span>
+            <Link href="/terms-and-conditions" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Terms & Conditions</Link>
+            <span className="text-stone-300 text-[13px]">|</span>
+
+            <Link href="/acceptable-use" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5 ">Acceptable Use</Link>
+            <span className="text-stone-300 text-[13px] "  >|</span>
+
+            <Link href="/refund-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Refund Policy</Link>
             <span className="text-stone-300">|</span>
 
-            <Link href="/acceptable-use">Acceptable Use</Link>
-            <span className="text-stone-300"  >|</span>
-
-            <Link href="/refund-policy">Refund Policy</Link>
-            <span className="text-stone-300">|</span>
-
-            <Link href="/disclaimer">Disclaimer</Link>
+            <Link href="/disclaimer" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Disclaimer</Link>
           </div>
         </div>
       </div>
