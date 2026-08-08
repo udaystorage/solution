@@ -58,14 +58,13 @@ export default function Navbar() {
             sm:text-2xl lg:text-[1.8rem] flex items-center gap-2 md:gap-2  justify-center tracking-wide
           "
         >
-          <div className="relative h-10 w-10 sm:h-12 sm:w-12 lg:h-15 lg:w-15">
+          <div className="relative flex justify-center items-center h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16">
             <Image
-              src="/logo/logo-1.svg"
-              fill
+              src="/logo/logo-3.svg"
+            fill
               aspectratio={1}
               sizes="100vw"
               className="object-cover mix-blend-multiply translate-x-4"
-              style={{ transform: "rotate(180deg)" }}
               alt="Logo"
             />
           </div>

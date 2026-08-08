@@ -27,7 +27,7 @@ const jsonLd = {
 };
 
 const EFFECTIVE_DATE = "07 August 2026";
-const LAST_UPDATED = "07 August 2026";
+const LAST_UPDATED = "08 August 2026";
 
 export default function DisclaimerPage() {
   return (
@@ -48,7 +48,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-6 flex flex-col gap-1 text-sm text-stone-500 sm:flex-row sm:gap-8">
               <p><strong className="text-stone-700">Effective:</strong> <time dateTime="2026-08-07">{EFFECTIVE_DATE}</time></p>
-              <p><strong className="text-stone-700">Last Updated:</strong> <time dateTime="2026-08-07">{LAST_UPDATED}</time></p>
+              <p><strong className="text-stone-700">Last Updated:</strong> <time dateTime="2026-08-08">{LAST_UPDATED}</time></p>
             </div>
 
             <p className="mt-8 text-base leading-8 text-stone-600">
@@ -184,11 +184,28 @@ export default function DisclaimerPage() {
               </p>
             </div>
           </section>
+          <section className="pt-20">
+            <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
+
+              7. Third-Party Images &amp; Content
+            </h2>
+
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
+              <p>
+                Certain photographs, illustrations or visual assets displayed on this website are licensed from third-party content providers, including platforms such as Unsplash, or are otherwise used under applicable licences or permissions.
+              </p>
+
+              <p>
+               Copyright and other intellectual property rights in such materials remain with their respective owners unless expressly stated otherwise.
+              </p>
+              <p>These materials are displayed solely as part of the presentation of LeadWala&apos;s website and services. Nothing on this website grants any right to copy, reproduce, redistribute, sublicense, sell, or otherwise exploit such third-party content except as permitted under the applicable licence or by the respective rights holder.</p>
+            </div>
+          </section>
 
           <section className="pt-20">
             <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
 
-              7. Website Availability
+              8. Website Availability
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
@@ -204,7 +221,7 @@ export default function DisclaimerPage() {
           <section className="pt-20">
             <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
 
-              8. Limitation of Reliance
+              9. Limitation of Reliance
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
@@ -220,7 +237,7 @@ export default function DisclaimerPage() {
           <section className="pt-20">
             <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
 
-              9. Changes to this Disclaimer
+              10. Changes to this Disclaimer
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
@@ -236,7 +253,7 @@ export default function DisclaimerPage() {
           <section className="pt-20">
             <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
 
-              10. Contact Information
+              11. Contact Information
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
