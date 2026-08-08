@@ -5,6 +5,7 @@ import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import path from "path";
 import Link from "next/link";
 import { getJsonFilesAsArray } from "@/lib/blog";
+import BreadCrumbSchema from "@/app/components/BreadCrumbSchema";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
@@ -195,6 +196,22 @@ const blogs = await getJsonFilesAsArray();
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
       />
+          <BreadCrumbSchema
+      items={[
+        {
+          name: "Home",
+          url: "https://leadwala.com/",
+        },
+        {
+          name: "Blog",
+          url: "https://leadwala.com/blog",
+        },
+        {
+          name: blog.title,
+          url: `https://leadwala.com/blog/${slug}`,
+        },
+      ]}
+    />
 
       <main className="min-h-screen relative overflow-hidden text-stone-900 selection:bg-emerald-100">
         {/* Ambient Glow Containers */}
