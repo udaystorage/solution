@@ -14,6 +14,10 @@ export const metadata = {
     url: "https://www.leadwala.com/disclaimer",
     type: "website",
   },
+   robots: {
+    index: true,
+    follow: true,
+  },
   twitter: {
     card: "summary_large_image",
   },

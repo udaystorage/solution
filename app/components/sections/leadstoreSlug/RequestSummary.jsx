@@ -73,15 +73,19 @@ export default function RequestSummary({ request }) {
 
               return (
                 <div key={item.label} className="flex items-start gap-3">
-                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-cyan-700">
-    <Icon className="h-[18px] w-[18px]" />
-</div>
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-cyan-700">
+                    <Icon className="h-[18px] w-[18px]" />
+                  </div>
 
                   <div className="min-w-0 flex-1">
-<p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">                      {item.label}
+                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">
+                      {" "}
+                      {item.label}
                     </p>
 
-<p className="mt-0.5 break-words text-sm font-medium leading-6 text-stone-900">                      {item.value}
+                    <p className="mt-0.5 break-words text-sm font-medium leading-6 text-stone-900">
+                      {" "}
+                      {item.value}
                     </p>
                   </div>
                 </div>
@@ -94,12 +98,14 @@ export default function RequestSummary({ request }) {
 
         <div className="border-t border-stone-200 bg-stone-50 px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
           <div className="flex items-start gap-3">
-           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white">
-    <Clock3 className="h-[18px] w-[18px] text-cyan-700" />
-</div>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white">
+              <Clock3 className="h-[18px] w-[18px] text-cyan-700" />
+            </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-stone-900">Estimated Delivery</h4>
+              <h4 className="text-sm font-semibold text-stone-900">
+                Estimated Delivery
+              </h4>
 
               <p className="mt-1 text-sm leading-6 text-stone-600">
                 Most database requests are prepared and shared within

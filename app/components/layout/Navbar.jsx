@@ -60,8 +60,9 @@ export default function Navbar() {
         >
           <div className="relative flex justify-center items-center h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16">
             <Image
-              src="/logo/logo-3.svg"
-            fill
+              src="/logo/logo-6.png"
+            width={25}
+            height={25}
               aspectratio={1}
               sizes="100vw"
               className="object-cover mix-blend-multiply translate-x-4"
