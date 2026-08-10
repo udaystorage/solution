@@ -82,7 +82,7 @@ export default function Navbar() {
             />
           </div>
           <span
-            className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold tracking-tight`}
+            className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold `}
           >
             LeadWala
           </span>
