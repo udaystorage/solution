@@ -3,16 +3,16 @@
 export default function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "OnlineBusiness",
-    "@id": "https://leadwala.com/#organization",
+    "@type": "Organization",
+    "@id": "https://leadwala.co.in/#organization",
 
     name: "LeadWala",
 
-    url: "https://leadwala.com",
+    url: "https://leadwala.co.in",
 
     logo: {
       "@type": "ImageObject",
-      url: "https://leadwala.com/logo.png",
+      url: "https://leadwala.co.in/logo.png",
     },
 
     description:

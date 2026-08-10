@@ -46,12 +46,12 @@ export const metadata = {
   title: "B2b sales intelligence platform & Lead Generation Blog | Leadwala",
   description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   alternates: {
-    canonical: "https://leadwala.com/blog",
+    canonical: "https://leadwala.co.in/blog",
   },
   openGraph: {
     title: "Leadwala Growth & Marketing Insights Blog",
     description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
-    url: "https://leadwala.com/blog",
+    url: "https://leadwala.co.in/blog",
     siteName: "Leadwala",
     type: "website",
     locale: "en_US",
@@ -65,16 +65,15 @@ export const metadata = {
 
 export default async function BlogListingPage() {
   
-  /**
-   * 2. BATCH ARCHIVE SCHEMA (JSON-LD)
-  */
+// 2. BATCH ARCHIVE SCHEMA (JSON-LD)
+
  const blogs =  await getJsonFilesAsArray();
   const listingJsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Leadwala Marketing & Growth Blog",
     "description": "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
-    "url": "https://leadwala.com/blog",
+    "url": "https://leadwala.co.in/blog",
     "blogPost": blogs.map((blog) => {
       let isoDate;
       try {
@@ -87,9 +86,9 @@ export default async function BlogListingPage() {
         "@type": "BlogPosting",
         "headline": blog.title,
         "description": blog.description,
-        "url": `https://leadwala.com/blog/${blog.slug}`,
+        "url": `https://leadwala.co.in/blog/${blog.slug}`,
         "datePublished": isoDate,
-        "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.com${blog.image || "/blog.jpg"}`,
+        "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.co.in${blog.image || "/blog.jpg"}`,
       };
     }),
   };

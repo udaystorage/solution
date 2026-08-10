@@ -3,9 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart,ArrowRight } from "lucide-react";
+import { ShoppingCart, ArrowRight } from "lucide-react";
 import logiNav from "@/public/logoNav.png";
 import Image from "next/image";
+import { Geist } from "next/font/google";
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 const navigationItems = [
   { label: "Home", href: "/" },
@@ -18,6 +22,7 @@ const navigationItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
@@ -55,21 +60,32 @@ export default function Navbar() {
           className="
             relative z-50
             text-xl font-bold
-            sm:text-2xl lg:text-[1.8rem] flex items-center gap-2 md:gap-2  justify-center tracking-wide
+            sm:text-2xl lg:text-[1.8rem] flex items-center gap-2 md:gap-3  justify-center tracking-wide
           "
         >
-          <div className="relative flex justify-center items-center h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16">
+          <div className="relative flex justify-center items-center">
             <Image
-              src="/logo/logo-6.png"
-            width={25}
-            height={25}
-              aspectratio={1}
-              sizes="100vw"
-              className="object-cover mix-blend-multiply translate-x-4"
-              alt="Logo"
+              src="/logo/symbol-1.svg"
+              alt="LeadWala Logo"
+              width={35}
+              height={35}
+              className="
+    w-6 h-6
+    sm:w-7 sm:h-7
+    md:w-8 md:h-8
+    lg:w-[35px] lg:h-[35px]
+    object-contain
+    mix-blend-multiply
+    translate-x-4
+    mr-2
+  "
             />
           </div>
-          <span>Leadwala</span>
+          <span
+            className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold tracking-tight`}
+          >
+            LeadWala
+          </span>
         </Link>
 
         {/* =====================================================
@@ -152,8 +168,8 @@ export default function Navbar() {
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
-  href="/leadstore/custom-data"
-  className="
+            href="/leadstore/custom-data"
+            className="
     group
     relative
     inline-flex
@@ -185,19 +201,18 @@ export default function Navbar() {
     focus:ring-slate-950
     focus:ring-offset-2
   "
->
-  <span>
-  <span className="min-[1100px]:inline hidden">Get </span>
-  <span className="min-[1080px]:inline hidden">Custom </span>
+          >
+            <span>
+              <span className="min-[1100px]:inline hidden">Get </span>
+              <span className="min-[1080px]:inline hidden">Custom </span>
+              Data
+            </span>
 
-   Data
-</span>
-  
-  <ArrowRight 
-    size={16} 
-    className="transition-transform duration-300 ease-out group-hover:translate-x-1 " 
-  />
-</Link>
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-300 ease-out group-hover:translate-x-1 "
+            />
+          </Link>
         </div>
 
         {/* =====================================================
@@ -224,8 +239,8 @@ export default function Navbar() {
             <ShoppingCart aria-hidden="true" className="size-5" />
           </Link> */}
           <Link
-  href="/leadstore/custom-data"
-  className="
+            href="/leadstore/custom-data"
+            className="
     group
     relative
     inline-flex
@@ -266,15 +281,15 @@ export default function Navbar() {
     focus:ring-slate-950
     focus:ring-offset-2
   "
->
-  <span>
-  <span className="inline xs:hidden">Custom Data</span>
-</span>
-  <ArrowRight 
-    size={16} 
-    className="transition-transform duration-300 ease-out group-hover:translate-x-1" 
-  />
-</Link>
+          >
+            <span>
+              <span className="inline xs:hidden">Custom Data</span>
+            </span>
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+            />
+          </Link>
           {/* Hamburger */}
           <button
             type="button"

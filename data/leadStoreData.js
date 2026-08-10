@@ -218,7 +218,7 @@ const leadStoreData = [
     verification: "Human Verified",
   },
     {
-    id: 18,
+    id: 17,
     slug: "industry-specific-datasets",
     title: "Industry-specific datasets",
     image:"/leadCards/industry-specific.webp",
@@ -231,7 +231,7 @@ const leadStoreData = [
   },
 
     {
-    id: 19,
+    id: 18,
     slug: "geographic-segmentation",
     title: "Geographic segmentation",
     image:"/leadCards/geographic-segmentation.webp",
