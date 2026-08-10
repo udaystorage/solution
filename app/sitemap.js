@@ -1,13 +1,26 @@
 // app/sitemap.js
-import {getJsonFilesAsArray} from "@/lib/blog";
+import { getJsonFilesAsArray } from "@/lib/blog";
+import leadStoreData from "@/data/leadStoreData";
 
 const blogs = await getJsonFilesAsArray();
+const leadStoreItems = leadStoreData;
 
 export default async function sitemap() {
-  const baseUrl = "https://leadwala.com";
+  const baseUrl = "https://leadwala.co.in";
 
   // 1. Static Routes
-  const staticRoutes = ["", "/blog"].map((route) => ({
+  const staticRoutes = [
+    "",
+    "/leadstore",
+    "/aboutus",
+    "/contact",
+    "/blog",
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/refund-policy",
+    "/acceptable-use",
+    "/disclaimer",
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "daily",
@@ -20,8 +33,17 @@ export default async function sitemap() {
     // Converts "July 15, 2026" formats cleanly into an ISO string for search engines
     lastModified: new Date(blog.date).toISOString(),
     changeFrequency: "monthly",
-    priority: 0.6,
+    priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const leadStoreRoutes = leadStoreItems.map((item) => ({
+    url: `${baseUrl}/leadstore/${item.slug}`,
+    lastModified: new Date(
+      item.updatedAt || item.date || Date.now(),
+    ).toISOString(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...leadStoreRoutes];
 }

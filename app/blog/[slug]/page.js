@@ -5,6 +5,7 @@ import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import path from "path";
 import Link from "next/link";
 import { getJsonFilesAsArray } from "@/lib/blog";
+import BreadCrumbSchema from "@/app/components/BreadCrumbSchema";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
@@ -74,9 +75,7 @@ function parseParagraphBlocks(text) {
 
 
 
-/**
- * 1. SSG PRE-RENDERING PARAMETERS
- */
+//  1. SSG PRE-RENDERING PARAMETERS
 export async function generateStaticParams() {
   const blogs = await getJsonFilesAsArray();
 
@@ -85,9 +84,7 @@ export async function generateStaticParams() {
   }));
 }
 
-/**
- * 2. DYNAMIC SEO METADATA INJECTION
- */
+// 2. DYNAMIC SEO METADATA INJECTION
 export async function generateMetadata({ params }) {
   const blogs = await getJsonFilesAsArray();
 
@@ -98,7 +95,7 @@ export async function generateMetadata({ params }) {
 
   const cleanImageUrl = blog.image?.startsWith("http")
     ? blog.image
-    : `https://leadwala.com${blog.image || "/demoBlog.webp"}`;
+    : `https://leadwala.co.in${blog.image || "/demoBlog.webp"}`;
     
     const isoDate = new Date(blog.date).toISOString();
     
@@ -106,7 +103,7 @@ export async function generateMetadata({ params }) {
     title: `${blog.title} | Leadwala Insights`,
     description: blog.description?.substring(0, 160) || "Read the latest digital insights on Leadwala.",
     alternates: {
-      canonical: `https://leadwala.com/blog/${slug}`,
+      canonical: `https://leadwala.co.in/blog/${slug}`,
     },
     robots: {
       index: true,
@@ -117,7 +114,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://leadwala.com/blog/${slug}`,
+      url: `https://leadwala.co.in/blog/${slug}`,
       siteName: "Leadwala",
       type: "article",
       publishedTime: isoDate,
@@ -157,9 +154,7 @@ const blogs = await getJsonFilesAsArray();
 
   const isoDate = new Date(blog.date).toISOString();
 
-  /**
-   * 3. INLINE STRUCURED DATA PIPELINE (JSON-LD)
-   */
+  // 3. INLINE STRUCURED DATA PIPELINE (JSON-LD)
   const jsonLdSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -167,23 +162,23 @@ const blogs = await getJsonFilesAsArray();
     "description": blog.description,
     "datePublished": isoDate,
     "dateModified": isoDate,
-    "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.com${blog.image || "/demoBlog.webp"}`,
+    "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.co.in${blog.image || "/demoBlog.webp"}`,
     "author": {
       "@type": "Organization",
       "name": "Leadwala",
-      "url": "https://leadwala.com"
+      "url": "https://leadwala.co.in"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Leadwala",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://leadwala.com/logo.png"
+        "url": "https://leadwala.co.in/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://leadwala.com/blog/${slug}`
+      "@id": `https://leadwala.co.in/blog/${slug}`
     }
   };
 
@@ -195,6 +190,22 @@ const blogs = await getJsonFilesAsArray();
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
       />
+          <BreadCrumbSchema
+      items={[
+        {
+          name: "Home",
+          url: "https://leadwala.co.in/",
+        },
+        {
+          name: "Blog",
+          url: "https://leadwala.co.in/blog",
+        },
+        {
+          name: blog.title,
+          url: `https://leadwala.co.in/blog/${slug}`,
+        },
+      ]}
+    />
 
       <main className="min-h-screen relative overflow-hidden text-stone-900 selection:bg-emerald-100">
         {/* Ambient Glow Containers */}

@@ -1,42 +1,43 @@
-// app/components/OrganizationSchema.jsx
+// components/OrganizationSchema.jsx
 
 export default function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://yourdomain.com/#organization",
+    "@id": "https://leadwala.co.in/#organization",
 
-    name: "Lead Wala",
-    url: "https://leadwala.in",
+    name: "LeadWala",
+
+    url: "https://leadwala.co.in",
+
     logo: {
       "@type": "ImageObject",
-      url: "https://yourdomain.com/logo.png",
+      url: "https://leadwala.co.in/logo.png",
     },
 
     description:
-      "Lead Wala provides verified B2B databases and business data solutions that help companies connect with relevant decision-makers and generate qualified leads.",
+      "LeadWala provides verified B2B and B2C business databases and data solutions that help businesses connect with relevant decision-makers and generate qualified leads.",
 
-    email: "mailto:contact@yourdomain.com",
+    email: "mailto:YOUR_REAL_EMAIL",
+
     telephone: "+91-XXXXXXXXXX",
-
-    sameAs: [
-      "https://www.linkedin.com/company/your-company",
-      "https://x.com/yourcompany",
-    ],
 
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-XXXXXXXXXX",
-      email: "contact@yourdomain.com",
+      email: "YOUR_REAL_EMAIL",
       contactType: "customer service",
       availableLanguage: ["English"],
     },
+
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema),
+      }}
     />
   );
 }

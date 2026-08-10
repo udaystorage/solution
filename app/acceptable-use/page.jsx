@@ -14,6 +14,10 @@ export const metadata = {
     url: "https://www.leadwala.com/acceptable-use",
     type: "website",
   },
+   robots: {
+    index: true,
+    follow: true,
+  },
   twitter: {
     card: "summary_large_image",
   },
