@@ -1,17 +1,20 @@
 import Script from "next/script";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
+
 export const metadata = {
   title: "Disclaimer | LeadWala",
   description:
     "Important information about the use of LeadWala's website, services and business databases.",
   alternates: {
-    canonical: "https://www.leadwala.com/disclaimer",
+    canonical: `${baseUrl}/disclaimer`,
   },
   openGraph: {
     title: "Disclaimer | LeadWala",
     description:
       "Read LeadWala's disclaimer regarding data accuracy, business outcomes and use of our services.",
-    url: "https://www.leadwala.com/disclaimer",
+    url: `${baseUrl}/disclaimer`,
     type: "website",
   },
    robots: {
@@ -27,7 +30,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Disclaimer",
-  url: "https://www.leadwala.com/disclaimer",
+  url: `${baseUrl}/disclaimer`,
 };
 
 const EFFECTIVE_DATE = "07 August 2026";
@@ -268,9 +271,9 @@ export default function DisclaimerPage() {
 
               <address className="not-italic leading-8">
                 <strong>LeadWala</strong><br />
-                Email: support@leadwala.com<br />
+                Email: support@leadwala.co.in<br />
                 Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.com<br />
+                Website: https://www.leadwala.co.in<br />
                 Registered Address: [Your Registered Business Address]
               </address>
             </div>

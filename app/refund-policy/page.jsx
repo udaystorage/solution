@@ -1,17 +1,19 @@
 import Script from "next/script";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
 export const metadata = {
   title: "Refund & Replacement Policy | LeadWala",
   description:
     "Learn how LeadWala reviews refund requests, evaluates database quality, and handles replacements for manually curated business databases.",
   alternates: {
-    canonical: "https://www.leadwala.com/refund-policy",
+    canonical: `${baseUrl}/refund-policy`,
   },
   openGraph: {
     title: "Refund & Replacement Policy | LeadWala",
     description:
       "Understand LeadWala&apos;s refund review and database replacement process.",
-    url: "https://www.leadwala.com/refund-policy",
+    url: `${baseUrl}/refund-policy`,
     type: "website",
   },
    robots: {
@@ -25,7 +27,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Refund & Replacement Policy",
-  url: "https://www.leadwala.com/refund-policy",
+  url: `${baseUrl}/refund-policy`,
 };
 
 const EFFECTIVE_DATE = "07 August 2026";
@@ -286,9 +288,9 @@ export default function RefundPolicyPage() {
 
               <address className="not-italic leading-8">
                 <strong>LeadWala</strong><br />
-                Email: support@leadwala.com<br />
+                Email: support@leadwala.co.in<br />
                 Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.com<br />
+                Website: https://www.leadwala.co.in<br />
                 Registered Address: [Your Registered Business Address]
               </address>
 

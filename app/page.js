@@ -5,6 +5,8 @@ import SolutionSection from "./components/home/SolutionsSection";
 import WhyChooseUs from "./components/home/WhyChooseUs";
 import { Check, TrendingUp } from "lucide-react";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
 // 1. Core Metadata Configuration for B2B Bounded Engine Optimization
 export const metadata = {
   title: "Leadwala | Premium B2B Lead Databases & Verified Email Lists",
@@ -23,12 +25,12 @@ export const metadata = {
     "school and college database"
   ],
   alternates: {
-    canonical: "https://leadwala.com", // Replace with your real URL when production-ready
+    canonical: baseUrl, // Replace with your real URL when production-ready
   },
   openGraph: {
     title: "Leadwala | Premium B2B Lead Databases",
     description: "Access high-accuracy B2B datasets with zero subscription lock-ins.",
-    url: "https://leadwala.com",
+    url: baseUrl,
     siteName: "Leadwala",
     type: "website",
   }

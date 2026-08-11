@@ -1,17 +1,18 @@
 import Script from "next/script";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 
 export const metadata = {
   title: "Terms & Conditions | LeadWala",
   description:
     "Read the Terms & Conditions governing the use of LeadWala's website and business database services.",
   alternates: {
-    canonical: "https://www.leadwala.com/terms-and-conditions",
+    canonical: `${baseUrl}/terms-and-conditions`,
   },
   openGraph: {
     title: "Terms & Conditions | LeadWala",
     description:
       "Terms governing the use of LeadWala's website and business database services.",
-    url: "https://www.leadwala.com/terms-and-conditions",
+    url: `${baseUrl}/terms-and-conditions`,
     type: "website",
   },
    robots: {
@@ -27,7 +28,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Terms & Conditions",
-  url: "https://www.leadwala.com/terms-and-conditions",
+  url: `${baseUrl}/terms-and-conditions`,
 };
 
 export default function TermsConditionsPage() {
@@ -393,9 +394,9 @@ export default function TermsConditionsPage() {
 
               <address className="not-italic leading-8">
                 <strong>LeadWala</strong><br />
-                Email: support@leadwala.com<br />
+                Email: support@leadwala.co.in<br />
                 Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.com<br />
+                Website: https://www.leadwala.co.in<br />
                 Registered Address: [Your Registered Business Address]
               </address>
             </div>

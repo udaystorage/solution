@@ -8,12 +8,14 @@ import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 // Keep this only if you already use this FAQ component on Contact.
 // import FAQSection from "../components/sections/FAQ";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata = {
   title: "Contact Leadwala | Discuss Your Data Requirement",
   description:
     "Tell Leadwala the audience, industry, location, or market you want to reach. Discuss verified B2B and B2C data availability with our team.",
   alternates: {
-    canonical: "/contact",
+    canonical: `${baseUrl}/contact`,
   },
   openGraph: {
     title: "Contact Leadwala | Discuss Your Data Requirement",
@@ -30,11 +32,11 @@ export default function ContactPage() {
         items={[
           {
             name: "Home",
-            url: "https://leadwala.co.in/",
+            url: baseUrl,
           },
           {
             name: "Contact",
-            url: "https://leadwala.co.in/contact",
+            url: `${baseUrl}/contact`,
           },
         ]}
       />

@@ -1,17 +1,19 @@
 import Script from "next/script";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
 
 export const metadata = {
   title: "Privacy Policy | LeadWala",
   description:
     "Learn how LeadWala handles information when you browse our website or contact us through WhatsApp.",
   alternates: {
-    canonical: "https://www.leadwala.com/privacy-policy",
+    canonical: `${baseUrl}/privacy-policy`,
   },
   openGraph: {
     title: "Privacy Policy | LeadWala",
     description:
       "Learn how LeadWala handles information when you browse our website or contact us through WhatsApp.",
-    url: "https://www.leadwala.com/privacy-policy",
+    url: `${baseUrl}/privacy-policy`,
     type: "website",
   },
   twitter: {
@@ -30,7 +32,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Privacy Policy",
-  url: "https://www.leadwala.com/privacy-policy",
+  url: `${baseUrl}/privacy-policy`,
   description:
     "Privacy Policy describing how LeadWala handles information and WhatsApp enquiries.",
 };
@@ -371,9 +373,9 @@ export default function PrivacyPolicyPage() {
 
               <address className="not-italic leading-8">
                 <strong>LeadWala</strong><br />
-                Email: support@leadwala.com<br />
+                Email: support@leadwala.co.in<br />
                 Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.com<br />
+                Website: https://www.leadwala.co.in<br />
                 Registered Address: [Your Registered Business Address]
               </address>
 

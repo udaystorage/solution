@@ -8,6 +8,8 @@ import FAQSection from "../components/sections/FAQ";
 import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
 // 1. Next.js SEO Metadata Config
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata = {
   title: "About LeadWala | Verified Business Data & Lead Generation",
   description:
@@ -23,17 +25,17 @@ export const metadata = {
     "B2B database",
   ],
   alternates: {
-    canonical: "https://www.leadwala.co.in/about",
+    canonical: `${baseUrl}/aboutus`,
   },
   openGraph: {
     title: "About LeadWala | Verified Business Data & Lead Generation",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
-    url: "https://www.leadwala.co.in/about",
+    url: `${baseUrl}/aboutus`,
     siteName: "Leadwala",
     images: [
       {
-        url: "https://www.leadwala.co.in/og-about.jpg",
+        url: `${baseUrl}/og-about.jpg`,
         width: 1200,
         height: 630,
         alt: "Leadwala B2B Data Platform",
@@ -46,7 +48,7 @@ export const metadata = {
     title: "About LeadWala | Verified Business Data & Lead Generation",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
-    images: ["https://www.leadwala.co.in/og-about.jpg"],
+    images: [`${baseUrl}/og-about.jpg`],
   },
 };
 
@@ -57,11 +59,11 @@ export default function AboutPage() {
         items={[
           {
             name: "Home",
-            url: "https://leadwala.co.in/",
+            url: baseUrl,
           },
           {
             name: "About Us",
-            url: "https://leadwala.co.in/aboutus",
+            url: `${baseUrl}/aboutus`,
           },
         ]}
       />

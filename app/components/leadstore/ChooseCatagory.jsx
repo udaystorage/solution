@@ -1,7 +1,6 @@
 "use client";
 import { MoveRight, PencilSparkles } from "lucide-react";
 import React, { useState } from "react";
-import CatagoryCard from "./CatagoryCard";
 import {
   TrendingUp,
   LineChart,

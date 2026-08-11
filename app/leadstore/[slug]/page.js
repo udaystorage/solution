@@ -4,6 +4,9 @@ import leadStoreData from "@/data/leadStoreData";
 import LeadStoreClient from "../LeadStoreClient";
 import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
@@ -23,7 +26,6 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const baseUrl = "https://leadwala.co.in";
 
   const canonicalUrl =
     `${baseUrl}/leadstore/${product.slug}`;
@@ -101,7 +103,6 @@ export default async function LeadStoreProductPage({ params }) {
     notFound();
   }
 
-  const baseUrl = "https://leadwala.co.in";
 
   
 
@@ -148,15 +149,15 @@ export default async function LeadStoreProductPage({ params }) {
         items={[
           {
             name: "Home",
-            url: "https://leadwala.co.in/",
+            url: `${baseUrl}`,
           },
           {
             name: "Lead Store",
-            url: "https://leadwala.co.in/leadstore",
+            url: `${baseUrl}/leadstore`,
           },
           {
             name: product.title,
-            url: `https://leadwala.co.in/leadstore/${product.slug}`,
+            url: `${baseUrl}/leadstore/${product.slug}`,
           },
         ]}
       />

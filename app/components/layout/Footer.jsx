@@ -53,17 +53,17 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Topsia, Kolkata 700039</span>
+                  <span>Topsia, Kolkata, West Bengal 700046</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Mail className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>support@leadwala.com</span>
+                  <span> joysolution21@gmail.com</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Phone className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>+91 90000 00000</span>
+                  <span> +91 81000 25936</span>
                 </div>
               </div>
             </div>
@@ -210,8 +210,8 @@ export default function Footer() {
                 <FaXTwitter className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
               </a>
 
-              <a
-                href="#"
+              <span
+                onClick={()=>openWhatsApp("Leadwala? I have some database query")}
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -221,10 +221,12 @@ export default function Footer() {
     active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
               >
                 <FaWhatsapp className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
+              </span>
 
-              <a
-                href="#"
+              <span
+                  onClick={() => {
+    window.location.href = "mailto:hello@leadwala.co.in";
+  }}
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -234,7 +236,7 @@ export default function Footer() {
     active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
               >
                 <Mail className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
+              </span>
             </div>
           </div>
         </div>
