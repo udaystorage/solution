@@ -9,7 +9,7 @@ import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
 // 1. Next.js SEO Metadata Config
 export const metadata = {
-  title: "About Leadwala | Verified B2B Data & Prospecting Intelligence",
+  title: "About LeadWala | Verified Business Data & Lead Generation",
   description:
     "Discover how Leadwala helps businesses reach decision-makers with high-accuracy B2B databases, custom human-assisted research, and pan-India coverage.",
   keywords: [
@@ -26,7 +26,7 @@ export const metadata = {
     canonical: "https://www.leadwala.co.in/about",
   },
   openGraph: {
-    title: "About Leadwala | Verified B2B Data & Prospecting Intelligence",
+    title: "About LeadWala | Verified Business Data & Lead Generation",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
     url: "https://www.leadwala.co.in/about",
@@ -43,7 +43,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Leadwala | Verified B2B Data & Prospecting Intelligence",
+    title: "About LeadWala | Verified Business Data & Lead Generation",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
     images: ["https://www.leadwala.co.in/og-about.jpg"],
