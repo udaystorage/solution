@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import ProductHero from "@/app/components/sections/leadstoreSlug/ProductHero";
-import DatabaseConfigurator from "@/app/components/sections/leadstoreSlug/DatabaseConfigurator";
-import RequestSummary from "@/app/components/sections/leadstoreSlug/RequestSummary";
+import ProductHero from "@/app/components/leadstoreSlug/ProductHero";
+import DatabaseConfigurator from "@/app/components/leadstoreSlug/DatabaseConfigurator";
+import RequestSummary from "@/app/components/leadstoreSlug/RequestSummary";
 
 const WHATSAPP_NUMBER = "919999999999";
 
