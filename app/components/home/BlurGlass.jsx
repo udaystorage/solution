@@ -1,6 +1,6 @@
 import React from "react";
-import BlobBackground from "../SVG/BlobBackground";
-import FloatingCard from "./animations/homeHeroAnimation/FloatingCard";
+import BlobBackground from "../../SVG/BlobBackground";
+import FloatingCard from "../animations/homeHeroAnimation/FloatingCard";
 import Link from "next/link";
 import { Headset } from "lucide-react";
 

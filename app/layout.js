@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import OrganizationSchema from "./components/OrganizationSchema";
+import OrganizationSchema from "./components/seo/OrganizationSchema";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 

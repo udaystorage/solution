@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BlurGlass from "./components/BlurGlass";
+import BlurGlass from "./components/home/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
 import SolutionSection from "./components/home/SolutionsSection";
 import WhyChooseUs from "./components/home/WhyChooseUs";

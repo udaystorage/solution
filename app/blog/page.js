@@ -6,6 +6,7 @@ import { MoveUpRight } from "lucide-react";
 import blogimage from "../../public/blog.jpg";
 import { promises as fs } from "fs";
 import path from "path";
+import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
  
@@ -101,6 +102,18 @@ export default async function BlogListingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingJsonLd) }}
       />
+            <BreadCrumbSchema
+              items={[
+                {
+                  name: "Home",
+                  url: "https://leadwala.co.in/",
+                },
+                {
+                  name: "Blog",
+                  url: "https://leadwala.co.in/blog",
+                },
+              ]}
+            />
 
      <div className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
   {/* SEMANTIC HEADER BANNER ZONE */}

@@ -3,6 +3,7 @@ import ContactPanel from "../components/contact/ContactPanel";
 import ContactProcess from "../components/contact/ContactProcess";
 import ContactCTA from "../components/contact/ContactCTA";
 import FAQSection from "../components/sections/FAQ";
+import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
 // Keep this only if you already use this FAQ component on Contact.
 // import FAQSection from "../components/sections/FAQ";
@@ -24,14 +25,27 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="overflow-hidden bg-white">
-      <ContactHero />
+    <>
+      <BreadCrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://leadwala.co.in/",
+          },
+          {
+            name: "Contact",
+            url: "https://leadwala.co.in/contact",
+          },
+        ]}
+      />
+      <main className="overflow-hidden bg-white">
+        <ContactHero />
 
-      <ContactPanel />
+        <ContactPanel />
 
-      <ContactProcess />
+        <ContactProcess />
 
-      {/*
+        {/*
         Optional:
         Keep this only if your Contact FAQ contains genuinely useful
         contact/data-buying questions rather than generic filler.
@@ -39,8 +53,8 @@ export default function ContactPage() {
       */}
         <FAQSection page="contact" />
 
-
-      <ContactCTA />
-    </main>
+        <ContactCTA />
+      </main>
+    </>
   );
 }

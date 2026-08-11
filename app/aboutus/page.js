@@ -1,4 +1,3 @@
-
 import AboutHero from "../components/aboutPage/AboutHero";
 import WhyWeExist from "../components/aboutPage/WhyWeExist";
 import OurApproach from "../components/aboutPage/OurApproach";
@@ -6,7 +5,7 @@ import OurPrinciples from "../components/aboutPage/OurPrinciples";
 import FinalCTA from "../components/aboutPage/FinalCTA";
 import ReachCapabilities from "../components/aboutPage/ReachCapabilities";
 import FAQSection from "../components/sections/FAQ";
-
+import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
 // 1. Next.js SEO Metadata Config
 export const metadata = {
@@ -53,14 +52,28 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden bg-white text-stone-950">
-      <AboutHero />
-      <WhyWeExist />
-      <OurApproach />
-      <OurPrinciples />
-      <ReachCapabilities />
-    <FAQSection page="about"/>
-      <FinalCTA />
-    </main>
+    <>
+      <BreadCrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://leadwala.co.in/",
+          },
+          {
+            name: "About Us",
+            url: "https://leadwala.co.in/aboutus",
+          },
+        ]}
+      />
+      <main className="overflow-hidden bg-white text-stone-950">
+        <AboutHero />
+        <WhyWeExist />
+        <OurApproach />
+        <OurPrinciples />
+        <ReachCapabilities />
+        <FAQSection page="about" />
+        <FinalCTA />
+      </main>
+    </>
   );
 }
