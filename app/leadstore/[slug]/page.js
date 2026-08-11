@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import leadStoreData from "@/data/leadStoreData";
 import LeadStoreClient from "../LeadStoreClient";
-import BreadCrumbSchema from "@/app/components/BreadCrumbSchema";
+import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
 
 export default async function LeadStoreProductPage({ params }) {
   const { slug } = await params;

@@ -72,9 +72,9 @@ export default function Footer() {
           {/* Discover */}
 
           <div>
-            <h3 className="mb-5 text-[14px] font-semibold text-neutral-900">
+            <h1 className="mb-5 text-[14px] font-semibold text-neutral-900">
               Solutions
-            </h3>
+            </h1>
 
             <ul className="space-y-3">
               {[
@@ -121,9 +121,9 @@ export default function Footer() {
           {/* Company */}
 
           <div>
-            <h3 className="mb-5 text-[14px] font-semibold text-neutral-900">
+            <h2 className="mb-5 text-[14px] font-semibold text-neutral-900">
               Company
-            </h3>
+            </h2>
 
             <ul className="space-y-3">
               {footerLinks.map((item) => (

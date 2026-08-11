@@ -5,7 +5,7 @@ import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import path from "path";
 import Link from "next/link";
 import { getJsonFilesAsArray } from "@/lib/blog";
-import BreadCrumbSchema from "@/app/components/BreadCrumbSchema";
+import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 

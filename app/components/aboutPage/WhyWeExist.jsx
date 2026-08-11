@@ -15,7 +15,6 @@ export default function WhyWeExist() {
         <div>
           <div className="lg:sticky lg:top-32">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-black sm:text-[11px] lg:text-[12px]">
-
               Why we exist
             </span>
 
@@ -57,7 +56,8 @@ export default function WhyWeExist() {
             >
               Too many businesses spend valuable time filtering outdated
               contacts, generic databases, and thousands of records before
-              finding someone worth reaching<span className="font-bold text-amber-500"> !</span>
+              finding someone worth reaching
+              <span className="font-bold text-amber-500"> !</span>
             </p>
           </div>
 
@@ -93,12 +93,7 @@ export default function WhyWeExist() {
                   "Manual filtering",
                   "Wasted outreach",
                 ].map((item, index) => (
-                  <FlowItem
-                    key={item}
-                    label={item}
-                    last={index === 3}
-                    muted
-                  />
+                  <FlowItem key={item} label={item} last={index === 3} muted />
                 ))}
               </div>
             </div>
@@ -128,11 +123,7 @@ export default function WhyWeExist() {
                   "Verified data",
                   "Relevant opportunities",
                 ].map((item, index) => (
-                  <FlowItem
-                    key={item}
-                    label={item}
-                    last={index === 3}
-                  />
+                  <FlowItem key={item} label={item} last={index === 3} />
                 ))}
               </div>
             </div>
@@ -157,9 +148,7 @@ function FlowItem({ label, last, muted = false }) {
       >
         <span
           className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
-            muted
-              ? "bg-stone-100 text-stone-400"
-              : "bg-cyan-600 text-stone-50"
+            muted ? "bg-stone-100 text-stone-400" : "bg-cyan-600 text-stone-50"
           }`}
         >
           <Check size={14} strokeWidth={2.5} />

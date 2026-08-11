@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import LocationInput from "./LocationInput";
-import QuantitySelector from "./QuantitySelector";
-import QualitySelector from "./QualitySelector";
-import RequirementsBox from "./RequirementsBox";
-import CustomerForm from "./CustomerForm";
-import ConsentCheckbox from "../../ui/ConsentCheckbox";
-import WhatsappButton from "./WhatsappButton";
+import LocationInput from "../leadstoreSlug/LocationInput";
+import QuantitySelector from "../leadstoreSlug/QuantitySelector";
+import QualitySelector from "../leadstoreSlug/QualitySelector";
+import RequirementsBox from "../leadstoreSlug/RequirementsBox";
+import CustomerForm from "../leadstoreSlug/CustomerForm";
+import ConsentCheckbox from ".././ui/ConsentCheckbox";
+import WhatsappButton from "../leadstoreSlug/WhatsappButton";
 
 export default function DatabaseConfigurator({
   request,

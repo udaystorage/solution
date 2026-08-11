@@ -10,19 +10,6 @@ export default function ContactHero() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-
-          {/* Eyebrow */}
-          {/* <p
-            className="
-              mb-5
-              text-xs font-semibold uppercase
-              tracking-[0.16em]
-              text-violet-600
-            "
-          >
-            Contact us
-          </p> */}
-
           {/* Primary page heading */}
           <h1
             id="contact-page-heading"

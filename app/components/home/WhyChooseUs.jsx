@@ -72,9 +72,9 @@ const handleWhyChooseUsClick = () => {
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 text-cyan-400 border border-white/10 uppercase tracking-wider">
               Why Leadwala
             </span>
-            <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
               Why Smart Sales Teams Source Data From Us
-            </h2>
+            </h1>
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl">
               Trusted by thousands of returning cleints who value high quality databases that creates real business opportunities
             </p>
@@ -104,7 +104,7 @@ const handleWhyChooseUsClick = () => {
                     <div className="relative w-full h-44 mt-6 rounded-2xl overflow-hidden">
                       <Image
                         src="/trust.webp"
-                        alt="Verified B2B Lead Database Pipeline Quality Assurance"
+                        alt="An office guy checking some data and papers with a pen in his hand."
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] transform-gpu"
@@ -112,9 +112,9 @@ const handleWhyChooseUsClick = () => {
                     </div>
                     
                     <div className="space-y-4 mt-8">
-                      <h3 className="text-2xl font-semibold text-white tracking-tight">
+                      <h2 className="text-2xl font-semibold text-white tracking-tight">
                         {feat.title}
-                      </h3>
+                      </h2>
                       <p className="text-slate-400 text-sm leading-relaxed max-w-md">
                         {feat.description}
                       </p>

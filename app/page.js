@@ -1,8 +1,8 @@
 import Image from "next/image";
-import BlurGlass from "./components/BlurGlass";
+import BlurGlass from "./components/home/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
-import SolutionSection from "./components/sections/SolutionsSection";
-import WhyChooseUs from "./components/sections/WhyChooseUs";
+import SolutionSection from "./components/home/SolutionsSection";
+import WhyChooseUs from "./components/home/WhyChooseUs";
 import { Check, TrendingUp } from "lucide-react";
 
 // 1. Core Metadata Configuration for B2B Bounded Engine Optimization
