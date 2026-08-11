@@ -1,5 +1,4 @@
 import React from "react";
-import DustCard from "./TestCard";
 import CardFlipAnimation from "./CardFlipAnimation";
 
 export default function FloatingCard() {

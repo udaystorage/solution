@@ -1,5 +1,5 @@
 import React from "react";
-import Cube from "../Desigines/Cube";
+import Cube from "../animations/cubeAnimate/Cube";
 import Image from "next/image";
 import demoprofile1 from "../../images/store/demoprofile1.jpg";
 import demoprofile2 from "../../images/store/demoprofile2.jpg";
