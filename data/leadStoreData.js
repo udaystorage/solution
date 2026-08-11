@@ -8,7 +8,7 @@ const leadStoreData = [
 
     description:
       "Custom-built databases tailored to your exact audience and business requirements.",
-    industry: "Custom",
+    industry: "Custom Data",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -23,7 +23,7 @@ const leadStoreData = [
 
     description:
       "Verified database of Demat account holders across India.",
-    industry: "Finance",
+    industry: "Finance & Investment",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -38,7 +38,7 @@ const leadStoreData = [
 
     description:
       "Verified stock market investors database for financial marketing campaigns.",
-    industry: "Finance",
+    industry: "Finance & Investment",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -53,7 +53,7 @@ const leadStoreData = [
 
     description:
       "Verified loan customer database across multiple lending segments.",
-    industry: "Finance",
+    industry: "Banking & Lending",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -98,7 +98,7 @@ const leadStoreData = [
 
     description:
       "Verified employee database across IT companies, Government departments and MNCs.",
-    industry: "Corporate",
+    industry: "IT-Corporate & Public Sector",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -113,7 +113,7 @@ const leadStoreData = [
 
     description:
       "Premium verified High Net Worth Individuals database.",
-    industry: "Finance",
+    industry: "Wealth Management",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -129,7 +129,7 @@ const leadStoreData = [
 
     description:
       "Verified car owners database across India.",
-    industry: "Automobile",
+    industry: "Automotive",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -145,7 +145,7 @@ const leadStoreData = [
 
     description:
       "Verified credit card holder database.",
-    industry: "Finance",
+    industry: "Banking & Financial Services",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -176,7 +176,7 @@ const leadStoreData = [
 
     description:
       "Verified business and institution database across multiple industries.",
-    industry: "Business",
+    industry: "Cross Industry B2B & Hospitality",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
@@ -191,7 +191,7 @@ const leadStoreData = [
 
     description:
       "Highly targeted database filtered by PIN code and location.",
-    industry: "Location Based",
+    industry: "Geographic",
     coverage: "Pan India",
     delivery: "2–3 Hours",
     verification: "Human Verified",
