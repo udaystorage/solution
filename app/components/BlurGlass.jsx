@@ -43,7 +43,7 @@ export default function BlurGlass() {
         lg:pl-6 xl:pl-10
       "
     >
-      <h2
+      <h1
         className="
           text-xs sm:text-sm
           font-semibold tracking-wide
@@ -51,9 +51,9 @@ export default function BlurGlass() {
         "
       >
         Premium B2B & B2C Lead Generation
-      </h2>
+      </h1>
 
-      <h1
+      <h2
         className="
           text-[2.5rem] sm:text-5xl md:text-6xl
           lg:text-[3.5rem] xl:text-6xl
@@ -73,7 +73,7 @@ export default function BlurGlass() {
         >
           verified leads.
         </span>
-      </h1>
+      </h2>
 
       <p
         className="

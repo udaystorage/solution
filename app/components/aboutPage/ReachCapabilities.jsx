@@ -4,11 +4,19 @@ import Link from "next/link";
 
 const capabilities = [
   // "Pan-India business research",
-  {id: 1, name: "Pan-India business research", slug: "pan-india-business-research"},
-  {id: 2, name: "Industry-specific datasets", slug: "industry-specific-datasets"},
-  {id: 3, name: "Decision-maker targeting", slug: "decision-maker-targeting"},
-  {id: 4, name: "Geographic segmentation", slug: "geographic-segmentation"},
-  {id: 5, name: "Custom data requirements", slug: "custom-data"},
+  {
+    id: 1,
+    name: "Pan-India business research",
+    slug: "pan-india-business-research",
+  },
+  {
+    id: 2,
+    name: "Industry-specific datasets",
+    slug: "industry-specific-datasets",
+  },
+  { id: 3, name: "Decision-maker targeting", slug: "decision-maker-targeting" },
+  { id: 4, name: "Geographic segmentation", slug: "geographic-segmentation" },
+  { id: 5, name: "Custom data requirements", slug: "custom-data" },
 ];
 
 export default function ReachCapabilities() {
@@ -69,8 +77,7 @@ export default function ReachCapabilities() {
             </span>
 
             {/* Heading */}
-           <h2 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
-
+            <h2 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
               Built around the market you&apos;re trying to reach.
             </h2>
 

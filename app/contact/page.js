@@ -1,7 +1,7 @@
-import ContactHero from "../components/sections/contact/ContactHero";
-import ContactPanel from "../components/sections/contact/ContactPanel";
-import ContactProcess from "../components/sections/contact/ContactProcess";
-import ContactCTA from "../components/sections/contact/ContactCTA";
+import ContactHero from "../components/contact/ContactHero";
+import ContactPanel from "../components/contact/ContactPanel";
+import ContactProcess from "../components/contact/ContactProcess";
+import ContactCTA from "../components/contact/ContactCTA";
 import FAQSection from "../components/sections/FAQ";
 
 // Keep this only if you already use this FAQ component on Contact.

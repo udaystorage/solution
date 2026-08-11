@@ -211,9 +211,9 @@ export default async function BlogListingPage() {
       <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200/50 bg-neutral-100 sm:rounded-3xl md:flex-row">
         {/* CTA Content */}
         <div className="flex w-full flex-col items-start justify-center gap-4 p-6 sm:gap-5 sm:p-8 md:w-1/2 md:p-10 lg:p-12">
-          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl">
+          <h3 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl">
             Get Your Lead Today
-          </h2>
+          </h3>
 
           <p className="max-w-xl text-sm leading-relaxed text-neutral-600 sm:text-base">
             Start your journey with us and unlock the potential of your

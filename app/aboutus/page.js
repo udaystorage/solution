@@ -1,10 +1,10 @@
 
-import AboutHero from "../components/sections/aboutPage/AboutHero";
-import WhyWeExist from "../components/sections/aboutPage/WhyWeExist";
-import OurApproach from "../components/sections/aboutPage/OurApproach";
-import OurPrinciples from "../components/sections/aboutPage/OurPrinciples";
-import FinalCTA from "../components/sections/aboutPage/FinalCTA";
-import ReachCapabilities from "../components/sections/aboutPage/ReachCapabilities";
+import AboutHero from "../components/aboutPage/AboutHero";
+import WhyWeExist from "../components/aboutPage/WhyWeExist";
+import OurApproach from "../components/aboutPage/OurApproach";
+import OurPrinciples from "../components/aboutPage/OurPrinciples";
+import FinalCTA from "../components/aboutPage/FinalCTA";
+import ReachCapabilities from "../components/aboutPage/ReachCapabilities";
 import FAQSection from "../components/sections/FAQ";
 
 
@@ -24,17 +24,17 @@ export const metadata = {
     "B2B database",
   ],
   alternates: {
-    canonical: "https://www.leadwala.com/about",
+    canonical: "https://www.leadwala.co.in/about",
   },
   openGraph: {
     title: "About Leadwala | Verified B2B Data & Prospecting Intelligence",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
-    url: "https://www.leadwala.com/about",
+    url: "https://www.leadwala.co.in/about",
     siteName: "Leadwala",
     images: [
       {
-        url: "https://www.leadwala.com/og-about.jpg",
+        url: "https://www.leadwala.co.in/og-about.jpg",
         width: 1200,
         height: 630,
         alt: "Leadwala B2B Data Platform",
@@ -47,7 +47,7 @@ export const metadata = {
     title: "About Leadwala | Verified B2B Data & Prospecting Intelligence",
     description:
       "Data should create opportunities, not work. Learn how Leadwala delivers structured, accurate, and dependable B2B contact intelligence.",
-    images: ["https://www.leadwala.com/og-about.jpg"],
+    images: ["https://www.leadwala.co.in/og-about.jpg"],
   },
 };
 

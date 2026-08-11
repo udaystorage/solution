@@ -19,9 +19,9 @@ export default function BestProductCard({ name, slug, image, description }) {
           />
         </div>
         <div className="flex flex-col rounded-2xl justify-between items-center h-auto min-h-44 sm:min-h-48 md:min-h-50 w-full bg-white p-2 -translate-y-3 transition-transform duration-100 group-hover:pb-3">
-          <div className="text-base sm:text-lg font-bold p-1 px-2 text-start w-full">
+          <h2 className="text-base sm:text-lg font-bold p-1 px-2 text-start w-full">
             {name}
-          </div>
+          </h2>
           <p className="px-2 w-full text-neutral-500 text-start text-sm sm:text-base">
             {description ? description : "Details Here"}
           </p>

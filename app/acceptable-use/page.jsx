@@ -5,13 +5,13 @@ export const metadata = {
   description:
     "Understand the acceptable and prohibited uses of LeadWala&apos;s datasets and services.",
   alternates: {
-    canonical: "https://www.leadwala.com/acceptable-use",
+    canonical: "https://www.leadwala.co.in/acceptable-use",
   },
   openGraph: {
     title: "Acceptable Use Policy | LeadWala",
     description:
       "Guidelines for the responsible use of LeadWala&apos;s services and business databases.",
-    url: "https://www.leadwala.com/acceptable-use",
+    url: "https://www.leadwala.co.in/acceptable-use",
     type: "website",
   },
    robots: {
@@ -27,7 +27,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Acceptable Use Policy",
-  url: "https://www.leadwala.com/acceptable-use",
+  url: "https://www.leadwala.co.in/acceptable-use",
 };
 
 const EFFECTIVE_DATE = "07 August 2026";
@@ -250,9 +250,9 @@ export default function AcceptableUsePolicyPage() {
 
               <address className="not-italic leading-8">
                 <strong>LeadWala</strong><br />
-                Email: support@leadwala.com<br />
+                Email: support@leadwala.co.in<br />
                 Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.com<br />
+                Website: https://www.leadwala.co.in<br />
                 Registered Address: [Your Registered Business Address]
               </address>
             </div>

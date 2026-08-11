@@ -69,9 +69,9 @@ export default function SolutionsSection() {
             >
               <Verified className="w-8 h-8 text-blue-500" />
             </div>
-            <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
+            <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Human Verified Databases
-            </h4>
+            </h3>
             <p className="text-sm leading-6 text-neutral-500">
               Every sales lead profile undergoes manual verification for optimum database accuracy. No outreach campaign goes to waste.
               {/* Every sales lead profile undergoes manual verification & validation. Leadwala make sure each databse has optimum accuracy for your outreach campaigns.   */}

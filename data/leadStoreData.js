@@ -4,6 +4,8 @@ const leadStoreData = [
     slug: "custom-data",
     title: "Custom Data",
     image:"/leadCards/custom-data.webp",
+    imageAlt:"A guy in office wear analyzing some data chart on his tab.",
+
     description:
       "Custom-built databases tailored to your exact audience and business requirements.",
     industry: "Custom",

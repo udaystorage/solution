@@ -109,7 +109,7 @@ export default function ContactCTA() {
                     md:text-3xl
                   "
                 >
-                  <span
+                  <h2
                     className="
                       transition-opacity
                       duration-300
@@ -117,7 +117,7 @@ export default function ContactCTA() {
                     "
                   >
                     {PHONE_DISPLAY}
-                  </span>
+                  </h2>
 
                   {/* Interactive arrow */}
                   <span

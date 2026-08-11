@@ -16,10 +16,10 @@ export default function FinalCTA() {
     );
   };
 
-return (
-  <section className="bg-white px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10">
-    <div
-      className="
+  return (
+    <section className="bg-white px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10">
+      <div
+        className="
         group relative mx-auto
         max-w-5xl overflow-hidden
         rounded-[1.5rem]
@@ -43,11 +43,11 @@ return (
         lg:hover:-translate-y-0.5
         lg:hover:shadow-[-8px_-8px_20px_rgba(255,255,255,0.9),_8px_8px_20px_rgba(0,0,0,0.1)]
       "
-    >
-      <div className="relative z-10 mx-auto max-w-3xl">
-        {/* Badge */}
-        <span
-          className="
+      >
+        <div className="relative z-10 mx-auto max-w-3xl">
+          {/* Badge */}
+          <span
+            className="
             inline-flex items-center gap-1.5
             rounded-full
             border border-white/[0.12]
@@ -61,13 +61,13 @@ return (
             sm:text-[11px]
             lg:text-[12px]
           "
-        >
-          Let&apos;s talk
-        </span>
+          >
+            Let&apos;s talk
+          </span>
 
-        {/* Heading */}
-        <h2
-          className="
+          {/* Heading */}
+          <h2
+            className="
             mt-5
             text-2xl font-semibold
             leading-[1.08]
@@ -78,24 +78,21 @@ return (
             md:text-4xl
             lg:text-5xl
           "
-        >
-          You know your ideal customer.
-
-          <br className="hidden sm:block" />
-
-          <span className="sm:hidden"> </span>
-
-          <span
-            data-text="We'll help you find them."
-            className="shimmer-text text-stone-400"
           >
-            We&apos;ll help you find them.
-          </span>
-        </h2>
+            You know your ideal customer.
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            <span
+              data-text="We'll help you find them."
+              className="shimmer-text text-stone-400"
+            >
+              We&apos;ll help you find them.
+            </span>
+          </h2>
 
-        {/* Description */}
-        <p
-          className="
+          {/* Description */}
+          <p
+            className="
             mx-auto mt-5
             max-w-xl
             text-[13px]
@@ -105,14 +102,14 @@ return (
             sm:text-base
             sm:leading-7
           "
-        >
-          Tell us the industry, location, company profile, or decision-makers
-          you&apos;re trying to reach.
-        </p>
+          >
+            Tell us the industry, location, company profile, or decision-makers
+            you&apos;re trying to reach.
+          </p>
 
-        {/* CTA Buttons */}
-        <div
-          className="
+          {/* CTA Buttons */}
+          <div
+            className="
             mx-auto mt-8
             flex w-full max-w-sm
             flex-col items-stretch
@@ -122,11 +119,11 @@ return (
             sm:flex-row
             sm:items-center
           "
-        >
-          {/* Get Custom Data */}
-          <a
-            href="/contact"
-            className="
+          >
+            {/* Get Custom Data */}
+            <a
+              href="/contact"
+              className="
               group/cta
               inline-flex w-full
               items-center justify-center gap-2
@@ -142,9 +139,9 @@ return (
               sm:hover:-translate-y-1
               sm:hover:shadow-xl
             "
-          >
-            <span
-              className="
+            >
+              <button
+                className="
                 bg-gradient-to-r
                 from-violet-800 via-blue-700 to-cyan-800
                 bg-clip-text text-transparent
@@ -152,23 +149,23 @@ return (
                 sm:group-hover/cta:from-cyan-800
                 sm:group-hover/cta:to-violet-800
               "
-            >
-              Get Custom Data
-            </span>
+              >
+                Get Custom Data
+              </button>
 
-            <ArrowRight
-              size={15}
-              className="
+              <ArrowRight
+                size={15}
+                className="
                 text-black
                 transition-transform duration-300
                 sm:group-hover/cta:translate-x-0.5
               "
-            />
-          </a>
+              />
+            </a>
 
-          {/* Talk to an Expert */}
-          <div
-            className="
+            {/* Talk to an Expert */}
+            <div
+              className="
               w-full rounded-full
               bg-linear-to-r
               from-violet-400 via-blue-400 to-cyan-400
@@ -181,10 +178,10 @@ return (
               sm:hover:from-cyan-400
               sm:hover:to-violet-400
             "
-          >
-            <button
-              onClick={openWhatsApp}
-              className="
+            >
+              <button
+                onClick={openWhatsApp}
+                className="
                 group/tte
                 inline-flex w-full
                 cursor-pointer
@@ -198,22 +195,21 @@ return (
 
                 sm:min-w-[170px]
               "
-            >
-              Talk to an Expert
-
-              <ArrowUpRight
-                size={15}
-                className="
+              >
+                Talk to an Expert
+                <ArrowUpRight
+                  size={15}
+                  className="
                   transition-transform duration-300
                   sm:group-hover/tte:-translate-y-0.5
                   sm:group-hover/tte:translate-x-0.5
                 "
-              />
-            </button>
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }
