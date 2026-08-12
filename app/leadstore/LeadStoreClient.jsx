@@ -21,7 +21,6 @@ export default function LeadStoreClient({ product }) {
     customer: {
       name: "",
       phone: "",
-      email: "",
     },
   });
 
