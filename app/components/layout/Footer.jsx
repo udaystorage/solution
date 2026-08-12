@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { Geist } from "next/font/google";
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 import { openWhatsApp } from "@/lib/whatsapp";
 
@@ -41,10 +46,30 @@ export default function Footer() {
 
           <div>
             <div className="flex flex-col items-start text-left">
-              <span className="text-xl font-semibold text-neutral-900">
+               <div className="relative flex justify-center items-center">
+                          <Image
+                            src="/logo/symbol-1.svg"
+                            alt="LeadWala Logo"
+                            width={35}
+                            height={35}
+                            className="
+                  w-6 h-6
+                  sm:w-7 sm:h-7
+                  md:w-8 md:h-8
+                  lg:w-[35px] lg:h-[35px]
+                  object-contain
+                  mix-blend-multiply
+                  translate-x-4
+                  mr-2
+                "
+                          />
+                              <span             className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
+>
                 {" "}
                 leadwala{" "}
               </span>
+                        </div>
+          
 
               <p className="mt-3 max-w-65 text-sm leading-6 text-neutral-500">
                 Trusted data that helps you reach the right people.
