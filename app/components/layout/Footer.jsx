@@ -207,7 +207,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mt-10 flex gap-3">
+            {/* <div className="mt-10 flex gap-3">
               <a
                 href="#"
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
@@ -263,7 +263,7 @@ export default function Footer() {
               >
                 <Mail className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
 
