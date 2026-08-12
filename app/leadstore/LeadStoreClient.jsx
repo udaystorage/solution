@@ -99,9 +99,6 @@ ${request.customer.name}
 Phone:
 ${request.customer.phone}
 
-Email:
-${request.customer.email || "Not provided"}
-
 ━━━━━━━━━━━━━━━━━━
 
 Please share pricing and availability.
