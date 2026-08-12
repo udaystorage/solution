@@ -144,7 +144,7 @@ export const FAQSection = ({ page }) => {
 
         {/* Global Action Conversion Block */}
         <div className="mt-16 rounded-2xl bg-gray-50 p-8 text-center md:flex md:items-center md:justify-between md:text-left md:gap-6">
-          <div>
+          <div className="max-w-full md:max-w-[70%]">
             <h2 className="text-xl font-bold text-gray-900 m-0">Still have questions?</h2>
             <p className="mt-1 md:w-3/4 text-gray-500 text-sm text-wrap">Can&apos;t find the exact answer you are looking for? Our database specialists are always here to help.</p>
           </div>
