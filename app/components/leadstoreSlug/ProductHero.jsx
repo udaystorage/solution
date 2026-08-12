@@ -80,7 +80,7 @@ export default function ProductHero({ product }) {
                   Database Preview
                 </span>
 
-                <Sparkles className="text-cyan-600" size={18} />
+                {/* <Sparkles className="text-cyan-600" size={18} /> */}
               </div>
 
               <div className="mt-8 overflow-hidden rounded-2xl border border-stone-200 bg-white">

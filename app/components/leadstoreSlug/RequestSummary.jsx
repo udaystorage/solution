@@ -44,18 +44,18 @@ export default function RequestSummary({ request }) {
 
   return (
     <aside className="lg:sticky lg:top-28">
-      <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,.05)] lg:rounded-[2rem]">
+      <div className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-200 shadow-[0_18px_55px_rgba(15,23,42,.05)] lg:rounded-[2rem]">
         {/* Header */}
 
-        <div className="border-b border-stone-200 px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-medium text-cyan-700">
+        <div className="border-b border-white px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
+          {/* <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-medium text-cyan-700">
             <BadgeCheck size={14} />
             Live Request
-          </span>
+          </span> */}
 
-          <h3 className="mt-3 text-xl font-semibold tracking-[-0.04em] text-stone-900 sm:text-2xl">
+          <h3 className="mt-3 text-xl font-semibold tracking-[-0.04em] text-neutral-700 sm:text-2xl">
             {" "}
-            Your Database Request
+            Your Database Summary
           </h3>
 
           <p className="mt-1.5 text-sm leading-6 text-stone-500">
@@ -73,12 +73,12 @@ export default function RequestSummary({ request }) {
 
               return (
                 <div key={item.label} className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-cyan-700">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-cyan-700">
                     <Icon className="h-[18px] w-[18px]" />
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-500">
                       {" "}
                       {item.label}
                     </p>
@@ -98,8 +98,8 @@ export default function RequestSummary({ request }) {
 
         <div className="border-t border-stone-200 bg-stone-50 px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white">
-              <Clock3 className="h-[18px] w-[18px] text-cyan-700" />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-400">
+              <Clock3 className="h-[18px] w-[18px] text-neutral-100" />
             </div>
 
             <div>
