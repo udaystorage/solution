@@ -26,11 +26,6 @@ export default function BestProducts() {
         <div className="w-full flex flex-col justify-start items-center overflow-hidden transition-all duration-400">
           <div className="flex flex-row justify-between items-center w-full px-4 sm:px-8 md:px-16 lg:px-25 py-3 sm:py-5 bg-white">
             <div className="text-lg sm:text-xl md:text-2xl font-bold py-2 sm:py-3">Best Selling Products</div>
-            {/* <div
-              className="flex gap-2 text-center cursor-pointer hover:text-gray-500">
-              {}
-              <MoveRight />
-            </div> */}
           </div>
           <div className="flex flex-row justify-center items-start flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full px-4 sm:px-10 md:px-16 lg:px-20">
             {

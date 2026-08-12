@@ -5,6 +5,9 @@ import BestProducts from "../components/leadstore/BestProducts";
 
 
 export default function page() {
+
+  
+
   return (
     <>
       <div className="w-full min-h-max flex flex-col justify-start items-center text-black">

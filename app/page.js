@@ -3,30 +3,16 @@ import BlurGlass from "./components/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
 import SolutionSection from "./components/sections/SolutionsSection";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
-import { Check, TrendingUp } from "lucide-react";
 
 // 1. Core Metadata Configuration for B2B Bounded Engine Optimization
 export const metadata = {
-  title: "Leadwala | Premium B2B Lead Databases & Verified Email Lists",
-  description: "Buy hand-verified B2B database without annual subscription traps. Export premium databases for Real Estate, E-commerce, Insurance,college database , and niche industries.",
-  keywords: [
-    "Buy leads online",
-    "real estate agent database",
-    "best lead selling plat form",
-    "b2b lead generation platform",
-    "ecommerce store email list",
-    "download bulk lead database",
-    "ecommerce customer database India",
-    "business owner database",
-    "CA database India",
-    "doctor database India",
-    "school and college database"
-  ],
+  title: "Leadwala | Premium B2B Database Provider",
+  description: "Buy hand-verified B2B database without annual subscription traps. Export premium databases for verified email list, Real Estate, E-commerce, Insurance,college database, niche industries and custom databases",
   alternates: {
     canonical: "https://leadwala.com", // Replace with your real URL when production-ready
   },
   openGraph: {
-    title: "Leadwala | Premium B2B Lead Databases",
+    title: "Leadwala | Premium B2B Database Provider",
     description: "Access high-accuracy B2B datasets with zero subscription lock-ins.",
     url: "https://leadwala.com",
     siteName: "Leadwala",

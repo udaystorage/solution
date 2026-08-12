@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function BestProductCard({ name, slug }) {
   return (
     <>
-      <div className="w-full max-w-70 sm:w-56 md:w-64 lg:w-70 h-auto transition-all duration-300 rounded-2xl shadow-md hover:shadow-xl shadow-slate-400 flex flex-col justify-between items-center mb-2">
+      <div className="w-full sm:w-56 md:w-64 lg:w-90 h-auto transition-all duration-300 rounded-2xl shadow-md hover:shadow-xl shadow-slate-400 flex flex-col justify-between items-center mb-2">
         <Image
           src={bestselling1}
           className="rounded-t-xl h-32 sm:h-36 md:h-40 w-full border object-cover"

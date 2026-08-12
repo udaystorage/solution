@@ -39,9 +39,9 @@ export default function SolutionsSection() {
     <section className="w-full bg-beige-100 px-4 py-16 sm:px-8 md:px-16 lg:px-20 font-sans text-[#1A1A1A]">
       <div className="w-full max-w-7xl mx-auto ">
         {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
-        <h1 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
+        <h2 className="py-2 pb-8 w-full text-4xl text-center font-extrabold text-black/50">
           Pan India B2B Leads
-        </h1>
+        </h2>
 
         {/* Carousel Container */}
         <div className="w-full overflow-hidden  pb-10 relative">
@@ -51,7 +51,7 @@ export default function SolutionsSection() {
         {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
         <div className="max-w-2xl mb-12 mt-12">
           <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            Find the exact target B2B email list you need to pitch.
+            Find the exact target Authentic email list and fresh leads you need to pitch.
           </h2>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop dealing with missing emails and dead numbers. Tell us your
@@ -63,7 +63,7 @@ export default function SolutionsSection() {
         {/* 4. Streamlined Minimal Feature Grid (Removed typo 'PX-20') */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
           {/* Card 1 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
@@ -81,7 +81,7 @@ export default function SolutionsSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
@@ -98,7 +98,7 @@ export default function SolutionsSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
@@ -124,7 +124,7 @@ export default function SolutionsSection() {
               </h4>
             </div>
 
-            <div className="relative flex min-w-[240px] rounded-full bg-stone-100 p-1 shadow-inner ring-1 ring-black/5">
+            <div className="relative flex min-w-60 rounded-full bg-stone-100 p-1 shadow-inner ring-1 ring-black/5">
               {/* Sliding Pill */}
               <div
                 className={`absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full

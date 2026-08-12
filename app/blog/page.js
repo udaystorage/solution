@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
-// import { blogs } from "../../data/blogs";
 import blogimage from "../../public/blog.jpg";
 import { promises as fs } from "fs";
 import path from "path";
