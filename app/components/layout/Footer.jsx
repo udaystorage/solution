@@ -46,30 +46,29 @@ export default function Footer() {
 
           <div>
             <div className="flex flex-col items-start text-left">
-               <div className="relative flex justify-center items-center">
-                          <Image
-                            src="/logo/symbol-1.svg"
-                            alt="LeadWala Logo"
-                            width={35}
-                            height={35}
-                            className="
-                  w-6 h-6
-                  sm:w-7 sm:h-7
-                  md:w-8 md:h-8
-                  lg:w-[35px] lg:h-[35px]
+              <div className="relative flex justify-center items-center gap-1 ">
+                <Image
+                  src="/logo/symbol-1.svg"
+                  alt="LeadWala Logo"
+                  width={35}
+                  height={35}
+                  className="
+                  flex justify-center items-center
+                  w-4 h-4
+                  sm:w-4 sm:h-4
+                  md:w-5 md:h-5
+                  lg:w-[18px] lg:h-[18px]
                   object-contain
                   mix-blend-multiply
-                  translate-x-4
-                  mr-2
                 "
-                          />
-                              <span             className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
->
-                {" "}
-                leadwala{" "}
-              </span>
-                        </div>
-          
+                />
+                <span
+                  className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
+                >
+                  {" "}
+                  LeadWala{" "}
+                </span>
+              </div>
 
               <p className="mt-3 max-w-65 text-sm leading-6 text-neutral-500">
                 Trusted data that helps you reach the right people.
@@ -236,7 +235,9 @@ export default function Footer() {
               </a>
 
               <span
-                onClick={()=>openWhatsApp("Leadwala? I have some database query")}
+                onClick={() =>
+                  openWhatsApp("Leadwala? I have some database query")
+                }
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -249,9 +250,9 @@ export default function Footer() {
               </span>
 
               <span
-                  onClick={() => {
-    window.location.href = "mailto:hello@leadwala.co.in";
-  }}
+                onClick={() => {
+                  window.location.href = "mailto:hello@leadwala.co.in";
+                }}
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -276,18 +277,43 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-stone-500">
-            <Link href="/privacy-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Privacy Policy</Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Privacy Policy
+            </Link>
             <span className="text-stone-300 text-[13px]">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Terms & Conditions</Link>
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Terms & Conditions
+            </Link>
             <span className="text-stone-300 text-[13px]">|</span>
 
-            <Link href="/acceptable-use" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5 ">Acceptable Use</Link>
-            <span className="text-stone-300 text-[13px] "  >|</span>
+            <Link
+              href="/acceptable-use"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5 "
+            >
+              Acceptable Use
+            </Link>
+            <span className="text-stone-300 text-[13px] ">|</span>
 
-            <Link href="/refund-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Refund Policy</Link>
+            <Link
+              href="/refund-policy"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Refund Policy
+            </Link>
             <span className="text-stone-300">|</span>
 
-            <Link href="/disclaimer" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Disclaimer</Link>
+            <Link
+              href="/disclaimer"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>
