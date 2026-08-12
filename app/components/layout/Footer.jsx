@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-12 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
+        <div className="grid gap-10 sm:grid-cols-2 md:px-8 md:grid-cols-2 md:gap-x-10 md:gap-y-12 md:px-10 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
           {/* Logo */}
 
           <div>
@@ -100,7 +100,7 @@ export default function Footer() {
               Solutions
             </h1>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-1 md:space-y-2 lg:space-y-3">
               {[
                 "B2B Leads",
                 "Industry Contacts",
@@ -126,7 +126,7 @@ export default function Footer() {
               Platform
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-3">
               {["For Buyers", "For Sellers", "Compliance", "Integrations"].map(
                 (item) => (
                   <li key={item}>
@@ -149,7 +149,7 @@ export default function Footer() {
               Company
             </h2>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-3">
               {footerLinks.map((item) => (
                 <li key={item.href}>
                   <Link
