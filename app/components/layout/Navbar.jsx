@@ -251,7 +251,6 @@ export default function Navbar() {
     focus:ring-offset-2
   "
           >
-          
             <span>
               <span className="min-[1140px]:inline hidden">Custom </span>
               <span className="min-[1090px]:inline hidden">Data </span>
@@ -291,9 +290,11 @@ export default function Navbar() {
           <Link
             href={`tel:${contact}`}
             className="
+            hidden
+            min-[480px]:inline-flex
     group
     relative
-    inline-flex
+    
     items-center
     justify-center
     gap-2
@@ -369,7 +370,7 @@ export default function Navbar() {
       focus:ring-offset-2
     "
           >
-              <span className="hidden min-[530px]:max-[1023px]:inline ">
+            <span className="hidden min-[340px]:max-[1023px]:inline ">
               Custom Data
             </span>
             <ArrowRight
