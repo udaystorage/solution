@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export default function FinalCTA() {
   const openWhatsApp = () => {
-    const phoneNumber = "919876543210";
+    const phoneNumber = "8100025936";
 
     const message = encodeURIComponent(
       "Hi, I would like to connect with your back-office expert team regarding my data requirements.",

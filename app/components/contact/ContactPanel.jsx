@@ -2,8 +2,8 @@ import { ArrowUpRight, Clock3, Phone } from "lucide-react";
 
 import ContactForm from "./ContactForm";
 
-const PHONE_DISPLAY = "+91 98765 43210";
-const PHONE_LINK = "tel:+919876543210";
+const PHONE_DISPLAY = "+91 81000 25936";
+const PHONE_LINK = "tel:+918100025936";
 
 export default function ContactPanel() {
   return (

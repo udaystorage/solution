@@ -1,17 +1,20 @@
 import Script from "next/script";
 
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
 export const metadata = {
   title: "Acceptable Use Policy | LeadWala",
   description:
     "Understand the acceptable and prohibited uses of LeadWala&apos;s datasets and services.",
   alternates: {
-    canonical: "https://www.leadwala.co.in/acceptable-use",
+    canonical: '${baseUrl}/acceptable-use',
   },
   openGraph: {
     title: "Acceptable Use Policy | LeadWala",
     description:
       "Guidelines for the responsible use of LeadWala&apos;s services and business databases.",
-    url: "https://www.leadwala.co.in/acceptable-use",
+    url: '${baseUrl}/acceptable-use',
     type: "website",
   },
    robots: {
@@ -27,7 +30,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Acceptable Use Policy",
-  url: "https://www.leadwala.co.in/acceptable-use",
+  url: '${baseUrl}/acceptable-use',
 };
 
 const EFFECTIVE_DATE = "07 August 2026";

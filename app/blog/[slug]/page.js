@@ -9,6 +9,9 @@ import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
+
 // Some older/raw content has bullet points typed inline inside a single
 // paragraph string, e.g. "May include: • Item one • Item two • Item three"
 // instead of being stored as a proper list block. This detects that pattern
@@ -95,7 +98,7 @@ export async function generateMetadata({ params }) {
 
   const cleanImageUrl = blog.image?.startsWith("http")
     ? blog.image
-    : `https://leadwala.co.in${blog.image || "/demoBlog.webp"}`;
+    : `${baseUrl}${blog.image || "/demoBlog.webp"}`;
     
     const isoDate = new Date(blog.date).toISOString();
     
@@ -103,7 +106,7 @@ export async function generateMetadata({ params }) {
     title: `${blog.title} | Leadwala Insights`,
     description: blog.description?.substring(0, 160) || "Read the latest digital insights on Leadwala.",
     alternates: {
-      canonical: `https://leadwala.co.in/blog/${slug}`,
+      canonical: `${baseUrl}/blog/${slug}`,
     },
     robots: {
       index: true,
@@ -114,7 +117,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://leadwala.co.in/blog/${slug}`,
+      url: `${baseUrl}/blog/${slug}`,
       siteName: "Leadwala",
       type: "article",
       publishedTime: isoDate,
@@ -162,23 +165,23 @@ const blogs = await getJsonFilesAsArray();
     "description": blog.description,
     "datePublished": isoDate,
     "dateModified": isoDate,
-    "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.co.in${blog.image || "/demoBlog.webp"}`,
+    "image": blog.image?.startsWith("http") ? blog.image : `${baseUrl}${blog.image || "/demoBlog.webp"}`,
     "author": {
       "@type": "Organization",
       "name": "Leadwala",
-      "url": "https://leadwala.co.in"
+      "url": `${baseUrl}`
     },
     "publisher": {
       "@type": "Organization",
       "name": "Leadwala",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://leadwala.co.in/logo.png"
+        "url": `${baseUrl}/logo.png`
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://leadwala.co.in/blog/${slug}`
+      "@id": `${baseUrl}/blog/${slug}`
     }
   };
 
@@ -194,15 +197,15 @@ const blogs = await getJsonFilesAsArray();
       items={[
         {
           name: "Home",
-          url: "https://leadwala.co.in/",
+          url: `${baseUrl}`,
         },
         {
           name: "Blog",
-          url: "https://leadwala.co.in/blog",
+          url: `${baseUrl}/blog`,
         },
         {
           name: blog.title,
-          url: `https://leadwala.co.in/blog/${slug}`,
+          url: `${baseUrl}/blog/${slug}`,
         },
       ]}
     />

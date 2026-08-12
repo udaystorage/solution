@@ -5,6 +5,7 @@ import FAQSection from "../components/sections/FAQ";
 import LeadStoreHero from '../components/leadstore/LeadStoreHero';
 import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 
 export const metadata = {
   title: "Premium B2B & B2C Lead Databases | LeadWala",
@@ -13,7 +14,7 @@ export const metadata = {
     "Explore verified B2B and B2C lead databases for sales, marketing, and lead generation. Find targeted business and consumer data tailored to your audience.",
 
   alternates: {
-    canonical: "https://leadwala.co.in/leadstore",
+    canonical: `${baseUrl}/leadstore`,
   },
 
   openGraph: {
@@ -22,7 +23,7 @@ export const metadata = {
     description:
       "Explore verified B2B and B2C lead databases for sales, marketing, and lead generation. Find targeted data tailored to your audience.",
 
-    url: "https://leadwala.co.in/leadstore",
+    url: `${baseUrl}/leadstore`,
 
     siteName: "LeadWala",
 
@@ -50,11 +51,11 @@ export default function page() {
           items={[
             {
               name: "Home",
-              url: "https://leadwala.co.in/",
+              url: `${baseUrl}`,
             },
             {
               name: "Lead Store",
-              url: "https://leadwala.co.in/leadstore",
+              url: `${baseUrl}/leadstore`,
             },
            
           ]}

@@ -7,6 +7,9 @@ import blogimage from "../../public/blog.jpg";
 import { promises as fs } from "fs";
 import path from "path";
 import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+
  
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
  
@@ -47,12 +50,12 @@ export const metadata = {
   title: "B2b sales intelligence platform & Lead Generation Blog | Leadwala",
   description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   alternates: {
-    canonical: "https://leadwala.co.in/blog",
+    canonical: `${baseUrl}/blog`,
   },
   openGraph: {
     title: "Leadwala Growth & Marketing Insights Blog",
     description: "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
-    url: "https://leadwala.co.in/blog",
+    url: `${baseUrl}/blog`,
     siteName: "Leadwala",
     type: "website",
     locale: "en_US",
@@ -74,7 +77,7 @@ export default async function BlogListingPage() {
     "@type": "Blog",
     "name": "Leadwala Marketing & Growth Blog",
     "description": "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
-    "url": "https://leadwala.co.in/blog",
+    "url": `${baseUrl}/blog`,
     "blogPost": blogs.map((blog) => {
       let isoDate;
       try {
@@ -87,9 +90,9 @@ export default async function BlogListingPage() {
         "@type": "BlogPosting",
         "headline": blog.title,
         "description": blog.description,
-        "url": `https://leadwala.co.in/blog/${blog.slug}`,
+        "url": `${baseUrl}/blog/${blog.slug}`,
         "datePublished": isoDate,
-        "image": blog.image?.startsWith("http") ? blog.image : `https://leadwala.co.in${blog.image || "/blog.jpg"}`,
+        "image": blog.image?.startsWith("http") ? blog.image : `${baseUrl}${blog.image || "/blog.jpg"}`,
       };
     }),
   };
@@ -106,11 +109,11 @@ export default async function BlogListingPage() {
               items={[
                 {
                   name: "Home",
-                  url: "https://leadwala.co.in/",
+                  url: `${baseUrl}`,
                 },
                 {
                   name: "Blog",
-                  url: "https://leadwala.co.in/blog",
+                  url: `${baseUrl}/blog`,
                 },
               ]}
             />

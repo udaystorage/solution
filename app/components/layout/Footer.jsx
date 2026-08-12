@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { Geist } from "next/font/google";
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 import { openWhatsApp } from "@/lib/whatsapp";
 
@@ -36,15 +41,34 @@ export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
+        <div className="grid gap-10 sm:grid-cols-2 md:px-8 md:grid-cols-2 md:gap-x-10 md:gap-y-12 md:px-10 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
           {/* Logo */}
 
           <div>
             <div className="flex flex-col items-start text-left">
-              <span className="text-xl font-semibold text-neutral-900">
-                {" "}
-                leadwala{" "}
-              </span>
+              <div className="relative flex justify-center items-center gap-1 ">
+                <Image
+                  src="/logo/symbol-1.svg"
+                  alt="LeadWala Logo"
+                  width={35}
+                  height={35}
+                  className="
+                  flex justify-center items-center
+                  w-4 h-4
+                  sm:w-4 sm:h-4
+                  md:w-5 md:h-5
+                  lg:w-[18px] lg:h-[18px]
+                  object-contain
+                  mix-blend-multiply
+                "
+                />
+                <span
+                  className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
+                >
+                  {" "}
+                  LeadWala{" "}
+                </span>
+              </div>
 
               <p className="mt-3 max-w-65 text-sm leading-6 text-neutral-500">
                 Trusted data that helps you reach the right people.
@@ -53,17 +77,17 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Topsia, Kolkata 700039</span>
+                  <span>Topsia, Kolkata, West Bengal 700046</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Mail className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>support@leadwala.com</span>
+                  <span> joysolution21@gmail.com</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Phone className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>+91 90000 00000</span>
+                  <span> +91 81000 25936</span>
                 </div>
               </div>
             </div>
@@ -76,7 +100,7 @@ export default function Footer() {
               Solutions
             </h1>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-1 md:space-y-2 lg:space-y-3">
               {[
                 "B2B Leads",
                 "Industry Contacts",
@@ -102,7 +126,7 @@ export default function Footer() {
               Platform
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-3">
               {["For Buyers", "For Sellers", "Compliance", "Integrations"].map(
                 (item) => (
                   <li key={item}>
@@ -125,7 +149,7 @@ export default function Footer() {
               Company
             </h2>
 
-            <ul className="space-y-3">
+            <ul className="space-y-1 md:space-y-2 lg:space-y-3">
               {footerLinks.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -210,8 +234,10 @@ export default function Footer() {
                 <FaXTwitter className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
               </a>
 
-              <a
-                href="#"
+              <span
+                onClick={() =>
+                  openWhatsApp("Leadwala? I have some database query")
+                }
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -221,10 +247,12 @@ export default function Footer() {
     active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
               >
                 <FaWhatsapp className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
+              </span>
 
-              <a
-                href="#"
+              <span
+                onClick={() => {
+                  window.location.href = "mailto:hello@leadwala.co.in";
+                }}
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
     hover:border-white/80 
@@ -234,7 +262,7 @@ export default function Footer() {
     active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
               >
                 <Mail className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -249,18 +277,43 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-stone-500">
-            <Link href="/privacy-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Privacy Policy</Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Privacy Policy
+            </Link>
             <span className="text-stone-300 text-[13px]">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Terms & Conditions</Link>
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Terms & Conditions
+            </Link>
             <span className="text-stone-300 text-[13px]">|</span>
 
-            <Link href="/acceptable-use" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5 ">Acceptable Use</Link>
-            <span className="text-stone-300 text-[13px] "  >|</span>
+            <Link
+              href="/acceptable-use"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5 "
+            >
+              Acceptable Use
+            </Link>
+            <span className="text-stone-300 text-[13px] ">|</span>
 
-            <Link href="/refund-policy" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Refund Policy</Link>
+            <Link
+              href="/refund-policy"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Refund Policy
+            </Link>
             <span className="text-stone-300">|</span>
 
-            <Link href="/disclaimer" className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5">Disclaimer</Link>
+            <Link
+              href="/disclaimer"
+              className="hover:text-stone-800 transition duration-200 hover:-translate-y-0.5"
+            >
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>
