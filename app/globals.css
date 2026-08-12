@@ -393,3 +393,54 @@ body {
 .animate-phone-shake {
   animation: phone-shake 4s ease-in-out infinite;
 }
+
+
+/* call popup */
+@keyframes call-popup {
+  /* Start outside */
+  0% {
+    transform: translateX(140%);
+    opacity: 0;
+  }
+
+  /* Slide in */
+  7% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Tiny settle/bounce */
+  9% {
+    transform: translateX(-6px);
+  }
+
+  11% {
+    transform: translateX(3px);
+  }
+
+  13% {
+    transform: translateX(0);
+  }
+
+  /* Stay visible */
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Slide back out */
+  33% {
+    transform: translateX(140%);
+    opacity: 0;
+  }
+
+  /* Remain outside */
+  100% {
+    transform: translateX(140%);
+    opacity: 0;
+  }
+}
+
+.animate-call-popup {
+  animation: call-popup 15s ease-in-out infinite;
+}

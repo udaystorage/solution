@@ -4,6 +4,9 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import OrganizationSchema from "./components/seo/OrganizationSchema";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import MobileCallCTA from "./components/ui/CallCta";
+
+const contact=process.env.CONTACT_NUMBER;
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -39,6 +42,7 @@ export default function RootLayout({ children }) {
         {children}
 
       <Footer/>
+      <MobileCallCTA contact={contact}/>
         </body>
     </html>
   );
