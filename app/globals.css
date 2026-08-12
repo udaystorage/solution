@@ -368,3 +368,28 @@ body {
     }
   }
 }
+
+/* mobile screen, call us cta animation */
+@keyframes phone-shake {
+  0%,
+  92%,
+  100% {
+    transform: rotate(0);
+  }
+
+  94% {
+    transform: rotate(-15deg);
+  }
+
+  96% {
+    transform: rotate(12deg);
+  }
+
+  98% {
+    transform: rotate(-13deg);
+  }
+}
+
+.animate-phone-shake {
+  animation: phone-shake 4s ease-in-out infinite;
+}

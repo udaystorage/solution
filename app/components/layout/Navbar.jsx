@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart, ArrowRight } from "lucide-react";
+import { ShoppingCart, Phone, ArrowRight } from "lucide-react";
 import logiNav from "@/public/logoNav.png";
 import Image from "next/image";
 import { Geist } from "next/font/google";
@@ -23,6 +23,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const contact = process.env.CONTACT_NUMBER;
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
@@ -168,6 +169,54 @@ export default function Navbar() {
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
+            href={`tel:${contact}`}
+            className="
+    group
+    relative
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    overflow-hidden
+    rounded-full
+    border
+    border-slate-800
+    bg-slate-950
+    px-5
+    py-2.5
+    text-sm
+    font-semibold
+    text-white
+    shadow-md
+    shadow-slate-950/15
+    transition-all
+    duration-300
+    ease-out
+    hover:-translate-y-0.5
+    hover:border-cyan-400/60
+    hover:bg-slate-900
+    hover:shadow-lg
+    hover:shadow-cyan-500/10
+    active:translate-y-0
+    focus:outline-none
+    focus:ring-2
+    focus:ring-cyan-400
+    focus:ring-offset-2
+  "
+          >
+            <Phone
+              size={15}
+              strokeWidth={2.2}
+              className="
+      transition-transform
+      duration-250
+      ease-out
+      group-hover:rotate-15
+    "
+            />
+            <span className="min-[1110px]:inline hidden">Call Us</span>
+          </Link>
+          <Link
             href="/leadstore/custom-data"
             className="
     group
@@ -202,10 +251,10 @@ export default function Navbar() {
     focus:ring-offset-2
   "
           >
+          
             <span>
-              <span className="min-[1100px]:inline hidden">Get </span>
-              <span className="min-[1080px]:inline hidden">Custom </span>
-              Data
+              <span className="min-[1140px]:inline hidden">Custom </span>
+              <span className="min-[1090px]:inline hidden">Data </span>
             </span>
 
             <ArrowRight
@@ -238,52 +287,90 @@ export default function Navbar() {
           >
             <ShoppingCart aria-hidden="true" className="size-5" />
           </Link> */}
+
           <Link
-            href="/leadstore/custom-data"
+            href={`tel:${contact}`}
             className="
     group
     relative
     inline-flex
     items-center
     justify-center
-    gap-1
-    sm:gap-2 md:gap-2 lg-gap-2
+    gap-2
+    overflow-hidden
     rounded-full
     border
-    border-slate-900/10
-    bg-white
-    px-4
-    sm:px-4
-    md:px-5
-    lg:px-5
-    py-2
-    sm:py-2.5
-    md:py-2.5
-    lg:py-2.5
+    border-slate-800
+    bg-slate-950
+    px-2.5
+    py-2.5
     text-sm
     font-semibold
-    text-slate-900
-    shadow-sm
+    text-white
+    shadow-md
+    shadow-slate-950/15
     transition-all
     duration-300
     ease-out
-    hover:-translate-y-0.2
-    sm:hover:-translate-y-0.5
-    md:hover:-translate-y-0.5
-    hover:border-slate-900
-    hover:bg-slate-950
-    hover:text-white
-    hover:shadow-md
-    hover:shadow-slate-950/10
     active:translate-y-0
     focus:outline-none
     focus:ring-2
-    focus:ring-slate-950
+    focus:ring-cyan-400
     focus:ring-offset-2
   "
           >
-            <span>
-              <span className="inline xs:hidden">Custom Data</span>
+            <Phone
+              size={15}
+              strokeWidth={2.2}
+              className="animate-phone-shake"
+            />
+          </Link>
+          <Link
+            href="/leadstore/custom-data"
+            className="
+      group
+      relative
+      inline-flex
+      items-center
+      justify-center
+      gap-1
+      sm:gap-2 md:gap-2 lg-gap-2
+      rounded-full
+      border
+      border-slate-900/10
+      bg-white
+      px-4
+      sm:px-4
+      md:px-5
+      lg:px-5
+      py-2
+      sm:py-2.5
+      md:py-2.5
+      lg:py-2.5
+      text-sm
+      font-semibold
+      text-slate-900
+      shadow-sm
+      transition-all
+      duration-300
+      ease-out
+      hover:-translate-y-0.2
+      sm:hover:-translate-y-0.5
+      md:hover:-translate-y-0.5
+      hover:border-slate-900
+      hover:bg-slate-950
+      hover:text-white
+      hover:shadow-md
+      hover:shadow-slate-950/10
+      active:translate-y-0
+      focus:outline-none
+      focus:ring-2
+      focus:ring-slate-950
+      focus:ring-offset-2
+    "
+          >
+              <span className="hidden min-[530px]:max-[1023px]:inline ">
+              Custom Data
             </span>
             <ArrowRight
               size={16}
