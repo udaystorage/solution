@@ -444,3 +444,38 @@ body {
 .animate-call-popup {
   animation: call-popup 15s ease-in-out infinite;
 }
+
+
+/* Call badge movement */
+@keyframes call-cta {
+  /* Hidden outside right */
+  0%,
+  60% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  /* Enter */
+  65% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Stay visible */
+  65%,
+  90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Exit */
+  95%,
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.animate-call-cta {
+  animation: call-cta 10s ease-in-out infinite;
+}

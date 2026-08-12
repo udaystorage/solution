@@ -8,25 +8,28 @@ export default function MobileCallCTA({ contact }) {
     <Link
       href={`tel:${contact}`}
       aria-label="Call LeadWala"
-      className="
-        fixed
-        bottom-5
-        right-5
-        z-50
-        flex
-        h-12
-        w-12
-        items-center
-        justify-center
-        rounded-full
-        border
-        border-slate-800
-        bg-slate-950
-        text-white
-        shadow-lg
-        shadow-slate-950/20
-        min-[480px]:hidden
-      "
+className="
+  fixed
+  bottom-4
+  right-4
+  z-50
+  flex
+  h-12
+  w-12
+  items-center
+  justify-center
+  rounded-full
+  border
+  border-white/20
+  bg-slate-900/75
+  text-white
+  shadow-lg
+  shadow-black/30
+  backdrop-blur-lg
+  backdrop-saturate-150
+  min-[480px]:hidden
+   animate-call-cta
+"
     >
       <Phone
         size={18}
