@@ -23,7 +23,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const contact = process.env.CONTACT_NUMBER;
+  const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
