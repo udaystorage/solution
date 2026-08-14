@@ -112,7 +112,7 @@ export const FAQSection = ({ page }) => {
 
   return (
     <section className="relative overflow-hidden bg-white py-24 px-6 md:px-12 lg:px-24">
-      <div className="absolute right-[-10%] top-1/2 -z-10 h-87.5 w-87.5 -translate-y-1/2 rounded-full bg-gradient-to-tr from-cyan-400 to-purple-500 opacity-[0.08] blur-[80px]" aria-hidden="true" />
+      <div className="absolute right-[-10%] top-1/2 -z-10 h-87.5 w-87.5 -translate-y-1/2 rounded-full bg-linear-to-tr from-cyan-400 to-purple-500 opacity-[0.08] blur-[80px]" aria-hidden="true" />
 
       <div className="mx-auto max-w-4xl">
         {/* Header Section */}

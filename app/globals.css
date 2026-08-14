@@ -395,87 +395,37 @@ body {
 }
 
 
-/* call popup */
-@keyframes call-popup {
-  /* Start outside */
-  0% {
-    transform: translateX(140%);
+
+/* Call badge movement */
+@keyframes call-cta {
+  /* Outside */
+  0%,
+  60% {
+    transform: translateX(calc(100% + 2rem));
     opacity: 0;
   }
 
   /* Slide in */
-  7% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  /* Tiny settle/bounce */
-  9% {
-    transform: translateX(-6px);
-  }
-
-  11% {
-    transform: translateX(3px);
-  }
-
-  13% {
-    transform: translateX(0);
-  }
-
-  /* Stay visible */
-  25% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  /* Slide back out */
-  33% {
-    transform: translateX(140%);
-    opacity: 0;
-  }
-
-  /* Remain outside */
-  100% {
-    transform: translateX(140%);
-    opacity: 0;
-  }
-}
-
-.animate-call-popup {
-  animation: call-popup 15s ease-in-out infinite;
-}
-
-
-/* Call badge movement */
-@keyframes call-cta {
-  /* Hidden outside right */
-  0%,
-  60% {
-    transform: translateX(120%);
-    opacity: 0;
-  }
-
-  /* Enter */
   65% {
     transform: translateX(0);
     opacity: 1;
   }
 
-  /* Stay visible */
+  /* Hold */
   65%,
   90% {
     transform: translateX(0);
     opacity: 1;
   }
 
-  /* Exit */
+  /* Slide out */
   95%,
   100% {
-    transform: translateX(120%);
+    transform: translateX(calc(100% + 2rem));
     opacity: 0;
   }
 }
 
 .animate-call-cta {
-  animation: call-cta 10s ease-in-out infinite;
+  animation: call-cta 10s linear infinite;
 }

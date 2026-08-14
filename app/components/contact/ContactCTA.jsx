@@ -1,7 +1,7 @@
 import { ArrowUpRight, Clock3 } from "lucide-react";
 
-const PHONE_DISPLAY = "+91 81000 25936";
-const PHONE_LINK = "tel:+918100025936";
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+const PHONE_LINK = `tel:${PHONE_DISPLAY}.replace(/\D/g, "")`;
 
 export default function ContactCTA() {
   return (
@@ -64,7 +64,7 @@ export default function ContactCTA() {
                   id="contact-cta-heading"
                   className="
                     text-xl font-semibold
-                    tracking-[-0.025em]
+                    tracking-tight
                     text-white
                     sm:text-2xl
                     md:text-3xl
@@ -89,7 +89,7 @@ export default function ContactCTA() {
               <div
                 className="
                   border-white/10
-                  md:min-w-[390px]
+                  md:min-w-97.5
                   md:border-l
                   md:pl-10
                   lg:pl-12
@@ -128,13 +128,13 @@ export default function ContactCTA() {
 
                       rounded-full
                       border border-white/15
-                      bg-white/[0.06]
+                      bg-white/6
 
                       transition-all
                       duration-300
 
                       group-hover:border-white/30
-                      group-hover:bg-white/[0.12]
+                      group-hover:bg-white/12
                       md:h-10 md:w-10
                     "
                   >

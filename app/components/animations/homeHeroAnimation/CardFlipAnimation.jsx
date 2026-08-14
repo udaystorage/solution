@@ -8,7 +8,6 @@ import {
   Gem,
   Globe2,
   GraduationCap,
-  HeartPulse,
   Hotel,
   Landmark,
   MapPin,
@@ -16,7 +15,6 @@ import {
   ShieldCheck,
   Sparkles,
   Stethoscope,
-  Store,
   Utensils,
   Building2,
   Check,
@@ -411,10 +409,10 @@ const rotateQueue = () => {
     className="
       card-animation-stage
       relative w-full
-       h-[310px]
-  sm:h-[350px]
-  md:h-[410px]
-  lg:h-[580px]
+       h-77.5
+  sm:h-87.5
+  md:h-102.5
+  lg:h-145
       overflow-hidden
       rounded-2xl
     "

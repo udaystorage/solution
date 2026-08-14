@@ -142,11 +142,11 @@ export default function OurApproach() {
         <div
           className="
         mt-10
-        rounded-[1.5rem]
+        rounded-3xl
         border border-stone-200
         bg-stone-50
         p-3
-        sm:mt-12 sm:rounded-[2rem] sm:p-6
+        sm:mt-12 sm:rounded-4xl sm:p-6
         lg:mt-16 lg:p-10
       "
         >
@@ -221,7 +221,7 @@ export default function OurApproach() {
             <div
               className="
             flex gap-2 overflow-x-auto px-1 pb-2
-            [scrollbar-width:none]
+            [scrollbar:none]
             [&::-webkit-scrollbar]:hidden
           "
             >
@@ -251,7 +251,7 @@ export default function OurApproach() {
           shadow-sm
           sm:mt-7 sm:rounded-3xl sm:p-8
           md:p-10
-          lg:mt-10 lg:min-h-[310px]
+          lg:mt-10 lg:min-h-77.5
           lg:grid-cols-[1fr_0.9fr]
           lg:items-center
         "
@@ -291,12 +291,12 @@ export default function OurApproach() {
             <div
               className="
             relative flex
-            min-h-[210px]
+            min-h-52.5
             items-center justify-center
             overflow-hidden
             rounded-2xl
             bg-stone-50
-            sm:min-h-[240px]
+            sm:min-h-60
             lg:min-h-55
           "
             >
@@ -336,7 +336,7 @@ export default function OurApproach() {
                 <ActiveIcon
                   size={30}
                   strokeWidth={1.5}
-                  className="sm:h-[34px] sm:w-[34px]"
+                  className="sm:h-8.5 sm:w-8.5"
                 />
               </div>
 

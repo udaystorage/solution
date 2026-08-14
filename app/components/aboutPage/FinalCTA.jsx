@@ -1,37 +1,27 @@
 "use client";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+const PHONE_LINK = `tel:${PHONE_DISPLAY}.replace(/[^\d+]/g, "")`;
 
 export default function FinalCTA() {
-  const openWhatsApp = () => {
-    const phoneNumber = "8100025936";
-
-    const message = encodeURIComponent(
-      "Hi, I would like to connect with your back-office expert team regarding my data requirements.",
-    );
-
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${message}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
-  };
-
   return (
     <section className="bg-white px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10">
       <div
         className="
         group relative mx-auto
         max-w-5xl overflow-hidden
-        rounded-[1.5rem]
+        rounded-3xl
         bg-linear-to-br from-[#111219] to-[#4b5667]
         px-5 py-14
         text-center text-white
 
-        shadow-[-4px_-4px_12px_rgba(255,255,255,0.8),_4px_4px_12px_rgba(0,0,0,0.06)]
+        shadow-[-4px_-4px_12px_rgba(255,255,255,0.8),4px_4px_12px_rgba(0,0,0,0.06)]
 
         transition-all duration-300 ease-out
 
-        sm:rounded-[2rem]
+        sm:rounded-4xl
         sm:px-10
         sm:py-20  
         sm:max-w-2xl
@@ -41,7 +31,7 @@ export default function FinalCTA() {
 
         lg:py-28
         lg:hover:-translate-y-0.5
-        lg:hover:shadow-[-8px_-8px_20px_rgba(255,255,255,0.9),_8px_8px_20px_rgba(0,0,0,0.1)]
+        lg:hover:shadow-[-8px_-8px_20px_rgba(255,255,255,0.9),8px_8px_20px_rgba(0,0,0,0.1)]
       "
       >
         <div className="relative z-10 mx-auto max-w-3xl">
@@ -50,8 +40,8 @@ export default function FinalCTA() {
             className="
             inline-flex items-center gap-1.5
             rounded-full
-            border border-white/[0.12]
-            bg-white/[0.15]
+            border border-white/12
+            bg-white/15
             px-3 py-1
             text-[10px] font-semibold
             uppercase tracking-wider
@@ -121,8 +111,8 @@ export default function FinalCTA() {
           "
           >
             {/* Get Custom Data */}
-            <a
-              href="/contact"
+            <Link
+              href="/leadstore/custom-data"
               className="
               group/cta
               inline-flex w-full
@@ -135,14 +125,14 @@ export default function FinalCTA() {
               transition-all duration-300
 
               sm:w-auto
-              sm:min-w-[170px]
+              sm:min-w-42.5
               sm:hover:-translate-y-1
               sm:hover:shadow-xl
             "
             >
               <button
                 className="
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-violet-800 via-blue-700 to-cyan-800
                 bg-clip-text text-transparent
 
@@ -161,7 +151,7 @@ export default function FinalCTA() {
                 sm:group-hover/cta:translate-x-0.5
               "
               />
-            </a>
+            </Link>
 
             {/* Talk to an Expert */}
             <div
@@ -179,8 +169,9 @@ export default function FinalCTA() {
               sm:hover:to-violet-400
             "
             >
-              <button
-                onClick={openWhatsApp}
+              <a
+                href={PHONE_LINK}
+                aria-label={`Call Leadwala at ${PHONE_DISPLAY}`}
                 className="
                 group/tte
                 inline-flex w-full
@@ -193,7 +184,7 @@ export default function FinalCTA() {
                 text-white
                 transition-colors duration-300
 
-                sm:min-w-[170px]
+                sm:min-w-42.5
               "
               >
                 Talk to an Expert
@@ -205,7 +196,7 @@ export default function FinalCTA() {
                   sm:group-hover/tte:translate-x-0.5
                 "
                 />
-              </button>
+              </a>
             </div>
           </div>
         </div>

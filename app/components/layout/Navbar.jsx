@@ -24,6 +24,10 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+  const cleanContact = contact.replace(/[^\d+]/g, "");
+
+  const PHONE_LINK = `tel:${cleanContact}`; 
+  
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
@@ -74,7 +78,7 @@ export default function Navbar() {
     w-6 h-6
     sm:w-7 sm:h-7
     md:w-8 md:h-8
-    lg:w-[35px] lg:h-[35px]
+    lg:w-8.75 lg:h-8.75
     object-contain
     mix-blend-multiply
     translate-x-4
@@ -169,7 +173,7 @@ export default function Navbar() {
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
-            href={`tel:${contact}`}
+            href={PHONE_LINK}
             className="
     group
     relative
@@ -288,7 +292,7 @@ export default function Navbar() {
           </Link> */}
 
           <Link
-            href={`tel:${contact}`}
+            href={PHONE_LINK}
             className="
             hidden
             min-[480px]:inline-flex
@@ -318,6 +322,7 @@ export default function Navbar() {
     focus:ring-2
     focus:ring-cyan-400
     focus:ring-offset-2
+       animate-call-cta
   "
           >
             <Phone

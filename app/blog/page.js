@@ -174,7 +174,7 @@ export default async function BlogListingPage() {
                     src={blog.image || blogimage}
                     alt={`Featured visualization analyzing: ${blog.title}`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-102"
+                    className="object-cover  transition-all duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-97"
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
                 </div>

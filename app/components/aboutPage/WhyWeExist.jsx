@@ -74,7 +74,7 @@ export default function WhyWeExist() {
               className="
                 rounded-2xl
                 border border-stone-200
-                bg-white/[0.7]
+                bg-white/70
                 p-5
                 backdrop-blur-xl
                 shadow-[0_8px_32px_rgba(16,185,129,0.10)]
@@ -165,7 +165,7 @@ function FlowItem({ label, last, muted = false }) {
 
       {!last && (
         <div
-          className={`ml-[13px] mt-1 h-5 w-px ${
+          className={`ml-3.25 mt-1 h-5 w-px ${
             muted ? "bg-stone-200" : "bg-stone-700"
           }`}
         />
