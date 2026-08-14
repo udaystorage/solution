@@ -1,0 +1,296 @@
+{
+  "id": 12,
+  "slug": "is-buying-b2b-data-legal-a-guide-to-gdpr-ccpa-and-compliance",
+  "title": "Is Buying B2B Data Legal? A Guide to GDPR, CCPA, and Compliance",
+  "image": "/uploads/is-b2b-data-legal.webp",
+  "date": "August 14, 2026",
+  "readTime": "14 min read",
+  "description": "Buying B2B data can give sales and marketing teams faster access to potential customers, decision-makers, and target companies.",
+  "content": {
+    "introduction": "Instead of spending weeks manually researching prospects, businesses can use a B2B database to identify relevant organizations, segment audiences, enrich CRM records, and support targeted outreach.\nBut one important question often comes before purchasing a database:\n",
+    "highlights": [
+      "Legitimate Interests ",
+      "Responsible Outreach",
+      "Lawful Data Sourcing ",
+      "Opt-Out Rights "
+    ],
+    "sections": [
+      {
+        "heading": "Buying B2B data can be legal, but buying a database does not automatically give you unrestricted permission to use every piece of information in any way you want.",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Compliance depends on several factors, including:\n•\tWhere the individuals are located\n•\tWhat type of data you purchase\n•\tHow the data was originally collected\n•\tYour purpose for processing it\n•\tYour lawful basis where required\n•\tHow you contact prospects\n•\tWhether appropriate privacy notices are provided\n•\tWhether opt-out and deletion rights are respected\nRegulations such as the General Data Protection Regulation (GDPR) in Europe and the California Consumer Privacy Act (CCPA), as amended by the CPRA, can affect how businesses collect, purchase, sell, share, store, and use personal information.\nAdditional laws may also regulate email marketing, telephone outreach, cookies, SMS marketing, and other communication channels.\nUnderstanding these requirements is essential for any organization using third-party B2B data."
+          }
+        ]
+      },
+      {
+        "heading": "What Is B2B Data?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "B2B data, or business-to-business data, is information used by companies to identify, understand, and communicate with other businesses and their relevant professionals.\nA B2B database may contain information such as:\n•\tCompany name\n•\tCompany website\n•\tIndustry\n•\tBusiness location\n•\tEmployee count\n•\tRevenue range\n•\tBusiness phone number\n•\tProfessional email address\n•\tEmployee name\n•\tJob title\n•\tDepartment\n•\tSeniority level\n•\tProfessional profile information\n•\tTechnology used by the company\nSome of this information relates only to an organization.\nOther information can identify or relate to an individual.\nThat distinction matters.\nFor example:\nCompany: ABC Technologies Ltd.\nIndustry: Software\nThese are primarily company-level details.\nBut:\nName: Sarah Johnson\nJob Title: Marketing Director\nWork Email: sarah@example.com\ncan relate to an identifiable individual and may therefore qualify as personal data or personal information under applicable privacy laws.\nThe fact that information is used in a business context does not automatically remove privacy-law obligations."
+          }
+        ]
+      },
+      {
+        "heading": "So, Is Buying B2B Data Legal?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "There is no universal rule that simply says:\n“Buying B2B data is legal.”\nNor is purchasing third-party business data automatically illegal.\nThe legality depends on the circumstances.\nBusinesses should consider three separate questions:\n1. Was the data collected and supplied lawfully?\nThe data provider should have appropriate processes for collecting, processing, maintaining, and supplying the information.\n2. Are you allowed to process the data for your intended purpose?\nEven if a vendor can lawfully provide information, your company still needs to assess its own obligations when receiving and using it.\n3. Is your outreach method compliant?\nHaving lawful access to contact information does not automatically mean every type of marketing communication is permitted.\nEmail, SMS, automated calls, telephone marketing, and other channels can be subject to additional rules.\nThis distinction is critical.\nBuying data, processing data, and using data for direct marketing are related—but legally distinct—activities."
+          }
+        ]
+      },
+      {
+        "heading": "Understanding GDPR and B2B Data",
+        "brief": "The General Data Protection Regulation (GDPR) is one of the world's most influential privacy frameworks.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "It regulates the processing of personal data and can apply when organizations process personal information relating to people protected by the regulation.\nA common misconception is that GDPR applies only to consumer data.\nThat is not necessarily true.\nProfessional information can still be personal data when it identifies or relates to a natural person.\nExamples may include:\n•\tA person's name\n•\tIndividual business email\n•\tDirect business phone number\n•\tProfessional profile\n•\tJob-related information connected to an identifiable person\nTherefore, businesses buying or using European B2B contact data need to assess their GDPR obligations carefully."
+          }
+        ]
+      },
+      {
+        "heading": "GDPR Does Not Mean Every B2B Contact Requires Consent",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Another common misconception is:\n“Under GDPR, you always need consent before processing B2B contact data.”\nGDPR provides multiple lawful bases for processing personal data.\nDepending on the circumstances, organizations may potentially rely on bases such as:\n•\tConsent\n•\tContract\n•\tLegal obligation\n•\tVital interests\n•\tPublic task\n•\tLegitimate interests\nFor certain B2B marketing activities, legitimate interests may be relevant.\nHowever, legitimate interests should not be treated as an automatic permission slip for cold outreach.\nBusinesses generally need to evaluate:\n1.\tWhether there is a legitimate purpose for the processing\n2.\tWhether processing the personal data is necessary for that purpose\n3.\tWhether the individual's rights, interests, and reasonable expectations outweigh the organization's interests\nThis is often approached through a Legitimate Interests Assessment, or LIA.\nThe exact analysis depends on the circumstances."
+          }
+        ]
+      },
+      {
+        "heading": "What Is Legitimate Interest in B2B Marketing?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Legitimate interests can sometimes provide a lawful basis for processing personal data when an organization has a genuine business interest and the processing is necessary and appropriately balanced against the individual's rights.\nImagine a company selling enterprise cybersecurity software.\nIt obtains professional contact information for IT security directors at large companies.\nThe company might consider whether it has a legitimate interest in marketing a highly relevant cybersecurity solution to professionals responsible for cybersecurity purchasing decisions.\nHowever, it should still consider questions such as:\n•\tWould the person reasonably expect this type of use?\n•\tIs the communication relevant to their professional role?\n•\tIs the amount of data being processed proportionate?\n•\tCould the same goal reasonably be achieved in a less intrusive way?\n•\tCan the person easily object?\n•\tAre applicable electronic-marketing rules also satisfied?\nA documented assessment can help demonstrate that these factors were considered."
+          }
+        ]
+      },
+      {
+        "heading": "GDPR Transparency: Tell People How Their Data Is Used",
+        "brief": "Transparency is a fundamental privacy principle.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "When a business obtains personal data indirectly—such as from a third-party B2B data provider—it may have obligations to inform the individual about how their information is being processed.\nDepending on the circumstances and applicable rules, relevant information may include:\n•\tWho your company is\n•\tWhy you process the data\n•\tWhat categories of data you hold\n•\tYour lawful basis\n•\tWhere the data came from\n•\tHow long you retain it\n•\tWho receives it\n•\tThe individual's privacy rights\n•\tHow to object or request deletion where applicable\n•\tHow to contact your organization\nBusinesses should not assume that because another company originally collected the data, all transparency responsibilities remain with that vendor.\nThe buyer can have its own responsibilities as a data controller."
+          }
+        ]
+      },
+      {
+        "heading": "The Right to Object Matters",
+        "brief": "When personal data is used for direct marketing, individuals may have important rights to object. Businesses need processes that can quickly recognize and honor valid objections.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "If someone tells you:\n“Do not contact me for marketing again.”\nthat request should not simply be ignored because the contact came from a purchased database.\nOrganizations commonly maintain suppression or do-not-contact records so that individuals who have opted out are not accidentally re-added during future database imports.\nThis highlights an important compliance principle:\nGood data governance does not end when you purchase a database.\nIt continues throughout the entire data lifecycle."
+          }
+        ]
+      },
+      {
+        "heading": "GDPR and Email Marketing Are Not the Same Thing",
+        "brief": "One of the most important distinctions for marketers is that data protection law and electronic-marketing law can overlap.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Having a lawful basis to process someone's personal data does not necessarily mean you automatically have permission to send every type of marketing communication.\nDepending on the country and recipient, additional electronic-communications or direct-marketing rules may apply.\nFor example, rules may differ depending on whether you are contacting:\n•\tA corporate business address\n•\tAn individual professional\n•\tA sole trader\n•\tA partnership\n•\tAn existing customer\n•\tA new prospect\nThe communication channel also matters.\nEmail, SMS, telephone calls, automated calls, and online advertising may each be regulated differently.\nTherefore, compliance should be evaluated at two levels:\nCan we lawfully process this data?\nand\nCan we lawfully use this communication channel for this particular marketing activity?"
+          }
+        ]
+      },
+      {
+        "heading": "What Is the CCPA?",
+        "brief": "In the United States, California has established extensive consumer privacy requirements through the California Consumer Privacy Act (CCPA) and subsequent amendments, including the California Privacy Rights Act (CPRA).",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "The law provides qualifying California consumers with rights relating to how covered businesses collect, use, disclose, sell, and share personal information.\nDepending on the circumstances, these rights can include the ability to:\n•\tKnow what personal information is collected\n•\tRequest deletion\n•\tRequest correction\n•\tOpt out of certain sales or sharing of personal information\n•\tLimit certain uses of sensitive personal information\n•\tReceive required privacy disclosures\nBusinesses that meet applicable thresholds need to evaluate whether the law applies to their activities."
+          }
+        ]
+      },
+      {
+        "heading": "Does CCPA Apply to B2B Data?",
+        "brief": "Businesses should not assume that information is automatically exempt simply because it was collected in a professional or business context.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "California's privacy framework has evolved significantly, and organizations handling information relating to California residents should carefully evaluate whether their data-processing activities fall within applicable requirements.\nIf a B2B database includes identifiable California residents, businesses should consider:\n•\tWhat personal information is collected\n•\tWhy it is collected\n•\tWhether it is sold or shared\n•\tWhat notices are required\n•\tHow consumer requests are handled\n•\tWhether opt-out rights apply\n•\tHow long information is retained\n•\tWhether service providers and contractors are appropriately governed\nOrganizations should evaluate their specific legal obligations rather than relying on a broad assumption that “B2B data is exempt.”"
+          }
+        ]
+      },
+      {
+        "heading": "Data Brokers Face Additional Requirements",
+        "brief": "Companies whose business involves collecting and selling personal information about individuals with whom they do not have a direct relationship may also fall within specific data broker laws.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "California has introduced significant requirements affecting registered data brokers.\nThese can include:\n•\tRegistration obligations\n•\tRequired disclosures\n•\tConsumer deletion mechanisms\n•\tProcessing opt-out or deletion requests\n•\tAdditional recordkeeping and compliance requirements\nThis is especially important for companies that sell databases rather than businesses that simply purchase data for their own internal sales operations.\nA reputable B2B data provider should understand whether data-broker registration or similar regulatory requirements apply to its activities."
+          }
+        ]
+      },
+      {
+        "heading": "",
+        "brief": "",
+        "paragraphs": []
+      },
+      {
+        "heading": "What About CAN-SPAM?",
+        "brief": "For businesses conducting email marketing in the United States, the CAN-SPAM Act is another important law to understand.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "CAN-SPAM establishes requirements for commercial email.\nAmong other obligations, commercial email senders generally need to avoid:\n•\tFalse or misleading header information\n•\tDeceptive subject lines\nThey also need to comply with requirements relating to sender identification, postal address information, and opt-out mechanisms.\nRecipients must have a practical way to stop future marketing messages, and valid opt-out requests must be honored according to applicable requirements.\nImportantly, CAN-SPAM is different from GDPR.\nA campaign that complies with CAN-SPAM is not automatically GDPR-compliant.\nLikewise, a GDPR lawful-basis analysis does not automatically satisfy every U.S. email-marketing requirement.\nCompliance depends on the jurisdictions and rules that apply to each campaign.\nPublicly Available Data Does Not Mean “Free to Use Without Restrictions”\nAnother common misconception is:\n“If the information is online, anyone can collect and use it however they want.”\nThat is not a safe assumption.\nPublic availability does not automatically remove privacy, contractual, intellectual-property, platform-policy, or marketing-law considerations.\nFor example, a professional may publicly display their:\n•\tName\n•\tJob title\n•\tEmployer\n•\tProfessional profile\nThat does not necessarily mean every organization has unrestricted permission to collect, combine, resell, profile, or use that information for any purpose.\nBusinesses sourcing B2B data should evaluate:\n•\tWhere the information originated\n•\tHow it was collected\n•\tWhether collection complied with applicable laws\n•\tWhether contractual restrictions apply\n•\tWhether the intended use is compatible with legal requirements\n•\tWhether required notices and rights are provided\n“Public” and “unregulated” are not the same thing."
+          }
+        ]
+      },
+      {
+        "heading": "What Should You Check Before Buying B2B Data?",
+        "brief": "Before purchasing a B2B database, perform due diligence on the provider.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Ask Where the Data Comes From\nA trustworthy provider should be able to explain its sourcing methodology at an appropriate level.\nPossible sources may include:\n•\tPublic business information\n•\tCompany websites\n•\tBusiness directories\n•\tLicensed data sources\n•\tDirect research\n•\tCustomer-provided information\n•\tOther legally permitted sources\nBe cautious if a provider cannot explain how its database is built or maintained.\nAsk How the Data Is Verified\nCompliance and data quality often overlap.\nOutdated information can lead to:\n•\tHigher bounce rates\n•\tContacting the wrong individuals\n•\tPoor targeting\n•\tComplaints\n•\tUnnecessary privacy risk\nAsk how frequently records are reviewed, verified, and updated.\nUnderstand Your Own Responsibilities\nDo not assume:\n“The vendor said the data is compliant, so we have nothing else to do.”\nThe provider and buyer may have separate legal responsibilities.\nYour organization may still need to:\n•\tIdentify an appropriate lawful basis\n•\tProvide privacy information\n•\tHandle objections\n•\tProcess deletion or access requests\n•\tMaintain suppression lists\n•\tSecure the data\n•\tLimit unnecessary retention\n•\tFollow channel-specific marketing rules\nVendor compliance does not automatically equal buyer compliance."
+          }
+        ]
+      },
+      {
+        "heading": "Red Flags When Buying B2B Data",
+        "brief": "Certain warning signs should make businesses investigate a provider more carefully.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "“100% GDPR Compliant” With No Explanation\nCompliance is rarely established by a simple marketing claim.\nAsk what specific practices support that statement.\nNo Clear Data Source Information\nIf a provider cannot explain where its information originates, that creates both quality and compliance concerns.\nExtremely Large Databases With No Verification Process\nMillions of records are not useful if the information is outdated, duplicated, irrelevant, or improperly sourced.\nNo Privacy or Data-Request Process\nProviders handling personal information should have appropriate procedures for privacy inquiries and applicable individual rights.\nSelling Sensitive Data Without Clear Safeguards\nSensitive personal information can trigger significantly greater legal and ethical concerns.\nBusinesses should exercise heightened caution around any provider offering highly sensitive categories of personal information.\nA Practical B2B Data Compliance Checklist\nBefore purchasing or using a B2B contact database, consider the following questions:\nData Source\nDo you understand where the data originated?\nLawful Processing\nHave you identified the legal basis or justification required for your intended use?\nPurpose\nIs the data being used for a clear and legitimate business purpose?\nRelevance\nAre you collecting only information reasonably necessary for that purpose?\nTransparency\nAre individuals given required information about how their data is used?\nMarketing Rules\nDoes your outreach comply with the laws governing the specific communication channel?\nOpt-Outs\nCan recipients easily object or unsubscribe where required?\nSuppression\nDo you prevent opted-out contacts from being accidentally re-added?\nData Rights\nCan your organization respond appropriately to access, deletion, correction, and other applicable requests?\nSecurity\nIs the database protected against unauthorized access or disclosure?\nRetention\nDo you have a policy for removing information that is no longer necessary?\nVendor Due Diligence\nHave you evaluated the provider's sourcing, verification, privacy, and compliance practices?\nThis checklist does not replace legal advice, but it provides a useful framework for evaluating risk."
+          }
+        ]
+      },
+      {
+        "heading": "Is It Legal to Buy Email Lists?",
+        "brief": "This is one of the most frequently asked questions in B2B marketing.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "The answer depends heavily on:\n•\tThe jurisdiction\n•\tHow the email addresses were collected\n•\tWhether they identify individuals\n•\tWho you intend to contact\n•\tYour lawful basis for processing\n•\tThe type of organization being contacted\n•\tThe marketing channel\n•\tApplicable consent requirements\n•\tThe recipient's previous preferences\nThe act of purchasing a list and the act of sending marketing emails using that list should be evaluated separately.\nA database may be lawfully obtained while a particular marketing campaign using that data could still violate applicable rules.\nBusinesses should therefore evaluate the entire data lifecycle, not just the purchase transaction."
+          }
+        ]
+      },
+      {
+        "heading": "How to Use Purchased B2B Data More Responsibly",
+        "brief": "A responsible B2B data strategy should combine legal compliance with good sales practices.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Target Relevant Prospects\nDo not purchase millions of contacts simply because they are available.\nFocus on people whose professional roles and companies are genuinely relevant to your offering.\nMinimize the Data You Collect\nCollect information that serves a clear business purpose.\nMore data is not automatically better data.\nKeep Records Updated\nRemove invalid, outdated, duplicate, and unnecessary information.\nMaintain Suppression Lists\nEnsure people who object or unsubscribe are not accidentally contacted again.\nProvide Clear Information\nMake it easy for people to understand who is contacting them and why.\nProtect the Data\nUse appropriate technical and organizational security measures.\nReview Vendors Regularly\nData providers, regulations, and business practices change.\nVendor due diligence should not be a one-time exercise."
+          }
+        ]
+      },
+      {
+        "heading": "GDPR vs. CCPA: Key Differences for B2B Data",
+        "brief": "GDPR and CCPA/CPRA both address personal information, but they use different legal frameworks.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "GDPR generally requires organizations to identify a lawful basis for processing personal data and places significant emphasis on principles such as transparency, purpose limitation, data minimization, accuracy, and accountability.\nCalifornia's framework provides consumers with specific rights relating to personal information and places obligations on covered businesses regarding notices, requests, sales, sharing, and other processing activities.\nNeither framework should be reduced to a simple rule such as:\n“GDPR requires consent, while CCPA only requires opt-out.”\nThe reality is more nuanced.\nDifferent activities trigger different obligations.\nFor companies operating internationally, compliance often requires a jurisdiction-specific approach.\nCompliance Can Improve Data Quality\nPrivacy compliance is sometimes viewed only as a restriction.\nBut good compliance practices can actually improve B2B data quality.\nConsider the connection:\nData minimization encourages businesses to collect only useful information.\nAccuracy requirements encourage databases to remain updated.\nPurpose limitation encourages clear targeting.\nOpt-out management prevents repeated outreach to uninterested prospects.\nTransparency builds trust.\nSecurity controls protect valuable business information.\nA well-managed, compliant database is often more useful than an uncontrolled collection of millions of outdated records."
+          }
+        ]
+      },
+      {
+        "heading": "Final Thoughts: Buying B2B Data Is About More Than the Purchase",
+        "brief": "So, is buying B2B data legal? It can be.",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "But the better question is:\n“Can we lawfully source, process, store, and use this specific data for this specific purpose in the jurisdictions that apply to us?”\nThat question leads to a much stronger compliance strategy.\nBefore purchasing B2B data:\n1.\tUnderstand what information you are buying.\n2.\tInvestigate where it came from.\n3.\tEvaluate the provider.\n4.\tDetermine which privacy and marketing laws apply.\n5.\tEstablish your lawful basis where required.\n6.\tProvide required transparency.\n7.\tRespect opt-outs and individual rights.\n8.\tSecure and maintain the data properly.\n9.\tReview your compliance practices regularly.\nHigh-quality B2B data can be a valuable resource for prospecting, market research, CRM enrichment, and sales intelligence.\nBut data quality and data compliance should work together.\nThe goal should not simply be to acquire more contacts.\nIt should be to build a reliable, transparent, and responsible data strategy that supports sustainable business growth."
+          }
+        ]
+      },
+      {
+        "heading": "Is buying B2B data legal under GDPR?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "GDPR does not create a simple blanket ban on purchasing B2B data. However, when the database contains personal data, organizations need to comply with applicable GDPR requirements, which can include having a lawful basis, providing appropriate transparency, respecting individual rights, securing the information, and complying with separate electronic-marketing rules."
+          }
+        ]
+      },
+      {
+        "heading": "Is it legal to buy an email list?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "It depends on the jurisdiction, how the data was collected, the type of email addresses involved, your intended use, and applicable privacy and electronic-marketing laws. Purchasing a list does not automatically authorize unrestricted marketing use."
+          }
+        ]
+      },
+      {
+        "heading": "Does GDPR apply to business email addresses?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "It can. A business email address that identifies an individual, particularly an address associated with a named employee, may constitute personal data. Generic company information and non-personal corporate contact details may be treated differently depending on the applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "Can legitimate interests be used for B2B marketing?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Legitimate interests may be an appropriate lawful basis for certain processing activities, depending on the circumstances. Organizations should evaluate the purpose, necessity, impact on individuals, reasonable expectations, and applicable electronic-marketing requirements rather than assuming legitimate interests always applies."
+          }
+        ]
+      },
+      {
+        "heading": "Does CCPA apply to B2B contact data?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "California privacy requirements can apply to personal information relating to individuals acting in a business or professional context, depending on the circumstances and whether the organization is subject to the law. Businesses should not assume all B2B contact information is automatically exempt."
+          }
+        ]
+      },
+      {
+        "heading": "What should I ask a B2B data provider before buying?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Ask how the data is sourced, verified, updated, and maintained; what privacy and compliance processes are followed; what jurisdictions are covered; how privacy requests are handled; and whether the provider is subject to data-broker registration or other applicable requirements."
+          }
+        ]
+      },
+      {
+        "heading": "Is publicly available B2B data automatically legal to use for marketing?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "No. Public availability does not necessarily mean unrestricted use. Privacy laws, electronic-marketing rules, contractual restrictions, platform terms, and other requirements may still apply."
+          }
+        ]
+      },
+      {
+        "heading": "Who is responsible for compliance: the data provider or the buyer?",
+        "brief": "",
+        "paragraphs": [
+          {
+            "type": "paragraph",
+            "text": "Potentially both. The provider may have obligations relating to collection and disclosure, while the buyer may have separate obligations relating to processing, transparency, security, retention, individual rights, and direct marketing."
+          }
+        ]
+      }
+    ],
+    "takeaway": "Buying B2B data is not automatically illegal, but before buying or using it, verify the source of the data, how it’s maintained, and whether the seller follows relevant privacy and marketing rules."
+  }
+}
