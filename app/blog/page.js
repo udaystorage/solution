@@ -181,7 +181,7 @@ export default async function BlogListingPage() {
 
                 {/* Content Detail Tree */}
                 <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4 bg-stone-50">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 sm:text-sm">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-stone-400 sm:text-sm">
                     <span>{blog.readTime}</span>
                   </div>
 

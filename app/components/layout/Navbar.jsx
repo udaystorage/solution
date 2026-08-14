@@ -550,11 +550,8 @@ export default function Navbar() {
             aria-hidden="true"
             className="
               absolute inset-0
-              animate-navbar-gradient
-              bg-linear-to-br
-              from-violet-500
-              via-blue-500
-              to-cyan-400
+              // animate-navbar-gradient
+              bg-stone-400
               bg-size-[300%_300%]
             "
           />
@@ -658,8 +655,8 @@ export default function Navbar() {
                           isActive
                             ? "bg-white/10"
                             : `
-                              bg-neutral-100
-                              group-hover/link:bg-white
+                              // bg-neutral-50
+                          bg-transparent
                             `
                         }
                       `}
@@ -681,7 +678,7 @@ export default function Navbar() {
             </div>
 
             {/* Divider */}
-            <div className="relative my-3 h-px bg-neutral-200/70" />
+            {/* <div className="relative my-3 h-px bg-neutral-200/70" /> */}
 
             {/* Login CTA */}
           </div>
