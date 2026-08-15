@@ -69,7 +69,7 @@ overflow-hidden
 rounded-2xl
 border
 p-3.5
-sm:rounded-[1.5rem]
+sm:rounded-3xl
 sm:p-5
 text-left
 transition-all
@@ -114,7 +114,7 @@ ${
     }
   `}
               >
-                <Check className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+                <Check className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
               </div>
 
               {/* Label */}

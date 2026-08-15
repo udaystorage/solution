@@ -322,7 +322,6 @@ export default function Navbar() {
     focus:ring-2
     focus:ring-cyan-400
     focus:ring-offset-2
-       animate-call-cta
   "
           >
             <Phone

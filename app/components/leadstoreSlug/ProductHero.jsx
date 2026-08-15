@@ -18,7 +18,7 @@ export default function ProductHero({ product }) {
   console.log(title);
 
   return (
-    <section className="border-b border-stone-200 bg-gradient-to-b from-white via-stone-50/40 to-white">
+    <section className="border-b border-stone-200 bg-linear-to-b from-white via-stone-50/40 to-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-14 px-4 py-14 sm:px-6 lg:px-10 lg:py-20">
         {/* Breadcrumb */}
 
@@ -74,7 +74,7 @@ export default function ProductHero({ product }) {
 
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-violet-200/40 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-stone-200 bg-white p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+            <div className="relative overflow-hidden rounded-4xl border border-stone-200 bg-white p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium text-stone-500">
                   Database Preview
@@ -85,7 +85,7 @@ export default function ProductHero({ product }) {
 
               <div className="mt-8 overflow-hidden rounded-2xl border border-stone-200 bg-white">
                 {/* Hero Image */}
-                <div className="relative aspect-[16/9] w-full bg-stone-100">
+                <div className="relative aspect-video w-full bg-stone-100">
                   <Image
                     src={image}
                     alt={title}
@@ -94,7 +94,7 @@ export default function ProductHero({ product }) {
                     sizes="(max-width:1024px)100vw,420px"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/35 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-black/35 to-transparent" />
                 </div>
 
                 {/* Details */}

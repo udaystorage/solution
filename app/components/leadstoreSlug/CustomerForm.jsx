@@ -31,7 +31,7 @@ export default function CustomerForm({ value, onChange }) {
 
       {/* Card */}
 
-      <div className="rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_10px_40px_rgba(15,23,42,.04)] sm:rounded-[2rem] sm:p-6 lg:p-7">
+      <div className="rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_10px_40px_rgba(15,23,42,.04)] sm:rounded-4xl sm:p-6 lg:p-7">
         <div className="grid gap-5 sm:gap-6">
           {/* Name */}
 
@@ -58,7 +58,7 @@ export default function CustomerForm({ value, onChange }) {
         {/* Privacy */}
 
         <div className="mt-6 rounded-xl border border-cyan-100 bg-cyan-50 p-4 sm:mt-8 sm:rounded-2xl sm:p-5">
-          <div className="flex items-start gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white sm:h-11 sm:w-11">
               <ShieldCheck className="h-5 w-5 text-cyan-600" />
             </div>

@@ -33,7 +33,7 @@ export default function DatabaseConfigurator({
   };
 
   return (
-    <section className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,.06)]">
+    <section className="overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,.06)]">
       {/* Header */}
 
       <div className="border-b border-stone-200 px-8 py-8 lg:px-10">

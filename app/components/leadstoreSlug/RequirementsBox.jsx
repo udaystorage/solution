@@ -72,7 +72,7 @@ sm:text-sm
       <div className="overflow-hidden rounded-2xl sm:rounded-[1.75rem] border border-stone-200 bg-white transition-all duration-300 focus-within:border-cyan-500 focus-within:shadow-[0_15px_45px_rgba(8,145,178,.12)]">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 px-4 py-3 sm:px-6 sm:py-4">
           <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-            <Lightbulb className="h-4 w-4 text-cyan-600 sm:h-[18px] sm:w-[18px]" />
+            <Lightbulb className="h-4 w-4 text-cyan-600 sm:h-4.5 sm:w-4.5" />
 
             <span className="text-sm font-medium text-stone-700">
               Describe your ideal audience
@@ -115,9 +115,9 @@ sm:leading-7
 
       {/* Tip Card */}
 
-      <div className="rounded-2xl p-4 sm:rounded-[1.5rem] sm:p-5 border border-cyan-100 bg-cyan-50">
-        <div className="flex items-start gap-3 sm:gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white sm:h-11 sm:w-11">
+      <div className="rounded-2xl p-4 sm:rounded-3xl sm:p-5 border border-cyan-100 bg-cyan-50">
+        <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+          <div className="flex  h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white sm:h-11 sm:w-11">
             <Sparkles className="h-5 w-5 text-cyan-600" />
           </div>
 

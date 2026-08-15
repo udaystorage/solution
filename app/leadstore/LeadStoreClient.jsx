@@ -6,7 +6,8 @@ import ProductHero from "@/app/components/leadstoreSlug/ProductHero";
 import DatabaseConfigurator from "@/app/components/leadstoreSlug/DatabaseConfigurator";
 import RequestSummary from "@/app/components/leadstoreSlug/RequestSummary";
 
-const WHATSAPP_NUMBER = "919999999999";
+const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+const WHATSAPP_NUMBER = contact?.replace(/\D/g, "");
 
 export default function LeadStoreClient({ product }) {
   const [request, setRequest] = useState({
