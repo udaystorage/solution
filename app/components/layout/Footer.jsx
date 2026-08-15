@@ -168,6 +168,7 @@ export default function Footer() {
 
                   <button
                     onClick={handleClick}
+                    aria-label="Submit number"
                     className="group flex w-14 items-center justify-center border-l border-neutral-200 bg-black transition-colors duration-200 hover:bg-black cursor-pointer"
                   >
                     <ArrowRight className="h-5 w-5 text-neutral-400 transition-all duration-300 group-hover:text-white group-hover:translate-x-1" />
