@@ -33,9 +33,6 @@ export default function BestProductCard({ name, slug, image, description }) {
             >
               Get Data
             </Link>
-            {/* <button className="group cursor-pointer hover:bg-cyan-400 mb-1 p-2 transition-all duration-300 rounded-xl shrink-0">
-              <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:stroke-white" />
-            </button> */}
           </div>
         </div>
       </div>

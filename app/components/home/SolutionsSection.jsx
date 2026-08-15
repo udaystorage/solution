@@ -135,6 +135,7 @@ export default function SolutionsSection() {
                   setSubmitted(false);
                 }}
                 type="button"
+                aria-label="B2B Lists"
                 className={`relative z-10 w-1/2 whitespace-nowrap rounded-full px-4 py-2
       text-xs font-semibold transition-colors duration-300 ${
         activeTab === "leads"
@@ -151,6 +152,7 @@ export default function SolutionsSection() {
                   setSubmitted(false);
                 }}
                 type="button"
+                aria-label="Custom Data"
                 className={`relative z-10 w-1/2 whitespace-nowrap rounded-full px-4 py-2
       text-xs font-semibold transition-colors duration-300 ${
         activeTab === "custom"
@@ -186,6 +188,7 @@ export default function SolutionsSection() {
                     Query logged. Our database managers will call you within 2
                     hours.
                     <span
+                    aria-label="Ok"
                       onClick={() => {
                         setSubmitted("");
                         setMobile("");
@@ -259,6 +262,7 @@ export default function SolutionsSection() {
                   </div>
                   <button
                     type="submit"
+                    aria-label="Request your batch"
                     className="px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs font-semibold rounded-full whitespace-nowrap transition-colors shadow-sm cursor-pointer max-h-fit  "
                   >
                     Request Your Batch

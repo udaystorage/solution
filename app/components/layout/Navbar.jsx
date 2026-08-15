@@ -26,8 +26,8 @@ export default function Navbar() {
   const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
   const cleanContact = contact.replace(/[^\d+]/g, "");
 
-  const PHONE_LINK = `tel:${cleanContact}`; 
-  
+  const PHONE_LINK = `tel:${cleanContact}`;
+
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
@@ -174,6 +174,7 @@ export default function Navbar() {
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
             href={PHONE_LINK}
+            aria-label="Call Leadwala"
             className="
     group
     relative
@@ -222,6 +223,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/leadstore/custom-data"
+            aria-label="Get custom data"
             className="
     group
     relative
@@ -272,27 +274,9 @@ export default function Navbar() {
         ====================================================== */}
 
         <div className="relative z-50 flex items-center gap-4 lg:hidden">
-          {/* Cart */}
-          {/* <Link
-            href="/cart"
-            aria-label="View shopping cart"
-            onClick={closeMenu}
-            className="
-              flex sm:size-10 size-8 items-center justify-center
-              rounded-full
-              border border-black/5
-              bg-white/70
-              shadow-sm
-              backdrop-blur-xl
-              transition-colors duration-300
-              hover:bg-white 
-            "
-          >
-            <ShoppingCart aria-hidden="true" className="size-5" />
-          </Link> */}
-
           <Link
             href={PHONE_LINK}
+            aria-label="Call Leadwala"
             className="
             hidden
             min-[480px]:inline-flex
@@ -332,6 +316,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/leadstore/custom-data"
+            aria-label="Get Custom Data"
             className="
       group
       relative
