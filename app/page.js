@@ -1,9 +1,7 @@
-import Image from "next/image";
 import BlurGlass from "./components/home/BlurGlass";
 import FAQSection from "./components/sections/FAQ";
 import SolutionSection from "./components/home/SolutionsSection";
 import WhyChooseUs from "./components/home/WhyChooseUs";
-import { Check, TrendingUp } from "lucide-react";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 

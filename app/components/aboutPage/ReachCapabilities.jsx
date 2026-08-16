@@ -37,7 +37,7 @@ export default function ReachCapabilities() {
         <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* visual */}
           {/* IMPORTANT: Map container and image behavior kept untouched */}
-          <div className="relative order-2 min-h-[460px] overflow-hidden rounded-[2rem] border border-stone-200 bg-white lg:order-1">
+          <div className="relative order-2 min-h-115 overflow-hidden rounded-4xl border border-stone-200 bg-white lg:order-1">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,.08),transparent_60%)]" />
 
             <Image src="/map.webp" alt="Pan India Coverege" fill />

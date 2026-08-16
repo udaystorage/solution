@@ -54,7 +54,7 @@ export default function LocationInput({
           className="
             h-16
             w-full
-            rounded-[1.5rem]
+            rounded-3xl
             border
             border-stone-200
             bg-white
@@ -112,9 +112,9 @@ export default function LocationInput({
 
       {/* Info Card */}
 
-      <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 p-5">
+      <div className="rounded-3xl border border-stone-200 bg-stone-50 p-5">
 
-        <div className="flex items-start gap-4">
+        <div className="flex flex-col sm:flex-row items-start gap-4">
 
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
 

@@ -122,12 +122,12 @@ export default async function BlogListingPage() {
   {/* SEMANTIC HEADER BANNER ZONE */}
   <header className="relative w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
   <div
-  className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-3xl sm:-top-28 sm:left-1/3 sm:h-72 sm:w-72 sm:blur-[100px] lg:-top-40 lg:left-1/4 lg:h-[28rem] lg:w-[28rem] lg:blur-[160px]"
+  className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-3xl sm:-top-28 sm:left-1/3 sm:h-72 sm:w-72 sm:blur-[100px] lg:-top-40 lg:left-1/4 lg:h-112 lg:w-md lg:blur-[160px]"
   aria-hidden="true"
 />
 
 <div
-  className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-3xl sm:h-64 sm:w-64 sm:blur-[100px] lg:h-[25rem] lg:w-[25rem] lg:blur-[160px]"
+  className="pointer-events-none absolute top-0 right-0 h-48 w-48 rounded-full bg-linear-to-tr from-indigo-300/15 to-violet-300/10 blur-3xl sm:h-64 sm:w-64 sm:blur-[100px] lg:h-100 lg:w-100 lg:blur-[160px]"
   aria-hidden="true"
 />
 
@@ -174,14 +174,14 @@ export default async function BlogListingPage() {
                     src={blog.image || blogimage}
                     alt={`Featured visualization analyzing: ${blog.title}`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-102"
+                    className="object-cover  transition-all duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-97"
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
                 </div>
 
                 {/* Content Detail Tree */}
-                <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 sm:text-sm">
+                <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4 bg-stone-50">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-stone-400 sm:text-sm">
                     <span>{blog.readTime}</span>
                   </div>
 
@@ -193,7 +193,7 @@ export default async function BlogListingPage() {
                     {blog.description}
                   </p>
 
-                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-neutral-100 pt-4">
+                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-neutral-200 pt-4">
                     <time
                       dateTime={machineDate}
                       className="shrink-0 text-xs font-semibold text-neutral-500"

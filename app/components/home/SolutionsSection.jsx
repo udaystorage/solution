@@ -39,9 +39,9 @@ export default function SolutionsSection() {
     <section className="w-full bg-beige-100 px-4 py-16 sm:px-8 md:px-16 lg:px-20 font-sans text-[#1A1A1A]">
       <div className="w-full max-w-7xl mx-auto ">
         {/* 2. Changed a generic div into an explicit H2 for regional target optimization */}
-        <h1 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
+        <h2 className="py-2 pb-8 w-full text-2xl text-center font-bold text-black/60">
           Pan India Business Leads
-        </h1>
+        </h2>
 
         {/* Carousel Container */}
         <div className="w-full overflow-hidden  pb-10 relative">
@@ -50,10 +50,10 @@ export default function SolutionsSection() {
 
         {/* 3. Replaced H2 with H3 to follow appropriate semantic structural hierarchy */}
         <div className="max-w-2xl mb-12 mt-12">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          <h3 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
             {/* Find the exact target B2B/B2C email list you need to pitch. */}
             Reach the target audience with leadwala verified preimium databases.
-          </h2>
+          </h3>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop reaching out the wrong people. Our verified and filtered databses will lead you to the interested prospects.
           </p>
@@ -62,16 +62,16 @@ export default function SolutionsSection() {
         {/* 4. Streamlined Minimal Feature Grid (Removed typo 'PX-20') */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
           {/* Card 1 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
               <Verified className="w-8 h-8 text-blue-500" />
             </div>
-            <h3 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
+            <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Human Verified Databases
-            </h3>
+            </h4>
             <p className="text-sm leading-6 text-neutral-500">
               Every sales lead profile undergoes manual verification for optimum database accuracy. No outreach campaign goes to waste.
               {/* Every sales lead profile undergoes manual verification & validation. Leadwala make sure each databse has optimum accuracy for your outreach campaigns.   */}
@@ -79,7 +79,7 @@ export default function SolutionsSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
@@ -95,7 +95,7 @@ export default function SolutionsSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
+          <div className="space-y-2 rounded-xl border border-neutral-200/80 p-5 bg-linear-to-br from-white via-neutral-50 to-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all">
             <div
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
@@ -115,12 +115,12 @@ export default function SolutionsSection() {
         <div className="bg-neutral-50 rounded-3xl p-8 md:p-10 border-3 border-neutral-200/50">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-200/60">
             <div>
-              <h4 className="text-xl font-bold text-neutral-900">
+              <h3 className="text-xl font-bold text-neutral-900">
                 Try Our Premium Leads
-              </h4>
+              </h3>
             </div>
 
-            <div className="relative flex min-w-[240px] rounded-full bg-stone-100 p-1 shadow-inner ring-1 ring-black/5">
+            <div className="relative flex min-w-60 rounded-full bg-stone-100 p-1 shadow-inner ring-1 ring-black/5">
               {/* Sliding Pill */}
               <div
                 className={`absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full
@@ -135,11 +135,12 @@ export default function SolutionsSection() {
                   setSubmitted(false);
                 }}
                 type="button"
+                aria-label="B2B Lists"
                 className={`relative z-10 w-1/2 whitespace-nowrap rounded-full px-4 py-2
       text-xs font-semibold transition-colors duration-300 ${
         activeTab === "leads"
           ? "text-white"
-          : "text-stone-500 hover:text-stone-700"
+          : "text-stone-700 hover:text-stone-900"
       }`}
               >
                 B2B Lists
@@ -151,11 +152,12 @@ export default function SolutionsSection() {
                   setSubmitted(false);
                 }}
                 type="button"
+                aria-label="Custom Data"
                 className={`relative z-10 w-1/2 whitespace-nowrap rounded-full px-4 py-2
       text-xs font-semibold transition-colors duration-300 ${
         activeTab === "custom"
           ? "text-white"
-          : "text-stone-500 hover:text-stone-700"
+          : "text-stone-700 hover:text-stone-900"
       }`}
               >
                 Custom Data
@@ -186,6 +188,7 @@ export default function SolutionsSection() {
                     Query logged. Our database managers will call you within 2
                     hours.
                     <span
+                    aria-label="Ok"
                       onClick={() => {
                         setSubmitted("");
                         setMobile("");
@@ -259,6 +262,7 @@ export default function SolutionsSection() {
                   </div>
                   <button
                     type="submit"
+                    aria-label="Request your batch"
                     className="px-6 py-3 bg-black hover:bg-neutral-800 text-white text-xs font-semibold rounded-full whitespace-nowrap transition-colors shadow-sm cursor-pointer max-h-fit  "
                   >
                     Request Your Batch

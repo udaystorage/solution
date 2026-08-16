@@ -5,25 +5,24 @@ import demoprofile1 from "../../images/store/demoprofile1.jpg";
 import demoprofile2 from "../../images/store/demoprofile2.jpg";
 import demoprofile3 from "../../images/store/demoprofile3.jpg";
 import demoprofile4 from "../../images/store/demoprofile4.jpg";
-import { CircleChevronRight } from "lucide-react";
 
 export default function LeadStoreHero() {
   return (
     <section className="relative isolate overflow-hidden w-screen h-150 md:h-115 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
       {/* Base Gradient */}
-      <div className="absolute inset-0 -z-30 bg-gradient-to-br from-sky-100 via-cyan-50 to-violet-100" />
+      <div className="absolute inset-0 -z-30 bg-linear-to-br from-sky-100 via-cyan-50 to-violet-100" />
 
       {/* Large Cyan Glow */}
-      <div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-cyan-300/35 blur-[140px] -z-20" />
+      <div className="absolute -top-40 -left-40 w-175 h-175 rounded-full bg-cyan-300/35 blur-[140px] -z-20" />
 
       {/* Purple Glow */}
-      <div className="absolute bottom-[-220px] left-1/3 w-[650px] h-[650px] rounded-full bg-violet-400/25 blur-[170px] -z-20" />
+      <div className="absolute -bottom-55 left-1/3 w-162.5 h-162.5 rounded-full bg-violet-400/25 blur-[170px] -z-20" />
 
       {/* Blue Glow */}
-      <div className="absolute top-10 right-[-180px] w-[500px] h-[500px] rounded-full bg-sky-400/25 blur-[140px] -z-20" />
+      <div className="absolute top-10 -right-45 w-125 h-125 rounded-full bg-sky-400/25 blur-[140px] -z-20" />
 
       {/* White Highlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-white/35 blur-[120px] -z-20" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-225 h-87.5 bg-white/35 blur-[120px] -z-20" />
       <div
         className="absolute inset-0 opacity-[0.04] -z-10"
         style={{
@@ -77,7 +76,7 @@ export default function LeadStoreHero() {
       </div>
 
       <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center">
-        <div className="absolute w-[420px] h-[420px] rounded-full bg-cyan-300/20 blur-[110px]" />
+        <div className="absolute w-105 h-105 rounded-full bg-cyan-300/20 blur-[110px]" />
 
         <Cube />
       </div>

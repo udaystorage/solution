@@ -98,7 +98,7 @@ ${
     }
   `}
               >
-                <Icon className="h-5 w-5 sm:h-[26px] sm:w-[26px]" />
+                <Icon className="h-5 w-5 sm:h-6.5 sm:w-6.5" />
               </div>
 
               {/* Content */}

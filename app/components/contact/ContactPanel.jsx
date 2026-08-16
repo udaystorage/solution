@@ -2,8 +2,8 @@ import { ArrowUpRight, Clock3, Phone } from "lucide-react";
 
 import ContactForm from "./ContactForm";
 
-const PHONE_DISPLAY = "+91 81000 25936";
-const PHONE_LINK = "tel:+918100025936";
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+const PHONE_LINK = `tel:${PHONE_DISPLAY}.replace(/\D/g, "")`;
 
 export default function ContactPanel() {
   return (
@@ -21,7 +21,7 @@ export default function ContactPanel() {
     rounded-[28px]
     border border-slate-200/80
 
-    bg-gradient-to-br
+    bg-linear-to-br
     from-white
     via-slate-200
     to-violet-300
@@ -32,9 +32,7 @@ export default function ContactPanel() {
   "
         >
           {" "}
-          {/* ==========================================
-              LEFT — REQUIREMENT FORM
-          ========================================== */}
+          {/* LEFT — REQUIREMENT FORM */}
           <div className="px-6 py-8 bg-white sm:px-10 sm:py-10 lg:px-12 lg:py-12">
             <div className="max-w-xl">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
@@ -43,7 +41,7 @@ export default function ContactPanel() {
 
               <h2
                 id="contact-requirement-heading"
-                className="mt-3 text-2xl font-semibold tracking-[-0.025em] text-slate-950 sm:text-3xl"
+                className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl"
               >
                 Tell us what you need.
               </h2>
@@ -55,14 +53,12 @@ export default function ContactPanel() {
               <ContactForm />
             </div>
           </div>
-          {/* ==========================================
-              RIGHT — DIRECT CALL
-          ========================================== */}
+          {/* RIGHT — DIRECT CALL */}
           <aside
             aria-labelledby="prefer-talk-heading"
             className="
     relative
-    min-h-[380px]
+    min-h-95
     overflow-hidden
 
     border-t border-white/70
@@ -72,7 +68,7 @@ export default function ContactPanel() {
 
     shadow-[inset_1px_0_0_rgba(255,255,255,0.75)]
 
-    sm:min-h-[420px]
+    sm:min-h-105
 
     lg:min-h-0
     lg:border-l
@@ -109,7 +105,7 @@ export default function ContactPanel() {
               className="
       pointer-events-none
       absolute inset-0
-      bg-gradient-to-br
+      bg-linear-to-br
       from-white/45
       via-white/10
       to-slate-100/25
@@ -123,27 +119,25 @@ export default function ContactPanel() {
       pointer-events-none
       absolute inset-x-0 top-0
       h-px
-      bg-gradient-to-r
+      bg-linear-to-r
       from-transparent
       via-white
       to-transparent
     "
             />
 
-            {/* ==================================================
-      CONTENT
-  ================================================== */}
+            {/* CONTENT */}
 
             <div
               className="
       relative z-10
       flex h-full
-      min-h-[380px]
+      min-h-95
       items-center
 
       px-6 py-10
 
-      sm:min-h-[420px]
+      sm:min-h-105
       sm:px-10 sm:py-12
 
       lg:min-h-full
@@ -174,7 +168,7 @@ export default function ContactPanel() {
                     className="
       phone-glow-icon
       relative z-10
-      h-[18px] w-[18px]
+      h-4.5 w-4.5
       text-slate-700
     "
                   />
@@ -186,7 +180,7 @@ export default function ContactPanel() {
                   className="
           mt-6
           text-2xl font-semibold
-          tracking-[-0.025em]
+          tracking-tight
           text-slate-950
           sm:text-3xl
         "
@@ -249,7 +243,7 @@ export default function ContactPanel() {
                 <div
                   className="
           mt-7
-          border-t border-slate-900/[0.08]
+          border-t border-slate-900/8
           pt-5
         "
                 >

@@ -6,14 +6,14 @@ export default function NotFound() {
     <div className="relative min-h-screen w-full bg-white text-[#111827] flex flex-col justify-between overflow-hidden font-sans antialiased">
       
       {/* Subtle Ambient Glow (Keeps the Leadwala brand DNA, but pushed heavily into the background) */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-40 mix-blend-multiply filter blur-3xl">
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00d2ff] via-[#9d4edd] to-[#7928ca] rounded-full transform scale-75 animate-pulse duration-[10s]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 pointer-events-none opacity-40 mix-blend-multiply filter blur-3xl">
+        <div className="absolute inset-0 bg-linear-to-tr from-[#00d2ff] via-[#9d4edd] to-[#7928ca] rounded-full transform scale-75 animate-pulse duration-[10s]" />
       </div>
 
    
 
       {/* Centered Minimal Content */}
-      <main className="flex-grow flex flex-col items-center justify-center z-10 px-6 text-center max-w-xl mx-auto -translate-y-6">
+      <main className="grow flex flex-col items-center justify-center z-10 px-6 text-center max-w-xl mx-auto -translate-y-6">
         
         {/* Massive Timeless 404 Headline */}
         <h1 className="text-[120px] sm:text-[160px] lg:text-[200px] font-extrabold tracking-tighter text-stone-800 leading-none select-none">

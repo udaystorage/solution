@@ -24,6 +24,10 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+  const cleanContact = contact.replace(/[^\d+]/g, "");
+
+  const PHONE_LINK = `tel:${cleanContact}`;
+
   // const [visibleCount, setVisibleCount] = useState(0);
 
   // Lock page scrolling only while mobile navigation is open.
@@ -74,7 +78,7 @@ export default function Navbar() {
     w-6 h-6
     sm:w-7 sm:h-7
     md:w-8 md:h-8
-    lg:w-[35px] lg:h-[35px]
+    lg:w-8.75 lg:h-8.75
     object-contain
     mix-blend-multiply
     translate-x-4
@@ -169,7 +173,8 @@ export default function Navbar() {
 
         <div className="hidden items-center justify-center gap-4 lg:flex">
           <Link
-            href={`tel:${contact}`}
+            href={PHONE_LINK}
+            aria-label="Call Leadwala"
             className="
     group
     relative
@@ -218,6 +223,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/leadstore/custom-data"
+            aria-label="Get custom data"
             className="
     group
     relative
@@ -268,27 +274,9 @@ export default function Navbar() {
         ====================================================== */}
 
         <div className="relative z-50 flex items-center gap-4 lg:hidden">
-          {/* Cart */}
-          {/* <Link
-            href="/cart"
-            aria-label="View shopping cart"
-            onClick={closeMenu}
-            className="
-              flex sm:size-10 size-8 items-center justify-center
-              rounded-full
-              border border-black/5
-              bg-white/70
-              shadow-sm
-              backdrop-blur-xl
-              transition-colors duration-300
-              hover:bg-white 
-            "
-          >
-            <ShoppingCart aria-hidden="true" className="size-5" />
-          </Link> */}
-
           <Link
-            href={`tel:${contact}`}
+            href={PHONE_LINK}
+            aria-label="Call Leadwala"
             className="
             hidden
             min-[480px]:inline-flex
@@ -328,6 +316,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/leadstore/custom-data"
+            aria-label="Get Custom Data"
             className="
       group
       relative
@@ -545,11 +534,8 @@ export default function Navbar() {
             aria-hidden="true"
             className="
               absolute inset-0
-              animate-navbar-gradient
-              bg-linear-to-br
-              from-violet-500
-              via-blue-500
-              to-cyan-400
+              // animate-navbar-gradient
+              bg-stone-400
               bg-size-[300%_300%]
             "
           />
@@ -653,8 +639,8 @@ export default function Navbar() {
                           isActive
                             ? "bg-white/10"
                             : `
-                              bg-neutral-100
-                              group-hover/link:bg-white
+                              // bg-neutral-50
+                          bg-transparent
                             `
                         }
                       `}
@@ -676,7 +662,7 @@ export default function Navbar() {
             </div>
 
             {/* Divider */}
-            <div className="relative my-3 h-px bg-neutral-200/70" />
+            {/* <div className="relative my-3 h-px bg-neutral-200/70" /> */}
 
             {/* Login CTA */}
           </div>

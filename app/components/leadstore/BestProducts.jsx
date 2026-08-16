@@ -1,6 +1,4 @@
-"use client";
-import { MoveRight } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 import BestProductCard from "./BestProductCard";
 
 const CATEGORIES = [
@@ -97,7 +95,7 @@ export default function BestProducts() {
           </p>
 
           <h3 className="mt-2 text-xl md:text-2xl  font-bold ">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-blue-600 to-cyan-500">
               4,834+{" "}
             </span>{" "}
             Verified Database Segments

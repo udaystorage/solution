@@ -112,7 +112,7 @@ export const FAQSection = ({ page }) => {
 
   return (
     <section className="relative overflow-hidden bg-white py-24 px-6 md:px-12 lg:px-24">
-      <div className="absolute right-[-10%] top-1/2 -z-10 h-87.5 w-87.5 -translate-y-1/2 rounded-full bg-gradient-to-tr from-cyan-400 to-purple-500 opacity-[0.08] blur-[80px]" aria-hidden="true" />
+      <div className="absolute right-[-10%] top-1/2 -z-10 h-87.5 w-87.5 -translate-y-1/2 rounded-full bg-linear-to-tr from-cyan-400 to-purple-500 opacity-[0.08] blur-[80px]" aria-hidden="true" />
 
       <div className="mx-auto max-w-4xl">
         {/* Header Section */}
@@ -120,9 +120,9 @@ export const FAQSection = ({ page }) => {
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Have Questions?
           </span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
             {formatHeadingText(currentPage)}
-          </h1>
+          </h2>
           <p className="mt-4 text-lg text-gray-500">
             Everything you need to know about our data services, platform extraction, and validation processes.
           </p>
@@ -145,7 +145,7 @@ export const FAQSection = ({ page }) => {
         {/* Global Action Conversion Block */}
         <div className="mt-16 rounded-2xl bg-gray-50 p-8 text-center md:flex md:items-center md:justify-between md:text-left md:gap-6">
           <div className="max-w-full md:max-w-[70%]">
-            <h2 className="text-xl font-bold text-gray-900 m-0">Still have questions?</h2>
+            <h3 className="text-xl font-bold text-gray-900 m-0">Still have questions?</h3>
             <p className="mt-1 md:w-3/4 text-gray-500 text-sm text-wrap">Can&apos;t find the exact answer you are looking for? Our database specialists are always here to help.</p>
           </div>
           <button 
