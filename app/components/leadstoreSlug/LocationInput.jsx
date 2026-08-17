@@ -22,7 +22,7 @@ export default function LocationInput({
 
       <div className="space-y-1">
 
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
           Target Region
         </p>
 

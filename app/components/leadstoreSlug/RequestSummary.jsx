@@ -44,7 +44,7 @@ export default function RequestSummary({ request }) {
 
   return (
     <aside className="lg:sticky lg:top-28">
-      <div className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-200 shadow-[0_18px_55px_rgba(15,23,42,.05)] lg:rounded-4xl">
+      <div className="overflow-hidden rounded-2xl border border-stone-200 bg-amber-50 shadow-[0_18px_55px_rgba(15,23,42,.05)] lg:rounded-4xl">
         {/* Header */}
 
         <div className="border-b border-white px-5 py-5 sm:px-8 sm:py-6 lg:px-7">

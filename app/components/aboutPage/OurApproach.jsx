@@ -258,7 +258,7 @@ export default function OurApproach() {
           >
             {/* Content */}
             <div>
-              <span className="text-xs font-medium text-stone-400 sm:text-sm">
+              <span className="text-xs font-medium text-stone-500 sm:text-sm">
                 {active.number} / 05
               </span>
 

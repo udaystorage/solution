@@ -90,7 +90,7 @@ export default function BestProducts() {
           })}
         </div>
         <div className="py-10 px-4 text-center">
-          <p className="text-xs sm:text-sm   uppercase tracking-[0.2em] text-emerald-600">
+          <p className="text-xs sm:text-sm   uppercase tracking-[0.2em] text-neutral-600">
             Database Collection
           </p>
 

@@ -60,12 +60,12 @@ export default function page() {
            
           ]}
         />
-      <div className="w-full min-h-max flex flex-col justify-start items-center text-black">
+      <main className="w-full min-h-max flex flex-col justify-start items-center text-black">
          <LeadStoreHero/>
          <ChooseCatagory/>
          <BestProducts/>
          <FAQSection page="leadstore"/>
-      </div>
+      </main>
     </>
   );
 }
