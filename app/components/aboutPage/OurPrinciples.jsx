@@ -86,7 +86,7 @@ export default  function OurPrinciples() {
         <h2
           className="
             mt-5 max-w-sm
-            text-3xl font-semibold
+            text-2xl font-semibold
             leading-[1.08]
             tracking-[-0.035em]
             text-white
