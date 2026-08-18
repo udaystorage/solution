@@ -249,16 +249,18 @@ const blogs = await getJsonFilesAsArray();
           </header>
 
           {/* Media Element Block */}
-          <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
-            <Image
-              src={blog.image || "/demoBlog.webp"}
-              alt={`${blog.title} overview image`}
-              width={1200}
-              height={680}
-              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
-              priority
-            />
-          </div>
+         <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
+  <Image
+    src={blog.image || "/demoBlog.webp"}
+    alt={`${blog.title} overview image`}
+    fetchPriority="high"
+    loading="eager"
+    width={1200}
+    height={680}
+    sizes="(max-width: 768px) 100vw, 895px"
+    className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+  />
+</div>
 
           {/* Content Distribution Architecture */}
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

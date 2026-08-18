@@ -35,7 +35,7 @@ export default function ConsentCheckbox({
           <Link
             href="/terms-and-conditions"
             target="_blank"
-            className="font-medium text-cyan-600 transition hover:text-cyan-700 hover:underline"
+            className="font-medium text-cyan-700 transition hover:text-cyan-800 hover:underline"
           >
             Terms &amp; Conditions
           </Link>{" "}
@@ -43,7 +43,7 @@ export default function ConsentCheckbox({
           <Link
             href="/privacy-policy"
             target="_blank"
-            className="font-medium text-cyan-600 transition hover:text-cyan-700 hover:underline"
+            className="font-medium text-cyan-700 transition hover:text-cyan-800 hover:underline"
           >
             Privacy Policy
           </Link>
