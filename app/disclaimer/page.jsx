@@ -1,7 +1,7 @@
 import Script from "next/script";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 export const metadata = {
   title: "Disclaimer | LeadWala",
@@ -269,12 +269,15 @@ export default function DisclaimerPage() {
                 contact:
               </p>
 
-              <address className="not-italic leading-8">
-                <strong>LeadWala</strong><br />
-                Email: support@leadwala.co.in<br />
-                Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.co.in<br />
-                Registered Address: [Your Registered Business Address]
+                <address className="not-italic leading-8">
+                <strong>LeadWala</strong>
+                <br />
+                Email: support@leadwala.co.in
+                <br />
+                Phone: {contact}
+                <br />
+                Website: https://www.leadwala.co.in
+                <br />
               </address>
             </div>
           </section>
