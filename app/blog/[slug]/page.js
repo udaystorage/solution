@@ -220,7 +220,7 @@ export default async function BlogPage({ params }) {
         </div>
 
         {/* Global Article Element Boundary Context Wrap */}
-        <article className="relative z-10 mx-auto max-w-4xl px-6 py-24">
+        <article className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 md:px-8 py-18 sm:py-24">
           {/* Header Segment */}
           <header className="flex flex-col gap-4">
             <div className="flex justify-between items-center gap-3 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-stone-500">
@@ -242,11 +242,11 @@ export default async function BlogPage({ params }) {
               </div>
             </div>
 
-            <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl tracking-tight leading-[1] text-stone-950 font-semibold">
+            <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl tracking-[0.15] lg:leading-[1.1] text-stone-950 font-semibold">
               {blog.title}
             </h1>
 
-            <p className="mt-2 md:mt-3 italic max-w-3xl text-md sm:text-lg md:text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
+            <p className="mt-2 md:mt-3 italic max-w-3xl text-md md:text-lg lg:text-[18px] font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-4 sm:pl-5 md:pl-6">
               {blog.description}
             </p>
           </header>
@@ -261,7 +261,7 @@ export default async function BlogPage({ params }) {
               width={1200}
               height={680}
               sizes="(max-width: 768px) 100vw, 895px"
-              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+              className="w-full aspect-video object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
           </div>
 
