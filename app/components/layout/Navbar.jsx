@@ -131,7 +131,7 @@ export default function Navbar() {
           />
 
           {/* Navigation Surface */}
-          <div className="relative flex min-w-min items-center gap-1 rounded-full bg-white p-2">
+          <div className="relative flex min-w-min items-center gap-1 rounded-full bg-white p-1.5">
             {navigationItems.map((navigationItem) => {
               const isActive =
                 navigationItem.href === "/"

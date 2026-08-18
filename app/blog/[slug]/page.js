@@ -246,13 +246,13 @@ export default async function BlogPage({ params }) {
               {blog.title}
             </h1>
 
-            <p className="mt-2 md:mt-3 italic max-w-3xl text-md md:text-lg lg:text-[18px] font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-4 sm:pl-5 md:pl-6">
+            <p className="mt-0 md:mt-3 italic max-w-3xl text-md md:text-lg lg:text-[18px] font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-4 sm:pl-5 md:pl-6">
               {blog.description}
             </p>
           </header>
 
           {/* Media Element Block */}
-          <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
+          <div className="mt-8 sm:mt-10 md:mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
             <Image
               src={blog.image || "/demoBlog.webp"}
               alt={`${blog.title} overview image`}
@@ -266,16 +266,16 @@ export default async function BlogPage({ params }) {
           </div>
 
           {/* Content Distribution Architecture */}
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
-              <p className="text-lg leading-relaxed text-stone-700 font-medium">
+              <p className="text-sm md:text-md leading-relaxed text-stone-700 font-medium">
                 {blog.content?.introduction}
               </p>
 
               {blog.content?.sections?.map((section, idx) => (
                 <section key={idx} className="space-y-4">
-                  <h2 className="text-2xl font-semibold tracking-tight text-stone-900 pt-4">
+                  <h2 className="text-[20px] lg:text-2xl font-semibold tracking-tight text-stone-900 pt-0 sm:pt-4">
                     {section.heading}
                   </h2>
 
@@ -318,11 +318,11 @@ export default async function BlogPage({ params }) {
                       return (
                         <div key={pIdx} className="space-y-3">
                           {inlineList.intro && (
-                            <p className="text-stone-600 leading-relaxed text-base antialiased">
+                            <p className="text-stone-600 leading-relaxed text-[15px] sm:text-base antialiased">
                               {inlineList.intro}
                             </p>
                           )}
-                          <ul className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-base antialiased">
+                          <ul className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-[15px] sm:text-base antialiased">
                             {inlineList.items.map((item, itemIdx) => (
                               <li key={itemIdx}>{item}</li>
                             ))}
@@ -355,7 +355,7 @@ export default async function BlogPage({ params }) {
                   <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
                     Key Takeaway
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-stone-200 font-light">
+                  <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-stone-200 font-light">
                     {blog.content.takeaway}
                   </p>
                 </aside>
