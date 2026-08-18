@@ -70,7 +70,7 @@ export default function Footer() {
                 </span>
               </div>
 
-              <p className="mt-3 max-w-65 text-sm leading-6 text-neutral-500">
+              <p className="mt-2 md:mt-3 max-w-65 text-sm leading-5 sm:leading-6 text-neutral-500">
                 Trusted data that helps you reach the right people.
               </p>
 

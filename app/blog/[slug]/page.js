@@ -269,7 +269,7 @@ export default async function BlogPage({ params }) {
           <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
-              <p className="text-sm md:text-md leading-relaxed text-stone-700 font-medium">
+              <p className="text-sm md:text-[15px] leading-relaxed text-stone-700 font-medium">
                 {blog.content?.introduction}
               </p>
 
