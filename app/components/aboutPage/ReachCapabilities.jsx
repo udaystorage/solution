@@ -124,7 +124,7 @@ export default function ReachCapabilities() {
               "
                 >
                   <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                    <span className="shrink-0 text-[9px] font-medium text-stone-400 sm:text-[10px]">
+                    <span className="shrink-0 text-[9px] font-medium text-stone-600 sm:text-[10px]">
                       0{index + 1}
                     </span>
 

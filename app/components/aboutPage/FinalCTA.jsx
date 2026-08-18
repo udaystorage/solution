@@ -130,7 +130,7 @@ export default function FinalCTA() {
               sm:hover:shadow-xl
             "
             >
-              <button
+              <span
                 className="
                 bg-linear-to-r
                 from-violet-800 via-blue-700 to-cyan-800
@@ -141,7 +141,7 @@ export default function FinalCTA() {
               "
               >
                 Get Custom Data
-              </button>
+              </span>
 
               <ArrowRight
                 size={15}

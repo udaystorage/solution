@@ -90,6 +90,8 @@ export default function ProductHero({ product }) {
                     src={image}
                     alt={title}
                     fill
+                    fetchPriority="high"
+                    loading="eager"
                     className="object-cover"
                     sizes="(max-width:1024px)100vw,420px"
                   />

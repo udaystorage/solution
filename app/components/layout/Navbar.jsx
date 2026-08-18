@@ -490,7 +490,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
         className={`
           fixed top-20 right-3 left-3 z-40
           origin-top-right

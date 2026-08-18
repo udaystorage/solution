@@ -120,7 +120,7 @@ export default  function OurPrinciples() {
             <span
               className="
                 text-[11px] font-medium
-                text-slate-500
+                text-slate-200
                 transition-colors duration-300
                 group-hover:text-cyan-400
                 sm:text-xs

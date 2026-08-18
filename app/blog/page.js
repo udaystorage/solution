@@ -118,7 +118,7 @@ export default async function BlogListingPage() {
               ]}
             />
 
-     <div className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
+     <main className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
   {/* SEMANTIC HEADER BANNER ZONE */}
   <header className="relative w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
   <div
@@ -165,6 +165,7 @@ export default async function BlogListingPage() {
           <li key={blog.id} className="h-full">
             <Link
               href={`/blog/${blog.slug}`}
+               aria-label={`Read post: ${blog.title}`}
               className="group block h-full focus:outline-hidden"
             >
               <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-xs transition-shadow duration-300 hover:shadow-md sm:rounded-3xl">
@@ -174,6 +175,8 @@ export default async function BlogListingPage() {
                     src={blog.image || blogimage}
                     alt={`Featured visualization analyzing: ${blog.title}`}
                     fill
+                    fetchPriority="high"
+                    loading="eager"
                     className="object-cover  transition-all duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-97"
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
@@ -181,7 +184,7 @@ export default async function BlogListingPage() {
 
                 {/* Content Detail Tree */}
                 <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4 bg-stone-50">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-stone-400 sm:text-sm">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 sm:text-sm">
                     <span>{blog.readTime}</span>
                   </div>
 
@@ -189,7 +192,7 @@ export default async function BlogListingPage() {
                     {blog.title}
                   </h2>
 
-                  <p className="mt-2 line-clamp-2 grow text-sm leading-relaxed text-neutral-500">
+                  <p className="mt-2 line-clamp-2 grow text-sm leading-relaxed text-neutral-600">
                     {blog.description}
                   </p>
 
@@ -249,19 +252,20 @@ export default async function BlogListingPage() {
               href="/aboutus"
               className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-7 py-3 text-sm font-semibold text-neutral-800 shadow-xs transition duration-300 hover:shadow-md sm:px-9"
             >
-              Learn More
+              About Us
             </Link>
           </div>
         </div>
 
         {/* CTA Visual */}
-        <div className="relative hidden min-h-80 w-full items-center justify-center overflow-hidden bg-neutral-50/50 sm:flex md:min-h-100 md:w-1/2">
+        <div className="relative hidden max-[768px]:mt-10 min-h-80 w-full items-center justify-center overflow-hidden bg-neutral-50/50 sm:flex md:min-h-100 md:w-1/2">
           <div className="absolute -right-12 -bottom-12 rounded-[30px] border border-neutral-300/70 bg-[#F7F6F2] p-3 shadow-xs">
             <Image
               src="/growthbg.webp"
               alt="Graph data tracking metrics representing scale development analytics"
               width={600}
               height={350}
+              sizes="600px"
               className="rounded-3xl object-cover"
             />
           </div>
@@ -269,7 +273,7 @@ export default async function BlogListingPage() {
       </div>
     </div>
   </section>
-</div>
+</main>
     </>
   );
 }

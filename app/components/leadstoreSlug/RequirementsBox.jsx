@@ -16,7 +16,7 @@ export default function RequirementsBox({ value, onChange }) {
       {/* Heading */}
 
       <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400 sm:text-xs">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
           Audience Filters
         </p>
 
@@ -79,7 +79,7 @@ sm:text-sm
             </span>
           </div>
 
-          <span className="text-[11px] text-stone-400 sm:text-xs">
+          <span className="text-[11px] text-stone-500 sm:text-xs">
             Optional
           </span>
         </div>

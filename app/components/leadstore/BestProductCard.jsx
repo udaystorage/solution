@@ -29,7 +29,7 @@ export default function BestProductCard({ name, slug, image, description }) {
           <div className="flex justify-between items-center w-full px-2 gap-2">
             <Link
               href={`/leadstore/${slug}`}
-              className="cursor-pointer mb-1 py-2 flex-1 rounded-xl bg-emerald-400 hover:bg-emerald-500 text-center text-white font-bold text-sm sm:text-base"
+              className="cursor-pointer mb-1 py-2 flex-1 rounded-xl bg-emerald-700 hover:bg-black text-center text-white font-bold text-sm sm:text-base"
             >
               Get Data
             </Link>

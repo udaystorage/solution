@@ -58,7 +58,7 @@ export default function RequestSummary({ request }) {
             Your Database Summary
           </h3>
 
-          <p className="mt-1.5 text-sm leading-6 text-stone-500">
+          <p className="mt-1.5 text-sm leading-6 text-stone-600">
             {" "}
             Review your selections before continuing on WhatsApp.
           </p>
@@ -78,7 +78,7 @@ export default function RequestSummary({ request }) {
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-500">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-stone-600">
                       {" "}
                       {item.label}
                     </p>
