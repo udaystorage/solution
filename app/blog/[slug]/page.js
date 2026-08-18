@@ -1,16 +1,15 @@
 import { notFound } from "next/navigation";
-import {ArrowLeft} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import path from "path";
 import Link from "next/link";
 import { getJsonFilesAsArray } from "@/lib/blog";
 import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
- 
+
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 // Some older/raw content has bullet points typed inline inside a single
 // paragraph string, e.g. "May include: • Item one • Item two • Item three"
@@ -74,9 +73,6 @@ function parseParagraphBlocks(text) {
   flushList();
   return blocks;
 }
- 
-
-
 
 //  1. SSG PRE-RENDERING PARAMETERS
 export async function generateStaticParams() {
@@ -99,12 +95,14 @@ export async function generateMetadata({ params }) {
   const cleanImageUrl = blog.image?.startsWith("http")
     ? blog.image
     : `${baseUrl}${blog.image || "/demoBlog.webp"}`;
-    
-    const isoDate = new Date(blog.date).toISOString();
-    
+
+  const isoDate = new Date(blog.date).toISOString();
+
   return {
     title: `${blog.title} | Leadwala Insights`,
-    description: blog.description?.substring(0, 160) || "Read the latest digital insights on Leadwala.",
+    description:
+      blog.description?.substring(0, 160) ||
+      "Read the latest digital insights on Leadwala.",
     alternates: {
       canonical: `${baseUrl}/blog/${slug}`,
     },
@@ -141,14 +139,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-
-
-
 export default async function BlogPage({ params }) {
-const blogs = await getJsonFilesAsArray();
-   
+  const blogs = await getJsonFilesAsArray();
+
   const { slug } = await params;
-  
+
   const blog = blogs.find((item) => item.slug === slug);
 
   if (!blog) {
@@ -161,28 +156,30 @@ const blogs = await getJsonFilesAsArray();
   const jsonLdSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": blog.title,
-    "description": blog.description,
-    "datePublished": isoDate,
-    "dateModified": isoDate,
-    "image": blog.image?.startsWith("http") ? blog.image : `${baseUrl}${blog.image || "/demoBlog.webp"}`,
-    "author": {
+    headline: blog.title,
+    description: blog.description,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    image: blog.image?.startsWith("http")
+      ? blog.image
+      : `${baseUrl}${blog.image || "/demoBlog.webp"}`,
+    author: {
       "@type": "Organization",
-      "name": "Leadwala",
-      "url": `${baseUrl}`
+      name: "Leadwala",
+      url: `${baseUrl}`,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Leadwala",
-      "logo": {
+      name: "Leadwala",
+      logo: {
         "@type": "ImageObject",
-        "url": `${baseUrl}/logo.png`
-      }
+        url: `${baseUrl}/logo.png`,
+      },
     },
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${baseUrl}/blog/${slug}`
-    }
+      "@id": `${baseUrl}/blog/${slug}`,
+    },
   };
 
   return (
@@ -193,26 +190,29 @@ const blogs = await getJsonFilesAsArray();
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
       />
-          <BreadCrumbSchema
-      items={[
-        {
-          name: "Home",
-          url: `${baseUrl}`,
-        },
-        {
-          name: "Blog",
-          url: `${baseUrl}/blog`,
-        },
-        {
-          name: blog.title,
-          url: `${baseUrl}/blog/${slug}`,
-        },
-      ]}
-    />
+      <BreadCrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: `${baseUrl}`,
+          },
+          {
+            name: "Blog",
+            url: `${baseUrl}/blog`,
+          },
+          {
+            name: blog.title,
+            url: `${baseUrl}/blog/${slug}`,
+          },
+        ]}
+      />
 
       <main className="min-h-screen relative overflow-hidden text-stone-900 selection:bg-emerald-100">
         {/* Ambient Glow Containers */}
-        <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" aria-hidden="true">
+        <div
+          className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden"
+          aria-hidden="true"
+        >
           <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-linear-to-b from-indigo-500/5 via-slate-400/0 to-transparent blur-[120px]"></div>
           <div className="absolute top-[5%] left-[-10%] w-[50%] h-[40%] rounded-full bg-radial from-emerald-400/5 via-transparent to-transparent blur-[100px]"></div>
           <div className="absolute top-[2%] right-[-10%] w-[40%] h-[40%] rounded-full bg-radial from-stone-300/10 via-transparent to-transparent blur-[90px]"></div>
@@ -221,50 +221,52 @@ const blogs = await getJsonFilesAsArray();
 
         {/* Global Article Element Boundary Context Wrap */}
         <article className="relative z-10 mx-auto max-w-4xl px-6 py-24">
-          
           {/* Header Segment */}
           <header className="flex flex-col gap-4">
-         <Link
-          href="/blog"
-          className="inline-flex w-fit items-center gap-2 text-sm text-stone-500 transition hover:text-emerald-700"
-        >
-          <ArrowLeft size={16} />
-          Back to Blog
-        </Link>
-            <div className="flex items-center gap-3 text-sm font-medium tracking-wide uppercase text-stone-500">
-              <time dateTime={isoDate.split('T')[0]}>{blog.date}</time>
-              <span className="text-stone-300" aria-hidden="true">•</span>
-              <span className="text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full font-semibold">
-                {blog.readTime}
-              </span>
+            <div className="flex justify-between items-center gap-3 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-stone-500">
+              <Link
+                href="/blog"
+                className="inline-flex w-fit items-center gap-2 text-stone-500 transition hover:text-emerald-700"
+              >
+                <ArrowLeft className="size-2.5 sm:size-3" />
+                Back to Blog
+              </Link>
+              <div>
+                <time dateTime={isoDate.split("T")[0]}>{blog.date}</time>
+                <span className="text-stone-300 ml-1 sm:ml-2" aria-hidden="true">
+                  •
+                </span>
+                <span className="text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full font-semibold ml-1 sm:ml-2">
+                  {blog.readTime}
+                </span>
+              </div>
             </div>
 
-            <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] text-stone-950 font-semibold">
+            <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl tracking-tight leading-[1] text-stone-950 font-semibold">
               {blog.title}
             </h1>
 
-            <p className="mt-4 italic max-w-3xl text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
+            <p className="mt-2 md:mt-3 italic max-w-3xl text-md sm:text-lg md:text-xl font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-6">
               {blog.description}
             </p>
           </header>
 
           {/* Media Element Block */}
-         <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
-  <Image
-    src={blog.image || "/demoBlog.webp"}
-    alt={`${blog.title} overview image`}
-    fetchPriority="high"
-    loading="eager"
-    width={1200}
-    height={680}
-    sizes="(max-width: 768px) 100vw, 895px"
-    className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
-  />
-</div>
+          <div className="mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
+            <Image
+              src={blog.image || "/demoBlog.webp"}
+              alt={`${blog.title} overview image`}
+              fetchPriority="high"
+              loading="eager"
+              width={1200}
+              height={680}
+              sizes="(max-width: 768px) 100vw, 895px"
+              className="w-full h-112.5 object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
+            />
+          </div>
 
           {/* Content Distribution Architecture */}
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
               <p className="text-lg leading-relaxed text-stone-700 font-medium">
@@ -342,11 +344,14 @@ const blogs = await getJsonFilesAsArray();
               ))}
 
               {blog.content?.takeaway && (
-                <aside 
+                <aside
                   className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
                   aria-label="Article Summary Key Takeaway"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl" aria-hidden="true" />
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"
+                    aria-hidden="true"
+                  />
                   <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
                     Key Takeaway
                   </h3>
@@ -365,9 +370,17 @@ const blogs = await getJsonFilesAsArray();
 
               <ul className="mt-4 space-y-4 list-none">
                 {blog.content?.highlights?.map((highlight, index) => (
-                  <li key={index} className="flex gap-3 items-start text-sm text-stone-600">
-                    <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2" aria-hidden="true" />
-                    <span className="leading-tight font-medium">{highlight}</span>
+                  <li
+                    key={index}
+                    className="flex gap-3 items-start text-sm text-stone-600"
+                  >
+                    <span
+                      className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2"
+                      aria-hidden="true"
+                    />
+                    <span className="leading-tight font-medium">
+                      {highlight}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -376,7 +389,6 @@ const blogs = await getJsonFilesAsArray();
                 <BlogWhatsappBtn />
               </div>
             </aside>
-            
           </div>
         </article>
       </main>
