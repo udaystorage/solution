@@ -2,15 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
-// import { blogs } from "../../data/blogs";
-import blogimage from "../../public/blog.jpg";
+import blogimage from "../../public/demoBlog.webp";
 import { promises as fs } from "fs";
 import path from "path";
 import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 
- 
 const BLOG_DIR = path.join(process.cwd(), "data", "blog");
  
 /**
