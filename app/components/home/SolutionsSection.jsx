@@ -67,7 +67,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <Verified className="w-8 h-8 text-blue-500" />
+              <Verified className="w-8 h-8 text-sky-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Human Verified Databases
@@ -84,7 +84,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <Smartphone className="w-7 h-7 text-blue-500" />
+              <Smartphone className="w-7 h-7 text-sky-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Direct Mobile Numbers
@@ -100,7 +100,7 @@ export default function SolutionsSection() {
               className="w-9 h-9 rounded-full bg-emerald-50 flex items-center justify-center"
               aria-hidden="true"
             >
-              <ListFilter className="w-6 h-6 text-blue-500" />
+              <ListFilter className="w-6 h-6 text-sky-500" />
             </div>
             <h4 className="text-[1.05rem] font-semibold leading-tight text-neutral-900">
               Niche Industry Categories
@@ -212,7 +212,7 @@ export default function SolutionsSection() {
                       className={`rounded-full p-px ${
                         mobileError
                           ? "bg-red-400"
-                          : "bg-linear-to-r from-violet-500 via-blue-500 to-cyan-400"
+                          : "bg-linear-to-r from-violet-500 via-sky-500 to-sky-400"
                       }`}
                     >
                       <input

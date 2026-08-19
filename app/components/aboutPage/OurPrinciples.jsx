@@ -52,7 +52,7 @@ export default  function OurPrinciples() {
       h-80 w-80
       -translate-x-1/2
       rounded-full
-      bg-cyan-500/10
+      bg-sky-500/10
       blur-[90px]
       sm:-top-32 sm:h-100 sm:w-100 sm:blur-[110px]
       lg:-top-40 lg:h-125 lg:w-125 lg:blur-[120px]
@@ -75,7 +75,7 @@ export default  function OurPrinciples() {
             px-3 py-1
             text-[10px] font-semibold
             uppercase tracking-wider
-            text-cyan-400
+            text-sky-400
             sm:text-[11px]
             lg:text-[12px]
           "
@@ -122,7 +122,7 @@ export default  function OurPrinciples() {
                 text-[11px] font-medium
                 text-slate-200
                 transition-colors duration-300
-                group-hover:text-cyan-400
+                group-hover:text-sky-400
                 sm:text-xs
               "
             >

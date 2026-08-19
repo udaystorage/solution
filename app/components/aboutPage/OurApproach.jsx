@@ -9,11 +9,14 @@ import {
   SlidersHorizontal,
   PackageCheck,
 } from "lucide-react";
+import Image from "next/image";
 const processSteps = [
   {
     number: "01",
     title: "Understand",
     icon: SlidersHorizontal,
+    src: "/aboutApproach/understand-illustration.svg",
+    imageAlt: "segmentation illustration",
     description:
       "We begin by understanding exactly who you need to reach — industry, geography, company profile, designation, and business requirements.",
   },
@@ -21,6 +24,8 @@ const processSteps = [
     number: "02",
     title: "Research",
     icon: Search,
+    src: "/aboutApproach/research-illustration.svg",
+    imageAlt: "research illustration",
     description:
       "Relevant businesses and decision-makers are identified through focused research built around your target market.",
   },
@@ -28,6 +33,8 @@ const processSteps = [
     number: "03",
     title: "Verify",
     icon: ShieldCheck,
+    src: "/aboutApproach/verify-illustration.svg",
+    imageAlt: "data verification illustration",
     description:
       "Records go through validation and quality checks to improve accuracy, consistency, and business relevance.",
   },
@@ -35,6 +42,8 @@ const processSteps = [
     number: "04",
     title: "Structure",
     icon: Database,
+    src: "/aboutApproach/structure-illustration.svg",
+    imageAlt: "structuring data illustration",
     description:
       "Information is cleaned, organized, segmented, and structured so your team can work with it immediately.",
   },
@@ -42,75 +51,127 @@ const processSteps = [
     number: "05",
     title: "Deliver",
     icon: PackageCheck,
+    src: "/aboutApproach/delivery-illustration.svg",
+    imageAlt: "delivering data illustration",
     description:
       "You receive actionable business data prepared around your requirements and ready for outreach.",
   },
 ];
 
-const stepBackgrounds = [
-  "from-violet-400/55 via-fuchsia-200/45 to-indigo-400/55",
-
-  "from-blue-400/55 via-cyan-200/45 to-sky-400/55",
-
-  "from-emerald-400/55 via-teal-200/45 to-cyan-400/50",
-
-  "from-amber-400/55 via-orange-200/45 to-rose-400/50",
-
-  "from-indigo-400/55 via-violet-200/45 to-fuchsia-400/55",
+const images = [
+  {
+    src: "/aboutApproach/understand-illustration.svg",
+    imageAlt: "segmentation illustration",
+  },
+  {
+    src: "/aboutApproach/research-illustration.svg",
+    imageAlt: "research illustration",
+  },
+  {
+    src: "/aboutApproach/verify-illustration.svg",
+    imageAlt: "data verification illustration",
+  },
+  {
+    src: "/aboutApproach/structure-illustration.svg",
+    imageAlt: "structuring data illustration",
+  },
+  {
+    src: "/aboutApproach/delivery-illustration.svg",
+    imageAlt: "delivering data illustration",
+  },
 ];
 
 export default function OurApproach() {
   const [activeStep, setActiveStep] = useState(0);
-  const active = processSteps[activeStep];
-  const ActiveIcon = active.icon;
-
   const [allCompleted, setAllCompleted] = useState(false);
+  const [isApproachVisible, setIsApproachVisible] = useState(false);
+  const [playDirection, setPlayDirection] = useState(1);
+
+  const active = processSteps[activeStep];
+
+  const timerRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   const approachRef = useRef(null);
 
-  // Using this useEffect to observe the viewport and animate the progressive step
+  // Viewport entry detector
+
   useEffect(() => {
+    const section = approachRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsApproachVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.35,
+      },
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll direction detector
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
     const handleScroll = () => {
-      const section = approachRef.current;
-      if (!section) return;
+      const currentY = window.scrollY;
 
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+      if (currentY > lastScrollY.current) {
+        setPlayDirection(1);
+      } else if (currentY < lastScrollY.current) {
+        setPlayDirection(-1);
+      }
 
-      // Start when section reaches 70% of viewport
-      const triggerPoint = viewportHeight * 0.7;
-
-      const scrollDistance = triggerPoint - rect.top;
-
-      // More breathing room between each step
-      const stepDistance = 180;
-
-      const progressStep = Math.floor(scrollDistance / stepDistance);
-
-      // Allow 0 → 5, where 5 means everything is completed
-      const clampedProgress = Math.max(
-        0,
-        Math.min(processSteps.length, progressStep),
-      );
-
-      // Content itself stays capped at the last real step
-      const contentStep = Math.min(clampedProgress, processSteps.length - 1);
-
-      setActiveStep(contentStep);
-
-      setAllCompleted(clampedProgress === processSteps.length);
+      lastScrollY.current = currentY;
     };
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
-    handleScroll();
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  //Automatically changes the steps
+  useEffect(() => {
+    if (!isApproachVisible) {
+      clearTimeout(timerRef.current);
+      return;
+    }
+
+    clearTimeout(timerRef.current);
+
+    timerRef.current = setTimeout(() => {
+      setActiveStep((prev) => {
+        const nextStep = prev + playDirection;
+
+        // Reached the beginning
+        if (nextStep < 0) {
+          setAllCompleted(false);
+          return 0;
+        }
+
+        // Reached the end
+        if (nextStep >= processSteps.length) {
+          setAllCompleted(true);
+          return processSteps.length - 1;
+        }
+
+        setAllCompleted(false);
+
+        return nextStep;
+      });
+    }, 1200);
+
+    return () => clearTimeout(timerRef.current);
+  }, [isApproachVisible, playDirection, activeStep]);
 
   return (
     <section
@@ -141,17 +202,18 @@ export default function OurApproach() {
         {/* Process container */}
         <div
           className="
-        mt-10
-        rounded-3xl
-        border border-stone-200
-        bg-stone-50
-        p-3
-        sm:mt-12 sm:rounded-4xl sm:p-6
-        lg:mt-16 lg:p-10
-      "
+    mt-10
+    rounded-[2.5rem]
+    border border-gray-200/60
+    bg-[#F8F9FA]
+    p-4
+    shadow-sm
+    sm:mt-12 sm:p-8
+    lg:mt-16 lg:p-10
+  "
         >
           {/* Desktop navigation */}
-          <div className="hidden grid-cols-5 lg:grid">
+          <div className="hidden grid-cols-5 items-center lg:grid">
             {processSteps.map((step, index) => {
               const isCompleted =
                 activeStep > index ||
@@ -163,54 +225,57 @@ export default function OurApproach() {
                 <button
                   key={step.title}
                   onClick={() => setActiveStep(index)}
-                  className="group relative text-left"
+                  className="group relative flex flex-col items-center text-center"
                 >
-                  <div className="relative mb-5 flex items-center">
-                    {/* Step circle */}
-                    <span
-                      className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-500 ${
-                        isCompleted
-                          ? "border-cyan-500 bg-cyan-600 text-white font-bold "
-                          : isActive
-                            ? "scale-105 border-stone-950 bg-stone-950 text-white shadow-md"
-                            : "border-stone-300 bg-white text-stone-400"
-                      }`}
-                    >
-                      {isCompleted ? (
-                        <Check
-                          size={17}
-                          strokeWidth={2.5}
-                          className="animate-in zoom-in duration-300"
-                        />
-                      ) : (
-                        step.number
-                      )}
+                  {/* Connecting progress line */}
+                  {index !== processSteps.length - 1 && (
+                    <span className="absolute left-1/2 top-4 z-0 h-0.5 w-full bg-gray-200">
+                      <span
+                        className={`block h-full bg-sky-500 transition-all duration-700 ease-out ${
+                          isCompleted ? "w-full" : "w-0"
+                        }`}
+                      />
                     </span>
+                  )}
 
-                    {/* Connecting progress line */}
-                    {index !== processSteps.length - 1 && (
-                      <span className="absolute left-10 right-0 h-px overflow-hidden bg-stone-200">
-                        <span
-                          className={`block h-full bg-cyan-500 transition-all duration-700 ease-out ${
-                            isCompleted ? "w-full" : "w-0"
-                          }`}
-                        />
+                  {/* Active Capsule vs Step Circles */}
+                  {isActive ? (
+                    <div className="z-10 flex flex-col items-center">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 text-white shadow-md shadow-sky-500/20">
+                        <Check size={16} strokeWidth={3} />
                       </span>
-                    )}
-                  </div>
-
-                  {/* Step title */}
-                  <span
-                    className={`text-sm font-medium transition-colors duration-300 ${
-                      isCompleted
-                        ? "text-cyan-700"
-                        : isActive
-                          ? "text-stone-950"
-                          : "text-stone-400 group-hover:text-stone-700"
-                    }`}
-                  >
-                    {step.title}
-                  </span>
+                      <span className="mt-2.5 rounded-full border border-gray-200 bg-white px-5 py-1 text-xs font-semibold text-gray-900 shadow-sm">
+                        {step.title}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="z-10 flex flex-col items-center">
+                      <span
+                        className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 ${
+                          isCompleted
+                            ? "bg-sky-600 text-white"
+                            : "border border-gray-200 bg-white text-gray-400 group-hover:border-gray-300 group-hover:text-gray-600"
+                        }`}
+                      >
+                        {isCompleted ? (
+                          <Check size={16} strokeWidth={2.5} />
+                        ) : (
+                          <span className="text-xs font-medium">
+                            {step.number}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        className={`mt-2.5 text-xs font-medium transition-colors duration-300 ${
+                          isCompleted
+                            ? "font-semibold text-gray-900"
+                            : "text-gray-500 group-hover:text-gray-900"
+                        }`}
+                      >
+                        {step.title}
+                      </span>
+                    </div>
+                  )}
                 </button>
               );
             })}
@@ -220,19 +285,19 @@ export default function OurApproach() {
           <div className="-mx-1 overflow-hidden lg:hidden">
             <div
               className="
-            flex gap-2 overflow-x-auto px-1 pb-2
-            [scrollbar:none]
-            [&::-webkit-scrollbar]:hidden
-          "
+        flex gap-2 overflow-x-auto px-1 pb-2
+        [scrollbar:none]
+        [&::-webkit-scrollbar]:hidden
+      "
             >
               {processSteps.map((step, index) => (
                 <button
                   key={step.title}
                   onClick={() => setActiveStep(index)}
-                  className={`shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-[11px] font-medium transition-all duration-300 sm:px-4 sm:text-xs ${
+                  className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
                     activeStep === index
-                      ? "bg-stone-950 text-white shadow-sm"
-                      : "border border-stone-200 bg-white text-stone-500"
+                      ? "bg-black text-white shadow-sm"
+                      : "border border-gray-200 bg-white text-gray-600"
                   }`}
                 >
                   {step.number} {step.title}
@@ -241,166 +306,78 @@ export default function OurApproach() {
             </div>
           </div>
 
-          {/* Active content */}
+          {/* Active content card */}
           <div
             className="
-          mt-5 grid gap-7
-          rounded-[1.25rem]
-          bg-white
-          p-5
-          shadow-sm
-          sm:mt-7 sm:rounded-3xl sm:p-8
-          md:p-10
-          lg:mt-10 lg:min-h-77.5
-          lg:grid-cols-[1fr_0.9fr]
-          lg:items-center
-        "
+      mt-6 grid gap-8
+      rounded-3xl
+      border border-gray-100
+      bg-white
+      p-6
+      shadow-sm
+      sm:mt-8 sm:p-10
+      lg:mt-8 lg:min-h-80
+      lg:grid-cols-[1fr_0.85fr]
+      lg:items-center
+    "
           >
             {/* Content */}
-            <div>
-              <span className="text-xs font-medium text-stone-500 sm:text-sm">
-                {active.number} / 05
-              </span>
+            <div className="flex flex-col justify-between h-full py-1">
+              <div>
+                <span className="text-xs font-medium tracking-wide text-gray-400 sm:text-sm">
+                  {active.number} / 05
+                </span>
 
-              <h3 className="mt-3 text-xl font-semibold tracking-tight sm:mt-4 sm:text-2xl lg:text-3xl">
-                {active.title}
-              </h3>
+                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+                  {active.title}
+                </h3>
 
-              <p className="mt-4 max-w-xl text-[14px] leading-6 text-stone-600 sm:mt-5 sm:text-base sm:leading-7">
-                {active.description}
-              </p>
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-gray-500 sm:text-base">
+                  {active.description}
+                </p>
+              </div>
 
-              <button
-                onClick={() =>
-                  setActiveStep((activeStep + 1) % processSteps.length)
-                }
-                className="group mt-6 inline-flex items-center gap-2 text-sm font-medium sm:mt-8"
-              >
-                {activeStep === processSteps.length - 1
-                  ? "Start again"
-                  : "Next step"}
+              <div className="mt-8">
+                <button
+                  onClick={() =>
+                    setActiveStep((activeStep + 1) % processSteps.length)
+                  }
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-sky-600 hover:text-sky-500 transition-colors"
+                >
+                  {activeStep === processSteps.length - 1
+                    ? "Start again"
+                    : "Next step"}
 
-                <ArrowRight
-                  size={15}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </button>
+                  <ArrowRight
+                    size={15}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </button>
+              </div>
             </div>
 
-            {/* Abstract data visual */}
+            {/* Abstract visual container */}
             <div
               className="
-            relative flex
-            min-h-52.5
-            items-center justify-center
-            overflow-hidden
-            rounded-2xl
-            bg-stone-50
-            sm:min-h-60
-            lg:min-h-55
-          "
+        relative flex
+        min-h-56
+        items-center justify-center
+        overflow-hidden
+        rounded-2xl
+        border border-gray-100
+        bg-[#FAFAFA]
+        p-4
+        sm:min-h-64
+      "
             >
-              {/* Dynamic ambient backgrounds */}
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                {stepBackgrounds.map((background, index) => (
-                  <div
-                    key={index}
-                    className={`absolute left-1/2 top-1/2
-                  h-56 w-56
-                  -translate-x-1/2 -translate-y-1/2
-                  rounded-full
-                  bg-linear-to-br ${background}
-                  blur-[70px]
-                  transition-opacity duration-1000 ease-in-out
-                  sm:h-72 sm:w-72 sm:blur-[80px]
-                  ${activeStep === index ? "opacity-100" : "opacity-0"}
-                `}
-                  />
-                ))}
-              </div>
-
-              {/* Main icon */}
-              <div
-                className="
-              relative z-10
-              flex h-20 w-20
-              items-center justify-center
-              rounded-[1.35rem]
-              border border-white/70
-              bg-white/65
-              backdrop-blur-2xl
-              shadow-[0_18px_45px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)]
-              sm:h-24 sm:w-24 sm:rounded-3xl
-            "
-              >
-                <ActiveIcon
-                  size={30}
-                  strokeWidth={1.5}
-                  className="sm:h-8.5 sm:w-8.5"
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-6">
+                <Image
+                  src={active.src}
+                  alt={active.imageAlt}
+                  fill
+                  className="object-contain p-6"
                 />
               </div>
-
-              {/* Floating labels */}
-              <span
-                className="
-              absolute left-3 top-3 z-10
-              rounded-full
-              border border-stone-200
-              bg-white
-              px-2.5 py-1
-              text-[9px] font-medium
-              shadow-sm
-              sm:left-6 sm:top-6 sm:px-3 sm:py-1.5 sm:text-[10px]
-            "
-              >
-                Industry
-              </span>
-
-              <span
-                className="
-              absolute right-3 top-10 z-10
-              rounded-full
-              border border-stone-200
-              bg-white
-              px-2.5 py-1
-              text-[9px] font-medium
-              shadow-sm
-              sm:right-5 sm:top-12 sm:px-3 sm:py-1.5 sm:text-[10px]
-            "
-              >
-                Geography
-              </span>
-
-              <span
-                className="
-              absolute bottom-5 left-3 z-10
-              rounded-full
-              border border-stone-200
-              bg-white
-              px-2.5 py-1
-              text-[9px] font-medium
-              shadow-sm
-              sm:bottom-7 sm:left-10 sm:px-3 sm:py-1.5 sm:text-[10px]
-            "
-              >
-                Decision Maker
-              </span>
-
-              <span
-                className="
-              absolute bottom-3 right-3 z-10
-              flex items-center gap-1
-              rounded-full
-              bg-emerald-100
-              px-2.5 py-1
-              text-[9px] font-medium
-              text-emerald-800
-              sm:bottom-5 sm:right-8 sm:px-3 sm:py-1.5 sm:text-[10px]
-            "
-              >
-                <Check size={11} />
-                Verified
-              </span>
             </div>
           </div>
         </div>
