@@ -1,7 +1,4 @@
 import Script from "next/script";
-const geist = Geist({
-  subsets: ["latin"],
-});
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
