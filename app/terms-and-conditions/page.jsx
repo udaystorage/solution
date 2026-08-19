@@ -1,5 +1,6 @@
 import Script from "next/script";
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 export const metadata = {
   title: "Terms & Conditions | LeadWala",
@@ -15,7 +16,7 @@ export const metadata = {
     url: `${baseUrl}/terms-and-conditions`,
     type: "website",
   },
-   robots: {
+  robots: {
     index: true,
     follow: true,
   },
@@ -42,15 +43,20 @@ export default function TermsConditionsPage() {
 
       <main className="bg-white text-stone-800">
         <article className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-
           <header className="border-b border-stone-200 pb-10">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
               Terms &amp; Conditions
             </h1>
 
             <div className="mt-6 flex flex-col gap-1 text-sm text-stone-500 sm:flex-row sm:gap-8">
-              <p><strong className="text-stone-700">Effective:</strong> <time dateTime="2026-08-07">07 August 2026</time></p>
-              <p><strong className="text-stone-700">Last Updated:</strong> <time dateTime="2026-08-07">07 August 2026</time></p>
+              <p>
+                <strong className="text-stone-700">Effective:</strong>{" "}
+                <time dateTime="2026-08-07">07 August 2026</time>
+              </p>
+              <p>
+                <strong className="text-stone-700">Last Updated:</strong>{" "}
+                <time dateTime="2026-08-07">07 August 2026</time>
+              </p>
             </div>
 
             <p className="mt-8 text-base leading-8 text-stone-600">
@@ -86,8 +92,7 @@ export default function TermsConditionsPage() {
               2. Our Services
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala provides curated business databases and custom business
                 data research services. Information displayed on this website is
@@ -113,8 +118,7 @@ export default function TermsConditionsPage() {
               3. Enquiry &amp; Order Process
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers may browse database categories and submit enquiries
                 through our WhatsApp enquiry workflow.
@@ -134,13 +138,12 @@ export default function TermsConditionsPage() {
               </p>
             </div>
           </section>
-                    <section className="pt-20">
+          <section className="pt-20">
             <h2 className="border-b border-stone-200 pb-3 text-[18px] md:text-xl lg:text-2xl font-semibold">
               4. Pricing &amp; Quotations
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Prices displayed on the website, if any, are indicative unless
                 expressly stated otherwise. Final pricing depends on factors
@@ -166,8 +169,7 @@ export default function TermsConditionsPage() {
               5. Delivery &amp; Fulfilment
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala manually researches, verifies and prepares datasets
                 based on customer requirements. Delivery timelines may vary
@@ -192,8 +194,7 @@ export default function TermsConditionsPage() {
               6. Customer Responsibilities
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers are responsible for providing accurate requirements
                 and ensuring that any information shared with LeadWala is
@@ -204,7 +205,9 @@ export default function TermsConditionsPage() {
                 <li>Use supplied data responsibly.</li>
                 <li>Comply with applicable privacy and marketing laws.</li>
                 <li>Maintain the confidentiality of delivered datasets.</li>
-                <li>Verify suitability before using data in commercial activities.</li>
+                <li>
+                  Verify suitability before using data in commercial activities.
+                </li>
               </ul>
             </div>
           </section>
@@ -214,19 +217,23 @@ export default function TermsConditionsPage() {
               7. Acceptable Use
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                Customers must not use LeadWala&apos;s services or supplied datasets
-                for any unlawful, deceptive, or unethical purpose.
+                Customers must not use LeadWala&apos;s services or supplied
+                datasets for any unlawful, deceptive, or unethical purpose.
               </p>
 
               <ul className="list-disc space-y-2 pl-6">
                 <li>Spam or unsolicited communications in violation of law.</li>
                 <li>Fraud, phishing, identity theft or impersonation.</li>
                 <li>Harassment or abusive conduct.</li>
-                <li>Reselling or redistributing datasets without written permission.</li>
-                <li>Creating competing public databases using our supplied data.</li>
+                <li>
+                  Reselling or redistributing datasets without written
+                  permission.
+                </li>
+                <li>
+                  Creating competing public databases using our supplied data.
+                </li>
               </ul>
 
               <p>
@@ -241,8 +248,7 @@ export default function TermsConditionsPage() {
               8. Intellectual Property
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Unless otherwise stated, all website content, branding, logos,
                 graphics, layouts, text, and other intellectual property remain
@@ -262,8 +268,7 @@ export default function TermsConditionsPage() {
               9. Third-Party Services
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Our website may link to third-party platforms such as WhatsApp
                 or other external services. LeadWala is not responsible for the
@@ -277,8 +282,7 @@ export default function TermsConditionsPage() {
               10. Limitation of Liability
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 LeadWala makes reasonable efforts to provide accurate and
                 relevant business information. However, business data naturally
@@ -306,14 +310,13 @@ export default function TermsConditionsPage() {
               11. Indemnification
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 You agree to indemnify and hold harmless LeadWala, its owners,
-                employees and representatives from claims, liabilities,
-                damages, losses and reasonable expenses arising out of your
-                misuse of the website, supplied data, or violation of these
-                Terms &amp; Conditions or applicable law.
+                employees and representatives from claims, liabilities, damages,
+                losses and reasonable expenses arising out of your misuse of the
+                website, supplied data, or violation of these Terms &amp;
+                Conditions or applicable law.
               </p>
             </div>
           </section>
@@ -323,8 +326,7 @@ export default function TermsConditionsPage() {
               12. Suspension &amp; Termination
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We reserve the right to suspend, refuse or discontinue services
                 where we reasonably believe these Terms have been violated or
@@ -344,8 +346,7 @@ export default function TermsConditionsPage() {
               13. Governing Law &amp; Jurisdiction
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 These Terms &amp; Conditions shall be governed by and construed
                 in accordance with the laws of India.
@@ -365,8 +366,7 @@ export default function TermsConditionsPage() {
               14. Changes to These Terms
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 We may revise these Terms &amp; Conditions periodically to
                 reflect changes in our business operations, legal obligations,
@@ -385,23 +385,24 @@ export default function TermsConditionsPage() {
               15. Contact Information
             </h2>
 
-                        <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-
+            <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Questions regarding these Terms &amp; Conditions may be directed
                 to:
               </p>
 
               <address className="not-italic leading-8">
-                <strong>LeadWala</strong><br />
-                Email: support@leadwala.co.in<br />
-                Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.co.in<br />
-                Registered Address: [Your Registered Business Address]
+                <strong>LeadWala</strong>
+                <br />
+                Email: support@leadwala.co.in
+                <br />
+                Phone: {contact}
+                <br />
+                Website: https://www.leadwala.co.in
+                <br />
               </address>
             </div>
           </section>
-
         </article>
       </main>
     </>

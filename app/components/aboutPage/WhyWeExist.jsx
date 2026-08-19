@@ -21,7 +21,7 @@ export default function WhyWeExist() {
             <h2
               className="
                 mt-5 max-w-md
-                text-3xl font-semibold
+                text-2xl font-semibold
                 leading-[1.08] tracking-[-0.035em]
                 sm:mt-6 sm:text-3xl
                 lg:text-4xl
@@ -148,7 +148,7 @@ function FlowItem({ label, last, muted = false }) {
       >
         <span
           className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
-            muted ? "bg-stone-100 text-stone-400" : "bg-cyan-600 text-stone-50"
+            muted ? "bg-stone-100 text-stone-400" : "bg-sky-600 text-stone-50"
           }`}
         >
           <Check size={14} strokeWidth={2.5} />

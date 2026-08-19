@@ -54,7 +54,7 @@ export default function ReachCapabilities() {
                 <span className="relative flex h-3 w-3">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-stone-400 opacity-75" />
 
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-600" />
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-600" />
                 </span>
 
                 <span className="absolute left-4 -top-1.25 whitespace-nowrap rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[10px] font-medium shadow-sm inline-block origin-left animate-pulse-scale">
@@ -77,7 +77,7 @@ export default function ReachCapabilities() {
             </span>
 
             {/* Heading */}
-            <h2 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-3xl lg:text-4xl">
               Built around the market you&apos;re trying to reach.
             </h2>
 

@@ -2,19 +2,23 @@ import Script from "next/script";
 
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
+const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+
+
 
 export const metadata = {
   title: "Acceptable Use Policy | LeadWala",
   description:
     "Understand the acceptable and prohibited uses of LeadWala&apos;s datasets and services.",
   alternates: {
-    canonical: '${baseUrl}/acceptable-use',
+        canonical: `${baseUrl}/acceptable-use`,
+
   },
   openGraph: {
     title: "Acceptable Use Policy | LeadWala",
     description:
       "Guidelines for the responsible use of LeadWala&apos;s services and business databases.",
-    url: '${baseUrl}/acceptable-use',
+    url: `${baseUrl}/acceptable-use`,
     type: "website",
   },
    robots: {
@@ -30,9 +34,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Acceptable Use Policy",
-  url: '${baseUrl}/acceptable-use',
+  url: `${baseUrl}/acceptable-use`,
 };
-
+  
 const EFFECTIVE_DATE = "07 August 2026";
 const LAST_UPDATED = "07 August 2026";
 
@@ -251,12 +255,15 @@ export default function AcceptableUsePolicyPage() {
                 please contact:
               </p>
 
-              <address className="not-italic leading-8">
-                <strong>LeadWala</strong><br />
-                Email: support@leadwala.co.in<br />
-                Phone: +91 XXXXX XXXXX<br />
-                Website: https://www.leadwala.co.in<br />
-                Registered Address: [Your Registered Business Address]
+                <address className="not-italic leading-8">
+                <strong>LeadWala</strong>
+                <br />
+                Email: support@leadwala.co.in
+                <br />
+                Phone: {contact}
+                <br />
+                Website: https://www.leadwala.co.in
+                <br />
               </address>
             </div>
           </section>
