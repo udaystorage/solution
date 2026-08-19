@@ -70,7 +70,7 @@ export default function Navbar() {
         >
           <div className="relative flex justify-center items-center">
             <Image
-              src="/logo/symbol-1.svg"
+              src="/logo/logo.webp"
               alt="LeadWala Logo"
               width={35}
               height={35}
@@ -89,7 +89,7 @@ export default function Navbar() {
           <span
             className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold tracking-[0.01em]`}
           >
-            LeadWala
+            Lead<span className="text-[#53A6DC]">Wala</span>
           </span>
         </Link>
 
