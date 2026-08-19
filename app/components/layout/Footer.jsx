@@ -36,6 +36,9 @@ export default function Footer() {
     openWhatsApp(message);
 
     setMobile("");
+      setTimeout(() => {
+    setStatus("");
+  }, 5000);
   };
 
   return (

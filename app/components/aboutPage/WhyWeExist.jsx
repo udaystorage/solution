@@ -80,6 +80,7 @@ export default function WhyWeExist() {
                 shadow-[0_8px_32px_rgba(16,185,129,0.10)]
                 sm:rounded-3xl sm:p-7
                 lg:p-8
+                [@media(min-width:1024px)_and_(max-width:1309px)]:p-6
               "
             >
               <span className="text-[11px] font-semibold uppercase tracking-widest text-stone-500 sm:text-xs">
@@ -110,13 +111,14 @@ export default function WhyWeExist() {
                 sm:rounded-3xl sm:p-7
                 md:scale-[1.02]
                 lg:scale-105 lg:p-8
+                
               "
             >
               <span className="text-[11px] font-semibold uppercase tracking-widest text-stone-300 sm:text-xs">
                 Our approach
               </span>
 
-              <div className="mt-6 space-y-4 sm:mt-8 sm:space-y-5">
+              <div className="mt-6 space-y-4 sm:mt-8 sm:space-y-5 [@media(min-width:1024px)_and_(max-width:1309px)]:mt-6 [@media(min-width:1024px)_and_(max-width:1309px)]:space-y-3">
                 {[
                   "Your requirement",
                   "Targeted research",
@@ -155,7 +157,7 @@ function FlowItem({ label, last, muted = false }) {
         </span>
 
         <span
-          className={`text-sm sm:text-base ${
+          className={`text-xs sm:text-sm md:text-base [@media(min-width:1024px)_and_(max-width:1309px)]:text-sm ${
             muted ? "text-stone-500" : "text-stone-100"
           }`}
         >

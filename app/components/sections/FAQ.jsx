@@ -17,12 +17,12 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
           aria-expanded={isOpen}
           aria-controls={panelId}
           type="button"
-          className="flex w-full items-center justify-between text-left focus:outline-none cursor-pointer hover:text-purple-600 transition-colors duration-200"
+          className="flex w-full items-center justify-between text-left focus:outline-none cursor-pointer hover:text-sky-600 transition-colors duration-200"
         >
           <span>{question}</span>
           <span 
             className={`ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-transform duration-300 ${
-              isOpen ? 'rotate-180 bg-purple-50 text-purple-600' : ''
+              isOpen ? 'rotate-180 bg-purple-50 text-sky-600' : ''
             }`}
             aria-hidden="true"
           >
