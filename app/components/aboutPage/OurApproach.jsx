@@ -254,7 +254,7 @@ export default function OurApproach() {
                         className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 ${
                           isCompleted
                             ? "bg-sky-600 text-white"
-                            : "border border-gray-200 bg-white text-gray-400 group-hover:border-gray-300 group-hover:text-gray-600"
+                            : "border border-gray-300 bg-white text-gray-500 group-hover:border-gray-400 group-hover:text-gray-600"
                         }`}
                       >
                         {isCompleted ? (
@@ -342,7 +342,7 @@ export default function OurApproach() {
                   onClick={() =>
                     setActiveStep((activeStep + 1) % processSteps.length)
                   }
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-sky-600 hover:text-sky-500 transition-colors"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-stone-600 hover:text-sky-600 transition-colors"
                 >
                   {activeStep === processSteps.length - 1
                     ? "Start again"
