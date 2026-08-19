@@ -19,14 +19,14 @@ export default function ProductHero({ product }) {
 
   return (
     <section className="border-b border-stone-200 bg-linear-to-b from-white via-stone-50/40 to-white">
-      <div className="mx-auto flex max-w-7xl flex-col gap-14 px-4 py-14 sm:px-6 lg:px-10 lg:py-20">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-14 px-4 py-16 md:py-20 sm:px-6 lg:px-10 ">
         {/* Breadcrumb */}
 
         <Link
           href="/leadstore"
           className="inline-flex w-fit items-center gap-2 text-sm text-stone-500 transition hover:text-black"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft className="size-2.5 sm:size-3" />
           Back to Lead Store
         </Link>
 
@@ -39,28 +39,28 @@ export default function ProductHero({ product }) {
               Premium Database
             </span>
 
-            <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.045em] text-stone-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-3 sm:mt-4 md:mt6 max-w-2xl text-3xl font-semibold tracking-[-0.045em] text-stone-900 sm:text-3xl lg:text-5xl">
               {title}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-600">
+            <p className="mt-3 sm:mt-4 md:mt-6 max-w-2xl text-base md:text-lg leading-8 text-stone-600">
               {description}
             </p>
 
             {/* Trust pills */}
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
+            <div className="mt-5 flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
                 <BadgeCheck size={16} className="text-cyan-600" />
                 Verified Records
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
                 <Clock3 size={16} className="text-cyan-600" />
                 Delivery in 2–3 Hours
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
                 <ShieldCheck size={16} className="text-cyan-600" />
                 Human Verified
               </div>
