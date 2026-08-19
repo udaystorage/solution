@@ -73,7 +73,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="mt-8 space-y-5"
+      className="mt-3 sm:mt-5 lg:mt-8 space-y-5"
     >
       {/* Mobile */}
       <div>
@@ -116,7 +116,7 @@ export default function ContactForm() {
               errors.mobile ? "mobile-error" : undefined
             }
             placeholder="Enter your 10-digit mobile number"
-            className="min-w-0 flex-1 bg-transparent px-4 py-3.5 text-sm text-slate-950 outline-none placeholder:text-slate-400"
+            className="min-w-0 flex-1 bg-transparent px-4 py-2 sm:py-3 md:py-3.5 text-sm text-slate-950 outline-none placeholder:text-slate-400"
           />
         </div>
 
@@ -160,7 +160,7 @@ export default function ContactForm() {
               : "requirement-hint"
           }
           placeholder="Describe the audience, industry, or data you need"
-          className={`w-full resize-none rounded-xl border bg-white px-4 py-3.5 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-400 ${
+          className={`w-full resize-none rounded-xl border bg-white px-4 py-2 sm:py-3 md:py-3.5 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-400 ${
             errors.requirement
               ? "border-red-400"
               : "border-slate-300 focus:border-slate-600"

@@ -166,7 +166,7 @@ export default function SolutionsSection() {
           </div>
 
           {/* Context Explainer + Inline Lead Capture */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center">
             <div className="lg:col-span-6">
               {activeTab === "leads" ? (
                 <p className="text-neutral-500 text-sm leading-relaxed">

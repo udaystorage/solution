@@ -41,9 +41,10 @@ export default function ContactHero() {
           {/* Supporting copy */}
           <p
             className="
-              mx-auto mt-6
+              mx-auto mt-4 sm:mt-6
               max-w-xl
-              text-base leading-7
+              text-md leading-5
+              md:leading-7
               text-slate-600
               sm:text-lg
             "
