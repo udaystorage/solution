@@ -69,7 +69,7 @@ export default function WhatsappButton({ request, accepted }) {
   }
 
   return (
-    <div className="w-full sm:w-auto">
+    <div className="w-full shrink-0 sm:w-[270px]">
       <button
         type="button"
         onClick={handleClick}

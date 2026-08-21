@@ -100,6 +100,7 @@ export default function FinalCTA() {
           {/* CTA Buttons */}
           <div
             className="
+            max-[640px]:items-center
             mx-auto mt-8
             flex w-full max-w-sm
             flex-col items-stretch
