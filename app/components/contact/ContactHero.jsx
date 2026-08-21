@@ -14,19 +14,15 @@ export default function ContactHero() {
           <h1
             id="contact-page-heading"
             className="
-              text-3xl font-semibold
-              leading-[1.04]
-              text-slate-950
-              sm:text-4xl
-              lg:text-5xl
+            
+            hero-heading
             "
           >
             Have an audience
             <br className="hidden sm:block" /> in mind?
-
             <span
               className="
-                mt-1 block
+               block
                 bg-linear-to-r
                 from-violet-600
                 to-cyan-500
@@ -43,17 +39,14 @@ export default function ContactHero() {
             className="
               mx-auto mt-4 sm:mt-6
               max-w-xl
-              text-md leading-5
-              md:leading-7
-              text-slate-600
-              sm:text-lg
+              text-base sm:text-lg
+              leading-6 sm:leading-7
+              text-slate-700
             "
           >
-            Share the target audience you&apos;re trying to reach.
-            We&apos;ll check what&apos;s available and help you find the
-            right data.
+            Share the target audience you&apos;re trying to reach. We&apos;ll
+            check what&apos;s available and help you find the right data.
           </p>
-
         </div>
       </div>
     </section>

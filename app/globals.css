@@ -34,7 +34,10 @@ body {
 } */
 
 @layer components {
-    .hero-subheading {
+  .hero-heading{
+   @apply text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-slate-950
+  }
+  .hero-subheading {
     @apply mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-600 sm:text-lg;
   }
   .section-subheading {

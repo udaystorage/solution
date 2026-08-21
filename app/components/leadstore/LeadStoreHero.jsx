@@ -8,7 +8,7 @@ import demoprofile4 from "../../images/store/demoprofile4.jpg";
 
 export default function LeadStoreHero() {
   return (
-    <section className="relative isolate overflow-hidden w-screen h-150 md:h-115 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
+    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-16 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
       {/* Base Gradient */}
       <div className="absolute inset-0 -z-30 bg-linear-to-br from-sky-100 via-cyan-50 to-violet-100" />
 
@@ -41,13 +41,13 @@ export default function LeadStoreHero() {
         }}
       />
       <div className="w-full md:w-1/2 h-full flex flex-col justify-center  items-center md:items-start gap-4 text-center md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-          Get Custom Leads Tailored to Your Exact Needs.
+        <h1 className=" hero-heading">
+          Get custom leads tailored to your exact needs.
         </h1>
-        <div className="text-sm sm:text-base">
+        <p className="text-base sm:text-lg leading-6 sm:leading-7 text-slate-700">
           Get custom, verified databases delivered directly to you within 2–3
-          hours
-        </div>
+          hours.
+        </p>
         <div className="relative flex flex-row justify-center sm:justify-start w-full sm:w-60 h-20 items-center flex-wrap gap-y-2">
           <Image
             src={demoprofile1}
