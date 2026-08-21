@@ -8,7 +8,7 @@ import demoprofile4 from "../../images/store/demoprofile4.jpg";
 
 export default function LeadStoreHero() {
   return (
-    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
+    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150  flex flex-col md:flex-row justify-center items-center pt-24 md:pt-15 lg:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
       {/* Base Gradient */}
       <div className="absolute inset-0 -z-30 bg-linear-to-br from-sky-100 via-cyan-50 to-violet-100" />
 
