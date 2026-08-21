@@ -132,16 +132,22 @@ export default async function BlogListingPage() {
             aria-hidden="true"
           />
 
-          <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-3 sm:gap-4">
+          <div className="relative mx-auto flex flex-col items-center ">
             {/* Primary Target Keyword Heading */}
-            <h1 className="max-w-xl text-center hero-heading">
+            <h1 className="max-w-2xl text-center hero-heading">
               Insights that brings you{" "}
-              <span className="font-bold text-black">Real growth</span>
+              <span        className="
+                block
+                bg-linear-to-r
+                from-violet-600
+                to-cyan-500
+                bg-clip-text
+                text-transparent
+              ">real growth</span>
             </h1>
 
             <p
-              className="max-w-2xl text-center text-base sm:text-lg
-              leading-6 sm:leading-7 text-slate-700"
+              className=" text-center hero-subheading"
             >
               Get the latest insights, trends, and best practices in the world
               of digital marketing. Our blog is your go-to resource for staying

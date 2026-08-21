@@ -8,7 +8,7 @@ import demoprofile4 from "../../images/store/demoprofile4.jpg";
 
 export default function LeadStoreHero() {
   return (
-    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-16 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
+    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150 flex flex-col md:flex-row justify-center items-center pt-24 md:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
       {/* Base Gradient */}
       <div className="absolute inset-0 -z-30 bg-linear-to-br from-sky-100 via-cyan-50 to-violet-100" />
 
@@ -40,15 +40,16 @@ export default function LeadStoreHero() {
             "radial-gradient(circle at center, transparent 35%, rgba(255,255,255,0.45) 100%)",
         }}
       />
-      <div className="w-full md:w-1/2 h-full flex flex-col justify-center  items-center md:items-start gap-4 text-center md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
-        <h1 className=" hero-heading">
-          Get custom leads tailored to your exact needs.
+      <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center text-center md:items-start md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
+        <h1 className="max-w-xl hero-heading">
+          Get custom leads tailored to your 
+          <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent"> exact needs.</span>
         </h1>
-        <p className="text-base sm:text-lg leading-6 sm:leading-7 text-slate-700">
+        <p className="hero-subheading">
           Get custom, verified databases delivered directly to you within 2–3
           hours.
         </p>
-        <div className="relative flex flex-row justify-center sm:justify-start w-full sm:w-60 h-20 items-center flex-wrap gap-y-2">
+        <div className="relative flex flex-row justify-center sm:justify-start w-full sm:w-60 h-20 items-center flex-wrap gap-y-2 mt-6">
           <Image
             src={demoprofile1}
             alt=""

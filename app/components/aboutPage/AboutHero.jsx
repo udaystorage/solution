@@ -24,7 +24,7 @@ export default function AboutHero() {
           About Leadwala
         </span> */}
 
-        <h1 className="max-w-4xl hero-heading">
+        <h1 className="max-w-2xl hero-heading">
           Data should create
           <br />
           <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
@@ -33,7 +33,7 @@ export default function AboutHero() {
           not more work.
         </h1>
 
-        <p className="mt-8 max-w-2xl text-base sm:text-lg leading-6 sm:leading-7 text-slate-700 ">
+        <p className="hero-subheading ">
           We help businesses discover and reach the clients they desire with
           high value databases backed by our lead expert&apos;s consultation.
         </p>

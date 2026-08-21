@@ -8,13 +8,11 @@ export default function ContactHero() {
         lg:px-10 lg:pb-20 lg:pt-28
       "
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-6xl flex flex-col justify-center text-center">
           {/* Primary page heading */}
           <h1
             id="contact-page-heading"
-            className="
-            
+            className="max-w-3xl mx-auto
             hero-heading
             "
           >
@@ -37,17 +35,12 @@ export default function ContactHero() {
           {/* Supporting copy */}
           <p
             className="
-              mx-auto mt-4 sm:mt-6
-              max-w-xl
-              text-base sm:text-lg
-              leading-6 sm:leading-7
-              text-slate-700
+              mx-auto hero-subheading
             "
           >
             Share the target audience you&apos;re trying to reach. We&apos;ll
             check what&apos;s available and help you find the right data.
           </p>
-        </div>
       </div>
     </section>
   );
