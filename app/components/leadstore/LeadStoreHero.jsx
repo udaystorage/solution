@@ -49,7 +49,7 @@ export default function LeadStoreHero() {
           Get custom, verified databases delivered directly to you within 2–3
           hours.
         </p>
-        <div className="relative flex flex-row justify-center sm:justify-start w-full sm:w-60 h-20 items-center flex-wrap gap-y-2 mt-6">
+        <div className="relative flex flex-row justify-center sm:justify-start w-full sm:w-60 h-20 items-center flex-wrap gap-y-2 mt-6 md:mt-8">
           <Image
             src={demoprofile1}
             alt=""

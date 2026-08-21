@@ -119,9 +119,9 @@ export default async function BlogListingPage() {
         ]}
       />
 
-      <main className="mt-16 w-full text-neutral-800 sm:mt-18 lg:mt-20">
+      <main className=" w-full text-neutral-800 ">
         {/* SEMANTIC HEADER BANNER ZONE */}
-        <header className="relative w-full px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:px-20 lg:py-12">
+        <header className="relative w-full px-5 mt-24 md:mt-32">
           <div
             className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-linear-to-br from-sky-300/20 to-cyan-400/10 blur-3xl sm:-top-28 sm:left-1/3 sm:h-72 sm:w-72 sm:blur-[100px] lg:-top-40 lg:left-1/4 lg:h-112 lg:w-md lg:blur-[160px]"
             aria-hidden="true"
@@ -138,6 +138,7 @@ export default async function BlogListingPage() {
               Insights that brings you{" "}
               <span        className="
                 block
+                pb-1
                 bg-linear-to-r
                 from-violet-600
                 to-cyan-500
@@ -147,7 +148,7 @@ export default async function BlogListingPage() {
             </h1>
 
             <p
-              className=" text-center hero-subheading"
+              className="mx-auto text-center hero-subheading"
             >
               Get the latest insights, trends, and best practices in the world
               of digital marketing. Our blog is your go-to resource for staying

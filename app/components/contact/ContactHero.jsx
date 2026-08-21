@@ -3,12 +3,10 @@ export default function ContactHero() {
     <section
       aria-labelledby="contact-page-heading"
       className="
-        px-4 pb-14 pt-20
-        sm:px-6 sm:pb-16 sm:pt-24
-        lg:px-10 lg:pb-20 lg:pt-28
+       px-5 mt-24 md:mt-32 pb-10 md:pb-14
       "
     >
-      <div className="mx-auto max-w-6xl flex flex-col justify-center text-center">
+      <div className="mx-auto max-w-6xl flex flex-col justify-center text-center overflow-visible">
           {/* Primary page heading */}
           <h1
             id="contact-page-heading"
