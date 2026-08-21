@@ -376,7 +376,7 @@ export default function PrivacyPolicyPage() {
                 <strong>LeadWala</strong><br />
                 Email: support@leadwala.co.in<br />
                 Phone: {contact}<br />
-                Website: https://www.leadwala.co.in<br />
+                Website:  {baseUrl}<br />
               </address>
 
               <p>

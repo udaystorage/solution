@@ -261,7 +261,7 @@ export default function AcceptableUsePolicyPage() {
                 <br />
                 Phone: {contact}
                 <br />
-                Website: https://www.leadwala.co.in
+                Website: {baseUrl}
                 <br />
               </address>
             </div>
