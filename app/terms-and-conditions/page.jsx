@@ -398,7 +398,7 @@ export default function TermsConditionsPage() {
                 <br />
                 Phone: {contact}
                 <br />
-                Website: https://www.leadwala.co.in
+                Website: {baseUrl}
                 <br />
               </address>
             </div>

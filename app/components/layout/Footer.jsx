@@ -146,7 +146,7 @@ export default function Footer() {
 
           <div className="flex flex-col justify-between">
             <div>
-              <h3 className="relative mb-5 inline-block overflow-hidden text-[15 px] font-semibold tracking-tight text-neutral-900 before:absolute before:top-0 before:left-0 before:h-full before:w-[45%]  before:skew-x-[-20deg] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.15)_35%,rgba(255,255,255,0.98)_50%,rgba(255,255,255,0.15)_65%,transparent_100%)] before:animate-shimmer-small">
+              <h3 className="relative mb-2 sm:mb-3 md:mb-5 inline-block overflow-hidden text-[15 px] font-semibold tracking-tight text-neutral-900 before:absolute before:top-0 before:left-0 before:h-full before:w-[45%]  before:skew-x-[-20deg] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.15)_35%,rgba(255,255,255,0.98)_50%,rgba(255,255,255,0.15)_65%,transparent_100%)] before:animate-shimmer-small">
                 Need Custom Data?
               </h3>
               <p className="text-[13px] text-neutral-600">

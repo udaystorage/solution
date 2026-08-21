@@ -13,7 +13,7 @@ export default function AboutHero() {
           preload
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center max-[640px]:opacity-90 opacity:100 "
         />
       </div>
       {/* subtle background glow */}
