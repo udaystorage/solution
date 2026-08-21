@@ -33,7 +33,7 @@ export default function AboutHero() {
           not more work.
         </h1>
 
-        <p className="mt-8 max-w-2xl text-base leading-7 text-stone-600 sm:text-lg">
+        <p className="mt-8 max-w-2xl text-base sm:text-lg leading-7 text-stone-600 ">
           We help businesses discover and reach the clients they desire with
           high value databases backed by our lead expert&apos;s consultation.
         </p>

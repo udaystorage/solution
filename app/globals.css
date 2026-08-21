@@ -33,6 +33,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+@layer components {
+    .hero-subheading {
+    @apply mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-600 sm:text-lg;
+  }
+  .section-subheading {
+    @apply mt-5 max-w-2xl text-[15px] font-medium leading-relaxed text-slate-600 sm:text-base;
+  }
+}
+
 @theme {
   --animate-shimmer-small: shimmerSmall 5.5s ease-in-out infinite;
 
