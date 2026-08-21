@@ -1,6 +1,5 @@
 import Script from "next/script";
 
-
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
@@ -256,7 +255,7 @@ export default function AcceptableUsePolicyPage() {
               </p>
 
                 <address className="not-italic leading-8">
-                <strong>LeadWala</strong>
+                <strong >LeadWala</strong>
                 <br />
                 Email: support@leadwala.co.in
                 <br />

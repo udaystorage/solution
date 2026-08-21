@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="flex flex-col items-start text-left">
               <div className="relative flex justify-center items-center gap-1 ">
                 <Image
-                  src="/logo/symbol-1.svg"
+                  src="/logo/logo.webp"
                   alt="LeadWala Logo"
                   width={35}
                   height={35}
@@ -68,8 +68,7 @@ export default function Footer() {
                 <span
                   className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
                 >
-                  {" "}
-                  LeadWala{" "}
+                  Lead<span className="text-[#53A6DC]">Wala</span>
                 </span>
               </div>
 
@@ -252,7 +251,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-neutral-200 pt-8 text-center lg:flex-row lg:text-left">
           <p className="text-sm leading-7 text-neutral-600">
-            © 2026 Leadwala
+            © 2026 LeadWala
             <br />
             All rights reserved.
           </p>

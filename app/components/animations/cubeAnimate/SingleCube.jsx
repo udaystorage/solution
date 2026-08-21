@@ -47,10 +47,10 @@ export default function SingleCube({
           transform: scale(0.55);
         }
         @media (min-width: 480px) {
-          .cube-responsive-scale { transform: scale(0.7); }
+          .cube-responsive-scale { transform: scale(0.58); }
         }
         @media (min-width: 640px) {
-          .cube-responsive-scale { transform: scale(0.85); }
+          .cube-responsive-scale { transform: scale(0.75); }
         }
         @media (min-width: 1024px) {
           .cube-responsive-scale { transform: scale(1); }

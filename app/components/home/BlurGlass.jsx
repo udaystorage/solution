@@ -78,7 +78,7 @@ export default function BlurGlass() {
       <p
         className="
           max-w-xl
-          text-sm sm:text-base
+          text-base sm:text-lg
           leading-6 sm:leading-7
           text-slate-700
         "

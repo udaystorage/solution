@@ -10,7 +10,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
 
   return (
     <div className="border-b border-gray-100 py-5 transition-all duration-300 ">
-      <h3 className="m-0 p-0 text-md font-semibold text-gray-900 md:text-md ">
+      <h3 className="m-0 p-0 text-[15px] md:text-base font-semibold text-gray-900 ">
         <button
           id={headingId}
           onClick={onToggle}
@@ -48,7 +48,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="text-sm text-gray-600 md:text-sm leading-relaxed max-w-3xl">
+          <p className="text-sm text-gray-600 md:text-[15px] leading-relaxed max-w-3xl">
             {answer}
           </p>
         </div>
@@ -123,7 +123,7 @@ export const FAQSection = ({ page }) => {
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
             {formatHeadingText(currentPage)}
           </h2>
-          <p className="mt-4 text-base md:text-lg text-gray-500">
+          <p className="mt-4 text-sm   md:text-md lg:text-lg text-gray-500">
             Everything you need to know about our data services, platform extraction, and validation processes.
           </p>
         </div>

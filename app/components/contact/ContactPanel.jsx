@@ -41,12 +41,12 @@ export default function ContactPanel() {
 
               <h2
                 id="contact-requirement-heading"
-                className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl"
+                className="mt-2 md:mt-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl md:text-3xl"
               >
                 Tell us what you need.
               </h2>
 
-              <p className="mt-2 text-sm leading-6 text-slate-500">
+              <p className="mt-1 sm:mt-2 text-sm leading-6 text-slate-500">
                 Two details. Less than a minute.
               </p>
 

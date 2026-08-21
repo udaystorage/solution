@@ -33,7 +33,7 @@ export default function WhyWeExist() {
             <p
               className="
                 mt-5 max-w-md
-                text-[14px] leading-7 text-stone-600
+                text-[15px] leading-7 text-stone-600
                 sm:mt-6 sm:text-base
               "
             >
