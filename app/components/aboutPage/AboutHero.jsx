@@ -7,7 +7,7 @@ export default function AboutHero() {
       {/* Background Image */}
       <div className="absolute inset-0 ">
         <Image
-          src="/about.webp"
+          src="/about-bg-4.webp"
           alt=""
           fill
           preload
