@@ -34,7 +34,7 @@ export default function ContactPanel() {
           {" "}
           {/* LEFT — REQUIREMENT FORM */}
           <div className="px-6 py-8 bg-white sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-            <div className="max-w-xl">
+            <div className="max-w-4xl">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
                 Your requirement
               </p>

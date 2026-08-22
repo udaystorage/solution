@@ -371,7 +371,7 @@ export default function Navbar() {
       focus:ring-offset-2
     "
           >
-            <span className="hidden min-[340px]:max-[1023px]:inline ">
+            <span className="hidden min-[370px]:max-[1023px]:inline ">
               Custom Data
             </span>
             <ArrowRight
