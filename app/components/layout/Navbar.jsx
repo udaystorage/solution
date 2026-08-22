@@ -231,7 +231,7 @@ export default function Navbar() {
       group-hover:rotate-15
     "
             />
-            <span className="min-[1110px]:inline hidden">Call Us</span>
+            <span className="min-[1350px]:inline hidden">Call Us</span>
           </Link>
           <Link
             href="/leadstore/custom-data"
@@ -270,7 +270,7 @@ export default function Navbar() {
   "
           >
             <span>
-              <span className="min-[1140px]:inline hidden">Custom </span>
+              <span className="min-[1270px]:inline hidden">Custom </span>
               <span className="min-[1090px]:inline hidden">Data </span>
             </span>
 
