@@ -97,7 +97,19 @@ export default function Navbar() {
             DESKTOP NAVIGATION
         ====================================================== */}
 
-        <div className="group relative hidden overflow-hidden rounded-full p-px lg:block">
+        <div
+          className="
+    group
+    absolute
+    left-1/2
+    -translate-x-1/2
+    hidden
+    overflow-hidden
+    rounded-full
+    p-px
+    lg:block
+  "
+        >
           {/* Animated Gradient Border */}
           <div
             aria-hidden="true"
