@@ -14,7 +14,7 @@ export default function FinalCTA() {
         max-w-5xl overflow-hidden
         rounded-3xl
         bg-linear-to-br from-[#111219] to-[#4b5667]
-        px-5 py-14
+        px-8 py-12
         text-center text-white
 
         shadow-[-4px_-4px_12px_rgba(255,255,255,0.8),4px_4px_12px_rgba(0,0,0,0.06)]
