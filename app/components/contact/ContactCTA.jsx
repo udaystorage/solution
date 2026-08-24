@@ -63,7 +63,7 @@ export default function ContactCTA() {
                 <h2
                   id="contact-cta-heading"
                   className="
-                    text-xl font-semibold
+                    text-lg font-semibold
                     tracking-tight
                     text-white
                     sm:text-2xl
@@ -102,7 +102,7 @@ export default function ContactCTA() {
                     group
                     inline-flex
                     items-center gap-4
-                    text-xl font-semibold
+                    text-lg font-semibold
                     tracking-[-0.03em]
                     text-white
                     sm:text-2xl
