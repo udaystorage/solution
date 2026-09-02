@@ -89,7 +89,7 @@ export default function Navbar() {
           <span
             className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold tracking-[0.01em]`}
           >
-            Lead<span className="text-[#53A6DC]">Wala</span>
+            Data<span className="text-[#53A6DC]">Treasure</span>
           </span>
         </Link>
 

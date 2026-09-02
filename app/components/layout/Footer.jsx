@@ -68,7 +68,7 @@ export default function Footer() {
                 <span
                   className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
                 >
-                  Lead<span className="text-[#53A6DC]">Wala</span>
+                  Data<span className="text-[#53A6DC]">Treasure</span>
                 </span>
               </div>
 
