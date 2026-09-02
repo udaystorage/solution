@@ -52,7 +52,7 @@ export default function Footer() {
               <div className="relative flex justify-center items-center gap-1 ">
                 <Image
                   src="/logo/logo.webp"
-                  alt="LeadWala Logo"
+                  alt="DataTreasure Logo"
                   width={35}
                   height={35}
                   className="
@@ -251,7 +251,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-neutral-200 pt-8 text-center lg:flex-row lg:text-left">
           <p className="text-sm leading-7 text-neutral-600">
-            © 2026 LeadWala
+            © 2026 DataTreasure
             <br />
             All rights reserved.
           </p>

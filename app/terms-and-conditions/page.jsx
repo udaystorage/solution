@@ -3,16 +3,16 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 export const metadata = {
-  title: "Terms & Conditions | LeadWala",
+  title: "Terms & Conditions | DataTreasure",
   description:
-    "Read the Terms & Conditions governing the use of LeadWala's website and business database services.",
+    "Read the Terms & Conditions governing the use of DataTreasure's website and business database services.",
   alternates: {
     canonical: `${baseUrl}/terms-and-conditions`,
   },
   openGraph: {
-    title: "Terms & Conditions | LeadWala",
+    title: "Terms & Conditions | DataTreasure",
     description:
-      "Terms governing the use of LeadWala's website and business database services.",
+      "Terms governing the use of DataTreasure's website and business database services.",
     url: `${baseUrl}/terms-and-conditions`,
     type: "website",
   },
@@ -61,7 +61,7 @@ export default function TermsConditionsPage() {
 
             <p className="mt-8 text-base leading-8 text-stone-600">
               These Terms &amp; Conditions govern your access to and use of the
-              LeadWala website and the business database services we provide.
+              DataTreasure website and the business database services we provide.
               Please read them carefully before using our website or requesting
               our services.
             </p>
@@ -74,7 +74,7 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                By accessing or using the LeadWala website, you agree to be
+                By accessing or using the DataTreasure website, you agree to be
                 bound by these Terms &amp; Conditions. If you do not agree with
                 any part of these Terms, you should discontinue using the
                 website.
@@ -94,7 +94,7 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala provides curated business databases and custom business
+                DataTreasure provides curated business databases and custom business
                 data research services. Information displayed on this website is
                 intended to help visitors understand the categories of databases
                 and services available.
@@ -152,7 +152,7 @@ export default function TermsConditionsPage() {
               </p>
 
               <p>
-                Any quotation shared by LeadWala remains valid only for the
+                Any quotation shared by DataTreasure remains valid only for the
                 period specified in the quotation or until withdrawn or revised
                 by us.
               </p>
@@ -171,7 +171,7 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala manually researches, verifies and prepares datasets
+                DataTreasure manually researches, verifies and prepares datasets
                 based on customer requirements. Delivery timelines may vary
                 depending on project complexity and data availability.
               </p>
@@ -197,7 +197,7 @@ export default function TermsConditionsPage() {
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers are responsible for providing accurate requirements
-                and ensuring that any information shared with LeadWala is
+                and ensuring that any information shared with DataTreasure is
                 complete and truthful.
               </p>
 
@@ -219,7 +219,7 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                Customers must not use LeadWala&apos;s services or supplied
+                Customers must not use DataTreasure&apos;s services or supplied
                 datasets for any unlawful, deceptive, or unethical purpose.
               </p>
 
@@ -252,7 +252,7 @@ export default function TermsConditionsPage() {
               <p>
                 Unless otherwise stated, all website content, branding, logos,
                 graphics, layouts, text, and other intellectual property remain
-                the property of LeadWala or its licensors.
+                the property of DataTreasure or its licensors.
               </p>
 
               <p>
@@ -271,7 +271,7 @@ export default function TermsConditionsPage() {
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Our website may link to third-party platforms such as WhatsApp
-                or other external services. LeadWala is not responsible for the
+                or other external services. DataTreasure is not responsible for the
                 content, availability, privacy practices or policies of those
                 third-party services.
               </p>
@@ -284,14 +284,14 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala makes reasonable efforts to provide accurate and
+                DataTreasure makes reasonable efforts to provide accurate and
                 relevant business information. However, business data naturally
                 changes over time, and we cannot guarantee that every record
                 will remain complete, current or error-free.
               </p>
 
               <p>
-                To the maximum extent permitted by applicable law, LeadWala
+                To the maximum extent permitted by applicable law, DataTreasure
                 shall not be liable for indirect, incidental, consequential,
                 special or business losses arising from the use of our website,
                 services or supplied datasets.
@@ -312,7 +312,7 @@ export default function TermsConditionsPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                You agree to indemnify and hold harmless LeadWala, its owners,
+                You agree to indemnify and hold harmless DataTreasure, its owners,
                 employees and representatives from claims, liabilities, damages,
                 losses and reasonable expenses arising out of your misuse of the
                 website, supplied data, or violation of these Terms &amp;
@@ -356,7 +356,7 @@ export default function TermsConditionsPage() {
                 Subject to applicable law, disputes arising from these Terms or
                 the use of our website shall be subject to the exclusive
                 jurisdiction of the competent courts having jurisdiction over
-                LeadWala&apos;s principal place of business.
+                DataTreasure&apos;s principal place of business.
               </p>
             </div>
           </section>
@@ -392,9 +392,9 @@ export default function TermsConditionsPage() {
               </p>
 
               <address className="not-italic leading-8">
-                <strong>LeadWala</strong>
+                <strong>DataTreasure</strong>
                 <br />
-                Email: support@leadwala.co.in
+                Email: support@DataTreasure.co.in
                 <br />
                 Phone: {contact}
                 <br />

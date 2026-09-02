@@ -32,7 +32,7 @@ export default function Cube() {
     floatHeight="20"
     floatDuration="2.5"
     shadow=""
-    name="Real Estate"
+    name="Forex Traders Data"
     colour="bg-cyan-500/50 blur-10"
     position="
       -translate-x-20
@@ -51,7 +51,7 @@ export default function Cube() {
     floatHeight="20"
     floatDuration="2.2"
     shadow=""
-    name="Student's Data"
+    name="Crypto Traders Data"
     colour="bg-violet-500/50 blur-10"
     position="
       translate-x-20
