@@ -113,7 +113,7 @@ export default function FinalCTA() {
           >
             {/* Get Custom Data */}
             <Link
-              href="/leadstore/custom-data"
+              href="/datastore/custom-data"
               className="
               group/cta
               inline-flex w-full

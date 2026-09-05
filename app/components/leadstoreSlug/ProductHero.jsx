@@ -23,7 +23,7 @@ export default function ProductHero({ product }) {
         {/* Breadcrumb */}
 
         <Link
-          href="/leadstore"
+          href="/datastore"
           className="inline-flex w-fit items-center gap-2 text-sm text-stone-500 transition hover:text-black"
         >
           <ArrowLeft className="size-2.5 sm:size-3" />

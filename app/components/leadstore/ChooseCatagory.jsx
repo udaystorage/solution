@@ -155,7 +155,7 @@ export default function ChooseCatagory() {
 
         <div className="w-full h-min px-2 sm:px-8 md:px-8 lg:px-8 py-3 flex flex-wrap flex-row gap-2 sm:gap-6 md:gap-8 lg:gap-10 items-baseline justify-center">
           <Link
-            href={`/leadstore/custom-data`}
+            href={`/datastore/custom-data`}
             className="hover:shadow-lg shadow-gray-400 cursor-pointer transition duration-200 w-28 sm:w-36 md:w-40 lg:w-45 h-min rounded-2xl px-3 sm:px-4 lg:px-5 py-3 flex flex-col items-center justify-start gap-2 sm:gap-3 lg:gap-3.5"
           >
             <div className="bg-violet-500 flex items-center justify-center rounded-full w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-30 lg:h-30">
@@ -171,7 +171,7 @@ export default function ChooseCatagory() {
             return (
               <div key={cat.id}>
                 <Link
-                  href={`/leadstore/${cat.slug}`}
+                  href={`/datastore/${cat.slug}`}
                   className="hover:shadow-lg shadow-gray-400 cursor-pointer transition duration-200 w-28 sm:w-36 md:w-40 lg:w-45 h-min rounded-2xl px-3 sm:px-4 lg:px-5 py-3 flex flex-col items-center justify-start gap-2 sm:gap-3 lg:gap-3.5"
                 >
                   <div className="bg-cyan-400 flex items-center justify-center rounded-full w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-30 lg:h-30">

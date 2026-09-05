@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart, Phone, ArrowRight } from "lucide-react";
-import logiNav from "@/public/logoNav.png";
+import { Phone, ArrowRight } from "lucide-react";
+// import logiNav from "@/public/logoNav.png";
 import Image from "next/image";
 import { Geist } from "next/font/google";
 const geist = Geist({
@@ -13,7 +13,7 @@ const geist = Geist({
 
 const navigationItems = [
   { label: "Home", href: "/" },
-  { label: "Lead Store", href: "/leadstore" },
+  { label: "Data Store", href: "/datastore" },
   { label: "About Us", href: "/aboutus" },
   { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
@@ -234,7 +234,7 @@ export default function Navbar() {
             <span className="min-[1350px]:inline hidden">Call Us</span>
           </Link>
           <Link
-            href="/leadstore/custom-data"
+            href="/datastore/custom-data"
             aria-label="Get custom data"
             className="
     group
@@ -327,7 +327,7 @@ export default function Navbar() {
             />
           </Link>
           <Link
-            href="/leadstore/custom-data"
+            href="/datastore/custom-data"
             aria-label="Get Custom Data"
             className="
       group

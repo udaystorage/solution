@@ -100,7 +100,7 @@ export default function ReachCapabilities() {
             <div className="mt-8 border-t border-stone-200 sm:mt-10">
               {capabilities.map((item, index) => (
                 <Link
-                  href={`/leadstore/${item.slug}`}
+                  href={`/datastore/${item.slug}`}
                   key={item.id}
                   className="
                 group relative z-0
