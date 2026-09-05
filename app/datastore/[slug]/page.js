@@ -16,9 +16,9 @@ export async function generateMetadata({ params }) {
 
   if (!product) {
     return {
-      title: "Lead Store | LeadWala",
+      title: "Data Store | DataTreasure",
       description:
-        "Explore verified B2B and B2C data solutions from LeadWala.",
+        "Explore verified B2B and B2C data solutions from DataTreasure.",
       robots: {
         index: false,
         follow: false,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
 
 
   const canonicalUrl =
-    `${baseUrl}/leadstore/${product.slug}`;
+    `${baseUrl}/datastore/${product.slug}`;
 
   const imageUrl = product.image?.startsWith("http")
     ? product.image
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
 
 
   return {
-    title: `${product.title} | LeadWala`,
+    title: `${product.title} | DataTreasure`,
 
     description,
 
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }) {
       title: product.title,
       description,
       url: canonicalUrl,
-      siteName: "LeadWala",
+      siteName: "DataTreasure",
       type: "website",
       locale: "en_IN",
 
@@ -110,13 +110,13 @@ export default async function LeadStoreProductPage({ params }) {
     "@context": "https://schema.org",
     "@type": "Service",
 
-    "@id": `${baseUrl}/leadstore/${product.slug}#service`,
+    "@id": `${baseUrl}/datastore/${product.slug}#service`,
 
     name: product.title,
 
     description: product.description,
 
-    url: `${baseUrl}/leadstore/${product.slug}`,
+    url: `${baseUrl}/datastore/${product.slug}`,
 
     image: `${baseUrl}${product.image}`,
 
@@ -153,11 +153,11 @@ export default async function LeadStoreProductPage({ params }) {
           },
           {
             name: "Lead Store",
-            url: `${baseUrl}/leadstore`,
+            url: `${baseUrl}/datastore`,
           },
           {
             name: product.title,
-            url: `${baseUrl}/leadstore/${product.slug}`,
+            url: `${baseUrl}/datastore/${product.slug}`,
           },
         ]}
       />

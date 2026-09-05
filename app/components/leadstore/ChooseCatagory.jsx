@@ -52,14 +52,14 @@ const CATEGORIES = [
   },
   {
     id: 5,
-    title: "Intraday Market Traders Data",
+    title: "Intraday Traders Data",
     slug: "intraday-traders-data",
     icon: ChartNoAxesCombined,
   },
   {
     id: 6,
-    title: "Future & Options Traders Data",
-    slug: "future-options-traders-data",
+    title: "Future & Options Trader's Data",
+    slug: "future-and-options-traders-data",
     icon: ChartSpline,
   },
   {

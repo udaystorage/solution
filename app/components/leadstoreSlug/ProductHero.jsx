@@ -27,7 +27,7 @@ export default function ProductHero({ product }) {
           className="inline-flex w-fit items-center gap-2 text-sm text-stone-500 transition hover:text-black"
         >
           <ArrowLeft className="size-2.5 sm:size-3" />
-          Back to Lead Store
+          Back to Data Store
         </Link>
 
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr]">
