@@ -3,6 +3,12 @@ import { useState, useRef } from "react";
 import {
   BarChart3,
   BriefcaseBusiness,
+  Banknote,
+  CandlestickChart,
+  ChartNoAxesCombined,
+  ChartSpline,
+  Coins,
+  Bitcoin,
   CarFront,
   CreditCard,
   Gem,
@@ -181,6 +187,35 @@ const CARD_TEXTS = [
     category: "FINANCE",
     title: "Stock Market Traders",
     icon: BarChart3,
+  },
+   {
+    category: "FINANCE",
+    title: "Forex Trader's Data",
+    icon: Banknote,
+  },
+   {
+    category: "FINANCE",
+    title: "Equity Trader's Data",
+    icon: CandlestickChart,
+  },
+   {
+    category: "FINANCE",
+    title: "Intraday Trader's Data",
+    icon: ChartNoAxesCombined,
+  }, {
+    category: "FINANCE",
+    title: "Future & Options Trader's Data",
+    icon: ChartSpline,
+  },
+   {
+    category: "FINANCE",
+    title: "Commodity Trader's Data",
+    icon: Coins,
+  },
+   {
+    category: "FINANCE",
+    title: "Crypto Trader's Data",
+    icon: Bitcoin,
   },
   {
     category: "FINANCE",

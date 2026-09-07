@@ -11,6 +11,8 @@ const geist = Geist({
 });
 
 import { openWhatsApp } from "@/lib/whatsapp";
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+
 
 const footerLinks = [
   { label: "About Us", href: "/aboutus" },
@@ -89,7 +91,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Phone className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span> +91 81000 25936</span>
+                  <span> {PHONE_DISPLAY}</span>
                 </div>
               </div>
             </div>
