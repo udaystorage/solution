@@ -48,7 +48,7 @@ const leadStoreData = [
     id: 4,
     slug: "forex-traders-data",
     title: "Forex Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/foreign-currencies.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
@@ -63,7 +63,7 @@ const leadStoreData = [
     id: 5,
     slug: "equity-traders-data",
     title: "Equity Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/portfolio-on-screen.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
@@ -78,7 +78,7 @@ const leadStoreData = [
     id: 6,
     slug: "intraday-traders-data",
     title: "Intraday Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/checking-candle-chart.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
@@ -93,7 +93,7 @@ const leadStoreData = [
     id: 7,
     slug: "future-and-options-traders-data",
     title: "Future & Options Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/chart-on-laptop.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
@@ -108,7 +108,7 @@ const leadStoreData = [
     id: 8,
     slug: "commodity-traders-data",
     title: "Commodity Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/gold-bars.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
@@ -123,7 +123,7 @@ const leadStoreData = [
     id: 9,
     slug: "crypto-traders-data",
     title: "Crypto Trader's Data",
-    image: "/leadCards/stock-trader.webp",
+    image: "/leadCards/trading-crypto.webp",
     imageAlt: "A woman is viewing candle chart on mobile",
 
     description:
