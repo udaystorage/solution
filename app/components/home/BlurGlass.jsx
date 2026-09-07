@@ -83,7 +83,7 @@ export default function BlurGlass() {
           text-slate-700
         "
       >
-       Reach the right people and turn each call into a business opportunity with Leadwala&apos;s premium verified contact lists.
+       Reach the right people and turn each call into a business opportunity with Datatreasure&apos;s premium verified contact lists.
       </p>
 
       <div

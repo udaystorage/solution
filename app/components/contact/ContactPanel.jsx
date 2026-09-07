@@ -203,7 +203,7 @@ export default function ContactPanel() {
                 {/* Phone */}
                 <a
                   href={PHONE_LINK}
-                  aria-label={`Call Leadwala at ${PHONE_DISPLAY}`}
+                  aria-label={`Call Datatreasure at ${PHONE_DISPLAY}`}
                   className="
           group
           mt-7

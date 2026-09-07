@@ -12,6 +12,7 @@ const geist = Geist({
 
 import { openWhatsApp } from "@/lib/whatsapp";
 const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+const email = "datatreaure@gmail.com";
 
 
 const footerLinks = [
@@ -218,7 +219,7 @@ export default function Footer() {
 
               <span
                 onClick={() =>
-                  openWhatsApp("Leadwala? I have some database query")
+                  openWhatsApp("DataTreasure? I have some database query")
                 }
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 
@@ -233,7 +234,7 @@ export default function Footer() {
 
               <span
                 onClick={() => {
-                  window.location.href = "mailto:hello@leadwala.co.in";
+                  window.location.href = email;
                 }}
                 className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
     hover:bg-[#f5f6f8] 

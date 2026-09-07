@@ -52,7 +52,7 @@ export default function SolutionsSection() {
         <div className="max-w-2xl mb-12 mt-12">
           <h3 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
             {/* Find the exact target B2B/B2C email list you need to pitch. */}
-            Reach the target audience with leadwala verified preimium databases.
+            Reach the target audience with datatreasure&apos; verified preimium databases.
           </h3>
           <p className="text-base text-gray-600 leading-relaxed max-w-xl">
             Stop reaching out the wrong people. Our verified and filtered databses will lead you to the interested prospects.
@@ -74,7 +74,7 @@ export default function SolutionsSection() {
             </h4>
             <p className="text-sm leading-6 text-neutral-500">
               Every sales lead profile undergoes manual verification for optimum database accuracy. No outreach campaign goes to waste.
-              {/* Every sales lead profile undergoes manual verification & validation. Leadwala make sure each databse has optimum accuracy for your outreach campaigns.   */}
+              {/* Every sales lead profile undergoes manual verification & validation. Datatreasure make sure each databse has optimum accuracy for your outreach campaigns.   */}
             </p>
           </div>
 

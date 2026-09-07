@@ -43,24 +43,24 @@ export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
  * 1. CONFIGURATION META ENCODING BLOCK
  */
 export const metadata = {
-  title: "B2b sales intelligence platform & Lead Generation Blog | Leadwala",
+  title: "B2b sales intelligence platform & Lead Generation Blog | Datatreasure",
   description:
     "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   alternates: {
     canonical: `${baseUrl}/blog`,
   },
   openGraph: {
-    title: "Leadwala Growth & Marketing Insights Blog",
+    title: "Datatreasure : Growth & Marketing Insights Blog",
     description:
       "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
     url: `${baseUrl}/blog`,
-    siteName: "Leadwala",
+    siteName: "Datatreasure",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leadwala Growth & Marketing Insights Blog",
+    title: "Datatreasure : Growth & Marketing Insights Blog",
     description:
       "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   },
@@ -73,7 +73,7 @@ export default async function BlogListingPage() {
   const listingJsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Leadwala Marketing & Growth Blog",
+    name: "Datatreasure Marketing & Growth Blog",
     description:
       "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
     url: `${baseUrl}/blog`,
