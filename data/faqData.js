@@ -15,7 +15,7 @@ export const faqData = {
       answer: "Leadwala is committed to responsible data practices. We source and deliver business data with a focus on accuracy, transparency, and applicable privacy regulations."
     }
   ],
-leadstore: [
+datastore: [
   {
     question: "How do I request a database from the Lead Store?",
     answer:

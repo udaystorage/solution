@@ -107,7 +107,7 @@ export const FAQSection = ({ page }) => {
   // Clean formatting wrapper for dynamic text headings
   const formatHeadingText = (text) => {
     if (!text) return 'Frequently Asked Questions';
-    return `${text.charAt(0).toUpperCase() + text.slice(1)} Frequently Asked Questions`;
+    return `Frequently Asked Questions : ${text.charAt(0).toUpperCase() + text.slice(1)} `;
   };
 
   return (
@@ -150,7 +150,7 @@ export const FAQSection = ({ page }) => {
           </div>
           <button 
             type="button" 
-             onClick={() => openWhatsApp("Leadwala ?? I have a database enquiry.")}
+             onClick={() => openWhatsApp("DataTreasure ?? I have a database enquiry.")}
             className="mt-6 inline-flex items-center cursor-pointer justify-center rounded-full bg-black px-9 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800 md:mt-0 shadow-sm"
           >
             Get in touch

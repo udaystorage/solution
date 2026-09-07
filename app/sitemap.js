@@ -4,9 +4,10 @@ import leadStoreData from "@/data/leadStoreData";
 
 const blogs = await getJsonFilesAsArray();
 const dataStoreItems = leadStoreData;
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 
 export default async function sitemap() {
-  const baseUrl = "https://datatreasure.co.in";
 
   // 1. Static Routes
   const staticRoutes = [

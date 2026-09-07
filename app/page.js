@@ -7,7 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 // 1. Core Metadata Configuration for B2B Bounded Engine Optimization
 export const metadata = {
-  title: "Leadwala | Premium B2B Lead Databases & Verified Email Lists",
+  title: "DataTreasure | Premium B2B Lead Databases & Verified Email Lists",
   description: "Buy hand-verified B2B database without annual subscription traps. Export premium databases for Real Estate, E-commerce, Insurance,college database , and niche industries.",
   keywords: [
     "Buy leads online",
@@ -26,10 +26,10 @@ export const metadata = {
     canonical: baseUrl, // Replace with your real URL when production-ready
   },
   openGraph: {
-    title: "Leadwala | Premium B2B Lead Databases",
+    title: "DataTreasure | Premium B2B Lead Databases",
     description: "Access high-accuracy B2B datasets with zero subscription lock-ins.",
     url: baseUrl,
-    siteName: "Leadwala",
+    siteName: "DataTreasure",
     type: "website",
   }
 };

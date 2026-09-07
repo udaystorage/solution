@@ -8,24 +8,24 @@ import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;  
 
 export const metadata = {
-  title: "Premium B2B & B2C Lead Databases | LeadWala",
+  title: "Premium B2B & B2C Lead Databases | DataTreasure",
 
   description:
     "Explore verified B2B and B2C lead databases for sales, marketing, and lead generation. Find targeted business and consumer data tailored to your audience.",
 
   alternates: {
-    canonical: `${baseUrl}/leadstore`,
+    canonical: `${baseUrl}/datastore`,
   },
 
   openGraph: {
-    title: "Premium B2B & B2C Lead Databases | LeadWala",
+    title: "Premium B2B & B2C Lead Databases | DataTreasure",
 
     description:
       "Explore verified B2B and B2C lead databases for sales, marketing, and lead generation. Find targeted data tailored to your audience.",
 
-    url: `${baseUrl}/leadstore`,
+    url: `${baseUrl}/datastore`,
 
-    siteName: "LeadWala",
+    siteName: "DataTreasure",
 
     type: "website",
 
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Premium B2B & B2C Lead Databases | LeadWala",
+    title: "Premium B2B & B2C Lead Databases | DataTreasure",
 
     description:
       "Explore verified B2B and B2C lead databases for sales, marketing, and lead generation.",
@@ -55,7 +55,7 @@ export default function page() {
             },
             {
               name: "Lead Store",
-              url: `${baseUrl}/leadstore`,
+              url: `${baseUrl}/datastore`,
             },
            
           ]}
@@ -64,7 +64,7 @@ export default function page() {
          <LeadStoreHero/>
          <ChooseCatagory/>
          <BestProducts/>
-         <FAQSection page="leadstore"/>
+         <FAQSection page="datastore"/>
       </main>
     </>
   );

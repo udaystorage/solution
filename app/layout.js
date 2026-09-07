@@ -6,7 +6,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import MobileCallCTA from "./components/ui/CallCta";
 
-const contact=process.env.CONTACT_NUMBER;
+const contact=process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Lead Wala",
+  title: "Data Treasure",
   description: "Premium B2B and B2C Database Provider",
 };
 

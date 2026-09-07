@@ -63,10 +63,10 @@ export default function LeadStoreClient({ product }) {
         },
       };
 
-      localStorage.setItem("leadwala-order", JSON.stringify(order));
+      localStorage.setItem("datatreasure-order", JSON.stringify(order));
 
       const message = `
-Hi Leadwala 👋
+Hi DataTreasure 👋
 
 I'd like to request a database.
 

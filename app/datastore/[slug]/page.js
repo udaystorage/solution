@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
     product.description?.length > 160
       ? `${product.description.substring(0, 157).trim()}...`
       : product.description ||
-        `Explore verified ${product.title} from LeadWala for targeted sales and marketing.`;
+        `Explore verified ${product.title} from DataTreasure for targeted sales and marketing.`;
 
 
   return {
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }) {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${product.title} - LeadWala`,
+          alt: `${product.title} - DataTreasure`,
         },
       ],
     },
