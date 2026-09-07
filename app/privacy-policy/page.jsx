@@ -4,24 +4,24 @@ const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 
 export const metadata = {
-  title: "Privacy Policy | LeadWala",
+  title: "Privacy Policy | DataTreasure",
   description:
-    "Learn how LeadWala handles information when you browse our website or contact us through WhatsApp.",
+    "Learn how DataTreasure handles information when you browse our website or contact us through WhatsApp.",
   alternates: {
     canonical: `${baseUrl}/privacy-policy`,
   },
   openGraph: {
-    title: "Privacy Policy | LeadWala",
+    title: "Privacy Policy | DataTreasure",
     description:
-      "Learn how LeadWala handles information when you browse our website or contact us through WhatsApp.",
+      "Learn how DataTreasure handles information when you browse our website or contact us through WhatsApp.",
     url: `${baseUrl}/privacy-policy`,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | LeadWala",
+    title: "Privacy Policy | DataTreasure",
     description:
-      "Learn how LeadWala handles information when you browse our website or contact us through WhatsApp.",
+      "Learn how DataTreasure handles information when you browse our website or contact us through WhatsApp.",
   },
   robots: {
     index: true,
@@ -35,7 +35,7 @@ const jsonLd = {
   name: "Privacy Policy",
   url: `${baseUrl}/privacy-policy`,
   description:
-    "Privacy Policy describing how LeadWala handles information and WhatsApp enquiries.",
+    "Privacy Policy describing how DataTreasure handles information and WhatsApp enquiries.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-stone-600">
-              This Privacy Policy explains how LeadWala collects, uses and
+              This Privacy Policy explains how DataTreasure collects, uses and
               handles information when you browse our website or contact us
               regarding our business database services.
             </p>
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala (&quot;LeadWala&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides curated
+                DataTreasure (&quot;DataTreasure&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides curated
                 business databases and custom data research services across
                 India. We believe in being transparent about how our website
                 operates and how information is handled.
@@ -149,7 +149,7 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <p>
-                <strong>Important:</strong> LeadWala does not intentionally
+                <strong>Important:</strong> DataTreasure does not intentionally
                 store your enquiry on the website before you choose to send it.
                 The message is only transmitted after you voluntarily press
                 <strong> Send </strong>
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala uses WhatsApp as its primary enquiry channel. After
+                DataTreasure uses WhatsApp as its primary enquiry channel. After
                 completing an enquiry form, a pre-filled WhatsApp message is
                 generated using the information you have entered.
               </p>
@@ -182,7 +182,7 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <p>
-                Once your message is sent, your communication with LeadWala is
+                Once your message is sent, your communication with DataTreasure is
                 also governed by WhatsApp&apos;s own Privacy Policy and Terms of
                 Service.
               </p>
@@ -254,7 +254,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 Our website may contain links to third-party websites or
                 services, including WhatsApp. These services operate under their
-                own privacy policies and terms, and LeadWala is not responsible
+                own privacy policies and terms, and DataTreasure is not responsible
                 for their content or privacy practices.
               </p>
             </div>
@@ -310,7 +310,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 Subject to applicable law, you may request access to, correction
                 of, or deletion of information that you have shared directly
-                with LeadWala.
+                with DataTreasure.
               </p>
 
               <p>
@@ -330,7 +330,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala&apos;s services are intended for businesses and individuals
+                DataTreasure&apos;s services are intended for businesses and individuals
                 capable of entering commercial arrangements. Our website is not
                 directed towards children, and we do not knowingly collect
                 personal information from children.
@@ -373,8 +373,8 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <address className="not-italic leading-8">
-                <strong>LeadWala</strong><br />
-                Email: support@leadwala.co.in<br />
+                <strong>DataTreasure</strong><br />
+                Email: support@DataTreasure.co.in<br />
                 Phone: {contact}<br />
                 Website:  {baseUrl}<br />
               </address>

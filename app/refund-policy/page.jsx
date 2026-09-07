@@ -4,16 +4,16 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 export const metadata = {
-  title: "Refund & Replacement Policy | LeadWala",
+  title: "Refund & Replacement Policy | DataTreasure",
   description:
-    "Learn how LeadWala reviews refund requests, evaluates database quality, and handles replacements for manually curated business databases.",
+    "Learn how DataTreasure reviews refund requests, evaluates database quality, and handles replacements for manually curated business databases.",
   alternates: {
     canonical: `${baseUrl}/refund-policy`,
   },
   openGraph: {
-    title: "Refund & Replacement Policy | LeadWala",
+    title: "Refund & Replacement Policy | DataTreasure",
     description:
-      "Understand LeadWala&apos;s refund review and database replacement process.",
+      "Understand DataTreasure&apos;s refund review and database replacement process.",
     url: `${baseUrl}/refund-policy`,
     type: "website",
   },
@@ -63,7 +63,7 @@ export default function RefundPolicyPage() {
             </div>
 
             <p className="mt-8 text-base leading-8 text-stone-600">
-              Every LeadWala database is manually researched and curated to
+              Every DataTreasure database is manually researched and curated to
               match the customer&apos;s requirements. This policy explains how we
               review quality concerns, replacement requests and refund
               eligibility.
@@ -80,7 +80,7 @@ export default function RefundPolicyPage() {
               <p>
                 Because our databases are prepared specifically for each
                 customer, refunds are not automatic. Whenever possible,
-                LeadWala&apos;s first priority is to investigate the reported issue
+                DataTreasure&apos;s first priority is to investigate the reported issue
                 and provide a fair resolution through correction or replacement.
               </p>
 
@@ -100,7 +100,7 @@ export default function RefundPolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                Most orders supplied by LeadWala are custom-built using filters
+                Most orders supplied by DataTreasure are custom-built using filters
                 such as industry, geography, designation, company size or other
                 customer-specific requirements.
               </p>
@@ -141,7 +141,7 @@ export default function RefundPolicyPage() {
               </ul>
 
               <p>
-                LeadWala evaluates the successful contact conversion ratio
+                DataTreasure evaluates the successful contact conversion ratio
                 achieved during a genuine review of the supplied database.
               </p>
 
@@ -179,7 +179,7 @@ export default function RefundPolicyPage() {
                 <li>The customer changes their mind after purchase.</li>
                 <li>The database has not been reasonably evaluated.</li>
                 <li>The reported issue is unsupported by sufficient evidence.</li>
-                <li>The customer refuses a reasonable replacement offered by LeadWala.</li>
+                <li>The customer refuses a reasonable replacement offered by DataTreasure.</li>
                 <li>The supplied data has been modified, mixed with other datasets, or shared with third parties before the review.</li>
                 <li>The database was used in a manner inconsistent with our Terms &amp; Conditions or Acceptable Use Policy.</li>
               </ul>
@@ -231,7 +231,7 @@ export default function RefundPolicyPage() {
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
-                Depending on the verified findings of our review, LeadWala may,
+                Depending on the verified findings of our review, DataTreasure may,
                 at its sole discretion, provide one or more of the following:
               </p>
 
@@ -262,7 +262,7 @@ export default function RefundPolicyPage() {
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
 
               <p>
-                LeadWala may revise this Refund &amp; Replacement Policy from
+                DataTreasure may revise this Refund &amp; Replacement Policy from
                 time to time to reflect changes in our services, quality
                 standards or legal obligations.
               </p>
@@ -288,8 +288,8 @@ export default function RefundPolicyPage() {
               </p>
 
               <address className="not-italic leading-8">
-                <strong>LeadWala</strong><br />
-                Email: support@leadwala.co.in<br />
+                <strong>DataTreasure</strong><br />
+                Email: support@DataTreasure.co.in<br />
                 Phone: {contact}<br />
                 Website:  {baseUrl}<br />
               </address>

@@ -11,7 +11,6 @@ export default function robots() {
         ],
       },
     ],
-    sitemap: "https://leadwala.com/sitemap.xml",
-    host: "https://leadwala.com",
+    sitemap: "https://datatreasure.co.in/sitemap.xml",
   };
 }

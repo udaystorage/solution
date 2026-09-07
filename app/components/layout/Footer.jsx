@@ -11,6 +11,8 @@ const geist = Geist({
 });
 
 import { openWhatsApp } from "@/lib/whatsapp";
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
+
 
 const footerLinks = [
   { label: "About Us", href: "/aboutus" },
@@ -52,7 +54,7 @@ export default function Footer() {
               <div className="relative flex justify-center items-center gap-1 ">
                 <Image
                   src="/logo/logo.webp"
-                  alt="LeadWala Logo"
+                  alt="DataTreasure Logo"
                   width={35}
                   height={35}
                   className="
@@ -68,7 +70,7 @@ export default function Footer() {
                 <span
                   className={`${geist.className} text-sm md:text-base lg:text-lg font-semibold tracking-[0.01em]`}
                 >
-                  Lead<span className="text-[#53A6DC]">Wala</span>
+                  Data<span className="text-[#53A6DC]">Treasure</span>
                 </span>
               </div>
 
@@ -89,7 +91,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Phone className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span> +91 81000 25936</span>
+                  <span> {PHONE_DISPLAY}</span>
                 </div>
               </div>
             </div>
@@ -251,7 +253,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-neutral-200 pt-8 text-center lg:flex-row lg:text-left">
           <p className="text-sm leading-7 text-neutral-600">
-            © 2026 LeadWala
+            © 2026 DataTreasure
             <br />
             All rights reserved.
           </p>

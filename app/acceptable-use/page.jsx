@@ -6,17 +6,17 @@ const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 
 export const metadata = {
-  title: "Acceptable Use Policy | LeadWala",
+  title: "Acceptable Use Policy | DataTreasure",
   description:
-    "Understand the acceptable and prohibited uses of LeadWala&apos;s datasets and services.",
+    "Understand the acceptable and prohibited uses of DataTreasure&apos;s datasets and services.",
   alternates: {
         canonical: `${baseUrl}/acceptable-use`,
 
   },
   openGraph: {
-    title: "Acceptable Use Policy | LeadWala",
+    title: "Acceptable Use Policy | DataTreasure",
     description:
-      "Guidelines for the responsible use of LeadWala&apos;s services and business databases.",
+      "Guidelines for the responsible use of DataTreasure&apos;s services and business databases.",
     url: `${baseUrl}/acceptable-use`,
     type: "website",
   },
@@ -62,7 +62,7 @@ export default function AcceptableUsePolicyPage() {
             </div>
 
             <p className="mt-8 text-base leading-8 text-stone-600">
-              This Acceptable Use Policy explains how LeadWala&apos;s services and
+              This Acceptable Use Policy explains how DataTreasure&apos;s services and
               datasets may be used responsibly. It forms part of our Terms &
               Conditions.
             </p>
@@ -76,14 +76,14 @@ export default function AcceptableUsePolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala provides curated business databases for legitimate
+                DataTreasure provides curated business databases for legitimate
                 commercial purposes. This policy establishes the standards that
                 apply whenever you access, request, purchase or use our
                 services.
               </p>
 
               <p>
-                By using our website or obtaining data from LeadWala, you agree
+                By using our website or obtaining data from DataTreasure, you agree
                 to comply with this Policy and all applicable laws.
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function AcceptableUsePolicyPage() {
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-              <p>The datasets supplied by LeadWala may be used for legitimate business purposes, including:</p>
+              <p>The datasets supplied by DataTreasure may be used for legitimate business purposes, including:</p>
 
               <ul className="list-disc pl-6 space-y-2">
                 <li>Business development and B2B sales.</li>
@@ -121,7 +121,7 @@ export default function AcceptableUsePolicyPage() {
             </h2>
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
-              <p>You must not use LeadWala&apos;s services or supplied data for:</p>
+              <p>You must not use DataTreasure&apos;s services or supplied data for:</p>
 
               <ul className="list-disc pl-6 space-y-2">
                 <li>Fraud, phishing or identity theft.</li>
@@ -141,13 +141,13 @@ export default function AcceptableUsePolicyPage() {
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
                 Customers are responsible for ensuring that their use of
-                LeadWala&apos;s services complies with all applicable laws,
+                DataTreasure&apos;s services complies with all applicable laws,
                 regulations, privacy obligations, marketing requirements and
                 industry standards in the jurisdictions where they operate.
               </p>
 
               <p>
-                LeadWala does not provide legal advice regarding the legality of
+                DataTreasure does not provide legal advice regarding the legality of
                 your intended marketing campaigns or business activities.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function AcceptableUsePolicyPage() {
               <p>
                 Customers should implement appropriate technical and
                 organisational measures to protect datasets supplied by
-                LeadWala from unauthorised access, disclosure or misuse.
+                DataTreasure from unauthorised access, disclosure or misuse.
               </p>
 
               <ul className="list-disc pl-6 space-y-2">
@@ -188,7 +188,7 @@ export default function AcceptableUsePolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala reserves the right to investigate suspected misuse of
+                DataTreasure reserves the right to investigate suspected misuse of
                 its services where reasonably necessary to protect its business,
                 customers, reputation or legal rights.
               </p>
@@ -210,7 +210,7 @@ export default function AcceptableUsePolicyPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                If you become aware of any misuse of LeadWala&apos;s services or
+                If you become aware of any misuse of DataTreasure&apos;s services or
                 datasets, we encourage you to notify us promptly so that we may
                 investigate the matter.
               </p>
@@ -255,9 +255,9 @@ export default function AcceptableUsePolicyPage() {
               </p>
 
                 <address className="not-italic leading-8">
-                <strong >LeadWala</strong>
+                <strong >DataTreasure</strong>
                 <br />
-                Email: support@leadwala.co.in
+                Email: support@DataTreasure.co.in
                 <br />
                 Phone: {contact}
                 <br />

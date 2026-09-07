@@ -97,7 +97,7 @@ export default function BlurGlass() {
         "
       >
         <Link
-        href={"/leadstore"}
+        href={"/datastore"}
           className="
             w-full sm:w-auto
             min-h-12

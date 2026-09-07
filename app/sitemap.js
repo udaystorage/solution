@@ -3,15 +3,15 @@ import { getJsonFilesAsArray } from "@/lib/blog";
 import leadStoreData from "@/data/leadStoreData";
 
 const blogs = await getJsonFilesAsArray();
-const leadStoreItems = leadStoreData;
+const dataStoreItems = leadStoreData;
 
 export default async function sitemap() {
-  const baseUrl = "https://leadwala.co.in";
+  const baseUrl = "https://datatreasure.co.in";
 
   // 1. Static Routes
   const staticRoutes = [
     "",
-    "/leadstore",
+    "/datastore",
     "/aboutus",
     "/contact",
     "/blog",
@@ -36,8 +36,8 @@ export default async function sitemap() {
     priority: 0.7,
   }));
 
-  const leadStoreRoutes = leadStoreItems.map((item) => ({
-    url: `${baseUrl}/leadstore/${item.slug}`,
+  const dataStoreRoutes = dataStoreItems.map((item) => ({
+    url: `${baseUrl}/datastore/${item.slug}`,
     lastModified: new Date(
       item.updatedAt || item.date || Date.now(),
     ).toISOString(),
@@ -45,5 +45,5 @@ export default async function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...leadStoreRoutes];
+  return [...staticRoutes, ...blogRoutes, ...dataStoreRoutes];
 }

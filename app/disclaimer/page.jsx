@@ -4,16 +4,16 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
 export const metadata = {
-  title: "Disclaimer | LeadWala",
+  title: "Disclaimer | DataTreasure",
   description:
-    "Important information about the use of LeadWala's website, services and business databases.",
+    "Important information about the use of DataTreasure's website, services and business databases.",
   alternates: {
     canonical: `${baseUrl}/disclaimer`,
   },
   openGraph: {
-    title: "Disclaimer | LeadWala",
+    title: "Disclaimer | DataTreasure",
     description:
-      "Read LeadWala's disclaimer regarding data accuracy, business outcomes and use of our services.",
+      "Read DataTreasure's disclaimer regarding data accuracy, business outcomes and use of our services.",
     url: `${baseUrl}/disclaimer`,
     type: "website",
   },
@@ -60,7 +60,7 @@ export default function DisclaimerPage() {
 
             <p className="mt-8 text-base leading-8 text-stone-600">
               This Disclaimer explains the limitations that apply to the
-              information, datasets and services provided by LeadWala.
+              information, datasets and services provided by DataTreasure.
             </p>
           </header>
 
@@ -74,7 +74,7 @@ export default function DisclaimerPage() {
               <p>
                 The content available on this website is provided for general
                 business information purposes only. It is intended to help
-                visitors understand the services offered by LeadWala and should
+                visitors understand the services offered by DataTreasure and should
                 not be interpreted as legal, financial or professional advice.
               </p>
 
@@ -94,7 +94,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala uses research, validation and manual review processes
+                DataTreasure uses research, validation and manual review processes
                 to improve the quality of the business databases we provide.
                 However, business information changes over time as organisations
                 update personnel, contact details and operations.
@@ -115,7 +115,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                Purchasing or using a database from LeadWala does not guarantee
+                Purchasing or using a database from DataTreasure does not guarantee
                 sales, appointments, qualified leads, customer acquisition,
                 campaign performance or any particular commercial outcome.
               </p>
@@ -136,7 +136,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala may compile datasets using publicly available business
+                DataTreasure may compile datasets using publicly available business
                 information, company websites, trusted commercial sources,
                 proprietary research and manual verification processes.
               </p>
@@ -164,7 +164,7 @@ export default function DisclaimerPage() {
               </p>
 
               <p>
-                LeadWala does not authorise or encourage the unlawful use of
+                DataTreasure does not authorise or encourage the unlawful use of
                 supplied datasets, including spam, fraud, phishing, identity
                 theft, harassment or other prohibited activities.
               </p>
@@ -186,7 +186,7 @@ export default function DisclaimerPage() {
               </p>
 
               <p>
-                LeadWala is not responsible for the availability, content,
+                DataTreasure is not responsible for the availability, content,
                 security or practices of third-party websites or services.
               </p>
             </div>
@@ -205,7 +205,7 @@ export default function DisclaimerPage() {
               <p>
                Copyright and other intellectual property rights in such materials remain with their respective owners unless expressly stated otherwise.
               </p>
-              <p>These materials are displayed solely as part of the presentation of LeadWala&apos;s website and services. Nothing on this website grants any right to copy, reproduce, redistribute, sublicense, sell, or otherwise exploit such third-party content except as permitted under the applicable licence or by the respective rights holder.</p>
+              <p>These materials are displayed solely as part of the presentation of DataTreasure&apos;s website and services. Nothing on this website grants any right to copy, reproduce, redistribute, sublicense, sell, or otherwise exploit such third-party content except as permitted under the applicable licence or by the respective rights holder.</p>
             </div>
           </section>
 
@@ -233,7 +233,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                Decisions made using information obtained from LeadWala remain
+                Decisions made using information obtained from DataTreasure remain
                 the responsibility of the customer. We recommend evaluating the
                 suitability of supplied information in light of your own
                 commercial objectives and due diligence processes.
@@ -249,7 +249,7 @@ export default function DisclaimerPage() {
 
             <div className="mt-5 md:mt-6 lg:mt-8 space-y-6 text-[15px] md:text-base lg:text-base leading-7 lg:leading-8 text-stone-700">
               <p>
-                LeadWala may update this Disclaimer periodically to reflect
+                DataTreasure may update this Disclaimer periodically to reflect
                 changes in our services, legal obligations or business
                 practices. Updated versions will be published on this page with
                 the revised Last Updated date.
@@ -270,9 +270,9 @@ export default function DisclaimerPage() {
               </p>
 
                 <address className="not-italic leading-8">
-                <strong>LeadWala</strong>
+                <strong>DataTreasure</strong>
                 <br />
-                Email: support@leadwala.co.in
+                Email: support@DataTreasure.co.in
                 <br />
                 Phone: {contact}
                 <br />
