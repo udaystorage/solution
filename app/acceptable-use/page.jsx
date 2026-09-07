@@ -8,7 +8,7 @@ const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 export const metadata = {
   title: "Acceptable Use Policy | DataTreasure",
   description:
-    "Understand the acceptable and prohibited uses of DataTreasure&apos;s datasets and services.",
+    "Understand the acceptable and prohibited uses of DataTreasure's datasets and services.",
   alternates: {
         canonical: `${baseUrl}/acceptable-use`,
 
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Acceptable Use Policy | DataTreasure",
     description:
-      "Guidelines for the responsible use of DataTreasure&apos;s services and business databases.",
+      "Guidelines for the responsible use of DataTreasure's services and business databases.",
     url: `${baseUrl}/acceptable-use`,
     type: "website",
   },

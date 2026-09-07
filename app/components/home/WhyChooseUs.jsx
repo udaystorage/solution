@@ -70,7 +70,7 @@ const handleWhyChooseUsClick = () => {
           {/* 2. Structured Content Hierarchy Block */}
           <div className="max-w-xl space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 text-sky-400 border border-white/10 uppercase tracking-wider">
-              Why Leadwala
+              Why Datatreasure
             </span>
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
               Why Smart Sales Teams Source Data From Us

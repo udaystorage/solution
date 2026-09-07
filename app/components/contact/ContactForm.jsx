@@ -64,7 +64,7 @@ export default function ContactForm() {
       return;
     }
 
-  const message = `Hello Leadwala, I am looking for the following data: ${form.requirement}. You can reach me at +91${form.mobile}.`;
+  const message = `Hello Datatreasure, I am looking for the following data: ${form.requirement}. You can reach me at +91${form.mobile}.`;
     openWhatsApp(message);
     setForm(INITIAL_FORM);
   }

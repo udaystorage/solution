@@ -1,8 +1,8 @@
 // app/manifest.js
 export default function manifest() {
   return {
-    name: "Leadwala",
-    short_name: "Leadwala",
+    name: "DataTreasure",
+    short_name: "DataTreasure",
     description:
       "Premium B2B and B2C business database provider in India.",
     start_url: "/",

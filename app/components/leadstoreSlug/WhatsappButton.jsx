@@ -8,8 +8,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { openWhatsApp } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "919999999999"; // Replace with yours
 
 export default function WhatsappButton({ request, accepted }) {
   const [loading, setLoading] = useState(false);
@@ -48,15 +48,12 @@ export default function WhatsappButton({ request, accepted }) {
       };
 
       localStorage.setItem(
-        "leadwala_database_request",
+        "datatreasure_database_request",
         JSON.stringify(payload),
       );
 
       const message = createWhatsappMessage(request);
-
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        message,
-      )}`;
+      openWhatsApp(message)
 
       // tiny premium delay
 
@@ -69,7 +66,7 @@ export default function WhatsappButton({ request, accepted }) {
   }
 
   return (
-    <div className="w-full shrink-0 sm:w-[270px]">
+    <div className="w-full shrink-0 sm:w-67.5">
       <button
         type="button"
         onClick={handleClick}
@@ -137,7 +134,7 @@ export default function WhatsappButton({ request, accepted }) {
 
 function createWhatsappMessage(request) {
   return `
-Hi Leadwala 👋
+Hi DataTreasure 👋
 
 I'd like to request a database.
 

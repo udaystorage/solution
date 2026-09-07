@@ -1,4 +1,6 @@
 // app/robots.js
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export default function robots() {
   return {
     rules: [
@@ -11,6 +13,6 @@ export default function robots() {
         ],
       },
     ],
-    sitemap: "https://datatreasure.co.in/sitemap.xml",
+    sitemap:`${baseUrl}`,
   };
 }

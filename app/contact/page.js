@@ -11,16 +11,16 @@ import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata = {
-  title: "Contact Leadwala | Discuss Your Data Requirement",
+  title: "Contact DataTreasure | Discuss Your Data Requirement",
   description:
-    "Tell Leadwala the audience, industry, location, or market you want to reach. Discuss verified B2B and B2C data availability with our team.",
+    "Tell DataTreasure the audience, industry, location, or market you want to reach. Discuss verified B2B and B2C data availability with our team.",
   alternates: {
     canonical: `${baseUrl}/contact`,
   },
   openGraph: {
-    title: "Contact Leadwala | Discuss Your Data Requirement",
+    title: "Contact DataTreasure | Discuss Your Data Requirement",
     description:
-      "Share your target audience or data requirement with Leadwala and discuss suitable B2B and B2C data availability.",
+      "Share your target audience or data requirement with DataTreasure and discuss suitable B2B and B2C data availability.",
     type: "website",
   },
 };

@@ -99,10 +99,10 @@ export async function generateMetadata({ params }) {
   const isoDate = new Date(blog.date).toISOString();
 
   return {
-    title: `${blog.title} | Leadwala Insights`,
+    title: `${blog.title} | Datatreasure Insights`,
     description:
       blog.description?.substring(0, 160) ||
-      "Read the latest digital insights on Leadwala.",
+      "Read the latest digital insights on Datatreasure.",
     alternates: {
       canonical: `${baseUrl}/blog/${slug}`,
     },
@@ -116,11 +116,11 @@ export async function generateMetadata({ params }) {
       title: blog.title,
       description: blog.description,
       url: `${baseUrl}/blog/${slug}`,
-      siteName: "Leadwala",
+      siteName: "Datatreasure",
       type: "article",
       publishedTime: isoDate,
       modifiedTime: isoDate,
-      authors: ["Leadwala"],
+      authors: ["Datatreasure"],
       images: [
         {
           url: cleanImageUrl,
@@ -165,12 +165,12 @@ export default async function BlogPage({ params }) {
       : `${baseUrl}${blog.image || "/demoBlog.webp"}`,
     author: {
       "@type": "Organization",
-      name: "Leadwala",
+      name: "Datatreasure",
       url: `${baseUrl}`,
     },
     publisher: {
       "@type": "Organization",
-      name: "Leadwala",
+      name: "Datatreasure",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/logo.png`,
