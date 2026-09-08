@@ -12,58 +12,65 @@ const CATEGORIES = [
   },
   {
     id: 2,
-    title: "Loan Data",
-    slug: "loan-data",
-    image: "/leadCards/loan.webp",
-    description: "Loan Defaulter, Home Loan Customers, Car Loan Customers",
+    title: "Forex Trader's Data",
+    slug: "forex-traders-data",
+    image: "/leadCards/foreign-currencies.webp",
+
+    description:
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 3,
-    title: "Insurance Data",
-    slug: "insurance-data",
-    image: "/leadCards/insurance.webp",
+    slug: "equity-traders-data",
+    title: "Equity Trader's Data",
+    image: "/leadCards/portfolio-on-screen.webp",
+
     description:
-      "Life Insurance Enquiries, Car Insurance Policyholders, Health Insurance Prospects",
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 4,
-    title: "Real Estate Data",
-    slug: "real-estate-data",
-    image: "/leadCards/real-estate.webp",
+    slug: "intraday-traders-data",
+    title: "Intraday Trader's Data",
+    image: "/leadCards/checking-candle-chart.webp",
+
     description:
-      "Active Property Buyers, Property Sellers, Flat Rent, VDNB (Visit Done Not Booking)",
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 5,
-    title: "HNI (High Net Worth Individuals) Data",
-    slug: "hni-data",
-    image: "/leadCards/hni.webp",
+    slug: "future-and-options-traders-data",
+    title: "Future & Options Trader's Data",
+    image: "/leadCards/chart-on-laptop.webp",
+
     description:
-      "High Profile Individuals, High Salaried Persons, Business Owners",
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 6,
-    title: "Credit Card Holder's Data",
-    slug: "credit-card-data",
-    image: "/leadCards/credit-card.webp",
+    slug: "commodity-traders-data",
+    title: "Commodity Trader's Data",
+    image: "/leadCards/gold-bars.webp",
+
     description:
-      "Credit Card Interested Customers, High CIBIL Score Customers, Low CIBIL Score Customers",
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 7,
-    title: "Student's Data",
-    slug: "students-data",
-    image: "/leadCards/students.webp",
+    slug: "crypto-traders-data",
+    title: "Crypto Trader's Data",
+    image: "/leadCards/trading-crypto.webp",
+
     description:
-      "School Students, Fresh Engineering Graduates, Job Seekers, Skill Development Learners",
+      "Verified stock market investors database for financial marketing campaigns.",
   },
   {
     id: 8,
-    title: "Car Owner's Data",
-    slug: "car-owners-data",
-    image: "/leadCards/car-owner.webp",
-    description:
-      "Car Insurance Renewal Customers, New Car Buyers, Luxury Car Owners, Used Car Buyers",
+    slug: "demat-account-holders-data",
+    title: "Demat Account Holder's Data",
+    image: "/leadCards/demat-account-holders.webp",
+
+    description: "Verified database of Demat account holders across India.",
   },
 ];
 
