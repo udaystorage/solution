@@ -9,7 +9,7 @@ export default function OrganizationSchema() {
     "@type": "Organization",
     "@id": `https://${baseUrl}/#organization`,
 
-    name: "LeadWala",
+    name: "Datatreasure",
 
     url: `https://${baseUrl}`,
 
@@ -19,7 +19,7 @@ export default function OrganizationSchema() {
     },
 
     description:
-      "LeadWala provides verified B2B and B2C business databases and data solutions that help businesses connect with relevant decision-makers and generate qualified leads.",
+      "Datatreasure provides verified B2B and B2C business databases and data solutions that help businesses connect with relevant decision-makers and generate qualified leads.",
 
     email: `mailto:${email}`,
 

@@ -58,40 +58,65 @@ export default function Navbar() {
         "
       >
         {/* Brand */}
-        <Link
-          href="/"
-          aria-label="Leadwala home"
-          onClick={closeMenu}
-          className="
-            relative z-50
-            text-xl font-bold
-            sm:text-2xl lg:text-[1.8rem] flex items-center gap-2 md:gap-3  justify-center tracking-wide
-          "
-        >
-          <div className="relative flex justify-center items-center">
-            <Image
-              src="/logo/logo.webp"
-              alt="LeadWala Logo"
-              width={35}
-              height={35}
-              className="
-    w-6 h-6
-    sm:w-7 sm:h-7
-    md:w-8 md:h-8
-    lg:w-8.75 lg:h-8.75
-    object-contain
-    mix-blend-multiply
-    translate-x-4
-    mr-2
+      <Link
+  href="/"
+  aria-label="Datatreasure home"
+  onClick={closeMenu}
+  className="
+    relative z-50
+    flex items-center justify-center
+    gap-2 md:gap-3
   "
-            />
-          </div>
-          <span
-            className={`${geist.className} text-[1.2rem] md:text-[1.3rem] lg:text-[1.6rem] font-semibold tracking-[0.01em]`}
-          >
-            Data<span className="text-[#53A6DC]">Treasure</span>
-          </span>
-        </Link>
+>
+  {/* Logo Icon */}
+  <div className="relative flex items-center justify-center shrink-0">
+    <Image
+      src="/logo/logo.webp"
+      alt="Datatreasure Logo"
+      width={35}
+      height={35}
+      className="
+        w-6 h-6
+        sm:w-7 sm:h-7
+        md:w-8 md:h-8
+        lg:w-8.75 lg:h-8.75
+        object-contain
+        mix-blend-multiply
+      "
+    />
+  </div>
+
+  {/* Wordmark + Slogan */}
+  <div className="flex flex-col items-start leading-none">
+    <span
+      className={`${geist.className}
+        text-[1.2rem]
+        md:text-[1.3rem]
+        lg:text-[1.6rem]
+        font-semibold
+        tracking-[0.01em]
+      `}
+    >
+      Data<span className="text-[#53A6DC]">Treasure</span>
+    </span>
+
+    <span
+      className="
+        mt-0.5
+        ml-0.5
+        text-[9px]
+        sm:text-[10px]
+        md:text-[11px]
+        font-medium
+        tracking-[0.035em]
+        text-slate-600
+        whitespace-nowrap
+      "
+    >
+     Premium Data. Golden Opportunities.
+    </span>
+  </div>
+</Link>
 
         {/* =====================================================
             DESKTOP NAVIGATION
@@ -107,7 +132,7 @@ export default function Navbar() {
     overflow-hidden
     rounded-full
     p-px
-    lg:block
+    min-[1200px]:block
   "
         >
           {/* Animated Gradient Border */}
@@ -183,10 +208,10 @@ export default function Navbar() {
             DESKTOP ACTIONS
         ====================================================== */}
 
-        <div className="hidden items-center justify-center gap-4 lg:flex">
+        <div className="hidden items-center justify-center gap-4 min-[1200px]:flex">
           <Link
             href={PHONE_LINK}
-            aria-label="Call Leadwala"
+            aria-label="Call Datatreasure"
             className="
     group
     relative
@@ -194,7 +219,6 @@ export default function Navbar() {
     items-center
     justify-center
     gap-2
-    overflow-hidden
     rounded-full
     border
     border-slate-800
@@ -204,17 +228,17 @@ export default function Navbar() {
     text-sm
     font-semibold
     text-white
-    shadow-md
-    shadow-slate-950/15
     transition-all
     duration-300
     ease-out
-    hover:-translate-y-0.5
+    animate-[heartbeat_2.2s_infinite]
+    hover:animate-none
+    group-hover:[animation-play-state:paused]
     hover:border-cyan-400/60
     hover:bg-slate-900
     hover:shadow-lg
-    hover:shadow-cyan-500/10
-    active:translate-y-0
+    hover:shadow-cyan-500/20
+    active:scale-95
     focus:outline-none
     focus:ring-2
     focus:ring-cyan-400
@@ -228,7 +252,9 @@ export default function Navbar() {
       transition-transform
       duration-250
       ease-out
-      group-hover:rotate-15
+      animate-[phone-shake_2.2s_infinite]
+      group-hover:animate-none
+     group-hover:-rotate-10 group-hover:scale-[1.01]
     "
             />
             <span className="min-[1350px]:inline hidden">Call Us</span>
@@ -285,10 +311,10 @@ export default function Navbar() {
             MOBILE ACTIONS
         ====================================================== */}
 
-        <div className="relative z-50 flex items-center gap-4 lg:hidden">
+        <div className="relative z-50 flex items-center gap-4 min-[1200px]:hidden">
           <Link
             href={PHONE_LINK}
-            aria-label="Call Leadwala"
+            aria-label="Call Datatreasure"
             className="
             hidden
             min-[480px]:inline-flex
@@ -371,7 +397,7 @@ export default function Navbar() {
       focus:ring-offset-2
     "
           >
-            <span className="hidden min-[370px]:max-[1023px]:inline ">
+            <span className="hidden min-[420px]:max-[1199px]:inline ">
               Custom Data
             </span>
             <ArrowRight

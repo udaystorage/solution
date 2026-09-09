@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="relative min-h-screen w-full bg-white text-[#111827] flex flex-col justify-between overflow-hidden font-sans antialiased">
       
-      {/* Subtle Ambient Glow (Keeps the Leadwala brand DNA, but pushed heavily into the background) */}
+      {/* Subtle Ambient Glow (Keeps the Datatreasure brand DNA, but pushed heavily into the background) */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 pointer-events-none opacity-40 mix-blend-multiply filter blur-3xl">
         <div className="absolute inset-0 bg-linear-to-tr from-[#00d2ff] via-[#9d4edd] to-[#7928ca] rounded-full transform scale-75 animate-pulse duration-[10s]" />
       </div>

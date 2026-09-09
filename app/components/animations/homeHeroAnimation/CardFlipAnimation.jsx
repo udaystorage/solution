@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 
 import "./CardFlipAnimation.css"
+import Link from "next/link";
 
 // Fixed on-screen positions the cards move between. All are expressed as
 // an offset from dead-center (left:50%/top:50%), so `translate(-50%,-50%)`
@@ -186,65 +187,78 @@ const CARD_TEXTS = [
   {
     category: "FINANCE",
     title: "Stock Market Traders",
+    slug: "stock-market-investors-data",
     icon: BarChart3,
   },
    {
     category: "FINANCE",
     title: "Forex Trader's Data",
+      slug: "forex-traders-data",
     icon: Banknote,
   },
    {
     category: "FINANCE",
     title: "Equity Trader's Data",
+    slug: "equity-traders-data",
     icon: CandlestickChart,
   },
    {
     category: "FINANCE",
     title: "Intraday Trader's Data",
+    slug: "intraday-traders-data",
     icon: ChartNoAxesCombined,
   }, {
     category: "FINANCE",
     title: "Future & Options Trader's Data",
+    slug: "future-and-options-traders-data",
     icon: ChartSpline,
   },
    {
     category: "FINANCE",
     title: "Commodity Trader's Data",
+    slug: "commodity-traders-data",
     icon: Coins,
   },
    {
     category: "FINANCE",
     title: "Crypto Trader's Data",
+    slug: "crypto-traders-data",
     icon: Bitcoin,
   },
   {
     category: "FINANCE",
     title: "Credit Card Holders",
+    slug: "credit-card-data",
     icon: CreditCard,
   },
   {
     category: "REAL ESTATE",
     title: "Real Estate Data",
+    slug: "real-estate-data",
     icon: Building2,
   },
   {
     category: "EDUCATION",
     title: "College & School Students",
+    slug: "students-data",
     icon: GraduationCap,
   },
   {
     category: "INSURANCE",
     title: "Insurance Data",
+    slug: "insurance-data",
     icon: ShieldCheck,
   },
   {
     category: "HEALTHCARE",
     title: "Doctors",
+    slug: "doctors-data",
     icon: Stethoscope,
   },
   {
     category: "HOSPITALITY",
     title: "Hotel Data",
+    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
     icon: Hotel,
   },
   {
@@ -255,41 +269,49 @@ const CARD_TEXTS = [
   {
     category: "HOSPITALITY",
     title: "Restaurant Data",
+    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
     icon: Utensils,
   },
   {
     category: "WELLNESS",
     title: "Spa Data",
+    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
     icon: Sparkles,
   },
   {
     category: "LOCATION",
     title: "Pincode-Wise Data",
+    slug: "pincode-wise-data",
     icon: MapPin,
   },
   {
     category: "WORKFORCE",
     title: "Employees Data",
+    slug: "it-government-mnc-employees-data",
     icon: BriefcaseBusiness,
   },
   {
     category: "GLOBAL",
     title: "International Data",
+    slug: "international-data",
     icon: Globe2,
   },
   {
     category: "AUTOMOTIVE",
     title: "Car Owners",
+    slug: "car-owners-data",
     icon: CarFront,
   },
   {
     category: "PREMIUM SEGMENT",
     title: "High-Net-Worth Individuals",
+    slug: "hni-data",
     icon: Gem,
   },
   {
     category: "FINANCE",
     title: "Loan Data",
+    slug: "loan-data",
     icon: Landmark,
   },
 ];
@@ -324,8 +346,9 @@ function Card({ role, text, onDone }) {
       }}
     >
       {/* FRONT */}
-      <div
+      <Link
         className="glass-card-face glass-card-front"
+         href={`/datastore/${text.slug}`}
         style={{
           WebkitBackfaceVisibility: "hidden",
           backfaceVisibility: "hidden",
@@ -389,7 +412,7 @@ function Card({ role, text, onDone }) {
             </span> */}
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* BACK */}
       <div
