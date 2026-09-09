@@ -47,7 +47,7 @@ export default function ConsentCheckbox({
           >
             Privacy Policy
           </Link>
-          , and consent to sharing this enquiry with LeadWala via WhatsApp.
+          , and consent to sharing this enquiry with Datatreasure via WhatsApp.
         </label>
       </div>
     </div>

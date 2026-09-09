@@ -7,7 +7,7 @@ export default function MobileCallCTA({ contact }) {
   return (
     <Link
       href={`tel:${contact}`}
-      aria-label="Call LeadWala"
+      aria-label="Call Datatreasure"
 className="
   fixed
   bottom-4
