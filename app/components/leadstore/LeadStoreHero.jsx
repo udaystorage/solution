@@ -76,11 +76,11 @@ export default function LeadStoreHero() {
         </div>
       </div>
 
-      <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center">
-        <div className="absolute w-105 h-105 rounded-full bg-cyan-300/20 blur-[110px]" />
+     <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center overflow-visible">
+  <div className="absolute w-105 h-105 rounded-full bg-cyan-300/20 blur-[110px]" />
 
-        <Cube />
-      </div>
+  <Cube />
+</div>
     </section>
   );
 }

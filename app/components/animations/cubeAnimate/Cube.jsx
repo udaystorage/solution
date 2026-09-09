@@ -5,7 +5,6 @@
 // export default function Cube() {
 //   const [rotation, setRotation] = useState({ x: -25, y: -35 });
 
-
 //   return (
 // <div className="w-full h-full flex flex-col items-center justify-center bg-transparent rounded-2xl p-8 select-none overflow-hidden">
 
@@ -74,19 +73,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const categories = [
-  "FINANCE",
-  "REAL ESTATE",
-  "INVESTORS",
-  "HEALTHCARE",
-  "RETAIL",
-];
+const categories = ["FRESH", "VERIFIED", "CUSTOM"];
 
-const statuses = [
-  "DATA RECEIVED",
-  "HUMAN VERIFIED",
-  "READY TO REACH",
-];
+const statuses = ["NEW INVESTORS","CRYPTO TRADERS", "IPO INVESTORS", "TRADING ENTHUSIASTS","HIGH VALUE INVESTORS"];
 
 const particles = [
   { left: "7%", top: "27%", delay: "0s" },
@@ -131,7 +120,7 @@ export default function Cube() {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(element);
@@ -192,11 +181,9 @@ export default function Cube() {
 
     const rect = element.getBoundingClientRect();
 
-    const px =
-      (event.clientX - rect.left) / rect.width;
+    const px = (event.clientX - rect.left) / rect.width;
 
-    const py =
-      (event.clientY - rect.top) / rect.height;
+    const py = (event.clientY - rect.top) / rect.height;
 
     setTilt({
       x: (0.5 - py) * 3,
@@ -221,14 +208,10 @@ export default function Cube() {
       ====================================================== */}
 
       <div
-        className={`absolute left-1/2 top-1/2 h-[28rem] w-[28rem]
+        className={`absolute left-1/2 top-1/2 h-112 w-md
         -translate-x-1/2 -translate-y-1/2 rounded-full
-        transition-all duration-[1600ms]
-        ${
-          visible
-            ? "scale-100 opacity-100"
-            : "scale-75 opacity-0"
-        }`}
+        transition-all duration-1600
+        ${visible ? "scale-100 opacity-100" : "scale-75 opacity-0"}`}
         style={{
           background:
             "radial-gradient(circle, rgba(109,40,217,0.20) 0%, rgba(124,58,237,0.11) 32%, rgba(59,130,246,0.06) 52%, transparent 72%)",
@@ -237,14 +220,10 @@ export default function Cube() {
       />
 
       <div
-        className={`absolute left-1/2 top-1/2 h-[19rem] w-[19rem]
+        className={`absolute left-1/2 top-1/2 h-76 w-76
         -translate-x-1/2 -translate-y-1/2 rounded-full
-        transition-all duration-[1800ms]
-        ${
-          visible
-            ? "scale-100 opacity-100"
-            : "scale-50 opacity-0"
-        }`}
+        transition-all duration-1800
+        ${visible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
         style={{
           background:
             "radial-gradient(circle, rgba(34,211,238,0.12), transparent 68%)",
@@ -259,10 +238,8 @@ export default function Cube() {
       {particles.map((particle, index) => (
         <span
           key={index}
-          className={`data-core-particle absolute h-[3px] w-[3px]
-          rounded-full bg-cyan-400 ${
-            visible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`data-core-particle absolute h-0.75 w-0.75
+          rounded-full bg-cyan-400 ${visible ? "opacity-100" : "opacity-0"}`}
           style={{
             left: particle.left,
             top: particle.top,
@@ -279,11 +256,7 @@ export default function Cube() {
       <div
         className={`absolute left-1/2 top-[5%]
         -translate-x-1/2 transition-all duration-1000
-        ${
-          visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-3 opacity-0"
-        }`}
+        ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
       >
         <div className="flex items-center gap-3">
           <span className="h-px w-9 bg-linear-to-r from-transparent to-violet-500/40" />
@@ -344,8 +317,7 @@ export default function Cube() {
           -translate-x-1/2 -translate-y-1/2
           rounded-[3rem]"
           style={{
-            background:
-              "rgba(76,29,149,0.30)",
+            background: "rgba(76,29,149,0.30)",
             filter: "blur(45px)",
           }}
         />
@@ -357,20 +329,16 @@ export default function Cube() {
         <div
           className="absolute inset-[8%] rounded-[3rem]"
           style={{
-            border:
-              "1px solid rgba(124,58,237,0.18)",
-            transform:
-              "rotate(5deg)",
+            border: "1px solid rgba(124,58,237,0.18)",
+            transform: "rotate(5deg)",
           }}
         />
 
         <div
           className="absolute inset-[11%] rounded-[3rem]"
           style={{
-            border:
-              "1px solid rgba(34,211,238,0.12)",
-            transform:
-              "rotate(-4deg)",
+            border: "1px solid rgba(34,211,238,0.12)",
+            transform: "rotate(-4deg)",
           }}
         />
 
@@ -392,11 +360,7 @@ export default function Cube() {
           -translate-x-1/2 -translate-y-1/2
           overflow-hidden rounded-[3rem]
           transition-all duration-700
-          ${
-            activeSignal
-              ? "data-core-glass-active"
-              : ""
-          }`}
+          ${activeSignal ? "data-core-glass-active" : ""}`}
         >
           {/* Glass reflection */}
 
@@ -436,14 +400,13 @@ export default function Cube() {
           ================================================== */}
 
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-
             {/* TOP STATUS */}
 
             <div className="mb-5 flex items-center gap-2">
               <span className="data-core-status-dot" />
 
-              <span className="text-[8px] font-semibold tracking-[0.34em] text-cyan-200/75">
-                VERIFIED DATA
+              <span className="text-[9px] font-semibold tracking-[0.34em] text-cyan-200/75">
+                WEBLEADS
               </span>
 
               <span className="data-core-status-dot violet" />
@@ -539,9 +502,7 @@ export default function Cube() {
           className={`absolute left-[2%] top-[38%]
           transition-all duration-1000 delay-700
           ${
-            visible
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-5 opacity-0"
+            visible ? "translate-x-0 opacity-100" : "-translate-x-5 opacity-0"
           }`}
         >
           <div className="data-core-line mb-2 w-10" />
@@ -562,19 +523,15 @@ export default function Cube() {
         <div
           className={`absolute right-[1%] top-[57%] text-right
           transition-all duration-1000 delay-900
-          ${
-            visible
-              ? "translate-x-0 opacity-100"
-              : "translate-x-5 opacity-0"
-          }`}
+          ${visible ? "translate-x-0 opacity-100" : "translate-x-5 opacity-0"}`}
         >
           <div className="data-core-line mb-2 ml-auto w-10" />
 
-          <p className="text-[7px] font-semibold tracking-[0.24em] text-cyan-600/80">
+          <p className="text-[8px] font-semibold tracking-[0.24em] text-cyan-600">
             VERIFIED
           </p>
 
-          <p className="mt-1 text-[7px] tracking-[0.16em] text-slate-500">
+          <p className="mt-1 text-[8px] tracking-[0.16em] text-slate-600">
             READY
           </p>
         </div>
@@ -583,9 +540,7 @@ export default function Cube() {
             CHECKPOINTS
         ================================================== */}
 
-        <div className="data-core-check absolute right-[13%] top-[22%]">
-          ✓
-        </div>
+        <div className="data-core-check absolute right-[13%] top-[22%]">✓</div>
 
         <div className="data-core-check violet absolute bottom-[19%] left-[13%]">
           ✓
@@ -608,33 +563,9 @@ export default function Cube() {
         className={`absolute bottom-[1%] left-1/2
         -translate-x-1/2 whitespace-nowrap
         transition-all duration-1000 delay-[1100ms]
-        ${
-          visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-3 opacity-0"
-        }`}
+        ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
       >
-        <div className="flex items-center gap-2 text-[9px] tracking-[0.08em]">
-          <span className="font-medium text-violet-600">
-            Premium
-          </span>
-
-          <span className="text-slate-400">
-            ·
-          </span>
-
-          <span className="text-slate-500">
-            Human Verified
-          </span>
-
-          <span className="text-slate-400">
-            ·
-          </span>
-
-          <span className="font-medium text-cyan-600">
-            Ready for Outreach
-          </span>
-        </div>
+        <span className="text-slate-600">For advisory, brokerage, demat, investment & financial services</span>
       </div>
     </div>
   );
