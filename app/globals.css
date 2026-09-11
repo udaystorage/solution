@@ -187,6 +187,33 @@ body {
   animation: text-shimmer 1.5s ease-out 1;
 }
 
+/* Dataa store hero shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -50% center;
+  }
+}
+
+/* Data store hero rotation css */
+.data-core-card-rotate {
+  animation: dataCoreCardRotate 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes dataCoreCardRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes text-shimmer {
   from {
     background-position: -100% center;
@@ -520,11 +547,11 @@ body {
 
 @keyframes dataCoreOrbit {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 

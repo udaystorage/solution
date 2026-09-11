@@ -72,10 +72,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import LensText from "../../ui/LensText";
 
-const categories = ["FRESH", "VERIFIED", "CUSTOM"];
+const categories = ["FILTERED", "VERIFIED", "CUSTOM"];
 
-const statuses = ["NEW INVESTORS","CRYPTO TRADERS", "IPO INVESTORS", "TRADING ENTHUSIASTS","HIGH VALUE INVESTORS"];
+const statuses = [
+  "NEW INVESTORS",
+  "CRYPTO TRADERS",
+  "IPO INVESTORS",
+  "HIGH VALUE INVESTORS",
+];
 
 const particles = [
   { left: "7%", top: "27%", delay: "0s" },
@@ -298,7 +304,7 @@ export default function Cube() {
           visible
             ? "translate-y-0 scale-100 opacity-100"
             : "translate-y-8 scale-[0.88] opacity-0"
-        }`}
+        } `}
         style={{
           transform: `
             perspective(1200px)
@@ -355,45 +361,49 @@ export default function Cube() {
         ================================================== */}
 
         <div
-          className={`data-core-glass absolute left-1/2 top-1/2
-          aspect-square w-[63%]
-          -translate-x-1/2 -translate-y-1/2
-          overflow-hidden rounded-[3rem]
-          transition-all duration-700
-          ${activeSignal ? "data-core-glass-active" : ""}`}
+          className="absolute left-1/2 top-1/2
+  aspect-square w-[63%]
+  -translate-x-1/2 -translate-y-1/2"
         >
-          {/* Glass reflection */}
-
+          {/* ROTATING CARD BACKGROUND */}
           <div
-            className="absolute -left-[25%] -top-[30%]
-            h-[75%] w-[70%] rotate-[-35deg]
-            rounded-full bg-white/[0.09] blur-[22px]"
-          />
+            className={`data-core-glass data-core-card-rotate
+    absolute inset-0
+    overflow-hidden rounded-[3rem]
+    ${activeSignal ? "data-core-glass-active" : ""}`}
+          >
+            {/* Glass reflection */}
+            <div
+              className="absolute left-[-25%] top-[-30%]
+      h-[75%] w-[70%] rotate-[-35deg]
+      rounded-full bg-white/10 blur-[22px]"
+            />
 
-          {/* Violet internal light */}
+            {/* Violet internal light */}
+            <div
+              className="absolute left-1/2 top-1/2
+      h-[75%] w-[75%]
+      -translate-x-1/2 -translate-y-1/2
+      rounded-full bg-violet-500/40 blur-[42px]"
+            />
 
-          <div
-            className="absolute left-1/2 top-1/2
-            h-[75%] w-[75%]
-            -translate-x-1/2 -translate-y-1/2
-            rounded-full bg-violet-500/20 blur-[42px]"
-          />
+            {/* Cyan internal light */}
+            <div
+              className="absolute right-[-20%] top-[20%]
+      h-[55%] w-[35%]
+      rounded-full bg-cyan-400/30 blur-[35px]"
+            />
 
-          {/* Cyan internal light */}
+            {/* Inner border */}
+            <div
+              className="absolute inset-[3%]
+      rounded-[2.7rem]
+      border border-white/13"
+            />
 
-          <div
-            className="absolute -right-[20%] top-[20%]
-            h-[55%] w-[35%]
-            rounded-full bg-cyan-400/10 blur-[35px]"
-          />
-
-          {/* Inner border */}
-
-          <div
-            className="absolute inset-[3%]
-            rounded-[2.7rem]
-            border border-white/[0.13]"
-          />
+            {/* Scanning light */}
+            {/* <div className="data-core-scan absolute left-0 top-0 h-px w-full" /> */}
+          </div>
 
           {/* =================================================
               CONTENT
@@ -431,6 +441,7 @@ export default function Cube() {
 
               <span
                 className="relative
+                pr-1
                 bg-linear-to-br from-white
                 via-violet-100 to-cyan-200
                 bg-clip-text text-transparent
@@ -473,7 +484,7 @@ export default function Cube() {
                     ✓
                   </span>
 
-                  <span className="text-[8px] font-medium tracking-[0.22em] text-white/65">
+                  <span className="text-[8px] font-medium tracking-[0.22em] text-white/75">
                     {status}
                   </span>
                 </div>
@@ -482,8 +493,8 @@ export default function Cube() {
 
             {/* BOTTOM DETAIL */}
 
-            <div className="mt-4 text-[7px] tracking-[0.18em] text-white/35">
-              HUMAN VERIFIED · QUALITY CHECKED
+            <div className="mt-4 text-[7px] tracking-[0.18em] text-cyan-200">
+              FRESH . ACTIVE . ACCURATE
             </div>
           </div>
 
@@ -560,12 +571,26 @@ export default function Cube() {
       ====================================================== */}
 
       <div
-        className={`absolute bottom-[1%] left-1/2
+        className={`absolute bottom-[3%] left-1/2
         -translate-x-1/2 whitespace-nowrap
         transition-all duration-1000 delay-[1100ms]
         ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
       >
-        <span className="text-slate-600">For advisory, brokerage, demat, investment & financial services</span>
+        {/* <span
+          className="
+    relative inline-block
+    text-slate-600
+    drop-shadow-[0_0_6px_rgba(99,102,241,0.22)]
+bg-[linear-gradient(110deg,#334155_0%,#334155_40%,#ffffff_50%,#6366f1_54%,#334155_64%,#334155_100%)]    bg-[length:250%_100%]
+    bg-clip-text
+    text-transparent
+    animate-[shimmer_4s_ease-in-out_infinite]
+  "
+        >
+          For advisory, brokerage, stock-market training courses & financial
+          services
+        </span> */}
+        <LensText/>
       </div>
     </div>
   );
