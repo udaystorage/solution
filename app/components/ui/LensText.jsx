@@ -2,7 +2,7 @@
 "use client";
 
 const text =
-  "For advisory, brokerage, demat, investment & financial services";
+  "For advisory, brokerage, trading courses & financial services";
 
 export default function LensText() {
   return (
