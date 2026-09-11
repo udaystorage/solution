@@ -8,7 +8,7 @@ import demoprofile4 from "../../images/store/demoprofile4.jpg";
 
 export default function LeadStoreHero() {
   return (
-    <section className="relative isolate overflow-hidden w-screen h-150 sm:h-180 md:h-150  flex flex-col md:flex-row justify-center items-center pt-24 md:pt-15 lg:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
+    <section className="relative isolate overflow-hidden w-screen h-190 sm:h-180 md:h-160  flex flex-col md:flex-row justify-center items-center pt-14 sm:pt-24 md:pt-15 lg:pt-18 px-6 md:px-0 gap-10 md:gap-0 pb-10 md:pb-0">
       {/* Base Gradient */}
       <div className="absolute inset-0 -z-30 bg-linear-to-br from-sky-100 via-cyan-50 to-violet-100" />
 
@@ -42,8 +42,11 @@ export default function LeadStoreHero() {
       />
       <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center text-center md:items-start md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
         <h1 className="max-w-xl hero-heading">
-          Get custom leads tailored to your 
-          <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent"> exact needs.</span>
+          Get custom leads tailored to your
+          <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            {" "}
+            exact needs.
+          </span>
         </h1>
         <p className="hero-subheading">
           Get custom, verified databases delivered directly to you within 2–3
@@ -76,7 +79,7 @@ export default function LeadStoreHero() {
         </div>
       </div>
 
-      <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center">
+      <div className="relative w-full md:w-1/2 h-45 sm:h-80 md:h-full flex justify-center items-center overflow-visible pb-22 md:pb-0">
         <div className="absolute w-105 h-105 rounded-full bg-cyan-300/20 blur-[110px]" />
 
         <Cube />

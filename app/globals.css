@@ -187,6 +187,49 @@ body {
   animation: text-shimmer 1.5s ease-out 1;
 }
 
+/* Dataa store hero shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -50% center;
+  }
+}
+
+/* Data store hero rotation css */
+.data-core-card-rotate {
+  animation: dataCoreCardRotate 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes dataCoreCardRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Data store hero reverese rotation css */
+.data-core-card-outer-rotate {
+  animation: dataCoreCardOuterRotate 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes dataCoreCardOuterRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
 @keyframes text-shimmer {
   from {
     background-position: -100% center;
@@ -482,4 +525,369 @@ body {
 
 .animate-call-cta {
   animation: call-cta 10s linear infinite;
+}
+
+
+/* =========================================================
+   DATA STORE HERO — DATA CORE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   AMBIENT PARTICLES
+   --------------------------------------------------------- */
+
+@keyframes dataCoreParticle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translate3d(8px, -12px, 0) scale(1);
+    opacity: 0.9;
+  }
+}
+
+.data-core-particle {
+  animation: dataCoreParticle 6s ease-in-out infinite;
+  box-shadow:
+    0 0 7px rgba(34, 211, 238, 0.8),
+    0 0 16px rgba(34, 211, 238, 0.3);
+}
+
+
+/* ---------------------------------------------------------
+   ORBIT
+   --------------------------------------------------------- */
+
+@keyframes dataCoreOrbit {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.data-core-orbit {
+  border:
+    1px dashed
+    rgba(124, 58, 237, 0.18);
+
+  animation:
+    dataCoreOrbit
+    22s
+    linear
+    infinite;
+}
+
+.data-core-orbit-dot {
+  position: absolute;
+
+  left: 5%;
+  top: 5%;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: #8b5cf6;
+
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, 0.9),
+    0 0 24px rgba(139, 92, 246, 0.4);
+}
+
+
+/* ---------------------------------------------------------
+   GLASS CORE
+   --------------------------------------------------------- */
+
+.data-core-glass {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(49, 25, 92, 0.94),
+      rgba(35, 19, 72, 0.90) 42%,
+      rgba(28, 17, 59, 0.94) 70%,
+      rgba(28, 40, 76, 0.91)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.20);
+
+  box-shadow:
+    0 20px 60px rgba(48, 23, 95, 0.28),
+    0 0 30px rgba(124, 58, 237, 0.25),
+    0 0 80px rgba(124, 58, 237, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 0 45px rgba(139, 92, 246, 0.12);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SIGNAL
+   --------------------------------------------------------- */
+
+.data-core-glass-active {
+  border-color:
+    rgba(103, 232, 249, 0.42);
+
+  box-shadow:
+    0 20px 65px rgba(48, 23, 95, 0.34),
+    0 0 35px rgba(124, 58, 237, 0.35),
+    0 0 90px rgba(34, 211, 238, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    inset 0 0 55px rgba(139, 92, 246, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   SCANNING LIGHT
+   --------------------------------------------------------- */
+
+@keyframes dataCoreScan {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+  85% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+}
+
+.data-core-scan {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 92, 246, 0.1),
+      rgba(103, 232, 249, 0.75),
+      rgba(139, 92, 246, 0.1),
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(34, 211, 238, 0.35);
+
+  animation:
+    dataCoreScan
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* ---------------------------------------------------------
+   STATUS DOTS
+   --------------------------------------------------------- */
+
+@keyframes dataCoreStatus {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.data-core-status-dot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: #67e8f9;
+
+  box-shadow:
+    0 0 8px rgba(34, 211, 238, 0.9);
+
+  animation:
+    dataCoreStatus
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+.data-core-status-dot.violet {
+  background: #a78bfa;
+
+  box-shadow:
+    0 0 8px rgba(139, 92, 246, 0.9);
+
+  animation-delay: 1.2s;
+}
+
+
+/* ---------------------------------------------------------
+   CHECKPOINTS
+   --------------------------------------------------------- */
+
+@keyframes dataCoreCheck {
+  0%,
+  100% {
+    transform: scale(0.88);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+.data-core-check {
+  display: flex;
+
+  width: 27px;
+  height: 27px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(34, 211, 238, 0.38);
+
+  background:
+    rgba(34, 211, 238, 0.08);
+
+  color:
+    rgba(34, 211, 238, 0.85);
+
+  font-size: 9px;
+
+  box-shadow:
+    0 0 15px rgba(34, 211, 238, 0.16);
+
+  backdrop-filter:
+    blur(8px);
+
+  animation:
+    dataCoreCheck
+    4s
+    ease-in-out
+    infinite;
+}
+
+.data-core-check.violet {
+  border-color:
+    rgba(139, 92, 246, 0.35);
+
+  background:
+    rgba(139, 92, 246, 0.07);
+
+  color:
+    rgba(167, 139, 250, 0.9);
+
+  animation-delay: 1.6s;
+}
+
+
+/* ---------------------------------------------------------
+   DATA NODES
+   --------------------------------------------------------- */
+
+@keyframes dataCoreNode {
+  0%,
+  100% {
+    transform: scale(0.65);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.data-core-node {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: #8b5cf6;
+
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, 0.95),
+    0 0 22px rgba(139, 92, 246, 0.35);
+
+  animation:
+    dataCoreNode
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+.data-core-node.cyan {
+  background: #22d3ee;
+
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.95),
+    0 0 22px rgba(34, 211, 238, 0.35);
+
+  animation-delay: 1.7s;
+}
+
+
+/* ---------------------------------------------------------
+   DATA LABEL LINE
+   --------------------------------------------------------- */
+
+.data-core-line {
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0),
+      rgba(139, 92, 246, 0.55)
+    );
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .data-core-particle,
+  .data-core-orbit,
+  .data-core-scan,
+  .data-core-status-dot,
+  .data-core-check,
+  .data-core-node {
+    animation: none;
+  }
 }
