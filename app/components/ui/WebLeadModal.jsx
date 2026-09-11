@@ -51,7 +51,7 @@ export default function WhatsAppModal({
   <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
     {/* Backdrop */}
     <div
-      className="absolute inset-0 bg-slate-950/55 backdrop-blur-[8px]"
+      className="absolute inset-0 bg-slate-950/55 backdrop-blur-sm"
       onClick={handleClose}
     />
 
@@ -61,7 +61,7 @@ export default function WhatsAppModal({
       aria-modal="true"
       aria-labelledby="whatsapp-modal-title"
       className="
-        relative z-10 w-full max-w-[420px]
+        relative z-10 w-full max-w-105
         overflow-hidden rounded-[28px]
         border border-white/10
         bg-slate-900
@@ -112,10 +112,10 @@ export default function WhatsAppModal({
           flex h-9 w-9 items-center justify-center
           rounded-full
           border border-white/5
-          bg-white/[0.04]
+          bg-white/4
           text-slate-400
           transition-all duration-200
-          hover:bg-white/[0.09]
+          hover:bg-white/9
           hover:text-white
         "
       >
@@ -141,7 +141,7 @@ export default function WhatsAppModal({
         <div className="flex justify-center">
           <div
             className="
-              relative flex h-[58px] w-[58px]
+              relative flex h-14.5 w-14.5
               items-center justify-center
               rounded-[18px]
               bg-linear-to-br
@@ -166,7 +166,7 @@ export default function WhatsAppModal({
             id="whatsapp-modal-title"
             className="
               text-[25px] font-semibold
-              leading-tight tracking-[-0.025em]
+              leading-tight tracking-tight
               sm:text-[27px]
             "
           >
