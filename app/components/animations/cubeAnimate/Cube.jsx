@@ -73,6 +73,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import LensText from "../../ui/LensText";
+import WhatsAppModal from "../../ui/WebLeadModal";
 
 const categories = ["FILTERED", "VERIFIED", "CUSTOM"];
 
@@ -107,6 +108,12 @@ export default function Cube() {
     x: 0,
     y: 0,
   });
+
+  const [isWebLeadCardClicked, setIsWebLeadCardClicked] = useState(false)
+
+  const handleWebLeadClick = ()=>{
+    setIsWebLeadCardClicked((prev)=>!prev)
+  }
 
   /* -------------------------------------------------------
      ENTRANCE
@@ -382,9 +389,9 @@ export default function Cube() {
             DATA ORBIT PATH
         ================================================== */}
 
-          <div className="data-core-orbit hidden md:block absolute inset-[12%] rounded-full">
+          {/* <div className="data-core-orbit hidden md:block absolute inset-[12%] rounded-full">
             <span className="data-core-orbit-dot" />
-          </div>
+          </div> */}
 
           {/* =================================================
             GLASS CORE
@@ -404,6 +411,7 @@ export default function Cube() {
   -translate-x-1/2
   -translate-y-1/2
 "
+onClick={handleWebLeadClick}
           >
             {/* ROTATING CARD BACKGROUND */}
             <div
@@ -628,6 +636,7 @@ export default function Cube() {
       >
         <LensText />
       </div>
+      <WhatsAppModal isWebLeadCardClicked={isWebLeadCardClicked} setIsWebLeadCardClicked={setIsWebLeadCardClicked}/>
     </>
   );
 }
