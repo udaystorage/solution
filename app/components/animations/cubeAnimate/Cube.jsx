@@ -79,8 +79,8 @@ const categories = ["FILTERED", "VERIFIED", "CUSTOM"];
 const statuses = [
   "NEW INVESTORS",
   "CRYPTO TRADERS",
-  "IPO INVESTORS",
-  "HIGH VALUE INVESTORS",
+  "FOREX TRADERS",
+  "HIGH VALUE TRADERS",
 ];
 
 const particles = [
@@ -205,393 +205,429 @@ export default function Cube() {
   };
 
   return (
-    <div
-      ref={wrapperRef}
-      className="relative flex h-full w-full items-center justify-center overflow-visible"
-    >
-      {/* =====================================================
+    <>
+      <div
+        ref={wrapperRef}
+        className="relative flex h-full w-full min-w-0 items-center justify-center overflow-visible
+    pt-0
+    sm:pt-10
+    md:pt-8
+    lg:pt-0"
+      >
+        {/* =====================================================
           AMBIENT FIELD
       ====================================================== */}
 
-      <div
-        className={`absolute left-1/2 top-1/2 h-112 w-md
+        <div
+          className={`absolute left-1/2 top-1/2 h-112 w-md
         -translate-x-1/2 -translate-y-1/2 rounded-full
         transition-all duration-1600
         ${visible ? "scale-100 opacity-100" : "scale-75 opacity-0"}`}
-        style={{
-          background:
-            "radial-gradient(circle, rgba(109,40,217,0.20) 0%, rgba(124,58,237,0.11) 32%, rgba(59,130,246,0.06) 52%, transparent 72%)",
-          filter: "blur(28px)",
-        }}
-      />
+          style={{
+            background:
+              "radial-gradient(circle, rgba(109,40,217,0.20) 0%, rgba(124,58,237,0.11) 32%, rgba(59,130,246,0.06) 52%, transparent 72%)",
+            filter: "blur(28px)",
+          }}
+        />
 
-      <div
-        className={`absolute left-1/2 top-1/2 h-76 w-76
+        <div
+          className={`absolute left-1/2 top-1/2 h-76 w-76
         -translate-x-1/2 -translate-y-1/2 rounded-full
         transition-all duration-1800
         ${visible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
-        style={{
-          background:
-            "radial-gradient(circle, rgba(34,211,238,0.12), transparent 68%)",
-          filter: "blur(30px)",
-        }}
-      />
+          style={{
+            background:
+              "radial-gradient(circle, rgba(34,211,238,0.12), transparent 68%)",
+            filter: "blur(30px)",
+          }}
+        />
 
-      {/* =====================================================
+        {/* =====================================================
           AMBIENT PARTICLES
       ====================================================== */}
 
-      {particles.map((particle, index) => (
-        <span
-          key={index}
-          className={`data-core-particle absolute h-0.75 w-0.75
+        {particles.map((particle, index) => (
+          <span
+            key={index}
+            className={`data-core-particle absolute h-0.75 w-0.75
           rounded-full bg-cyan-400 ${visible ? "opacity-100" : "opacity-0"}`}
-          style={{
-            left: particle.left,
-            top: particle.top,
-            animationDelay: particle.delay,
-            transition: `opacity 700ms ease ${index * 80}ms`,
-          }}
-        />
-      ))}
+            style={{
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.delay,
+              transition: `opacity 700ms ease ${index * 80}ms`,
+            }}
+          />
+        ))}
 
-      {/* =====================================================
+        {/* =====================================================
           CATEGORY LABEL
       ====================================================== */}
 
-      <div
-        className={`absolute left-1/2 top-[5%]
+        <div
+          className={`absolute left-1/2 top-[5%]
         -translate-x-1/2 transition-all duration-1000
         ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
-      >
-        <div className="flex items-center gap-3">
-          <span className="h-px w-9 bg-linear-to-r from-transparent to-violet-500/40" />
+        >
+          <div className="flex items-center gap-3">
+            <span className="h-px w-9 bg-linear-to-r from-transparent to-violet-500/40" />
 
-          <div className="relative h-4 w-28 overflow-hidden text-center">
-            {categories.map((category, index) => (
-              <span
-                key={category}
-                className={`absolute inset-0 text-[8px]
+            <div className="relative h-4 w-28 overflow-hidden text-center">
+              {categories.map((category, index) => (
+                <span
+                  key={category}
+                  className={`absolute inset-0 text-[8px]
                 font-semibold tracking-[0.32em]
-                text-violet-600/70 transition-all duration-700
+                text-violet-600 transition-all duration-700
                 ${
                   categoryIndex === index
                     ? "translate-y-0 opacity-100"
                     : "translate-y-3 opacity-0"
                 }`}
-              >
-                {category}
-              </span>
-            ))}
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+
+            <span className="h-px w-9 bg-linear-to-l from-transparent to-cyan-500/40" />
           </div>
-
-          <span className="h-px w-9 bg-linear-to-l from-transparent to-cyan-500/40" />
         </div>
-      </div>
 
-      {/* =====================================================
+        {/* =====================================================
           MAIN OBJECT
       ====================================================== */}
 
-      <div
-        ref={coreRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        className={`relative aspect-square w-[min(82vw,31rem)]
-        transition-all duration-[1400ms]
+        <div
+          ref={coreRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={`relative aspect-square
+  w-[min(76vw,31rem)]
+  sm:w-[min(72vw,31rem)]
+  md:w-[min(52vw,31rem)]
+  lg:w-[min(31rem,38vw)]
+  xl:w-124
+        transition-all duration-1400
         ease-[cubic-bezier(.22,.61,.36,1)]
         ${
           visible
             ? "translate-y-0 scale-100 opacity-100"
             : "translate-y-8 scale-[0.88] opacity-0"
         } `}
-        style={{
-          transform: `
+          style={{
+            transform: `
             perspective(1200px)
             rotateX(${tilt.x}deg)
             rotateY(${tilt.y}deg)
           `,
-        }}
-      >
-        {/* =================================================
+          }}
+        >
+          {/* =================================================
             LARGE SOFT SHADOW
         ================================================== */}
 
-        <div
-          className="absolute left-1/2 top-1/2
+          <div
+            className="absolute left-1/2 top-1/2
           h-[68%] w-[68%]
           -translate-x-1/2 -translate-y-1/2
           rounded-[3rem]"
-          style={{
-            background: "rgba(76,29,149,0.30)",
-            filter: "blur(45px)",
-          }}
-        />
+            style={{
+              background: "rgba(76,29,149,0.30)",
+              filter: "blur(45px)",
+            }}
+          />
 
-        {/* =================================================
+          {/* =================================================
             BACK DATA FRAME
         ================================================== */}
 
-        <div
-          className="absolute inset-[8%] rounded-[3rem]"
-          style={{
-            border: "1px solid rgba(124,58,237,0.18)",
-            transform: "rotate(5deg)",
-          }}
-        />
+          <div
+            className="
+  absolute
+  inset-[13%]
+  min-[480px]:inset-[19%]
+  sm:inset-[18%]
+  md:inset-[10%]
+  lg:inset-[8%]
+  rounded-4xl
+  sm:rounded-[2.5rem]
+  lg:rounded-[3rem]
+  data-core-card-outer-rotate
+"
+            style={{
+              border: "1px solid rgba(124,58,237,0.18)",
+              transform: "rotate(5deg)",
+            }}
+          />
 
-        <div
-          className="absolute inset-[11%] rounded-[3rem]"
-          style={{
-            border: "1px solid rgba(34,211,238,0.12)",
-            transform: "rotate(-4deg)",
-          }}
-        />
+          <div
+            className="
+  absolute
+  inset-[9%]
+  sm:inset-[10%]
+  md:inset-[9%]
+  lg:inset-[7%]
+  rounded-4xl
+  sm:rounded-[2.5rem]
+  lg:rounded-[3rem]
+"
+            style={{
+              border: "1px solid rgba(34,211,238,0.12)",
+              transform: "rotate(-4deg)",
+            }}
+          />
 
-        {/* =================================================
+          {/* =================================================
             DATA ORBIT PATH
         ================================================== */}
 
-        <div className="data-core-orbit absolute inset-[12%] rounded-full">
-          <span className="data-core-orbit-dot" />
-        </div>
-
-        {/* =================================================
-            GLASS CORE
-        ================================================== */}
-
-        <div
-          className="absolute left-1/2 top-1/2
-  aspect-square w-[63%]
-  -translate-x-1/2 -translate-y-1/2"
-        >
-          {/* ROTATING CARD BACKGROUND */}
-          <div
-            className={`data-core-glass data-core-card-rotate
-    absolute inset-0
-    overflow-hidden rounded-[3rem]
-    ${activeSignal ? "data-core-glass-active" : ""}`}
-          >
-            {/* Glass reflection */}
-            <div
-              className="absolute left-[-25%] top-[-30%]
-      h-[75%] w-[70%] rotate-[-35deg]
-      rounded-full bg-white/10 blur-[22px]"
-            />
-
-            {/* Violet internal light */}
-            <div
-              className="absolute left-1/2 top-1/2
-      h-[75%] w-[75%]
-      -translate-x-1/2 -translate-y-1/2
-      rounded-full bg-violet-500/40 blur-[42px]"
-            />
-
-            {/* Cyan internal light */}
-            <div
-              className="absolute right-[-20%] top-[20%]
-      h-[55%] w-[35%]
-      rounded-full bg-cyan-400/30 blur-[35px]"
-            />
-
-            {/* Inner border */}
-            <div
-              className="absolute inset-[3%]
-      rounded-[2.7rem]
-      border border-white/13"
-            />
-
-            {/* Scanning light */}
-            {/* <div className="data-core-scan absolute left-0 top-0 h-px w-full" /> */}
+          <div className="data-core-orbit hidden md:block absolute inset-[12%] rounded-full">
+            <span className="data-core-orbit-dot" />
           </div>
 
           {/* =================================================
+            GLASS CORE
+        ================================================== */}
+
+          <div
+            className="
+  absolute
+  left-1/2
+  top-1/2
+  aspect-square
+  w-[52%]
+ min-[480px]:w-[45%] 
+  sm:w-[48%]
+  md:w-[58%]
+  lg:w-[63%]
+  -translate-x-1/2
+  -translate-y-1/2
+"
+          >
+            {/* ROTATING CARD BACKGROUND */}
+            <div
+              className={`data-core-glass data-core-card-rotate
+    absolute inset-0
+    overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] lg:rounded-[3rem]
+    ${activeSignal ? "data-core-glass-active" : ""}`}
+            >
+              {/* Glass reflection */}
+              <div
+                className="absolute left-[-25%] top-[-30%]
+      h-[75%] w-[70%] rotate-[-35deg]
+      rounded-full bg-white/10 blur-[22px]"
+              />
+
+              {/* Violet internal light */}
+              <div
+                className="absolute left-1/2 top-1/2
+      h-[75%] w-[75%]
+      -translate-x-1/2 -translate-y-1/2
+      rounded-full bg-violet-500/40 blur-[42px]"
+              />
+
+              {/* Cyan internal light */}
+              <div
+                className="absolute right-[-20%] top-[20%]
+      h-[55%] w-[35%]
+      rounded-full bg-cyan-400/30 blur-[35px]"
+              />
+
+              {/* Inner border */}
+              <div
+                className="absolute inset-[3%] rounded-[1.4rem] sm:rounded-[1.9rem] lg:rounded-[2.7rem]
+      border border-white/13"
+              />
+
+              {/* Scanning light */}
+              {/* <div className="data-core-scan absolute left-0 top-0 h-px w-full" /> */}
+            </div>
+
+            {/* =================================================
               CONTENT
           ================================================== */}
 
-          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-            {/* TOP STATUS */}
+            <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
+              {/* TOP STATUS */}
 
-            <div className="mb-5 flex items-center gap-2">
-              <span className="data-core-status-dot" />
+              <div className="mb-3 sm:mb-4 md:mb-4 mt-2 sm:mt-3 flex items-center gap-1.5 sm:gap-2">
+                <span className="data-core-status-dot" />
 
-              <span className="text-[9px] font-semibold tracking-[0.34em] text-cyan-200/75">
-                WEBLEADS
-              </span>
+                <span className="text-[9px] font-semibold tracking-[0.34em] text-cyan-200/75">
+                  WEBLEADS
+                </span>
 
-              <span className="data-core-status-dot violet" />
-            </div>
+                <span className="data-core-status-dot violet" />
+              </div>
 
-            {/* PRICE */}
+              {/* PRICE */}
 
-            <div className="relative select-none">
-              <span
-                aria-hidden="true"
-                className="absolute inset-0
+              <div className="relative select-none">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0
                 bg-linear-to-r from-violet-300
                 via-white to-cyan-300
                 bg-clip-text text-transparent
-                text-[clamp(5.5rem,10vw,8rem)]
+                text-[clamp(3rem,15vw,8rem)]
                 font-semibold leading-[0.8]
-                tracking-[-0.1em]
+                -tracking-widest
                 opacity-70 blur-[18px]"
-              >
-                ₹25
-              </span>
+                >
+                  ₹25
+                </span>
 
-              <span
-                className="relative
+                <span
+                  className="relative
                 pr-1
                 bg-linear-to-br from-white
                 via-violet-100 to-cyan-200
                 bg-clip-text text-transparent
-                text-[clamp(5.5rem,10vw,8rem)]
+                text-[clamp(3rem,15vw,8rem)]
                 font-semibold leading-[0.8]
-                tracking-[-0.1em]
+                -tracking-widest
                 drop-shadow-[0_0_24px_rgba(139,92,246,0.45)]"
-              >
-                ₹25
-              </span>
-            </div>
+                >
+                  ₹25
+                </span>
+              </div>
 
-            {/* LEAD LABEL */}
+              {/* LEAD LABEL */}
 
-            <div className="mt-5 flex items-center gap-3">
-              <span className="h-px w-7 bg-violet-300/50" />
+              <div className="mt-3 sm:mt-4 md:mt-5 flex sm:hidden lg:flex items-center gap-2 sm:gap-3 px-2">
+                <span className="h-px w-7 bg-violet-300/50" />
 
-              <span className="text-[10px] font-semibold tracking-[0.30em] text-white/90">
-                PER VERIFIED LEAD
-              </span>
+                <span className="text-[8px] sm:text-[9px] md:text-[10px] font-semibold tracking-[0.20em] sm:tracking-[0.25em] md:tracking-[0.30em] text-white/90 whitespace-nowrap ">
+                  PER VERIFIED LEAD
+                </span>
 
-              <span className="h-px w-7 bg-cyan-300/50" />
-            </div>
+                <span className="h-px w-7 bg-cyan-300/50" />
+              </div>
 
-            {/* STATUS */}
+              {/* STATUS */}
 
-            <div className="relative mt-7 h-5 w-48 overflow-hidden">
-              {statuses.map((status, index) => (
-                <div
-                  key={status}
-                  className={`absolute inset-0 flex items-center
+              <div className="relative mt-1.5 sm:mt-5 lg:mt-7 h-5 w-[min(11rem,70%)] overflow-hidden">
+                {statuses.map((status, index) => (
+                  <div
+                    key={status}
+                    className={`absolute inset-0 flex items-center
                   justify-center gap-2 transition-all duration-700
                   ${
                     statusIndex === index
                       ? "translate-y-0 opacity-100"
                       : "translate-y-3 opacity-0"
                   }`}
-                >
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-300/10 text-[8px] text-cyan-200">
-                    ✓
-                  </span>
+                  >
+                    <span className="flex h-4 w-4 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-300/10 text-[8px] text-cyan-200">
+                      ✓
+                    </span>
 
-                  <span className="text-[8px] font-medium tracking-[0.22em] text-white/75">
-                    {status}
-                  </span>
-                </div>
-              ))}
+                    <span className="text-[7px] sm:text-[8px] font-medium tracking-[0.16em] sm:tracking-[0.22em] text-white/75 whitespace-nowrap">
+                      {status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BOTTOM DETAIL */}
+
+              <div className="mt-4 text-[7px] tracking-[0.18em] text-cyan-200 hidden sm:block">
+                FRESH . ACTIVE . ACCURATE
+              </div>
             </div>
 
-            {/* BOTTOM DETAIL */}
-
-            <div className="mt-4 text-[7px] tracking-[0.18em] text-cyan-200">
-              FRESH . ACTIVE . ACCURATE
-            </div>
-          </div>
-
-          {/* =================================================
+            {/* =================================================
               SCANNING LIGHT
           ================================================== */}
 
-          <div className="data-core-scan absolute left-0 top-0 h-px w-full" />
-        </div>
+            <div className="data-core-scan absolute left-0 top-0 h-px w-full" />
+          </div>
 
-        {/* =================================================
+          {/* =================================================
             LEFT DATA LABEL
         ================================================== */}
 
-        <div
-          className={`absolute left-[2%] top-[38%]
+          <div
+            className={`absolute left-[0%] sm:left-[1%] md:left-[2%] top-[38%]
           transition-all duration-1000 delay-700
           ${
             visible ? "translate-x-0 opacity-100" : "-translate-x-5 opacity-0"
           }`}
-        >
-          <div className="data-core-line mb-2 w-10" />
+          >
+            <div className="data-core-line mb-2 w-10" />
 
-          <p className="text-[7px] font-semibold tracking-[0.24em] text-violet-600/75">
-            DATA
-          </p>
+            <p className="text-[6px] sm:text-[7px] font-semibold tracking-[0.18em] sm:tracking-[0.24em] text-violet-600/75">
+              DATA
+            </p>
 
-          <p className="mt-1 text-[7px] tracking-[0.16em] text-slate-500">
-            MATCHED
-          </p>
-        </div>
+            <p className="mt-1 text-[6px] sm:text-[7px] tracking-[0.12em] sm:tracking-[0.16em] text-slate-500">
+              MATCHED
+            </p>
+          </div>
 
-        {/* =================================================
+          {/* =================================================
             RIGHT DATA LABEL
         ================================================== */}
 
-        <div
-          className={`absolute right-[1%] top-[57%] text-right
+          <div
+            className={`absolute right-[0%] sm:right-[1%] md:right-[2%] top-[57%] text-right
           transition-all duration-1000 delay-900
           ${visible ? "translate-x-0 opacity-100" : "translate-x-5 opacity-0"}`}
-        >
-          <div className="data-core-line mb-2 ml-auto w-10" />
+          >
+            <div className="data-core-line mb-2 ml-auto w-10" />
 
-          <p className="text-[8px] font-semibold tracking-[0.24em] text-cyan-600">
-            VERIFIED
-          </p>
+            <p className="text-[6px] sm:text-[7px] md:text-[8px] font-semibold tracking-[0.18em] sm:tracking-[0.24em] text-cyan-600">
+              VERIFIED
+            </p>
 
-          <p className="mt-1 text-[8px] tracking-[0.16em] text-slate-600">
-            READY
-          </p>
-        </div>
+            <p className="mt-1 text-[6px] sm:text-[7px] tracking-[0.12em] sm:tracking-[0.16em] text-slate-500">
+              READY
+            </p>
+          </div>
 
-        {/* =================================================
+          {/* =================================================
             CHECKPOINTS
         ================================================== */}
 
-        <div className="data-core-check absolute right-[13%] top-[22%]">✓</div>
+          <div className="data-core-check absolute right-[11%] sm:right-[12%] md:right-[13%] top-[20%] sm:top-[21%] md:top-[22%]">
+            ✓
+          </div>
 
-        <div className="data-core-check violet absolute bottom-[19%] left-[13%]">
-          ✓
-        </div>
+          <div className="data-core-check violet absolute bottom-[17%] sm:bottom-[18%] md:bottom-[19%] left-[11%] sm:left-[12%] md:left-[13%]">
+            ✓
+          </div>
 
-        {/* =================================================
+          {/* =================================================
             DATA NODES
         ================================================== */}
 
-        <span className="data-core-node absolute left-[18%] top-[29%]" />
+          <span className="data-core-node absolute left-[16%] sm:left-[17%] md:left-[18%] top-[27%] sm:top-[28%] md:top-[29%]" />
 
-        <span className="data-core-node cyan absolute bottom-[28%] right-[18%]" />
-      </div>
+          <span className="data-core-node cyan absolute bottom-[26%] sm:bottom-[27%] md:bottom-[28%] right-[16%] sm:right-[17%] md:right-[18%]" />
+        </div>
 
-      {/* =====================================================
+        {/* =====================================================
           BOTTOM MESSAGE
       ====================================================== */}
-
-      <div
-        className={`absolute bottom-[3%] left-1/2
-        -translate-x-1/2 whitespace-nowrap
-        transition-all duration-1000 delay-[1100ms]
-        ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
-      >
-        {/* <span
-          className="
-    relative inline-block
-    text-slate-600
-    drop-shadow-[0_0_6px_rgba(99,102,241,0.22)]
-bg-[linear-gradient(110deg,#334155_0%,#334155_40%,#ffffff_50%,#6366f1_54%,#334155_64%,#334155_100%)]    bg-[length:250%_100%]
-    bg-clip-text
-    text-transparent
-    animate-[shimmer_4s_ease-in-out_infinite]
-  "
-        >
-          For advisory, brokerage, stock-market training courses & financial
-          services
-        </span> */}
-        <LensText/>
       </div>
-    </div>
+      <div
+      className={`absolute
+  left-1/2
+  -translate-x-1/2
+  -bottom-8
+  sm:bottom-0.5
+  md:bottom-[5%]
+  lg:bottom-[3%]
+  w-full
+  px-4
+  flex
+  justify-center
+  transition-all duration-1000 delay-1100
+  ${visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+      >
+        <LensText />
+      </div>
+    </>
   );
 }

@@ -213,6 +213,22 @@ body {
     transform: rotate(360deg);
   }
 }
+/* Data store hero reverese rotation css */
+.data-core-card-outer-rotate {
+  animation: dataCoreCardOuterRotate 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes dataCoreCardOuterRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 @keyframes text-shimmer {
   from {

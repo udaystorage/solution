@@ -1,3 +1,4 @@
+
 "use client";
 
 const text =
@@ -74,6 +75,28 @@ export default function LensText() {
           }
         }
 
+        /*
+         * MOBILE + TABLET
+         * Allow the letters to wrap into two lines.
+         */
+        @media (max-width: 1023px) {
+          .lens-text {
+            white-space: normal;
+            width: min(90vw, 520px);
+            text-align: center;
+          }
+        }
+
+        /*
+         * SMALL MOBILE
+         * Slightly narrower so the break happens cleanly.
+         */
+        @media (max-width: 639px) {
+          .lens-text {
+            width: min(92vw, 390px);
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .lens-letter {
             animation: none;
@@ -83,3 +106,4 @@ export default function LensText() {
     </>
   );
 }
+
