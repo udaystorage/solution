@@ -82,7 +82,7 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>Topsia, Kolkata, West Bengal 700046</span>
+                  <span>14/2, Ashutosh Mukherjee Road, Building No. 5E, Bhowanipore 700020</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
