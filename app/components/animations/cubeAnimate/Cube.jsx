@@ -463,7 +463,7 @@ onClick={handleWebLeadClick}
                 <span className="data-core-status-dot" />
 
                 <span className="text-[9px] font-semibold tracking-[0.34em] text-cyan-200/75">
-                  WEBLEADS
+                  WEB LEADS
                 </span>
 
                 <span className="data-core-status-dot violet" />

@@ -12,7 +12,9 @@ const geist = Geist({
 
 import { openWhatsApp } from "@/lib/whatsapp";
 const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
-const email = "datatreaure@gmail.com";
+
+const email1 = process.env.NEXT_PUBLIC_EMAIL_1;
+const email2 = process.env.NEXT_PUBLIC_EMAIL_2;
 
 
 const footerLinks = [
@@ -81,13 +83,13 @@ export default function Footer() {
 
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
-                  <MapPin className="h-4 w-4 shrink-0 text-neutral-400" />
+                  <MapPin className="-mt-5 h-4 w-4 shrink-0 text-neutral-400" />
                   <span>14/2, Ashutosh Mukherjee Road, Building No. 5E, Bhowanipore 700020</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
-                  <Mail className="h-4 w-4 shrink-0 text-neutral-400" />
-                  <span> joysolution21@gmail.com</span>
+                  <Mail className="-mt-5 h-4 w-4 shrink-0 text-neutral-400" />
+                  <span> {email1} {" "}<br />{email2}</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
