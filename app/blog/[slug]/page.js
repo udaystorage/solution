@@ -1,94 +1,31 @@
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
+import { urlFor } from "@/lib/sanity/image";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
-import path from "path";
 import Link from "next/link";
-import { getJsonFilesAsArray } from "@/lib/blog";
 import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
+import { getAllPosts, getPostBySlug } from "@/lib/sanity/queries";
 
-const BLOG_DIR = path.join(process.cwd(), "data", "blog");
+import PortableTextRenderer from "@/app/components/blog/PortableTextRenderer";
+
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-// Some older/raw content has bullet points typed inline inside a single
-// paragraph string, e.g. "May include: • Item one • Item two • Item three"
-// instead of being stored as a proper list block. This detects that pattern
-// and splits it into an optional intro sentence + real list items.
-function extractInlineBulletList(text) {
-  if (!text || !text.includes("•")) return null;
-
-  const parts = text
-    .split("•")
-    .map((p) => p.trim())
-    .filter(Boolean);
-
-  // Need at least 2 bullet-separated chunks to treat this as a list
-  if (parts.length < 2) return null;
-
-  const [intro, ...items] = parts;
-  return { intro, items };
-}
-
-// Turns a paragraph textarea's raw text into an array of blocks.
-// Lines starting with "- ", "* ", or "• " become a list block.
-// Everything else becomes a paragraph block.
-function parseParagraphBlocks(text) {
-  const lines = text.split("\n");
-  const blocks = [];
-  let currentList = null;
-  let currentParagraph = [];
-
-  const flushParagraph = () => {
-    const joined = currentParagraph.join(" ").trim();
-    if (joined) blocks.push({ type: "paragraph", text: joined });
-    currentParagraph = [];
-  };
-
-  const flushList = () => {
-    if (currentList && currentList.length) {
-      blocks.push({ type: "list", items: currentList });
-    }
-    currentList = null;
-  };
-
-  lines.forEach((line) => {
-    const trimmed = line.trim();
-    const bulletMatch = trimmed.match(/^[-*•]\s+(.*)/);
-
-    if (bulletMatch) {
-      flushParagraph();
-      if (!currentList) currentList = [];
-      currentList.push(bulletMatch[1]);
-    } else if (trimmed === "") {
-      flushParagraph();
-      flushList();
-    } else {
-      flushList();
-      currentParagraph.push(trimmed);
-    }
-  });
-
-  flushParagraph();
-  flushList();
-  return blocks;
-}
-
 //  1. SSG PRE-RENDERING PARAMETERS
 export async function generateStaticParams() {
-  const blogs = await getJsonFilesAsArray();
+  const posts = await getAllPosts();
 
-  return blogs.map((blog) => ({
-    slug: blog.slug,
+  return posts.map((post) => ({
+    slug: post.slug,
   }));
 }
 
 // 2. DYNAMIC SEO METADATA INJECTION
 export async function generateMetadata({ params }) {
-  const blogs = await getJsonFilesAsArray();
-
   const { slug } = await params;
-  const blog = blogs.find((item) => item.slug === slug);
+
+  const blog = await getPostBySlug(slug);
 
   if (!blog) return {};
 
@@ -96,7 +33,7 @@ export async function generateMetadata({ params }) {
     ? blog.image
     : `${baseUrl}${blog.image || "/demoBlog.webp"}`;
 
-  const isoDate = new Date(blog.date).toISOString();
+  const isoDate = new Date(blog.publishedAt).toISOString();
 
   return {
     title: `${blog.title} | Datatreasure Insights`,
@@ -140,17 +77,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-  const blogs = await getJsonFilesAsArray();
-
   const { slug } = await params;
 
-  const blog = blogs.find((item) => item.slug === slug);
+  const blog = await getPostBySlug(slug);
 
   if (!blog) {
     notFound();
   }
 
-  const isoDate = new Date(blog.date).toISOString();
+ const isoDate = new Date(blog.publishedAt).toISOString();
 
   // 3. INLINE STRUCURED DATA PIPELINE (JSON-LD)
   const jsonLdSchema = {
@@ -232,7 +167,7 @@ export default async function BlogPage({ params }) {
                 Back to Blog
               </Link>
               <div>
-                <time dateTime={isoDate.split("T")[0]}>{blog.date}</time>
+                <time dateTime={isoDate.split("T")[0]}>{blog.publishedAt}</time>
                 <span className="text-stone-300 ml-1 sm:ml-2" aria-hidden="true">
                   •
                 </span>
@@ -254,7 +189,7 @@ export default async function BlogPage({ params }) {
           {/* Media Element Block */}
           <div className="mt-8 sm:mt-10 md:mt-12 overflow-hidden rounded-3xl border border-stone-200 shadow-xl shadow-stone-950/5">
             <Image
-              src={blog.image || "/demoBlog.webp"}
+              src={urlFor(blog.coverImage).width(1200).url()}
               alt={`${blog.title} overview image`}
               fetchPriority="high"
               loading="eager"
@@ -269,97 +204,29 @@ export default async function BlogPage({ params }) {
           <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
-              <p className="text-sm md:text-[15px] leading-relaxed text-stone-700 font-medium">
-                {blog.content?.introduction}
-              </p>
+             <div className="mt-12">
+  <PortableTextRenderer value={blog.body} />
+</div>
 
-              {blog.content?.sections?.map((section, idx) => (
-                <section key={idx} className="space-y-4">
-                  <h2 className="text-[20px] lg:text-2xl font-semibold tracking-tight text-stone-900 pt-0 sm:pt-4">
-                    {section.heading}
-                  </h2>
+          {blog.takeaway && (
+  <aside
+    className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
+    aria-label="Article Summary Key Takeaway"
+  >
+    <div
+      className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"
+      aria-hidden="true"
+    />
 
-                  {section.brief && (
-                    <p className="text-stone-500 italic font-medium text-base">
-                      {section.brief}
-                    </p>
-                  )}
+    <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
+      Key Takeaway
+    </h3>
 
-                  {section.paragraphs?.map((block, pIdx) => {
-                    // Backward compatibility: older posts may have saved
-                    // paragraphs as plain strings instead of block objects.
-                    if (typeof block === "string") {
-                      return (
-                        <p
-                          key={pIdx}
-                          className="text-stone-600 leading-relaxed text-base antialiased"
-                        >
-                          {block}
-                        </p>
-                      );
-                    }
-
-                    if (block?.type === "list") {
-                      return (
-                        <ul
-                          key={pIdx}
-                          className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-base antialiased"
-                        >
-                          {block.items?.map((item, itemIdx) => (
-                            <li key={itemIdx}>{item}</li>
-                          ))}
-                        </ul>
-                      );
-                    }
-
-                    const inlineList = extractInlineBulletList(block?.text);
-
-                    if (inlineList) {
-                      return (
-                        <div key={pIdx} className="space-y-3">
-                          {inlineList.intro && (
-                            <p className="text-stone-600 leading-relaxed text-[15px] sm:text-base antialiased">
-                              {inlineList.intro}
-                            </p>
-                          )}
-                          <ul className="list-disc pl-6 space-y-1.5 text-stone-600 leading-relaxed text-[15px] sm:text-base antialiased">
-                            {inlineList.items.map((item, itemIdx) => (
-                              <li key={itemIdx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      );
-                    }
-
-                    return (
-                      <p
-                        key={pIdx}
-                        className="text-stone-600 leading-relaxed text-base antialiased"
-                      >
-                        {block?.text}
-                      </p>
-                    );
-                  })}
-                </section>
-              ))}
-
-              {blog.content?.takeaway && (
-                <aside
-                  className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
-                  aria-label="Article Summary Key Takeaway"
-                >
-                  <div
-                    className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"
-                    aria-hidden="true"
-                  />
-                  <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
-                    Key Takeaway
-                  </h3>
-                  <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-stone-200 font-light">
-                    {blog.content.takeaway}
-                  </p>
-                </aside>
-              )}
+    <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-stone-200 font-light">
+      {blog.takeaway}
+    </p>
+  </aside>
+)}
             </div>
 
             {/* Sidebar Sticky Panel Area */}
@@ -369,20 +236,20 @@ export default async function BlogPage({ params }) {
               </h3>
 
               <ul className="mt-4 space-y-4 list-none">
-                {blog.content?.highlights?.map((highlight, index) => (
-                  <li
-                    key={index}
-                    className="flex gap-3 items-start text-sm text-stone-600"
-                  >
-                    <span
-                      className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2"
-                      aria-hidden="true"
-                    />
-                    <span className="leading-tight font-medium">
-                      {highlight}
-                    </span>
-                  </li>
-                ))}
+              {blog.highlights?.length > 0 && (
+  <div>
+    <div className="mt-4 divide-y border-y">
+      {blog.highlights.map((highlight, index) => (
+        <div
+          key={index}
+          className="py-3 text-sm text-neutral-700"
+        >
+          {highlight}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
               </ul>
 
               <div className="mt-6 pt-5 border-t border-stone-200 text-center">
