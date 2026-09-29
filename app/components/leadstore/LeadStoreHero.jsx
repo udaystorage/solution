@@ -42,7 +42,7 @@ export default function LeadStoreHero() {
       />
       <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center text-center md:items-start md:text-left px-2 md:pl-16 lg:pl-32 xl:pl-55">
         <h1 className="max-w-xl hero-heading">
-          Get custom leads tailored to your
+          Best stock market leads tailored to your
           <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
             {" "}
             exact needs.

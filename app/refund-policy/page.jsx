@@ -3,6 +3,9 @@ import Script from "next/script";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL; 
 const contact = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 
+const email1 = process.env.NEXT_PUBLIC_EMAIL_1;
+const email2 = process.env.NEXT_PUBLIC_EMAIL_2;
+
 export const metadata = {
   title: "Refund & Replacement Policy | DataTreasure",
   description:
@@ -289,7 +292,7 @@ export default function RefundPolicyPage() {
 
               <address className="not-italic leading-8">
                 <strong>DataTreasure</strong><br />
-                Email: support@DataTreasure.co.in<br />
+                Email: {email1}{" "}/{" "}{email2}<br />
                 Phone: {contact}<br />
                 Website:  {baseUrl}<br />
               </address>

@@ -3,16 +3,16 @@
 export const faqData = {
   home: [
     {
-      question: "How does Leadwala verify its B2B contact and intent data?",
-      answer: "Leadwala employs a multi-layer verification process that includes automated validation, manual review, and cross-referencing with trusted data sources. This ensures that every contact and dataset meets our high standards for accuracy and deliverability."
+      question: "How does Datatreasure verify its B2B contact and intent data?",
+      answer: "Datatreasure employs a multi-layer verification process that includes automated validation, manual review, and cross-referencing with trusted data sources. This ensures that every contact and dataset meets our high standards for accuracy and deliverability."
     },
     {
       question: "Can I list and sell my own verified datasets?",
       answer: "No, we only sale databases, not allow users to list their own datasets. "
     },
     {
-      question: "What compliance standards does Leadwala follow?",
-      answer: "Leadwala is committed to responsible data practices. We source and deliver business data with a focus on accuracy, transparency, and applicable privacy regulations."
+      question: "What compliance standards does Datatreasure follow?",
+      answer: "Datatreasure is committed to responsible data practices. We source and deliver business data with a focus on accuracy, transparency, and applicable privacy regulations."
     }
   ],
 datastore: [
@@ -34,7 +34,7 @@ datastore: [
 ],
   about: [
     {
-      question: "What is Leadwala's core mission?",
+      question: "What is Datatreasure's core mission?",
       answer: "To help businesses connect with the right people through accurate, human-verified data they can trust."
     },
     {
