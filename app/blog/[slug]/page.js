@@ -8,7 +8,7 @@ import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
 import { getAllPosts, getPostBySlug } from "@/lib/sanity/queries";
 
 import PortableTextRenderer from "@/app/components/blog/PortableTextRenderer";
-
+import { extractHeadings } from "@/lib/blog/toc";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
@@ -85,7 +85,8 @@ export default async function BlogPage({ params }) {
     notFound();
   }
 
- const isoDate = new Date(blog.publishedAt).toISOString();
+  const headings = extractHeadings(blog.body);
+  const isoDate = new Date(blog.publishedAt).toISOString();
 
   // 3. INLINE STRUCURED DATA PIPELINE (JSON-LD)
   const jsonLdSchema = {
@@ -167,8 +168,17 @@ export default async function BlogPage({ params }) {
                 Back to Blog
               </Link>
               <div>
-                <time dateTime={isoDate.split("T")[0]}>{blog.publishedAt}</time>
-                <span className="text-stone-300 ml-1 sm:ml-2" aria-hidden="true">
+                <time dateTime={isoDate.split("T")[0]}>
+                  {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </time>
+                <span
+                  className="text-stone-300 ml-1 sm:ml-2"
+                  aria-hidden="true"
+                >
                   •
                 </span>
                 <span className="text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full font-semibold ml-1 sm:ml-2">
@@ -182,7 +192,7 @@ export default async function BlogPage({ params }) {
             </h1>
 
             <p className="mt-0 md:mt-3 italic max-w-3xl text-md md:text-lg lg:text-[18px] font-light leading-relaxed text-stone-600 border-l-2 border-emerald-700/30 pl-4 sm:pl-5 md:pl-6">
-              {blog.description}
+              {blog.excerpt}
             </p>
           </header>
 
@@ -204,29 +214,29 @@ export default async function BlogPage({ params }) {
           <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
-             <div className="mt-12">
-  <PortableTextRenderer value={blog.body} />
-</div>
+              <div className="mt-12">
+                <PortableTextRenderer value={blog.body} />
+              </div>
 
-          {blog.takeaway && (
-  <aside
-    className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
-    aria-label="Article Summary Key Takeaway"
-  >
-    <div
-      className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"
-      aria-hidden="true"
-    />
+              {blog.takeaway && (
+                <aside
+                  className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
+                  aria-label="Article Summary Key Takeaway"
+                >
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"
+                    aria-hidden="true"
+                  />
 
-    <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
-      Key Takeaway
-    </h3>
+                  <h3 className="text-xs font-semibold tracking-widest text-emerald-400 uppercase">
+                    Key Takeaway
+                  </h3>
 
-    <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-stone-200 font-light">
-      {blog.takeaway}
-    </p>
-  </aside>
-)}
+                  <p className="mt-3 text-[15px] sm:text-base leading-relaxed text-stone-200 font-light">
+                    {blog.takeaway}
+                  </p>
+                </aside>
+              )}
             </div>
 
             {/* Sidebar Sticky Panel Area */}
@@ -236,20 +246,20 @@ export default async function BlogPage({ params }) {
               </h3>
 
               <ul className="mt-4 space-y-4 list-none">
-              {blog.highlights?.length > 0 && (
-  <div>
-    <div className="mt-4 divide-y border-y">
-      {blog.highlights.map((highlight, index) => (
-        <div
-          key={index}
-          className="py-3 text-sm text-neutral-700"
-        >
-          {highlight}
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+                {blog.highlights?.length > 0 && (
+                  <div>
+                    <div className="mt-4 divide-y">
+                      {blog.highlights.map((highlight, index) => (
+                        <div
+                          key={index}
+                          className="py-3 text-sm text-neutral-700"
+                        >
+                          {highlight}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </ul>
 
               <div className="mt-6 pt-5 border-t border-stone-200 text-center">
