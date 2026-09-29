@@ -5,10 +5,13 @@ import { urlFor } from "@/lib/sanity/image";
 import BlogWhatsappBtn from "@/app/components/ui/BlogWhatsappBtn";
 import Link from "next/link";
 import BreadCrumbSchema from "@/app/components/seo/BreadCrumbSchema";
-import { getAllPosts, getPostBySlug } from "@/lib/sanity/queries";
 
+import { getAllPosts, getPostBySlug } from "@/lib/sanity/queries";
 import PortableTextRenderer from "@/app/components/blog/PortableTextRenderer";
 import { extractHeadings } from "@/lib/blog/toc";
+import TableOfContents from "@/app/components/blog/TableOfContents";
+import FAQ from "@/app/components/blog/FAQ";
+
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
@@ -80,6 +83,7 @@ export default async function BlogPage({ params }) {
   const { slug } = await params;
 
   const blog = await getPostBySlug(slug);
+  console.log("SANITY IMAGE URL:", urlFor(blog.coverImage).width(1200).url());
 
   if (!blog) {
     notFound();
@@ -206,6 +210,7 @@ export default async function BlogPage({ params }) {
               width={1200}
               height={680}
               sizes="(max-width: 768px) 100vw, 895px"
+              unoptimized
               className="w-full aspect-video object-cover hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
           </div>
@@ -214,10 +219,21 @@ export default async function BlogPage({ params }) {
           <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main Content Body Column */}
             <div className="lg:col-span-8 space-y-12">
+
+              {/* Table Of Contents */}
+              <TableOfContents headings={headings} />
+
+              {/* Main content */}
               <div className="mt-12">
                 <PortableTextRenderer value={blog.body} />
               </div>
 
+              {/* FAQ */}
+<FAQ id="faq" items={blog.faq} />
+
+
+
+              {/* Takeaway Card */}
               {blog.takeaway && (
                 <aside
                   className="relative mt-12 p-8 rounded-2xl bg-linear-to-br from-stone-900 to-slate-950 text-stone-100 shadow-xl overflow-hidden group"
@@ -238,6 +254,7 @@ export default async function BlogPage({ params }) {
                 </aside>
               )}
             </div>
+            
 
             {/* Sidebar Sticky Panel Area */}
             <aside className="lg:col-span-4 lg:sticky lg:top-8 bg-stone-100/80 border border-stone-200/60 rounded-2xl p-6 backdrop-blur-md shadow-sm">

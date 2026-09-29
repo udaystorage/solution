@@ -1,49 +1,21 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
+
 import blogimage from "../../public/demoBlog.webp";
-import { promises as fs } from "fs";
-import path from "path";
 import BreadCrumbSchema from "../components/seo/BreadCrumbSchema";
 
+import { getAllPosts } from "@/lib/sanity/queries";
+import { urlFor } from "@/lib/sanity/image";
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-const BLOG_DIR = path.join(process.cwd(), "data", "blog");
-
-/**
- * Reads every .json file in a directory and returns their parsed
- * contents merged into a single array.
- *
- * @param {string} dirPath - Absolute path to the directory to read.
- * @returns {Promise<Array>} Combined array of all JSON file contents.
- */
-export async function getJsonFilesAsArray(dirPath = BLOG_DIR) {
-  try {
-    const files = await fs.readdir(dirPath);
-    const jsonFiles = files.filter((file) => file.endsWith(".json"));
-
-    const items = await Promise.all(
-      jsonFiles.map(async (file) => {
-        const filePath = path.join(dirPath, file);
-        const raw = await fs.readFile(filePath, "utf-8");
-        return JSON.parse(raw);
-      }),
-    );
-
-    return items;
-  } catch (err) {
-    // Directory doesn't exist yet -> return an empty array instead of throwing
-    if (err.code === "ENOENT") return [];
-    throw err;
-  }
-}
 
 /**
  * 1. CONFIGURATION META ENCODING BLOCK
  */
 export const metadata = {
-  title: "B2b sales intelligence platform & Lead Generation Blog | Datatreasure",
+  title:
+    "B2b sales intelligence platform & Lead Generation Blog | Datatreasure",
   description:
     "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
   alternates: {
@@ -69,7 +41,7 @@ export const metadata = {
 export default async function BlogListingPage() {
   // 2. BATCH ARCHIVE SCHEMA (JSON-LD)
 
-  const blogs = await getJsonFilesAsArray();
+  const blogs = await getAllPosts();
   const listingJsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -78,25 +50,45 @@ export default async function BlogListingPage() {
       "Stay ahead with actionable digital marketing trends, enterprise lead generation strategies, and advanced business growth blueprints.",
     url: `${baseUrl}/blog`,
     blogPost: blogs.map((blog) => {
-      let isoDate;
-      try {
-        isoDate = new Date(blog.date).toISOString();
-      } catch (e) {
-        isoDate = new Date().toISOString();
-      }
+      const publishedDate = blog.publishedAt
+        ? new Date(blog.publishedAt).toISOString()
+        : undefined;
+
+      const image = blog.coverImage
+        ? urlFor(blog.coverImage).width(1200).url()
+        : `${baseUrl}/blog.jpg`;
 
       return {
         "@type": "BlogPosting",
         headline: blog.title,
-        description: blog.description,
+        description: blog.excerpt,
         url: `${baseUrl}/blog/${blog.slug}`,
-        datePublished: isoDate,
-        image: blog.image?.startsWith("http")
-          ? blog.image
-          : `${baseUrl}${blog.image || "/blog.jpg"}`,
+        ...(publishedDate && {
+          datePublished: publishedDate,
+        }),
+        ...(blog.updatedAt && {
+          dateModified: new Date(blog.updatedAt).toISOString(),
+        }),
+        image,
       };
     }),
   };
+
+  const faqJsonLd =
+    blogs.faq?.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: blog.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <>
@@ -106,6 +98,15 @@ export default async function BlogListingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          id="schema-faq"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd),
+          }}
+        />
+      )}
       <BreadCrumbSchema
         items={[
           {
@@ -136,7 +137,8 @@ export default async function BlogListingPage() {
             {/* Primary Target Keyword Heading */}
             <h1 className="max-w-2xl text-center hero-heading">
               Insights that brings you{" "}
-              <span        className="
+              <span
+                className="
                 block
                 pb-1
                 bg-linear-to-r
@@ -144,12 +146,13 @@ export default async function BlogListingPage() {
                 to-cyan-500
                 bg-clip-text
                 text-transparent
-              ">real growth</span>
+              "
+              >
+                real growth
+              </span>
             </h1>
 
-            <p
-              className="mx-auto text-center hero-subheading"
-            >
+            <p className="mx-auto text-center hero-subheading">
               Get the latest insights, trends, and best practices in the world
               of digital marketing. Our blog is your go-to resource for staying
               ahead in the ever-evolving landscape of online business.
@@ -164,16 +167,24 @@ export default async function BlogListingPage() {
         >
           <ul className="mx-auto grid w-full max-w-7xl list-none grid-cols-1 gap-6 p-0 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:gap-10">
             {blogs.map((blog) => {
-              let machineDate;
+              const machineDate = blog.publishedAt
+                ? new Date(blog.publishedAt).toISOString().split("T")[0]
+                : "";
 
-              try {
-                machineDate = new Date(blog.date).toISOString().split("T")[0];
-              } catch (e) {
-                machineDate = new Date().toISOString().split("T")[0];
-              }
+              const displayDate = blog.publishedAt
+                ? new Date(blog.publishedAt).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })
+                : "";
+
+              const imageUrl = blog.coverImage
+                ? urlFor(blog.coverImage).width(1200).url()
+                : blogimage;
 
               return (
-                <li key={blog.id} className="h-full">
+                <li key={blog._id} className="h-full">
                   <Link
                     href={`/blog/${blog.slug}`}
                     aria-label={`Read post: ${blog.title}`}
@@ -183,18 +194,22 @@ export default async function BlogListingPage() {
                       {/* Visual Asset Container */}
                       <div className="relative h-52 w-full overflow-hidden bg-neutral-100 sm:h-60 md:h-56 lg:h-60 xl:h-65">
                         <Image
-                          src={blog.image || blogimage}
-                          alt={`Featured visualization analyzing: ${blog.title}`}
+                          src={imageUrl}
+                          alt={
+                            blog.coverImage?.alt ||
+                            `Featured visualization analyzing: ${blog.title}`
+                          }
                           fill
                           fetchPriority="high"
                           loading="eager"
-                          className="object-cover  transition-all duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-97"
+                          unoptimized
+                          className="object-cover transition-all duration-500 group-hover:scale-102 opacity-90 group-hover:opacity-97"
                           sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                         />
                       </div>
 
                       {/* Content Detail Tree */}
-                      <div className="flex grow flex-col p-5 pt-4 sm:p-6 sm:pt-4 bg-stone-50">
+                      <div className="flex grow flex-col bg-stone-50 p-5 pt-4 sm:p-6 sm:pt-4">
                         <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 sm:text-sm">
                           <span>{blog.readTime}</span>
                         </div>
@@ -204,7 +219,7 @@ export default async function BlogListingPage() {
                         </h2>
 
                         <p className="mt-2 line-clamp-2 grow text-sm leading-relaxed text-neutral-600">
-                          {blog.description}
+                          {blog.excerpt}
                         </p>
 
                         <div className="mt-4 flex items-center justify-between gap-3 border-t border-neutral-200 pt-4">
@@ -212,7 +227,7 @@ export default async function BlogListingPage() {
                             dateTime={machineDate}
                             className="shrink-0 text-xs font-semibold text-neutral-500"
                           >
-                            {blog.date}
+                            {displayDate}
                           </time>
 
                           <span className="inline-flex shrink-0 scale-100 items-center gap-1 text-sm font-semibold text-neutral-700 transition duration-300 group-hover:scale-105">
