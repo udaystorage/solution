@@ -61,7 +61,7 @@ const components = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline underline-offset-4"
+         className="font-medium text-sky-600 underline decoration-sky-300 underline-offset-4 transition-colors hover:text-violet-900 hover:decoration-violet-600"
       >
         {children}
       </a>
