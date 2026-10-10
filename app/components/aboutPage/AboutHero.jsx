@@ -3,7 +3,11 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative h-[85vh] overflow-hidden">
+    <section
+      className="relative  min-h-[620px]
+    sm:min-h-[680px]
+    lg:min-h-[min(85svh,750px)] overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 ">
         <Image

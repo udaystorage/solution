@@ -32,8 +32,8 @@ export default function ReachCapabilities() {
   ];
 
   return (
-    <section className="bg-stone-50 px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20">
-      <div className="w-full lg:px-10 lg:py-36">
+    <section className="bg-stone-50 px-4 py-16 sm:px-8 md:px-16 lg:px-20 lg:py-20">
+      <div className="w-full">
         <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* visual */}
           {/* IMPORTANT: Map container and image behavior kept untouched */}

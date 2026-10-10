@@ -10,11 +10,11 @@ export default function BlurGlass() {
     // section gets morte weight by google
   <section
   className="
-    relative w-full min-h-screen
+    relative w-full lg:max-h-screen
     flex items-center justify-center
     overflow-hidden bg-white
     px-5 sm:px-8 md:px-10 lg:px-12 xl:px-20
-    py-24 sm:py-28 lg:py-20
+    py-24 sm:py-28 lg:py-32
   "
   aria-label="Hero Section"
   >

@@ -2,13 +2,13 @@ import { Check } from "lucide-react";
 
 export default function WhyWeExist() {
   return (
-    <section className="overflow-hidden bg-stone-50 px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20">
+    <section className="overflow-hidden bg-stone-50 px-4 py-16 sm:px-8 md:px-16 lg:px-20 lg:py-20">
       <div
         className="
           grid w-full gap-12
           sm:gap-14
           lg:grid-cols-[0.8fr_1.2fr]
-          lg:gap-16 lg:px-10 lg:py-36
+          lg:gap-16 
         "
       >
         {/* left */}
