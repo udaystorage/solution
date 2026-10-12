@@ -111,12 +111,12 @@ export const FAQSection = ({ page }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 px-6 md:px-12 lg:px-24">
+    <section className="relative overflow-hidden bg-white py-16 px-6 md:px-12 lg:px-16">
       <div className="absolute right-[-10%] top-1/2 -z-10 h-87.5 w-87.5 -translate-y-1/2 rounded-full bg-linear-to-tr from-cyan-400 to-purple-500 opacity-[0.08] blur-[80px]" aria-hidden="true" />
 
       <div className="mx-auto max-w-4xl">
         {/* Header Section */}
-        <div className="mb-16 text-center md:text-left">
+        <div className="mb-12 md:mb-14 lg:mb-16 text-center md:text-left">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-neutral-100 text-black border border-neutral-200/60 uppercase tracking-wider">
             Have Questions?
           </span>
