@@ -40,11 +40,11 @@ export default function ProductHero({ product }) {
               Premium Database
             </span>
 
-            <h1 className="mt-3 sm:mt-4 md:mt6 max-w-2xl text-3xl font-semibold tracking-[-0.045em] text-stone-900 sm:text-3xl lg:text-5xl">
+            <h1 className="mt-3 sm:mt-4 md:mt6 max-w-2xl text-2xl font-semibold tracking-[-0.045em] text-stone-900 sm:text-3xl lg:text-5xl">
               {title}
             </h1>
 
-            <p className="mt-3 sm:mt-4 md:mt-6 max-w-2xl text-base md:text-lg leading-8 text-stone-600">
+            <p className="mt-3 sm:mt-4 lg:mt-6 max-w-2xl text-base md:text-lg md:leading-8 text-stone-600">
               {description}
             </p>
 

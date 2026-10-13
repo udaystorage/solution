@@ -95,7 +95,7 @@ export default function QualitySelector({ value, onChange }) {
                   {option.title}
                 </h4>
 
-                <p className="mt-1.5 text-sm leading-5 text-stone-600">
+                <p className="hidden md:block mt-1.5 text-sm leading-5 text-stone-600">
                   {option.description}
                 </p>
               </div>
