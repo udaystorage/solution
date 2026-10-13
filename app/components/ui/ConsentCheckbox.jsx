@@ -29,7 +29,7 @@ export default function ConsentCheckbox({
 
         <label
           htmlFor="legal-consent"
-          className="text-sm leading-6 text-stone-600"
+          className="text-xs md:text-sm leading-6 text-stone-600"
         >
           I have read and agree to the{" "}
           <Link
