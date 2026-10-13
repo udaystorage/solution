@@ -33,27 +33,24 @@ const QUANTITIES = [
 
 export default function QuantitySelector({ value, onChange }) {
   return (
-    <section className="space-y-5">
+    <section className="space-y-4">
       {/* Heading */}
-
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
+      <div className="space-y-1">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
           Database Size
         </p>
 
-        <h3 className="text-lg font-semibold tracking-[-0.03em] text-stone-900 sm:text-xl md:text-2xl">
+        <h3 className="text-lg font-semibold tracking-tight text-stone-900 sm:text-xl">
           How many records do you need?
         </h3>
 
-        <p className="max-w-xl text-sm leading-6 text-stone-500">
-          Choose the approximate database size. You can always request a custom
-          quantity if your campaign requires something different.
+        <p className="text-sm leading-5 text-stone-500">
+          Select a quantity or choose Custom for a tailored request.
         </p>
       </div>
 
       {/* Options */}
-
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
         {QUANTITIES.map((option) => {
           const active = value === option.value;
 
@@ -62,70 +59,52 @@ export default function QuantitySelector({ value, onChange }) {
               key={option.value}
               type="button"
               onClick={() => onChange(option.value)}
+              aria-pressed={active}
               className={`
-group
-relative
-overflow-hidden
-rounded-2xl
-border
-p-3.5
-sm:rounded-3xl
-sm:p-5
-text-left
-transition-all
-duration-300
-
-${
-  active
-    ? "border-cyan-500 bg-cyan-50 shadow-[0_15px_40px_rgba(8,145,178,.15)]"
-    : "border-stone-200 bg-white hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl"
-}
-`}
+            group relative flex min-h-32 flex-col
+            items-start rounded-2xl border p-3.5
+            text-left transition-colors duration-200
+            focus-visible:outline-none
+            focus-visible:ring-2 focus-visible:ring-cyan-500
+            focus-visible:ring-offset-2
+            sm:min-h-0 sm:p-4
+            ${
+              active
+                ? "border-cyan-500 bg-cyan-50"
+                : "border-stone-200 bg-white hover:border-cyan-300 hover:bg-stone-50/50"
+            }
+          `}
             >
-              {/* Recommended */}
-
-              {option.recommended && (
-                <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-cyan-100 px-2 py-1 text-[10px] font-medium text-cyan-700 sm:right-4 sm:top-4 sm:px-2.5 sm:text-[11px]">
-                  <Sparkles size={12} />
-                  Popular
-                </div>
-              )}
-
               {/* Selected Icon */}
-
               <div
                 className={`
-    mb-5
-    flex
-    h-8
-    w-8
-    items-center
-    justify-center
-    rounded-full
-    transition-all
-    sm:mb-8
-    sm:h-10
-    sm:w-10
-
-    ${
-      active
-        ? "bg-cyan-600 text-white"
-        : "bg-stone-100 text-transparent group-hover:text-stone-400"
-    }
-  `}
+              mb-3 flex size-7 items-center justify-center
+              rounded-full transition-colors
+              ${
+                active
+                  ? "bg-cyan-600 text-white"
+                  : "bg-stone-100 text-transparent group-hover:text-stone-400"
+              }
+            `}
               >
-                <Check className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
+                <Check size={15} aria-hidden="true" />
               </div>
 
-              {/* Label */}
+              {/* Popular Badge */}
+              {option.recommended && (
+                <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-cyan-100 px-2 py-1 text-[9px] font-medium text-cyan-700">
+                  <Sparkles size={10} aria-hidden="true" />
+                  Popular
+                </span>
+              )}
 
-              <h4 className="text-lg font-semibold tracking-[-0.03em] text-stone-900 sm:text-xl lg:text-2xl">
+              <h4 className="text-lg font-semibold tracking-tight text-stone-900">
                 {option.label}
               </h4>
 
-              <p className="mt-1.5 text-xs leading-5 text-stone-500 sm:mt-2 sm:text-sm">
+              <p className="mt-1 text-xs leading-4 text-stone-500">
                 {option.value === "custom"
-                  ? "Tell us your exact requirement."
+                  ? "Specify your quantity"
                   : "Verified contact records"}
               </p>
             </button>
@@ -133,15 +112,12 @@ ${
         })}
       </div>
 
-      {/* Helper */}
-
-      <div className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 sm:rounded-2xl sm:px-5 sm:py-4">
-        <p className="text-sm leading-6 text-stone-600">
-          Need a larger or highly customized dataset? Select{" "}
-          <span className="font-medium text-stone-900">Custom</span> and mention
-          your preferred quantity in the requirements section.
-        </p>
-      </div>
+      {/* Compact Helper */}
+      <p className="text-xs leading-5 text-stone-500">
+        Need more records? Choose{" "}
+        <span className="font-medium text-stone-800">Custom</span> and specify
+        your requirements below.
+      </p>
     </section>
   );
 }

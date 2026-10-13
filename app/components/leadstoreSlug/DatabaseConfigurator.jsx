@@ -32,93 +32,94 @@ export default function DatabaseConfigurator({
     }));
   };
 
-  return (
-    <section className="overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,.06)]">
-      {/* Header */}
 
-      <div className="border-b border-stone-200 px-8 py-8 lg:px-10">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-black sm:text-[11px] lg:text-[12px]">
+return (
+  <section className="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.04)]">
 
-          Database Configuration
-        </span>
+    {/* Compact Header */}
+    <div className="border-b border-stone-200 px-5 py-5 sm:px-6 sm:py-6">
+      <span className="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-stone-600">
+        Database Configuration
+      </span>
 
-        <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-stone-900">
-          Configure your database
-        </h2>
+      <h2 className="mt-2 text-2xl font-semibold tracking-tight text-stone-900">
+        Configure your database
+      </h2>
 
-        <p className="mt-3 max-w-2xl text-base leading-7 text-stone-600">
-          Tell us exactly what you&apos;re looking for. Every request is
-          manually reviewed before delivery to ensure the highest possible
-          relevance and accuracy.
-        </p>
-      </div>
+      <p className="mt-1.5 max-w-2xl text-sm leading-5 text-stone-600">
+        Choose your target, record quantity and verification level.
+        Share your requirements and we&apos;ll contact you on WhatsApp.
+      </p>
+    </div>
 
-      {/* Body */}
+    {/* Form Sections */}
+    <div>
+      <ConfiguratorSection>
+        <LocationInput
+          value={request.location}
+          onChange={(value) => updateField("location", value)}
+        />
+      </ConfiguratorSection>
 
-      <div>
-        <ConfiguratorSection>
-          <LocationInput
-            value={request.location}
-            onChange={(value) => updateField("location", value)}
-          />
-        </ConfiguratorSection>
+      <ConfiguratorSection>
+        <QuantitySelector
+          value={request.quantity}
+          onChange={(value) => updateField("quantity", value)}
+        />
+      </ConfiguratorSection>
 
-        <ConfiguratorSection>
-          <QuantitySelector
-            value={request.quantity}
-            onChange={(value) => updateField("quantity", value)}
-          />
-        </ConfiguratorSection>
+      <ConfiguratorSection>
+        <QualitySelector
+          value={request.quality}
+          onChange={(value) => updateField("quality", value)}
+        />
+      </ConfiguratorSection>
 
-        <ConfiguratorSection>
-          <QualitySelector
-            value={request.quality}
-            onChange={(value) => updateField("quality", value)}
-          />
-        </ConfiguratorSection>
+      <ConfiguratorSection>
+        <RequirementsBox
+          value={request.requirements}
+          onChange={(value) => updateField("requirements", value)}
+        />
+      </ConfiguratorSection>
 
-        <ConfiguratorSection>
-          <RequirementsBox
-            value={request.requirements}
-            onChange={(value) => updateField("requirements", value)}
-          />
-        </ConfiguratorSection>
+      <ConfiguratorSection last>
+        <CustomerForm
+          value={request.customer}
+          onChange={updateCustomer}
+        />
+      </ConfiguratorSection>
+    </div>
 
-        <ConfiguratorSection last>
-          <CustomerForm value={request.customer} onChange={updateCustomer} />
-        </ConfiguratorSection>
-      </div>
-
-      {/* Footer */}
-
-      <div className="border-t border-stone-200 bg-stone-50 px-8 py-8 lg:px-10">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+    {/* Compact Submission Footer */}
+    <div className="border-t border-stone-200 bg-stone-50 px-5 py-5 sm:px-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <ConsentCheckbox
-        checked={accepted}
-        onChange={setAccepted}
-      />
+          checked={accepted}
+          onChange={setAccepted}
+        />
 
-          <WhatsappButton
-            accepted={accepted}
-            request={request}
-            loading={loading}
-            error={error}
-            onClick={handleClick}
-          />
-        </div>
+        <WhatsappButton
+          accepted={accepted}
+          request={request}
+          loading={loading}
+          error={error}
+          onClick={handleClick}
+        />
       </div>
-    </section>
-  );
-}
+    </div>
+
+  </section>
+);
 
 function ConfiguratorSection({ children, last = false }) {
   return (
     <div
-      className={`px-8 py-12 lg:px-10 ${
+      className={`px-5 py-7 sm:px-6 sm:py-8 ${
         !last ? "border-b border-stone-100" : ""
       }`}
     >
       {children}
     </div>
   );
+}
 }

@@ -12,126 +12,114 @@ const SUGGESTIONS = [
 
 export default function RequirementsBox({ value, onChange }) {
   return (
-    <section className="space-y-5 sm:space-y-6">
+    <section className="space-y-4">
       {/* Heading */}
-
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
+      <div className="space-y-1">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
           Audience Filters
         </p>
 
-        <h3 className="text-lg font-semibold tracking-[-0.03em] text-stone-900 sm:text-xl md:text-2xl">
+        <h3 className="text-lg font-semibold tracking-tight text-stone-900 sm:text-xl">
           Customize your database
         </h3>
 
-        <p className="max-w-xl text-sm leading-6 text-stone-500">
-          Tell us more about the audience you&apos;re looking for. The more
-          context you provide, the better we can tailor your database.
+        <p className="text-sm leading-5 text-stone-500">
+          Add any specific audience traits or targeting preferences.
         </p>
       </div>
 
       {/* Suggestions */}
+      <div className="flex flex-wrap gap-2">
+        {SUGGESTIONS.map((item) => {
+          const selected = value
+            .split(",")
+            .map((part) => part.trim())
+            .includes(item);
 
-      <div className="flex flex-wrap gap-2 sm:gap-3">
-        {SUGGESTIONS.map((item) => (
-          <button
-            key={item}
-            type="button"
-            onClick={() => {
-              if (value.includes(item)) return;
-
-              onChange(value ? `${value}, ${item}` : item);
-            }}
-            className="
-rounded-full
-border
-border-stone-200
-bg-white
-px-3
-py-1.5
-text-xs
-font-medium
-text-stone-600
-transition-all
-duration-300
-hover:border-cyan-200
-hover:bg-cyan-50
-hover:text-cyan-700
-sm:px-4
-sm:py-2
-sm:text-sm
-"
-          >
-            {item}
-          </button>
-        ))}
+          return (
+            <button
+              key={item}
+              type="button"
+              onClick={() => {
+                if (selected) return;
+                onChange(value ? `${value}, ${item}` : item);
+              }}
+              aria-pressed={selected}
+              className="
+            min-h-8 rounded-full border
+            border-stone-200 bg-white
+            px-3 py-1.5 text-xs font-medium
+            text-stone-600 transition-colors
+            hover:border-cyan-300 hover:bg-cyan-50
+            hover:text-cyan-700
+            focus-visible:outline-none
+            focus-visible:ring-2 focus-visible:ring-cyan-500
+          "
+            >
+              {item}
+            </button>
+          );
+        })}
       </div>
 
-      {/* Textarea */}
+      {/* Compact Textarea */}
+      <div
+        className="
+    overflow-hidden rounded-xl border border-stone-200
+    bg-white transition-colors
+    focus-within:border-cyan-500
+    focus-within:ring-2 focus-within:ring-cyan-100
+  "
+      >
+        <div
+          className="
+      flex items-center justify-between gap-3
+      border-b border-stone-100 px-3.5 py-2.5
+    "
+        >
+          <div className="flex min-w-0 items-center gap-2">
+            <Lightbulb
+              size={16}
+              aria-hidden="true"
+              className="shrink-0 text-cyan-600"
+            />
 
-      <div className="overflow-hidden rounded-2xl sm:rounded-[1.75rem] border border-stone-200 bg-white transition-all duration-300 focus-within:border-cyan-500 focus-within:shadow-[0_15px_45px_rgba(8,145,178,.12)]">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 px-4 py-3 sm:px-6 sm:py-4">
-          <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-            <Lightbulb className="h-4 w-4 text-cyan-600 sm:h-4.5 sm:w-4.5" />
-
-            <span className="text-sm font-medium text-stone-700">
-              Describe your ideal audience
-            </span>
+            <label
+              htmlFor="audience-requirements"
+              className="text-sm font-medium text-stone-700"
+            >
+              Additional requirements
+            </label>
           </div>
 
-          <span className="text-[11px] text-stone-500 sm:text-xs">
-            Optional
-          </span>
+          <span className="shrink-0 text-[11px] text-stone-400">Optional</span>
         </div>
 
         <textarea
-          rows={6}
+          id="audience-requirements"
+          rows={3}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder={`Example:
-• Women Investors
-• Income above ₹15L
-• Mutual Fund Investors
-
-  Any additional filters or preferences...`}
+          placeholder="e.g. Women investors, income above ₹15L, mutual fund investors..."
           className="
-w-full
-resize-none
-bg-transparent
-px-4
-py-4
-text-sm
-leading-6
-text-stone-700
-outline-none
-placeholder:text-stone-400
-sm:px-6
-sm:py-5
-sm:text-[15px]
-sm:leading-7
-"
+        min-h-24 w-full resize-y bg-transparent
+        px-3.5 py-3 text-sm leading-5 text-stone-800
+        outline-none placeholder:text-stone-400
+      "
         />
       </div>
 
-      {/* Tip Card */}
-
-      <div className="rounded-2xl p-4 sm:rounded-3xl sm:p-5 border border-cyan-100 bg-cyan-50">
-        <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-          <div className="flex  h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white sm:h-11 sm:w-11">
-            <Sparkles className="h-5 w-5 text-cyan-600" />
-          </div>
-
-          <div>
-            <h4 className="text-sm font-medium text-stone-900 sm:text-base">
-              Better requirements lead to better data.
-            </h4>
-
-            <p className="mt-1.5 text-sm leading-6 text-stone-600 sm:mt-2">
-              Premium data should always be tailored to your needs.
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Inline Tip — no separate card */}
+      {/* <div className="flex items-start gap-2.5 rounded-xl border border-cyan-100 bg-cyan-50/60 px-3.5 py-3">
+        <Sparkles
+          size={15}
+          aria-hidden="true"
+          className="mt-0.5 shrink-0 text-cyan-600"
+        />
+        <p className="text-xs leading-5 text-stone-600">
+          Specific filters help us match your audience more accurately.
+        </p>
+      </div> */}
     </section>
   );
 }

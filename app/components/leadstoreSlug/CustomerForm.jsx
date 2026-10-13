@@ -11,70 +11,62 @@ export default function CustomerForm({ value, onChange }) {
   };
 
   return (
-    <section className="space-y-5 sm:space-y-6">
+    <section className="space-y-4">
       {/* Heading */}
-
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
+      <div className="space-y-1">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
           Delivery Contact
         </p>
 
-        <h3 className="text-lg font-semibold tracking-[-0.03em] text-stone-900 sm:text-xl md:text-2xl">
+        <h3 className="text-lg font-semibold tracking-tight text-stone-900 sm:text-xl">
           Where should we reach you?
         </h3>
 
-        <p className="max-w-xl text-sm leading-6 text-stone-500">
-          We&apos;ll use these details only to discuss your database request and
-          share pricing or availability.
+        <p className="text-sm leading-5 text-stone-500">
+          For discussing your request and sharing pricing or availability.
         </p>
       </div>
 
-      {/* Card */}
+      {/* Contact fields */}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Input
+          icon={<User2 size={16} />}
+          label="Full Name"
+          placeholder="Your full name"
+          autoComplete="name"
+          value={value.name}
+          onChange={(e) => update("name", e.target.value)}
+        />
 
-      <div className="rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_10px_40px_rgba(15,23,42,.04)] sm:rounded-4xl sm:p-6 lg:p-7">
-        <div className="grid gap-5 sm:gap-6">
-          {/* Name */}
+        <Input
+          icon={<Phone size={16} />}
+          label="Mobile Number"
+          type="tel"
+          autoComplete="tel"
+          inputMode="tel"
+          placeholder="+91 98765 43210"
+          value={value.phone}
+          onChange={(e) => update("phone", e.target.value)}
+        />
+      </div>
 
-          <Input
-            icon={<User2 size={18} />}
-            label="Full Name"
-            placeholder="John Doe"
-            value={value.name}
-            onChange={(e) => update("name", e.target.value)}
-          />
+      {/* Privacy info */}
+      <div className="flex items-start gap-2.5 rounded-xl border border-cyan-100 bg-cyan-50/60 px-3.5 py-3">
+        <ShieldCheck
+          size={16}
+          aria-hidden="true"
+          className="mt-0.5 shrink-0 text-cyan-600"
+        />
 
-          {/* Mobile */}
-
-          <Input
-            icon={<Phone size={18} />}
-            label="Mobile Number"
-            type="tel"
-            placeholder="+91 98765 43210"
-            value={value.phone}
-            onChange={(e) => update("phone", e.target.value)}
-          />
-        </div>
-
-        {/* Privacy */}
-
-        <div className="mt-6 rounded-xl border border-cyan-100 bg-cyan-50 p-4 sm:mt-8 sm:rounded-2xl sm:p-5">
-          <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white sm:h-11 sm:w-11">
-              <ShieldCheck className="h-5 w-5 text-cyan-600" />
-            </div>
-
-            <div>
-              <h4 className="text-sm font-medium text-stone-900 sm:text-base">
-                Your information stays private.
-              </h4>
-
-              <p className="mt-1.5 text-sm leading-6 text-stone-600 sm:mt-2">
-                We only use these details to discuss your request. We never sell
-                or publicly share your contact information.
-              </p>
-            </div>
-          </div>
-        </div>
+        <p className="text-xs leading-5 text-stone-600">
+          <span className="font-medium text-stone-800">
+            Your information stays private.
+          </span>{" "}
+          <span className="hidden md:block">
+            We use your contact details only to discuss your request and
+            don&apos;t sell or publicly share them.
+          </span>
+        </p>
       </div>
     </section>
   );
@@ -82,19 +74,19 @@ export default function CustomerForm({ value, onChange }) {
 
 function Input({ icon, label, ...props }) {
   return (
-    <label className="block">
-      <span className="mb-3 block text-sm font-medium text-stone-700">
+    <label className="block min-w-0">
+      <span className="mb-1.5 block text-xs font-medium text-stone-700">
         {label}
       </span>
 
-      <div className="group flex h-14 items-center gap-4 rounded-2xl border border-stone-200 bg-white px-5 transition-all duration-300 focus-within:border-cyan-500 focus-within:ring-4 focus-within:ring-cyan-100">
-        <div className="text-stone-400 group-focus-within:text-cyan-600 transition-colors">
+      <div className="group flex h-11 items-center gap-3 rounded-xl border border-stone-200 bg-white px-3.5 transition-colors focus-within:border-cyan-500 focus-within:ring-2 focus-within:ring-cyan-100">
+        <div className="shrink-0 text-stone-400 transition-colors group-focus-within:text-cyan-600">
           {icon}
         </div>
 
         <input
           {...props}
-          className="w-full bg-transparent text-[15px] text-stone-800 outline-none placeholder:text-stone-400"
+          className="min-w-0 w-full bg-transparent text-sm text-stone-800 outline-none placeholder:text-stone-400"
         />
       </div>
     </label>
