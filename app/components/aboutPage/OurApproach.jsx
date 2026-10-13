@@ -177,9 +177,9 @@ export default function OurApproach() {
     <section
       ref={approachRef}
       id="approach"
-      className="overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-30 lg:py-20"
+      className="overflow-hidden bg-white px-4 py-16 sm:px-8 md:px-16 lg:px-20 lg:py-20"
     >
-      <div className="w-full lg:px-10 lg:py-36">
+      <div className="w-full">
         {/* Heading */}
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/60 bg-neutral-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-black sm:text-[11px] lg:text-[12px]">

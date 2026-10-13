@@ -25,27 +25,24 @@ const OPTIONS = [
 
 export default function QualitySelector({ value, onChange }) {
   return (
-    <section className="space-y-4 sm:space-y-5">
+    <section className="space-y-4">
       {/* Heading */}
-
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
+      <div className="space-y-1">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
           Data Quality
         </p>
 
-        <h3 className="text-lg font-semibold tracking-[-0.03em] text-stone-900 sm:text-xl md:text-2xl">
+        <h3 className="text-lg font-semibold tracking-tight text-stone-900 sm:text-xl">
           Choose your database quality
         </h3>
 
-        <p className="max-w-xl text-sm leading-6 text-stone-500">
-          Select the verification level that best matches your campaign and
-          business goals.
+        <p className="text-sm leading-5 text-stone-500">
+          Select the verification level for your campaign.
         </p>
       </div>
 
-      {/* Cards */}
-
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-2">
+      {/* Quality Options */}
+      <div className="grid gap-3 sm:grid-cols-2">
         {OPTIONS.map((option) => {
           const active = value === option.value;
           const Icon = option.icon;
@@ -55,67 +52,56 @@ export default function QualitySelector({ value, onChange }) {
               key={option.value}
               type="button"
               onClick={() => onChange(option.value)}
+              aria-pressed={active}
               className={`
-group
-relative
-overflow-hidden
-rounded-2xl
-border
-p-4
-sm:rounded-[1.75rem]
-sm:p-6
-text-left
-transition-all
-duration-300
-
-${
-  active
-    ? "border-cyan-500 bg-cyan-50 shadow-[0_15px_45px_rgba(8,145,178,.15)]"
-    : "border-stone-200 bg-white hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl"
-}
-`}
+            group relative flex h-full flex-col
+            rounded-2xl border p-4 text-left
+            transition-colors duration-200
+            focus-visible:outline-none
+            focus-visible:ring-2 focus-visible:ring-cyan-500
+            focus-visible:ring-offset-2
+            ${
+              active
+                ? "border-cyan-500 bg-cyan-50"
+                : "border-stone-200 bg-white hover:border-cyan-300 hover:bg-stone-50/50"
+            }
+          `}
             >
               {/* Badge */}
-
               {option.badge && (
-                <span className="absolute right-3 top-3 rounded-full bg-cyan-100 px-2.5 py-1 text-[10px] font-medium text-cyan-700 sm:right-5 sm:top-5 sm:px-3 sm:text-[11px]">
-                  {" "}
+                <span className="absolute right-3 top-3 max-w-[60%] rounded-full bg-cyan-100 px-2 py-1 text-[9px] font-medium text-cyan-700 sm:text-[10px]">
                   {option.badge}
                 </span>
               )}
 
               {/* Icon */}
-
               <div
                 className={`
-    flex h-11 w-11 items-center justify-center rounded-xl transition-all
-    sm:h-14 sm:w-14 sm:rounded-2xl
-
-    ${
-      active
-        ? "bg-cyan-600 text-white"
-        : "bg-stone-100 text-stone-500 group-hover:bg-cyan-100 group-hover:text-cyan-700"
-    }
-  `}
+              flex size-9 shrink-0 items-center justify-center
+              rounded-xl transition-colors
+              ${
+                active
+                  ? "bg-cyan-600 text-white"
+                  : "bg-stone-100 text-stone-500 group-hover:bg-cyan-100 group-hover:text-cyan-700"
+              }
+            `}
               >
-                <Icon className="h-5 w-5 sm:h-6.5 sm:w-6.5" />
+                <Icon size={19} aria-hidden="true" />
               </div>
 
               {/* Content */}
-
-              <div className="mt-4 sm:mt-6">
-                <h4 className="text-xl font-semibold tracking-[-0.03em] text-stone-900 sm:text-2xl">
+              <div className="mt-3">
+                <h4 className="text-lg font-semibold tracking-tight text-stone-900">
                   {option.title}
                 </h4>
 
-                <p className="mt-2 text-sm leading-6 text-stone-600 sm:mt-3 sm:leading-7">
+                <p className="mt-1.5 text-sm leading-5 text-stone-600">
                   {option.description}
                 </p>
               </div>
 
               {/* Features */}
-
-              <div className="mt-6 space-y-2 border-t border-stone-200 pt-4 sm:mt-8 sm:space-y-3 sm:pt-6">
+              <div className="mt-4 space-y-2 border-t border-stone-200/80 pt-3">
                 <Feature
                   text={
                     option.value === "premium"
@@ -131,14 +117,6 @@ ${
                       : "Suitable For Broad Outreach"
                   }
                 />
-                {/* 
-                <Feature
-                  text={
-                    option.value === "premium"
-                      ? "Priority data verification"
-                      : "Standard verification"
-                  }
-                /> */}
               </div>
             </button>
           );
@@ -150,10 +128,13 @@ ${
 
 function Feature({ text }) {
   return (
-    <div className="flex items-center gap-3">
-      <div className="h-2 w-2 rounded-full bg-cyan-500" />
+    <div className="flex items-start gap-2">
+      <span
+        aria-hidden="true"
+        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-500"
+      />
 
-      <span className="text-sm text-stone-600">{text}</span>
+      <span className="text-xs leading-4 text-stone-600">{text}</span>
     </div>
   );
 }

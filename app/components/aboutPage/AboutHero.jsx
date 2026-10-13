@@ -3,9 +3,17 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative h-[85vh] overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 ">
+    <section
+      className="
+    relative isolate
+    min-h-155 sm:min-h-170
+    lg:min-h-[min(85svh,750px)]
+    overflow-hidden
+    bg-sky-100
+    "
+    >
+      {/* Layer 1: Background image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/about-bg-4.webp"
           alt=""
@@ -13,23 +21,43 @@ export default function AboutHero() {
           preload
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-center max-[640px]:opacity-90 opacity:100 "
+          className="object-cover object-center"
         />
       </div>
-      {/* subtle background glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-violet-100/40 via-blue-100/40 to-cyan-100/40 blur-[100px]" />
 
-      <div className="relative mx-auto  flex min-h-162.5 max-w-7xl flex-col items-center justify-center px-6  text-center lg:px-10">
-        <h1 className="max-w-2xl hero-heading">
+      <div
+        aria-hidden="true"
+        className="
+    pointer-events-none absolute inset-0 z-2
+    bg-[linear-gradient(to_bottom,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.48)_40%,rgba(255,255,255,0.27)_60%,rgba(255,255,255,0.08)_100%)]
+  "
+      />
+
+      {/* Layer 3: Actual content — always above the overlay */}
+      <div
+        className="
+      relative z-10 mx-auto flex min-h-155
+      max-w-7xl flex-col items-center justify-center
+      px-6 py-16 text-center
+      sm:min-h-170 sm:px-8
+      lg:px-10
+    "
+      >
+        <h1 className="hero-heading max-w-2xl text-black">
           Data should create
           <br />
-          <span className="bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+          <span
+            className="
+          bg-linear-to-r from-violet-500 via-blue-500
+          to-cyan-500 bg-clip-text text-transparent
+        "
+          >
             opportunities,
           </span>{" "}
           not more work.
         </h1>
 
-        <p className="hero-subheading ">
+        <p className="hero-subheading text-slate-900">
           We help businesses discover and reach the clients they desire with
           high value databases backed by our lead expert&apos;s consultation.
         </p>

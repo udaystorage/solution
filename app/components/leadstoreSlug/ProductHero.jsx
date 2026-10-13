@@ -8,7 +8,8 @@ import {
   Clock3,
   Database,
   ShieldCheck,
-  Sparkles,
+  ListFilterPlus,
+  MapPin,
 } from "lucide-react";
 
 export default function ProductHero({ product }) {
@@ -49,94 +50,166 @@ export default function ProductHero({ product }) {
 
             {/* Trust pills */}
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
-                <BadgeCheck size={16} className="text-cyan-600" />
+            {/* Product Benefits */}
+            {/* <div className="mt-5">
+              <div className="grid grid-cols-3 divide-x divide-stone-200 border-y border-stone-200 py-3">
+                <div className="pr-2 sm:pr-4">
+                  <div className="flex items-center gap-1.5 text-stone-800">
+                    <MapPin size={14} className="shrink-0 text-cyan-600" />
+                    <span className="text-[11px] font-semibold sm:text-xs">
+                      Pan India
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[10px] leading-4 text-stone-500 sm:text-xs">
+                    Nationwide Coverage Available
+                  </p>
+                </div>
+
+                <div className="px-2 sm:px-4">
+                  <div className="flex items-center gap-1.5 text-stone-800">
+                    <ListFilterPlus
+                      size={14}
+                      className="shrink-0 text-cyan-600"
+                    />
+                    <span className="text-[11px] font-semibold sm:text-xs">
+                      Custom Filters
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[10px] leading-4 text-stone-500 sm:text-xs">
+                    Define your audience
+                  </p>
+                </div>
+
+                <div className="pl-2 sm:pl-4">
+                  <div className="flex items-center gap-1.5 text-stone-800">
+                    <ShieldCheck size={14} className="shrink-0 text-cyan-600" />
+                    <span className="text-[11px] font-semibold sm:text-xs">
+                      Private Enquiry
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[10px] leading-4 text-stone-500 sm:text-xs">
+                    Contact details stay private
+                  </p>
+                </div>
+              </div>
+            </div> */}
+
+            {/* Trust Pills */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              <div className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs text-stone-600">
+                <BadgeCheck size={14} className="shrink-0 text-cyan-600" />
                 Verified Records
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
-                <Clock3 size={16} className="text-cyan-600" />
+              <div className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs text-stone-600">
+                <Clock3 size={14} className="shrink-0 text-cyan-600" />
                 Delivery in 2–3 Hours
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1 md:py-2 text-sm text-stone-700 shadow-sm">
-                <ShieldCheck size={16} className="text-cyan-600" />
-                Human Verified
+              <div className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs text-stone-600">
+                <Database size={14} className="shrink-0 text-cyan-600" />
+                Custom Database
               </div>
             </div>
+
           </div>
 
           {/* RIGHT */}
 
-          <div className="relative">
-            <div className="absolute -left-6 top-10 h-36 w-36 rounded-full bg-cyan-200/40 blur-3xl" />
+          <div className="relative min-w-0">
+            {/* Subtle background glow */}
+            <div
+              aria-hidden="true"
+              className="absolute -left-4 top-8 size-28 rounded-full bg-cyan-200/30 blur-3xl sm:size-36"
+            />
 
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-violet-200/40 blur-3xl" />
+            <div
+              aria-hidden="true"
+              className="absolute -right-2 top-0 size-32 rounded-full bg-violet-200/30 blur-3xl sm:size-40"
+            />
 
-            <div className="relative overflow-hidden rounded-4xl border border-stone-200 bg-white p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-stone-500">
+            {/* Preview Card */}
+            <div className="relative mx-auto max-w-lg overflow-hidden rounded-2xl border border-stone-200/90 bg-white p-4 shadow-[0_16px_50px_rgba(15,23,42,0.07)] sm:rounded-3xl sm:p-5 lg:p-6">
+              {/* Card heading */}
+              <div className="mb-3 flex items-center justify-between">
+                <span className="text-xs font-semibold text-stone-500">
                   Database Preview
                 </span>
 
-                {/* <Sparkles className="text-cyan-600" size={18} /> */}
+                <Database
+                  size={15}
+                  aria-hidden="true"
+                  className="text-cyan-600"
+                />
               </div>
 
-              <div className="mt-8 overflow-hidden rounded-2xl border border-stone-200 bg-white">
-                {/* Hero Image */}
-                <div className="relative aspect-video w-full bg-stone-100">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    fetchPriority="high"
-                    loading="eager"
-                    className="object-cover"
-                    sizes="(max-width:1024px)100vw,420px"
+              {/* Product image */}
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-stone-100">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  fetchPriority="high"
+                  loading="eager"
+                  unoptimized
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 480px"
+                />
+              </div>
+
+              {/* Product identity */}
+              <div className="flex items-center gap-3 py-3.5">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-50">
+                  <Database
+                    size={19}
+                    aria-hidden="true"
+                    className="text-cyan-700"
                   />
-
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-black/35 to-transparent" />
                 </div>
 
-                {/* Details */}
-                <div className="p-6">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100">
-                      <Database className="text-cyan-700" size={22} />
-                    </div>
-
-                    <div>
-                      <p className="font-semibold text-stone-900">{title}</p>
-
-                      <p className="text-sm text-stone-500">
-                        Tailored & Verified Dataset
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 space-y-4">
-                    <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
-                      <span className="text-stone-500">Coverage</span>
-                      <span className="font-medium">Pan India</span>
-                    </div>
-
-                    <div className="flex items-center justify-between border-b border-stone-200 pb-3 text-sm">
-                      <span className="text-stone-500">Quality</span>
-                      <span className="font-medium">Premium Verified</span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-stone-500">Delivery</span>
-                      <span className="font-medium">Within Hours</span>
-                    </div>
-                  </div>
+                <div className="min-w-0">
+                  <h2 className="truncate text-sm font-semibold text-stone-900">
+                    {title}
+                  </h2>
+                  <p className="mt-0.5 text-xs text-stone-500">
+                    Tailored &amp; Verified Dataset
+                  </p>
                 </div>
               </div>
 
-              <div className="mt-8 rounded-2xl border border-cyan-100 bg-cyan-50 px-5 py-4">
-                <p className="text-sm leading-6 text-cyan-900">
-                 Every database is tailored, reviewd and verified before delivery.
+              {/* Product specifications */}
+              <dl className="border-t border-stone-100">
+                <div className="flex items-center justify-between gap-3 border-b border-stone-100 py-2.5 text-xs">
+                  <dt className="text-stone-500">Coverage</dt>
+                  <dd className="text-right font-medium text-stone-800">
+                    Pan India
+                  </dd>
+                </div>
+
+                <div className="flex items-center justify-between gap-3 border-b border-stone-100 py-2.5 text-xs">
+                  <dt className="text-stone-500">Quality</dt>
+                  <dd className="text-right font-medium text-stone-800">
+                    Premium Verified
+                  </dd>
+                </div>
+
+                <div className="flex items-center justify-between gap-3 py-2.5 text-xs">
+                  <dt className="text-stone-500">Delivery</dt>
+                  <dd className="text-right font-medium text-stone-800">
+                    Within Hours
+                  </dd>
+                </div>
+              </dl>
+
+              {/* Verification note */}
+              <div className="mt-2 flex items-start gap-2 rounded-xl bg-cyan-50/70 px-3 py-2.5">
+                <ShieldCheck
+                  size={15}
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0 text-cyan-700"
+                />
+                <p className="text-[11px] leading-4 text-cyan-900">
+                  Tailored and reviewed before delivery.
                 </p>
               </div>
             </div>

@@ -29,7 +29,7 @@ const principles = [
 
 export default  function OurPrinciples() {
   return (
-<section className="relative w-full overflow-hidden bg-slate-950 px-5 py-16 text-slate-900 sm:px-8 sm:py-20 md:px-16 lg:px-20">
+<section className="relative w-full overflow-hidden bg-slate-950  text-slate-900 px-4 py-16 sm:px-8 md:px-16 lg:px-20 lg:py-20">
   {/* Dynamic Ambient Graphics */}
   <div
     className="
@@ -61,7 +61,7 @@ export default  function OurPrinciples() {
   />
 
   {/* Content */}
-  <div className="relative z-10 mx-auto w-full max-w-7xl lg:px-10 lg:py-20">
+  <div className="relative z-10 mx-auto w-full max-w-7xl">
     <div className="grid gap-10 sm:gap-12 lg:grid-cols-[0.6fr_1.4fr]">
       
       {/* Left Heading */}
