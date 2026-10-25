@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { FaWhatsapp, FaXTwitter, FaLinkedin, FaGlobe } from "react-icons/fa6";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { useState,useEffect } from "react";
+import { ArrowRight, Mail, MapPin, Phone, WifiOff } from "lucide-react";
 import { Geist } from "next/font/google";
 const geist = Geist({
   subsets: ["latin"],
@@ -16,7 +15,6 @@ const PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_NUMBER;
 const email1 = process.env.NEXT_PUBLIC_EMAIL_1;
 const email2 = process.env.NEXT_PUBLIC_EMAIL_2;
 
-
 const footerLinks = [
   { label: "About Us", href: "/aboutus" },
   { label: "Blog", href: "/blog" },
@@ -27,6 +25,24 @@ export default function Footer() {
   const [mobile, setMobile] = useState("");
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
+
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    const updateConnection = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    updateConnection();
+
+    window.addEventListener("online", updateConnection);
+    window.addEventListener("offline", updateConnection);
+
+    return () => {
+      window.removeEventListener("online", updateConnection);
+      window.removeEventListener("offline", updateConnection);
+    };
+  }, []);
 
   const handleClick = () => {
     if (!/^[6-9]\d{9}$/.test(mobile)) {
@@ -41,9 +57,9 @@ export default function Footer() {
     openWhatsApp(message);
 
     setMobile("");
-      setTimeout(() => {
-    setStatus("");
-  }, 5000);
+    setTimeout(() => {
+      setStatus("");
+    }, 5000);
   };
 
   return (
@@ -84,12 +100,19 @@ export default function Footer() {
               <div className="mt-8 flex flex-col gap-2">
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <MapPin className="-mt-5 h-4 w-4 shrink-0 text-neutral-400" />
-                  <span>14/2, Ashutosh Mukherjee Road, Building No. 5E, Bhowanipore 700020</span>
+                  <span>
+                    14/2, Ashutosh Mukherjee Road, Building No. 5E, Bhowanipore
+                    700020
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
                   <Mail className="-mt-5 h-4 w-4 shrink-0 text-neutral-400" />
-                  <span> {email1} {" "}<br />{email2}</span>
+                  <span>
+                    {" "}
+                    {email1} <br />
+                    {email2}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[13px] leading-6 text-neutral-500">
@@ -160,26 +183,48 @@ export default function Footer() {
               </p>
 
               <div className="mt-4">
-                <div className="flex overflow-hidden rounded-xl border border-neutral-300 bg-white">
-                  <input
-                    type="tel"
-                    placeholder="Enter Your Mobile Number"
-                    value={mobile}
-                    onChange={(e) => {
-                      setMobile(e.target.value);
-                      setError("");
-                      setStatus("");
-                    }}
-                    className="w-full px-5 py-3 text-[13px] outline-none placeholder:text-neutral-400"
-                  />
+                <div className="space-y-2">
+                  <div className="flex overflow-hidden rounded-xl border border-neutral-300 bg-white">
+                    <input
+                      type="tel"
+                      placeholder="Enter Your Mobile Number"
+                      value={mobile}
+                      onChange={(e) => {
+                        setMobile(e.target.value);
+                        setError("");
+                        setStatus("");
+                      }}
+                      className="w-full min-w-0 px-5 py-3 text-[13px] outline-none placeholder:text-neutral-400"
+                    />
 
-                  <button
-                    onClick={handleClick}
-                    aria-label="Submit number"
-                    className="group flex w-14 items-center justify-center border-l border-neutral-200 bg-black transition-colors duration-200 hover:bg-black cursor-pointer"
-                  >
-                    <ArrowRight className="h-5 w-5 text-neutral-400 transition-all duration-300 group-hover:text-white group-hover:translate-x-1" />
-                  </button>
+                    <button
+                      type="button"
+                      onClick={handleClick}
+                      aria-label="Submit number"
+                      className="group flex w-12 shrink-0 items-center justify-center border-l border-neutral-200 bg-black transition-colors duration-200 hover:bg-neutral-800"
+                    >
+                      <ArrowRight className="h-5 w-5 text-neutral-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                    </button>
+                  </div>
+
+                  {!isOnline && (
+                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                      <span
+                        role="status"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-medium text-amber-700"
+                      >
+                        <WifiOff aria-hidden="true" className="h-3 w-3" />
+                        No internet connection
+                      </span>
+
+                      <a
+                        href={`tel:${process.env.NEXT_PUBLIC_CONTACT_NUMBER?.replace(/\D/g, "")}`}
+                        className="text-xs inline-flex items-center gap-1 font-medium text-sky-700 underline underline-offset-2 transition-colors hover:text-sky-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600"
+                      >
+                        <Phone className="h-3 w-3 rotate-20"/>Call Us
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 <p
@@ -191,64 +236,6 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-
-            {/* <div className="mt-10 flex gap-3">
-              <a
-                href="#"
-                className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
-    hover:bg-[#f5f6f8] 
-    hover:border-white/80 
-    hover:scale-[1.05] 
-    hover:shadow-[-5px_-5px_10px_#ffffff,_5px_5px_10px_rgba(0,0,0,0.08)] 
-    active:scale-[0.97] 
-    active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
-              >
-                <FaLinkedin className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
-
-              <a
-                href="#"
-                className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
-    hover:bg-[#f5f6f8] 
-    hover:border-white/80 
-    hover:scale-[1.05] 
-    hover:shadow-[-5px_-5px_10px_#ffffff,_5px_5px_10px_rgba(0,0,0,0.08)] 
-    active:scale-[0.97] 
-    active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
-              >
-                <FaXTwitter className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </a>
-
-              <span
-                onClick={() =>
-                  openWhatsApp("DataTreasure? I have some database query")
-                }
-                className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
-    hover:bg-[#f5f6f8] 
-    hover:border-white/80 
-    hover:scale-[1.05] 
-    hover:shadow-[-5px_-5px_10px_#ffffff,_5px_5px_10px_rgba(0,0,0,0.08)] 
-    active:scale-[0.97] 
-    active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
-              >
-                <FaWhatsapp className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </span>
-
-              <span
-                onClick={() => {
-                  window.location.href = email;
-                }}
-                className="group p-2.5 rounded-xl bg-transparent border border-transparent transition-all duration-300 ease-out 
-    hover:bg-[#f5f6f8] 
-    hover:border-white/80 
-    hover:scale-[1.05] 
-    hover:shadow-[-5px_-5px_10px_#ffffff,_5px_5px_10px_rgba(0,0,0,0.08)] 
-    active:scale-[0.97] 
-    active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),_inset_-2px_-2px_5px_rgba(255,255,255,0.9)]"
-              >
-                <Mail className="h-5 w-5 stroke-[1.8] text-slate-600 transition-colors duration-300 group-hover:text-slate-900" />
-              </span>
-            </div> */}
           </div>
         </div>
 

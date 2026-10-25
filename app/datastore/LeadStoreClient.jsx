@@ -142,5 +142,3 @@ Thank you.
     </main>
   );
 }
-
-
