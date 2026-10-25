@@ -33,6 +33,7 @@ export default function DatabaseConfigurator({
   };
 
 
+
 return (
   <section className="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.04)]">
 
@@ -110,6 +111,8 @@ return (
 
   </section>
 );
+}
+
 
 function ConfiguratorSection({ children, last = false }) {
   return (
@@ -121,5 +124,4 @@ function ConfiguratorSection({ children, last = false }) {
       {children}
     </div>
   );
-}
 }

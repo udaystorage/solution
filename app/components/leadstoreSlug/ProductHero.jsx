@@ -15,9 +15,6 @@ import {
 export default function ProductHero({ product }) {
   const { title, description, image } = product;
 
-  console.log(description);
-  console.log(title);
-
   return (
     <section className="border-b border-stone-200 bg-linear-to-b from-white via-stone-50/40 to-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-14 px-4 py-16 md:py-20 sm:px-6 lg:px-10 ">

@@ -268,7 +268,7 @@ export default async function BlogListingPage() {
 
                 <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
                   <Link
-                    href="/leadstore"
+                    href="/datastore"
                     className="inline-flex items-center justify-center rounded-full bg-black px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:shadow-lg sm:px-9"
                   >
                     Get Started
