@@ -10,12 +10,12 @@ export default function ContactHero() {
           {/* Primary page heading */}
           <h1
             id="contact-page-heading"
-            className="max-w-3xl mx-auto
+            className="w-full
             hero-heading
             "
           >
             Have an audience
-            <br className="hidden sm:block" /> in mind?
+             in mind?
             <span
               className="
                block
