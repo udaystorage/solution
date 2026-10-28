@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import BestProductCard from "./BestProductCard";
+import CustomDataCta from "./CustomDataCta";
 
 const CATEGORIES = [
   {
@@ -80,7 +82,7 @@ export default function BestProducts() {
       <div className="w-full flex flex-col justify-start items-center  transition-all duration-400">
         <div className="flex flex-row justify-between items-center w-full px-4 sm:px-8 md:px-16 lg:px-25 py-3 sm:py-5 bg-white">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold py-2 sm:py-3">
-            Best Selling Leads
+            Categories
           </h2>
         </div>
         <div className="flex flex-row md:mb-8 justify-center items-start flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full px-4 sm:px-10 md:px-16  lg:px-20">
@@ -96,6 +98,10 @@ export default function BestProducts() {
             );
           })}
         </div>
+
+        <Link className="w-full" href={`/datastore/custom-data`}>
+          <CustomDataCta />
+        </Link>
         <div className="py-10 px-4 text-center">
           <p className="text-xs sm:text-sm   uppercase tracking-[0.2em] text-neutral-600">
             Database Collection
