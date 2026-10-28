@@ -186,9 +186,15 @@ const ROLE_STYLE = {
 const CARD_TEXTS = [
   {
     category: "FINANCE",
-    title: "Stock Market Traders",
+    title: "Stock Market Traders Data",
     slug: "stock-market-investors-data",
     icon: BarChart3,
+  },
+   {
+    category: "FINANCE",
+    title: "Demat Account Holders Data",
+    slug: "demat-account-holders-data",
+    icon: ChartSpline,
   },
    {
     category: "FINANCE",
@@ -224,95 +230,6 @@ const CARD_TEXTS = [
     title: "Crypto Trader's Data",
     slug: "crypto-traders-data",
     icon: Bitcoin,
-  },
-  {
-    category: "FINANCE",
-    title: "Credit Card Holders",
-    slug: "credit-card-data",
-    icon: CreditCard,
-  },
-  {
-    category: "REAL ESTATE",
-    title: "Real Estate Data",
-    slug: "real-estate-data",
-    icon: Building2,
-  },
-  {
-    category: "EDUCATION",
-    title: "College & School Students",
-    slug: "students-data",
-    icon: GraduationCap,
-  },
-  {
-    category: "INSURANCE",
-    title: "Insurance Data",
-    slug: "insurance-data",
-    icon: ShieldCheck,
-  },
-  {
-    category: "HEALTHCARE",
-    title: "Doctors",
-    slug: "doctors-data",
-    icon: Stethoscope,
-  },
-  {
-    category: "HOSPITALITY",
-    title: "Hotel Data",
-    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
-    icon: Hotel,
-  },
-  {
-    category: "EDUCATION",
-    title: "College & School Owners",
-    icon: School,
-  },
-  {
-    category: "HOSPITALITY",
-    title: "Restaurant Data",
-    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
-    icon: Utensils,
-  },
-  {
-    category: "WELLNESS",
-    title: "Spa Data",
-    slug: "companies-hotels-colleges-schools-restaurants-spa-database",
-    icon: Sparkles,
-  },
-  {
-    category: "LOCATION",
-    title: "Pincode-Wise Data",
-    slug: "pincode-wise-data",
-    icon: MapPin,
-  },
-  {
-    category: "WORKFORCE",
-    title: "Employees Data",
-    slug: "it-government-mnc-employees-data",
-    icon: BriefcaseBusiness,
-  },
-  {
-    category: "GLOBAL",
-    title: "International Data",
-    slug: "international-data",
-    icon: Globe2,
-  },
-  {
-    category: "AUTOMOTIVE",
-    title: "Car Owners",
-    slug: "car-owners-data",
-    icon: CarFront,
-  },
-  {
-    category: "PREMIUM SEGMENT",
-    title: "High-Net-Worth Individuals",
-    slug: "hni-data",
-    icon: Gem,
-  },
-  {
-    category: "FINANCE",
-    title: "Loan Data",
-    slug: "loan-data",
-    icon: Landmark,
   },
 ];
 

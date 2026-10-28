@@ -22,7 +22,7 @@ const marquee = [...states, ...states];
             cursor-pointer
             border border-white/70
 
-            bg-white/45
+            bg-sky-100/60
             backdrop-blur-md
 
             px-6
@@ -40,11 +40,11 @@ const marquee = [...states, ...states];
             hover:shadow-[0_12px_24px_rgba(15,23,42,.08),inset_0_1px_0_rgba(255,255,255,1)]
           "
         >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/70 via-transparent to-transparent opacity-70" />
+          <div className="absolute inset-0 rounded-full bg-linear-to-b from-white/70 via-transparent to-transparent opacity-70" />
 
-          <div className="relative h-2.5 w-2.5 flex-shrink-0">
-            <span className="absolute inset-0 rounded-full bg-blue-400 blur-[5px] opacity-40" />
-            <span className="absolute inset-[2px] rounded-full bg-cyan-500" />
+          <div className="relative h-2.5 w-2.5 shrink-0">
+            <span className="absolute inset-0 rounded-full bg-violet-600 blur-[5px] opacity-40" />
+            <span className="absolute inset-0.5 rounded-full bg-violet-300" />
           </div>
 
           <span className="relative whitespace-nowrap text-[14px] font-medium tracking-[0.03em] text-neutral-700">

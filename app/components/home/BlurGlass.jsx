@@ -14,7 +14,7 @@ export default function BlurGlass() {
     flex items-center justify-center
     overflow-hidden bg-white
     px-5 sm:px-8 md:px-10 lg:px-12 xl:px-20
-    py-24 sm:py-28 lg:py-32
+    py-24 sm:py-28 lg:py-32 lg:pb-22
   "
   aria-label="Hero Section"
   >
