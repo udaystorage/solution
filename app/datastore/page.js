@@ -62,7 +62,7 @@ export default function page() {
         />
       <main className="w-full min-h-max flex flex-col justify-start items-center text-black">
          <LeadStoreHero/>
-         <ChooseCatagory/>
+         {/* <ChooseCatagory/> */}
          <BestProducts/>
          <FAQSection page="datastore"/>
       </main>
